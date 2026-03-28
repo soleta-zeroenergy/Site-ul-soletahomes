@@ -1,6 +1,5 @@
 import type { HeroProps }         from "@/components/sections/Hero";
 import type { FeatureSplitProps } from "@/components/sections/FeatureSplit";
-import type { SectionIntroProps } from "@/components/sections/SectionIntro";
 import type { ValuesGridProps }   from "@/components/sections/ValuesGrid";
 import type { CtaBandProps }      from "@/components/sections/CtaBand";
 

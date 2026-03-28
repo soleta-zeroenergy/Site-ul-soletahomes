@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 
-type SectionIntroProps = {
+export type SectionIntroProps = {
   eyebrow?: string;
   heading: string;
   body?: string;
