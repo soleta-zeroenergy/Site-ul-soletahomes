@@ -16,7 +16,7 @@ const cta = {
   body: "Tell us about your site, your vision and your timeline.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View all projects", href: "/built-projects" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function HolidayHomesPage() {

@@ -19,7 +19,7 @@ export type ProjectGridProps = {
   projects: ProjectItem[];
   cta?: { label: string; href: string };
   columns?: 2 | 3;
-  theme?: "light" | "warm" | "dark";
+  theme?: "light" | "warm" | "dark" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -35,7 +35,7 @@ const bgMap = {
   light: "bg-white",
   warm: "bg-[#faf8f6]",
   dark: "bg-[#1a1714]",
-} as const;
+};
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 export function ProjectGrid({

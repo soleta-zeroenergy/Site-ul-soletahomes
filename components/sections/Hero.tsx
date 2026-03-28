@@ -13,8 +13,8 @@ export type HeroProps = {
   secondaryCta?: Cta;
   imageSrc?:     string;
   imageAlt?:     string;
-  align?:        "left" | "center";
-  size?:         "full" | "large" | "medium";
+  align?:        "left" | "center" | string;
+  size?:         "full" | "large" | "medium" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */

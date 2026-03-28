@@ -10,7 +10,7 @@ export type BadgeRowProps = {
   eyebrow?:  string;
   heading?:  string;
   items:     BadgeItem[];
-  theme?:    "light" | "warm" | "dark";
+  theme?:    "light" | "warm" | "dark" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -18,7 +18,7 @@ const bgMap = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1a1714]",
-} as const;
+};
 
 const tok = {
   light: {
@@ -48,7 +48,7 @@ const tok = {
     divider:  "border-white/10 bg-white/10",
     accent:   "bg-brand-400",
   },
-} as const;
+};
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 export function BadgeRow({

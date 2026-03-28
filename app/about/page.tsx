@@ -21,7 +21,7 @@ const aboutCta = {
   body: "The first conversation is free. Tell us about your site and your vision.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View Built Projects", href: "/built-projects" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function AboutPage() {

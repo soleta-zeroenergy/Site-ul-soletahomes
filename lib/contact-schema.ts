@@ -9,7 +9,7 @@ export const PROJECT_TYPES = [
   "Custom Architecture",
   "Professional / Developer inquiry",
   "General question",
-] as const;
+];
 
 export type ProjectType = (typeof PROJECT_TYPES)[number];
 

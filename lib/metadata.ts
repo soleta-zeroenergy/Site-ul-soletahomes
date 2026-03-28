@@ -7,7 +7,7 @@ export const siteConfig = {
     "Soleta designs premium timber homes where precise craftsmanship meets warm, natural living. Bespoke architecture built to last generations.",
   url:            "https://soletahomes.com",
   locale:         "en_US",
-  type:           "website" as const,
+  type:           "website",
   twitterHandle:  "@soletahomes",
   ogImage:        "/images/og-default.jpg",
 };

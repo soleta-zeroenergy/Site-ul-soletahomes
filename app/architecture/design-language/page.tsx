@@ -17,7 +17,7 @@ const cta = {
   body: "How post and beam glulam timber frame turns design into a built reality.",
   primaryCta: { label: "Post & Beam System", href: "/architecture/post-beam" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function DesignLanguagePage() {

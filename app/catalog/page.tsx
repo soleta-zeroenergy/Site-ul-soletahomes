@@ -10,7 +10,7 @@ const catalogCta = {
   body: "The catalogue is the starting point. The conversation is where it becomes real.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function CatalogPage() {

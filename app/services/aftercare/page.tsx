@@ -15,7 +15,7 @@ const cta = {
   body: "Contact us to arrange an annual inspection or discuss your aftercare needs.",
   primaryCta: { label: "Contact the Aftercare Team", href: "/contact" },
   secondaryCta: { label: "Explore the Process", href: "/process" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function AftercarePage() {

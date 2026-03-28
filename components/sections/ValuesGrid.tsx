@@ -12,7 +12,7 @@ export type ValuesGridProps = {
   body?:     string;
   items:     ValueItem[];
   columns?:  2 | 3;      // default 3
-  theme?:    "light" | "warm" | "dark";
+  theme?:    "light" | "warm" | "dark" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -20,7 +20,7 @@ const bgMap = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1a1714]",
-} as const;
+};
 
 /* ── Helpers ───────────────────────────────────────────────────────────────── */
 function HeadingLines({ text }: { text: string }) {

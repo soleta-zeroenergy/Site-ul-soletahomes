@@ -15,7 +15,7 @@ const cta = {
   body: "Tell us about your project and we will arrange a session with the right members of our team.",
   primaryCta: { label: "Request a Session", href: "/contact" },
   secondaryCta: { label: "Explore the Process", href: "/process" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function PrivateConsultingPage() {

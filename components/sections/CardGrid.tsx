@@ -20,7 +20,7 @@ export type CardGridProps = {
   cards:     CardItem[];
   columns?:  3 | 4;     // defaults to 3, or 4 if cards.length === 4
   cta?:      { label: string; href: string };
-  theme?:    "light" | "warm" | "dark";
+  theme?:    "light" | "warm" | "dark" | string;
 };
 
 /* ── Component ─────────────────────────────────────────────────────────────── */

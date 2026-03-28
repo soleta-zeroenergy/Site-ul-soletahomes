@@ -15,7 +15,7 @@ const cta = {
   body: "Tell us about your site and your vision. We will tell you what is possible.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View Custom Architecture", href: "/collection/custom-architecture" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function CustomDesignPage() {

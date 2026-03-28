@@ -157,5 +157,5 @@ export const processCta = {
   body: "The first conversation is free. Tell us about your site and your vision — we will tell you what is possible.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "Download the Catalogue", href: "/catalog" },
-  theme: "dark" as const,
+  theme: "dark",
 };

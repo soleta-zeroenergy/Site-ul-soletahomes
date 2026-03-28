@@ -15,7 +15,7 @@ const cta = {
   body: "Tell us about your project and we will explain how our interior design service works.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function InteriorDesignPage() {

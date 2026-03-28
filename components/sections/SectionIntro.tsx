@@ -4,7 +4,7 @@ export type SectionIntroProps = {
   eyebrow?: string;
   heading: string;
   body?: string;
-  align?: string;
+  align?: "left" | "center" | string;
   maxWidth?: string;
 };
 

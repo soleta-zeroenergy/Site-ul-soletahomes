@@ -13,7 +13,7 @@ const cta = {
   body: "Tell us about your site and we will calculate the ZeroEnergy system for your specific location and consumption.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function ZeroEnergyPage() {

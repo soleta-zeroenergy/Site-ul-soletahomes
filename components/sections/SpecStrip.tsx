@@ -12,7 +12,7 @@ export type SpecStripProps = {
   heading?:  string;
   items:     SpecStripItem[];
   cta?:      { label: string; href: string };
-  theme?:    "light" | "warm" | "dark";
+  theme?:    "light" | "warm" | "dark" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -20,19 +20,19 @@ const bgMap = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1a1714]",
-} as const;
+};
 
 const itemBg = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1e1b18]",
-} as const;
+};
 
 const textMap = {
   light: { eyebrow: "text-brand-500", heading: "text-[#1a1714]", num: "text-brand-500/50", label: "text-[#1a1714]", desc: "text-[#6b5d56]", divider: "border-sand-400 bg-sand-400" },
   warm:  { eyebrow: "text-brand-500", heading: "text-[#1a1714]", num: "text-brand-500/50", label: "text-[#1a1714]", desc: "text-[#6b5d56]", divider: "border-sand-400 bg-sand-400" },
   dark:  { eyebrow: "text-brand-400", heading: "text-[#faf8f6]", num: "text-brand-400/50", label: "text-[#faf8f6]", desc: "text-[#9a8e87]",  divider: "border-white/10 bg-white/10" },
-} as const;
+};
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 export function SpecStrip({

@@ -57,7 +57,7 @@ const hero = {
   heading: "Begin\na conversation",
   subtext:
     "Every Soleta home starts here — with a short note about your site, your ideas, and what you want the house to do for you.",
-  size:  "medium" as const,
+  size:  "medium",
   align: "left",
 };
 
@@ -79,14 +79,14 @@ const panel = {
   ],
   trustNote:
     "Your inquiry is private. We do not share your details with third parties or add you to marketing lists.",
-  theme: "warm" as const,
+  theme: "warm",
 };
 
 const faq = {
   eyebrow:  "Before You Write",
   heading:  "What's helpful to include",
-  columns:  2 as const,
-  theme:    "light" as const,
+  columns:  2,
+  theme:    "light",
   items: [
     {
       q: "Do I need a site to start a conversation?",
@@ -120,7 +120,7 @@ const cta = {
   body:         "Use the form above or send a direct email. Either way, a person will read it and reply.",
   primaryCta:   { label: "Request a Private Offer", href: "#contact-form" },
   secondaryCta: { label: "Explore house models",    href: "/house-models" },
-  theme:        "dark" as const,
+  theme:        "dark",
 };
 
 /* ── Page ─────────────────────────────────────────────────────────────────── */

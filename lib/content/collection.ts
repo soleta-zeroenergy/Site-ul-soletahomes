@@ -89,5 +89,5 @@ export const collectionCta = {
   body: "Tell us about your site, your vision and your timeline.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "Discover the Process", href: "/process" },
-  theme: "dark" as const,
+  theme: "dark",
 };

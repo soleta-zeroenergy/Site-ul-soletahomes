@@ -9,7 +9,7 @@ export type CtaBandProps = {
   body?:        string;
   primaryCta:   { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  theme?:       "dark" | "brand" | "light" | "warm";
+  theme?:       "dark" | "brand" | "light" | "warm" | string;
   imageSrc?:    string;
   imageAlt?:    string;
 };
@@ -20,7 +20,7 @@ const themes = {
   brand: { bg: "bg-brand-500",  heading: "text-white",      body: "text-[#dedad5]", eyebrow: "text-[#dedad5]" },
   light: { bg: "bg-white",      heading: "text-[#1a1714]",  body: "text-[#4a4440]", eyebrow: "text-brand-500" },
   warm:  { bg: "bg-[#faf8f6]",  heading: "text-[#1a1714]",  body: "text-[#4a4440]", eyebrow: "text-brand-500" },
-} as const;
+};
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 export function CtaBand({

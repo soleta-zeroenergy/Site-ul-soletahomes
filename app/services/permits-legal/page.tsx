@@ -15,7 +15,7 @@ const cta = {
   body: "Tell us about your site and we will advise on the permit process before you commit to anything.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "Explore the Process", href: "/process" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function PermitsLegalPage() {

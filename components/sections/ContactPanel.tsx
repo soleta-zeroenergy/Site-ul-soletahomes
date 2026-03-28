@@ -25,7 +25,7 @@ export type ContactPanelProps = {
   details?:    ContactDetail[];
   locations?:  LocationItem[];
   trustNote?:  string;
-  theme?:      "light" | "warm";
+  theme?:      "light" | "warm" | string;
 };
 
 type Status = "idle" | "loading" | "success" | "error";

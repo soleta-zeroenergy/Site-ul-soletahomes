@@ -20,7 +20,7 @@ const cta = {
   body: "The first conversation is free. Tell us about your site and your vision.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function DesignPlanningPage() {

@@ -18,7 +18,7 @@ export type ModelCardGridProps = {
   heading?:  string;
   body?:     string;
   cards:     ModelCard[];   // 5 items for standard 2+3 layout
-  theme?:    "light" | "warm";
+  theme?:    "light" | "warm" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */

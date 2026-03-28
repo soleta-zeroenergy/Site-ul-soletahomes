@@ -20,7 +20,7 @@ const pressCta = {
   body: "We are happy to provide images, interviews and technical information for editorial coverage.",
   primaryCta: { label: "Contact the Press Team", href: "mailto:press@soletahomes.com" },
   secondaryCta: { label: "About Soleta", href: "/about" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function PressPage() {

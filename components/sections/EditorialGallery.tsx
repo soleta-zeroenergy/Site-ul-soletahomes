@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 export type EditorialItem = {
-  size?:      "full" | "half";   // default "half"
+  size?:      "full" | "half" | string;   // default "half"
   category:   string;            // eyebrow / category label
   title:      string;
   body?:      string;
@@ -16,7 +16,7 @@ export type EditorialGalleryProps = {
   heading?:  string;             // \n for line breaks
   body?:     string;
   items:     EditorialItem[];
-  theme?:    "light" | "warm";
+  theme?:    "light" | "warm" | string;
 };
 
 /* ── Config ─────────────────────────────────────────────────────────────────── */

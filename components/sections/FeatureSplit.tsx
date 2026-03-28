@@ -11,8 +11,8 @@ export type FeatureSplitProps = {
   cta?:             { label: string; href: string };
   imageSrc?:        string;
   imageAlt?:        string;
-  imagePosition?:   "left" | "right";  // default "right"
-  theme?:           "light" | "warm" | "dark";
+  imagePosition?:   "left" | "right" | string;  // default "right"
+  theme?:           "light" | "warm" | "dark" | string;
   children?:        React.ReactNode;
 };
 
@@ -21,13 +21,13 @@ const bgMap = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1a1714]",
-} as const;
+};
 
 const textMap = {
   light: { eyebrow: "text-brand-500", heading: "text-[#1a1714]", body: "text-[#4a4440]" },
   warm:  { eyebrow: "text-brand-500", heading: "text-[#1a1714]", body: "text-[#4a4440]" },
   dark:  { eyebrow: "text-brand-400", heading: "text-[#faf8f6]", body: "text-[#b09a8b]" },
-} as const;
+};
 
 /** Warm light placeholder for light/warm themes */
 const PLACEHOLDER_LIGHT =

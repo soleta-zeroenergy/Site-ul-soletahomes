@@ -17,7 +17,7 @@ const architectureCta = {
   body: "Browse our completed projects or start a conversation about your site.",
   primaryCta: { label: "View Built Projects", href: "/built-projects" },
   secondaryCta: { label: "Request a Private Offer", href: "/contact" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function ArchitecturePage() {

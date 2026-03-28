@@ -13,7 +13,7 @@ export type ProcessTimelineProps = {
   heading?:  string;         // \n for intentional line breaks
   body?:     string;
   stages:    ProcessStage[];
-  theme?:    "light" | "warm" | "dark";
+  theme?:    "light" | "warm" | "dark" | string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -21,7 +21,7 @@ const bgMap = {
   light: "bg-white",
   warm:  "bg-[#faf8f6]",
   dark:  "bg-[#1a1714]",
-} as const;
+};
 
 const t = {
   light: {
@@ -60,7 +60,7 @@ const t = {
     detail:     "text-[#9a8e87]",
     bullet:     "bg-brand-400/50",
   },
-} as const;
+};
 
 /* ── Helpers ───────────────────────────────────────────────────────────────── */
 function HeadingLines({ text }: { text: string }) {

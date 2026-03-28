@@ -50,5 +50,5 @@ export const sustainabilityCta = {
   body: "See exactly what goes into a Soleta wall — layer by layer.",
   primaryCta: { label: "Healthy Materials", href: "/architecture/healthy-materials" },
   secondaryCta: { label: "ZeroEnergy Systems", href: "/architecture/energy-zeroenergy" },
-  theme: "dark" as const,
+  theme: "dark",
 };

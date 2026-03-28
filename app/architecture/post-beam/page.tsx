@@ -17,7 +17,7 @@ const cta = {
   body: "What goes into a Soleta wall — and why it matters for the people inside.",
   primaryCta: { label: "Healthy Materials", href: "/architecture/healthy-materials" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function PostBeamPage() {

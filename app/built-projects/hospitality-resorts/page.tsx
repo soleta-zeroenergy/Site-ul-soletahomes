@@ -16,7 +16,7 @@ const cta = {
   body: "We work with developers and operators on boutique hotels, eco-resorts and lodge clusters. Tell us about your project.",
   primaryCta: { label: "Start a Conversation", href: "/contact" },
   secondaryCta: { label: "View all projects", href: "/built-projects" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function HospitalityResortsPage() {

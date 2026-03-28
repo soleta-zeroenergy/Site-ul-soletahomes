@@ -19,7 +19,7 @@ const cta = {
   body: "Tell us about your site and your vision. The first conversation is free and carries no obligation.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function DreamPage() {

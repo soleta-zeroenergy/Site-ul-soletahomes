@@ -16,7 +16,7 @@ const cta = {
   body: "We work with municipalities, foundations and public institutions on educational and community projects.",
   primaryCta: { label: "Start a Conversation", href: "/contact" },
   secondaryCta: { label: "View all projects", href: "/built-projects" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function EducationalPublicPage() {

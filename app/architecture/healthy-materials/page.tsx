@@ -17,7 +17,7 @@ const cta = {
   body: "A home that produces what it consumes — and what that means in practice.",
   primaryCta: { label: "Explore ZeroEnergy", href: "/architecture/energy-zeroenergy" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function HealthyMaterialsPage() {

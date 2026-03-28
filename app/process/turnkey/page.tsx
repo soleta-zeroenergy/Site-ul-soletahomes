@@ -19,7 +19,7 @@ const cta = {
   body: "The first conversation is free. Tell us about your site and your vision.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "Explore the Process", href: "/process" },
-  theme: "dark" as const,
+  theme: "dark",
 };
 
 export default function TurnkeyPage() {
