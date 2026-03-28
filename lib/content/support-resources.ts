@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { ValuesGridProps }    from "@/components/sections/ValuesGrid";
 import type { CardGridProps }      from "@/components/sections/CardGrid";
 import type { SpecStripProps }     from "@/components/sections/SpecStrip";
@@ -16,7 +15,7 @@ export const supportHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const supportIntro: SectionIntroProps = {
+export const supportIntro = {
   eyebrow: "Resources",
   heading: "Information before\ncommitment",
   body:

@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { FeatureSplitProps }  from "@/components/sections/FeatureSplit";
 import type { ValuesGridProps }    from "@/components/sections/ValuesGrid";
 import type { BadgeRowProps }      from "@/components/sections/BadgeRow";
@@ -16,7 +15,7 @@ export const sustainHero: HeroProps = {
 };
 
 /* ── 2. Philosophy intro ──────────────────────────────────────────────────── */
-export const sustainIntro: SectionIntroProps = {
+export const sustainIntro = {
   eyebrow: "Our Approach",
   heading: "No marketing claims.\nJust considered choices.",
   body:

@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { ValuesGridProps }    from "@/components/sections/ValuesGrid";
 import type { FeatureSplitProps }  from "@/components/sections/FeatureSplit";
 import type { CtaBandProps }       from "@/components/sections/CtaBand";
@@ -15,7 +14,7 @@ export const servicesHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const servicesIntro: SectionIntroProps = {
+export const servicesIntro = {
   eyebrow: "Full scope",
   heading: "One team.\nEvery discipline.",
   body:

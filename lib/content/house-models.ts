@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { ModelCardGridProps } from "@/components/sections/ModelCardGrid";
 import type { SpecStripProps }     from "@/components/sections/SpecStrip";
 import type { CtaBandProps }       from "@/components/sections/CtaBand";
@@ -15,7 +14,7 @@ export const modelsHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const modelsIntro: SectionIntroProps = {
+export const modelsIntro = {
   eyebrow: "The Collections",
   heading: "Designed around\nhow you want to live",
   body:

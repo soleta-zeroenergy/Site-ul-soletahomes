@@ -1,5 +1,4 @@
 import type { HeroProps }              from "@/components/sections/Hero";
-import type { SectionIntroProps }      from "@/components/sections/SectionIntro";
 import type { EditorialGalleryProps }  from "@/components/sections/EditorialGallery";
 import type { CtaBandProps }           from "@/components/sections/CtaBand";
 
@@ -14,7 +13,7 @@ export const inspirationHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const inspirationIntro: SectionIntroProps = {
+export const inspirationIntro = {
   eyebrow: "The Soleta Edit",
   heading: "Four ways of\nlooking at a home",
   body:

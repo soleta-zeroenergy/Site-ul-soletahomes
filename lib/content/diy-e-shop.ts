@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { CardGridProps }      from "@/components/sections/CardGrid";
 import type { BadgeRowProps }      from "@/components/sections/BadgeRow";
 import type { SpecStripProps }     from "@/components/sections/SpecStrip";
@@ -16,7 +15,7 @@ export const diyHero: HeroProps = {
 };
 
 /* ── 2. Positioning intro ─────────────────────────────────────────────────── */
-export const diyIntro: SectionIntroProps = {
+export const diyIntro = {
   eyebrow: "Coming Soon",
   heading: "Not everything needs\na full-service project",
   body:

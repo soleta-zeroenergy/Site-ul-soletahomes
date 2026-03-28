@@ -38,7 +38,7 @@ export const discoverMaterials: FeatureSplitProps = {
 };
 
 /* ── 4. Relationship with landscape ──────────────────────────────────────── */
-export const discoverLandscape: SectionIntroProps = {
+export const discoverLandscape = {
   eyebrow: "Site & Landscape",
   heading: "Every site tells us\nwhat to build",
   body:

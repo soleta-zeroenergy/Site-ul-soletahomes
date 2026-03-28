@@ -1,5 +1,4 @@
 import type { HeroProps }             from "@/components/sections/Hero";
-import type { SectionIntroProps }     from "@/components/sections/SectionIntro";
 import type { ProcessTimelineProps }  from "@/components/sections/ProcessTimeline";
 import type { CtaBandProps }          from "@/components/sections/CtaBand";
 
@@ -14,7 +13,7 @@ export const processHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const processIntro: SectionIntroProps = {
+export const processIntro = {
   eyebrow: "The Soleta Process",
   heading: "Five stages.\nOne clear path.",
   body:

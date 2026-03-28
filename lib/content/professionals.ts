@@ -1,5 +1,4 @@
 import type { HeroProps }          from "@/components/sections/Hero";
-import type { SectionIntroProps }  from "@/components/sections/SectionIntro";
 import type { CardGridProps }      from "@/components/sections/CardGrid";
 import type { FeatureSplitProps }  from "@/components/sections/FeatureSplit";
 import type { CtaBandProps }       from "@/components/sections/CtaBand";
@@ -15,7 +14,7 @@ export const professionalsHero: HeroProps = {
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
-export const professionalsIntro: SectionIntroProps = {
+export const professionalsIntro = {
   eyebrow: "Collaboration",
   heading: "A partner, not\na subcontractor",
   body:
