@@ -9,7 +9,7 @@ export const processHero: HeroProps = {
   subtext:
     "A considered, unhurried process — designed to keep you informed and in control at every stage.",
   size:  "medium",
-  align: "left",
+  align: "left" as const,
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -18,7 +18,7 @@ export const processIntro = {
   heading: "Five stages.\nOne clear path.",
   body:
     "We have refined our approach over many years and many sites. Each stage has a defined scope, a defined outcome, and a named person responsible for it. There are no surprises.",
-  align: "left",
+  align: "left" as const,
   theme: "warm",
 };
 

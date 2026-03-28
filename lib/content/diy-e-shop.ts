@@ -11,7 +11,7 @@ export const diyHero: HeroProps = {
   subtext:
     "Guides, materials, and components for builders who want to work with Soleta timber construction logic on their own terms. Coming soon.",
   size:  "medium",
-  align: "left",
+  align: "left" as const,
 };
 
 /* ── 2. Positioning intro ─────────────────────────────────────────────────── */
@@ -20,7 +20,7 @@ export const diyIntro = {
   heading: "Not everything needs\na full-service project",
   body:
     "Some clients are experienced builders or self-builders who want access to Soleta's material knowledge and construction approach without commissioning a full architectural project. We are building a curated resource to serve them — guides, specifications, and a small component catalogue.",
-  align: "left",
+  align: "left" as const,
   theme: "warm",
 };
 

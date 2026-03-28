@@ -10,7 +10,7 @@ export const professionalsHero: HeroProps = {
   subtext:
     "Architects, developers, and hospitality operators trust us to deliver exceptional timber architecture — reliably, on time, and to a level their clients expect.",
   size:  "medium",
-  align: "left",
+  align: "left" as const,
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -19,7 +19,7 @@ export const professionalsIntro = {
   heading: "A partner, not\na subcontractor",
   body:
     "We collaborate with professionals at every level — from independent architects seeking a trusted fabrication and build partner, to developers specifying premium residential product, to hospitality operators creating destination retreats. In every case, the relationship is direct, candid, and long-term.",
-  align: "left",
+  align: "left" as const,
   theme: "warm",
 };
 
