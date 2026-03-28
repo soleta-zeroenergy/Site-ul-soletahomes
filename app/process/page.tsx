@@ -30,7 +30,7 @@ export default function ProcessPage() {
       </section>
 
       {/* ── 2. Process stepper ── */}
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
+      <section id="process-steps" className="section" style={{ backgroundColor: "var(--color-bg)" }}>
         <div className="container-site">
           <span className="eyebrow mb-4 block">The process</span>
           <h2 className="mb-12 text-[2rem]">Five steps from dream to home</h2>
@@ -129,6 +129,7 @@ export default function ProcessPage() {
 
       {/* ── 3. Service levels ── */}
       <section
+        id="services"
         className="section border-t border-[var(--color-border-light)]"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
