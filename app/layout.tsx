@@ -1,14 +1,13 @@
-import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
-import { Header } from "@/components/layout/Header";
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
-import { baseMetadata } from "@/lib/metadata";
+import { Header } from "@/components/layout/Header";
+import { baseMetadata, siteConfig } from "@/lib/metadata";
 import "@/styles/globals.css";
 
-/* ─── Fonts ─────────────────────────────────────────────────────────────── */
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -16,42 +15,49 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-/* ─── Metadata & Viewport ───────────────────────────────────────────────── */
 export const metadata: Metadata = baseMetadata;
 
-export const viewport: Viewport = {
-  themeColor: "#fafaf9",
-  width: "device-width",
-  initialScale: 1,
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteConfig.url}/logo/soleta-logo-dark.svg`,
+    width: 180,
+    height: 48,
+  },
+  description: siteConfig.description,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: "studio@soletahomes.com",
+  },
+  sameAs: [],
 };
 
-/* ─── Root Layout ───────────────────────────────────────────────────────── */
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="antialiased flex flex-col min-h-dvh">
-
+    <html lang="en">
+      <body className={`${inter.variable} ${cormorant.variable} min-h-screen bg-[var(--soleta-bg)] text-[var(--soleta-ink)]`}>
         <Header />
-
-        {/* Main content — padded top to clear fixed header */}
-        <main
-          id="main-content"
-          className="flex-1 pt-20"
-          tabIndex={-1}
-        >
+        <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>
           {children}
         </main>
-
         <Footer />
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </body>
     </html>
   );

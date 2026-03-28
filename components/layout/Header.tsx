@@ -1,298 +1,350 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { topNav, type TopNavItem } from "@/lib/nav";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { MobileDrawer } from "./MobileDrawer";
+import { headerNav, type NavItem } from "@/lib/nav";
 
-/* ─── Icons ──────────────────────────────────────────────────────────────── */
-function ExternalIcon() {
+function isActive(href: string, pathname: string): boolean {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function hasActiveChild(item: NavItem, pathname: string): boolean {
   return (
-    <svg
-      width="9"
-      height="9"
-      viewBox="0 0 9 9"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="ml-0.5 opacity-50"
-      aria-hidden="true"
-    >
-      <path d="M3.5 1.5H1v6.5h6.5V5.5M5.5 1h2.5m0 0v2.5M7.5 1 4 4.5" />
-    </svg>
+    item.sections?.some((section) =>
+      section.children.some((child) => isActive(child.href, pathname))
+    ) ?? false
   );
 }
 
-function ChevronIcon({ open }: { open: boolean }) {
+function ExternalIndicator() {
   return (
-    <svg
-      className={cn(
-        "ml-0.5 w-2.5 h-2.5 opacity-50 transition-transform duration-200",
-        open && "rotate-180"
-      )}
-      fill="none"
-      viewBox="0 0 10 10"
-      stroke="currentColor"
-      strokeWidth={1.75}
-      aria-hidden="true"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M1.5 3.5l3.5 3 3.5-3" />
-    </svg>
+    <span aria-hidden="true" className="text-[0.6rem] leading-none">
+      ↗
+    </span>
   );
 }
 
-/* ─── Desktop menu panel ─────────────────────────────────────────────────── */
-function MenuPanel({
-  item,
-  onMouseEnter,
-  onMouseLeave,
-  onClose,
-}: {
-  item: TopNavItem;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-  onClose: () => void;
-}) {
-  if (item.type === "link") return null;
-
-  return (
-    <div
-      className="absolute top-full inset-x-0 bg-stone-50 border-b border-stone-200 shadow-xl"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      role="region"
-      aria-label={`${item.label} submenu`}
-    >
-      <div className="container-site py-8 pb-10">
-        {item.type === "dropdown" && (
-          <ul className="flex flex-col gap-0.5 w-52">
-            {item.items.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block text-sm text-stone-600 hover:text-stone-900 py-1.5 transition-colors duration-150"
-                  onClick={onClose}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {item.type === "mega" && (
-          <div
-            className={cn(
-              "grid gap-x-16 gap-y-8",
-              item.groups.length === 1 && "grid-cols-1 max-w-xs",
-              item.groups.length === 2 && "grid-cols-2 max-w-lg",
-              item.groups.length === 3 && "grid-cols-3 max-w-3xl",
-              item.groups.length >= 4 && "grid-cols-4"
-            )}
-          >
-            {item.groups.map((group) => (
-              <div key={group.label}>
-                {group.href ? (
-                  <Link
-                    href={group.href}
-                    className="eyebrow mb-4 block hover:text-timber-600 transition-colors duration-150"
-                    onClick={onClose}
-                  >
-                    {group.label}
-                  </Link>
-                ) : (
-                  <p className="eyebrow mb-4">{group.label}</p>
-                )}
-                <ul className="space-y-2">
-                  {group.items.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="block text-sm text-stone-600 hover:text-stone-900 py-0.5 transition-colors duration-150"
-                        onClick={onClose}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/* ─── Header ─────────────────────────────────────────────────────────────── */
 export function Header() {
-  const [open, setOpen] = useState<string | null>(null);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const clearClose = useCallback(() => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-  }, []);
-
-  const scheduleClose = useCallback(() => {
-    closeTimer.current = setTimeout(() => setOpen(null), 160);
-  }, []);
-
-  const openMenu = useCallback(
-    (label: string) => {
-      clearClose();
-      setOpen(label);
-    },
-    [clearClose]
-  );
-
-  const closeMenu = useCallback(() => setOpen(null), []);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<number | null>(null);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(null);
-        setIsMobileOpen(false);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const activeItem = topNav.find((item) => item.label === open);
+  useEffect(() => {
+    setMobileOpen(false);
+    setOpenSection(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 h-20 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur-md">
-        <div className="container-site h-full flex items-center gap-4">
-
-          {/* ── Wordmark ── */}
-          <Link
-            href="/"
-            className="flex-shrink-0 group mr-6"
-            aria-label="Soleta Homes — home"
-            onClick={closeMenu}
-          >
-            <span className="font-serif text-xl tracking-[0.12em] uppercase text-stone-900 group-hover:text-timber-600 transition-colors duration-200">
-              Soleta
-            </span>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b bg-[var(--soleta-cream)] transition-[border-color,box-shadow] duration-300",
+          scrolled
+            ? "border-soleta-gold/20 shadow-[0_2px_16px_0_rgb(30_27_22/0.07)]"
+            : "border-transparent"
+        )}
+        style={{ height: "var(--header-height)" }}
+      >
+        <div className="container-site flex h-full items-center justify-between gap-6">
+          <Link href="/" aria-label="Soleta Homes homepage" className="flex shrink-0 items-center gap-3">
+            <Image
+              src="/logo/Sigla%20Verde%20%2318392B.png"
+              alt=""
+              width={36}
+              height={36}
+              priority
+              className="h-8 w-auto"
+            />
+            <Image
+              src="/logo/Soleta%20sigla%20text%2018392b.png"
+              alt="Soleta Homes"
+              width={140}
+              height={32}
+              priority
+              className="h-7 w-auto"
+            />
           </Link>
 
-          {/* ── Desktop nav ── */}
-          <nav
-            aria-label="Main navigation"
-            className="hidden lg:flex flex-1 items-stretch"
-            onMouseLeave={scheduleClose}
-          >
-            {topNav.map((item) => {
-              const isOpen = open === item.label;
+          <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
+            {headerNav.map((item) => {
+              const active = isActive(item.href, pathname) || hasActiveChild(item, pathname);
+              const hasDropdown = Boolean(item.sections?.length);
 
-              /* External link */
-              if (item.type === "link" && item.external) {
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center px-3 text-[11px] font-sans font-medium tracking-[0.12em] uppercase whitespace-nowrap h-full border-b-2 border-transparent text-stone-400 hover:text-stone-700 transition-colors duration-200"
-                  >
-                    {item.label}
-                    <ExternalIcon />
-                  </a>
-                );
-              }
-
-              /* Internal simple link */
-              if (item.type === "link") {
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="flex items-center px-3 text-[11px] font-sans font-medium tracking-[0.12em] uppercase whitespace-nowrap h-full border-b-2 border-transparent text-stone-500 hover:text-stone-900 hover:border-stone-300 transition-colors duration-200"
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
-
-              /* Dropdown / mega trigger */
               return (
-                <button
-                  key={item.label}
-                  type="button"
-                  aria-expanded={isOpen}
-                  aria-haspopup="true"
-                  className={cn(
-                    "flex items-center px-3 text-[11px] font-sans font-medium tracking-[0.12em] uppercase whitespace-nowrap h-full border-b-2 transition-colors duration-200",
-                    isOpen
-                      ? "text-stone-900 border-timber-500"
-                      : "text-stone-500 border-transparent hover:text-stone-900 hover:border-stone-300"
+                <div key={item.href} className="group relative">
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-ink)]/75 transition-colors duration-200 hover:text-[var(--soleta-ink)]"
+                    >
+                      {item.label}
+                      <ExternalIndicator />
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "flex items-center gap-1 border-b font-ui pb-[2px] text-[0.6875rem] font-medium uppercase tracking-[0.1em] transition-colors duration-200",
+                        active
+                          ? "border-[var(--soleta-accent)] text-[var(--soleta-accent)]"
+                          : "border-transparent text-[var(--soleta-ink)]/75 hover:text-[var(--soleta-ink)]"
+                      )}
+                    >
+                      {item.label}
+                      {hasDropdown && (
+                        <svg
+                          aria-hidden="true"
+                          className="h-3 w-3 opacity-40 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                        </svg>
+                      )}
+                    </Link>
                   )}
-                  onMouseEnter={() => openMenu(item.label)}
-                  onFocus={() => openMenu(item.label)}
-                  onClick={() => (isOpen ? closeMenu() : openMenu(item.label))}
-                >
-                  {item.label}
-                  <ChevronIcon open={isOpen} />
-                </button>
+
+                  {hasDropdown && (
+                    <div
+                      className={cn(
+                        "absolute top-full pt-3",
+                        item.sections!.length > 1 ? "left-1/2 -translate-x-1/2" : "left-0",
+                        "invisible opacity-0 pointer-events-none transition-[opacity,visibility] duration-150",
+                        "group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto",
+                        "group-focus-within:visible group-focus-within:opacity-100 group-focus-within:pointer-events-auto"
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          "border border-soleta-gold/25 bg-[var(--soleta-cream)] shadow-[0_8px_32px_0_rgb(30_27_22/0.10),0_2px_8px_0_rgb(30_27_22/0.05)]",
+                          item.sections!.length > 1 && "flex"
+                        )}
+                      >
+                        {item.sections!.map((section, sectionIndex) => (
+                          <div
+                            key={`${item.href}-${sectionIndex}`}
+                            className={cn(
+                              "py-4",
+                              item.sections!.length > 1
+                                ? "min-w-[190px] border-r border-soleta-gold/15 px-6 last:border-r-0"
+                                : "min-w-[220px] px-5"
+                            )}
+                          >
+                            {section.sectionLabel && (
+                              <p className="mb-3 border-b border-soleta-gold/20 pb-2 font-ui text-[0.5625rem] font-medium uppercase tracking-[0.15em] text-[var(--soleta-accent)]">
+                                {section.sectionLabel}
+                              </p>
+                            )}
+                            <ul className="flex flex-col gap-[2px]">
+                              {section.children.map((child) => (
+                                <li key={child.href}>
+                                  <Link
+                                    href={child.href}
+                                    className={cn(
+                                      "block px-2 py-[0.45rem] font-ui text-[0.75rem] tracking-[0.02em] transition-colors duration-150",
+                                      isActive(child.href, pathname)
+                                        ? "text-[var(--soleta-accent)]"
+                                        : "text-[var(--soleta-ink)]/65 hover:bg-soleta-gold/8 hover:text-[var(--soleta-ink)]"
+                                    )}
+                                  >
+                                    {child.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </nav>
 
-          {/* ── CTA ── */}
-          <div className="hidden lg:flex flex-shrink-0 ml-auto">
+          <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="btn-primary text-[10.5px] py-3 px-5 tracking-widest"
+              className="btn-primary hidden px-7 py-[0.75rem] text-[0.625rem] lg:inline-flex"
             >
               Request a Private Offer
             </Link>
+
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+              onClick={() => setMobileOpen((value) => !value)}
+              className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] lg:hidden"
+            >
+              <span
+                className={cn(
+                  "block h-px w-[22px] origin-center bg-[var(--soleta-ink)] transition-transform duration-200",
+                  mobileOpen && "translate-y-[6px] rotate-45"
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-px w-[22px] bg-[var(--soleta-ink)] transition-opacity duration-200",
+                  mobileOpen && "opacity-0"
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-px w-[22px] origin-center bg-[var(--soleta-ink)] transition-transform duration-200",
+                  mobileOpen && "-translate-y-[6px] -rotate-45"
+                )}
+              />
+            </button>
           </div>
-
-          {/* ── Mobile hamburger ── */}
-          <button
-            type="button"
-            className="lg:hidden ml-auto p-2 text-stone-600 hover:text-stone-900 transition-colors"
-            aria-label={isMobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-          >
-            {isMobileOpen ? (
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <line x1="4" y1="4" x2="18" y2="18" />
-                <line x1="18" y1="4" x2="4" y2="18" />
-              </svg>
-            ) : (
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <line x1="2" y1="6"  x2="20" y2="6" />
-                <line x1="2" y1="11" x2="20" y2="11" />
-                <line x1="2" y1="16" x2="14" y2="16" />
-              </svg>
-            )}
-          </button>
-
         </div>
-
-        {/* ── Desktop menu panel ── */}
-        {activeItem && activeItem.type !== "link" && (
-          <MenuPanel
-            item={activeItem}
-            onMouseEnter={clearClose}
-            onMouseLeave={scheduleClose}
-            onClose={closeMenu}
-          />
-        )}
       </header>
 
-      {/* ── Mobile drawer ── */}
-      <MobileDrawer isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
+      <div
+        id="mobile-nav"
+        aria-hidden={!mobileOpen}
+        className={cn(
+          "fixed inset-x-0 z-40 max-h-[calc(100dvh-var(--header-height))] overflow-y-auto border-b border-soleta-gold/20 bg-[var(--soleta-cream)] transition-[opacity,transform] duration-200 lg:hidden",
+          mobileOpen
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-1 opacity-0 pointer-events-none"
+        )}
+        style={{ top: "var(--header-height)" }}
+      >
+        <nav aria-label="Mobile primary navigation" className="container-site flex flex-col py-6">
+          {headerNav.map((item, index) => {
+            const active = isActive(item.href, pathname) || hasActiveChild(item, pathname);
+            const hasDropdown = Boolean(item.sections?.length);
+            const expanded = openSection === index;
+
+            return (
+              <div key={item.href} className="border-b border-soleta-gold/15">
+                <div className="flex items-center justify-between">
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex flex-1 items-center gap-1.5 py-4 font-ui text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-ink)]/75 transition-colors duration-200 hover:text-[var(--soleta-ink)]"
+                    >
+                      {item.label}
+                      <ExternalIndicator />
+                    </a>
+                  ) : hasDropdown ? (
+                    <button
+                      type="button"
+                      onClick={() => setOpenSection(expanded ? null : index)}
+                      aria-expanded={expanded}
+                      className={cn(
+                        "flex flex-1 items-center justify-between py-4 font-ui text-left text-[0.75rem] font-medium uppercase tracking-[0.1em] transition-colors duration-200",
+                        active
+                          ? "text-[var(--soleta-accent)]"
+                          : "text-[var(--soleta-ink)]/75 hover:text-[var(--soleta-ink)]"
+                      )}
+                    >
+                      {item.label}
+                      <svg
+                        aria-hidden="true"
+                        className={cn(
+                          "h-4 w-4 opacity-35 transition-transform duration-200",
+                          expanded && "rotate-180"
+                        )}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                      </svg>
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "flex-1 py-4 font-ui text-[0.75rem] font-medium uppercase tracking-[0.1em] transition-colors duration-200",
+                        active
+                          ? "text-[var(--soleta-accent)]"
+                          : "text-[var(--soleta-ink)]/75 hover:text-[var(--soleta-ink)]"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+
+                {hasDropdown && expanded && (
+                  <div className="flex flex-col gap-4 pb-4">
+                    {item.sections!.map((section, sectionIndex) => (
+                      <div key={`${item.href}-${sectionIndex}`}>
+                        {section.sectionLabel && (
+                          <p className="mb-2 mt-1 font-ui text-[0.5625rem] font-medium uppercase tracking-[0.15em] text-[var(--soleta-accent)]">
+                            {section.sectionLabel}
+                          </p>
+                        )}
+                        <ul className="flex flex-col gap-1 pl-2">
+                          {section.children.map((child) => (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                className={cn(
+                                  "block py-[0.4rem] font-ui text-[0.8125rem] transition-colors duration-150",
+                                  isActive(child.href, pathname)
+                                    ? "text-[var(--soleta-accent)]"
+                                    : "text-[var(--soleta-ink)]/55 hover:text-[var(--soleta-ink)]"
+                                )}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          <Link
+            href="/contact"
+            className="btn-primary mt-8 self-start px-8 py-4 text-[0.625rem]"
+          >
+            Request a Private Offer
+          </Link>
+        </nav>
+      </div>
+
+      {mobileOpen && (
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-30 bg-[var(--soleta-ink)]/25 backdrop-blur-[2px] lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
     </>
   );
 }

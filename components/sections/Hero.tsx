@@ -1,211 +1,149 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 
-type Props = {
-  eyebrow?: string;
-  heading: string;
-  subheading?: string;
-  ctaLabel?: string;
-  ctaHref?: string;
-  secondaryCtaLabel?: string;
-  secondaryCtaHref?: string;
-  imageSrc: string;
-  imageAlt?: string;
-  /** "split" = text left / image right (default). "overlay" = full-bleed image + text overlay. */
-  variant?: "split" | "overlay";
+/* ── Types ─────────────────────────────────────────────────────────────────── */
+type Cta = { label: string; href: string };
+
+export type HeroProps = {
+  eyebrow?:      string;
+  heading:       string;   // use \n for intentional line breaks
+  subtext?:      string;
+  primaryCta?:   Cta;
+  secondaryCta?: Cta;
+  imageSrc?:     string;
+  imageAlt?:     string;
+  align?:        "left" | "center";
+  size?:         "full" | "large" | "medium";
 };
 
-export function Hero({
-  eyebrow,
-  heading,
-  subheading,
-  ctaLabel,
-  ctaHref = "/contact",
-  secondaryCtaLabel,
-  secondaryCtaHref,
-  imageSrc,
-  imageAlt = "",
-  variant = "split",
-}: Props) {
-  if (variant === "overlay") {
-    return <HeroOverlay {...{ eyebrow, heading, subheading, ctaLabel, ctaHref, secondaryCtaLabel, secondaryCtaHref, imageSrc, imageAlt }} />;
-  }
-  return <HeroSplit {...{ eyebrow, heading, subheading, ctaLabel, ctaHref, secondaryCtaLabel, secondaryCtaHref, imageSrc, imageAlt }} />;
-}
+/* ── Config ────────────────────────────────────────────────────────────────── */
+const sizeMap = {
+  full:   "min-h-[100svh]",
+  large:  "min-h-[85svh]",
+  medium: "min-h-[60svh]",
+};
 
-/* ─── Split variant ─────────────────────────────────────────────────────── */
-
-function HeroSplit(props: Omit<Props, "variant">) {
-  const { eyebrow, heading, subheading, ctaLabel, ctaHref = "/contact", secondaryCtaLabel, secondaryCtaHref, imageSrc, imageAlt } = props;
-
+/* ── Helpers ───────────────────────────────────────────────────────────────── */
+/** Renders a heading string with explicit \n line breaks preserved as <br />. */
+function HeadingLines({ text }: { text: string }) {
+  const lines = text.split("\n");
   return (
-    <section
-      aria-label="Hero"
-      /* Mobile: column stack. Desktop: side-by-side. Min-height shrinks on mobile. */
-      className="relative flex flex-col lg:flex-row min-h-[70dvh] lg:min-h-[calc(100dvh-5rem)]"
-    >
-      {/* ── Left: text panel ── */}
-      <div className="relative z-10 flex flex-col justify-center lg:w-[45%] px-5 sm:px-10 lg:px-16 xl:px-20 py-14 lg:py-0 bg-stone-50">
-
-        {/* Vertical rule on the right edge (desktop only) */}
-        <span className="hidden lg:block absolute right-0 top-12 bottom-12 w-px bg-stone-200" aria-hidden />
-
-        <div className="max-w-lg">
-          {eyebrow && (
-            <div
-              className="flex items-center gap-4 mb-6 md:mb-8 opacity-0 animate-fade-up"
-              style={{ animationDelay: "0ms" }}
-            >
-              <span className="eyebrow">{eyebrow}</span>
-              <span className="h-px w-10 bg-timber-400" aria-hidden />
-            </div>
-          )}
-
-          <h1
-            className={cn(
-              "font-serif text-stone-900 leading-[1.02] tracking-[-0.03em]",
-              /* Responsive clamp: smaller floor on mobile */
-              "text-[clamp(2rem,6vw,4.5rem)]",
-              "opacity-0 animate-fade-up",
-            )}
-            style={{ animationDelay: "100ms" }}
-          >
-            {heading}
-          </h1>
-
-          {subheading && (
-            <p
-              className="subtitle mt-5 md:mt-6 opacity-0 animate-fade-up"
-              style={{ animationDelay: "220ms" }}
-            >
-              {subheading}
-            </p>
-          )}
-
-          {(ctaLabel || secondaryCtaLabel) && (
-            <div
-              className="flex flex-wrap items-center gap-3 md:gap-4 mt-8 md:mt-10 opacity-0 animate-fade-up"
-              style={{ animationDelay: "340ms" }}
-            >
-              {ctaLabel && (
-                <Link href={ctaHref} className="btn-primary">
-                  {ctaLabel}
-                </Link>
-              )}
-              {secondaryCtaLabel && secondaryCtaHref && (
-                <Link href={secondaryCtaHref} className="btn-ghost">
-                  {secondaryCtaLabel}
-                </Link>
-              )}
-            </div>
-          )}
-        </div>
-
-        {/* Bottom metadata strip — hidden on mobile to avoid overlap */}
-        <div
-          className="hidden lg:flex absolute bottom-8 left-16 xl:left-20 items-center gap-6 opacity-0 animate-fade-in"
-          style={{ animationDelay: "600ms" }}
-        >
-          <span className="eyebrow text-stone-400">Precision · Warmth · Durability</span>
-        </div>
-      </div>
-
-      {/* ── Right: image panel ── */}
-      {/* Mobile: fixed aspect ratio so image is visible. Desktop: fills remaining height. */}
-      <div className="relative lg:w-[55%] aspect-[4/3] lg:aspect-auto lg:h-auto">
-        <Image
-          src={imageSrc}
-          alt={imageAlt ?? ""}
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 55vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-timber-900/5 pointer-events-none" aria-hidden />
-      </div>
-    </section>
+    <>
+      {lines.map((line, i) => (
+        <span key={i}>
+          {i > 0 && <br />}
+          {line}
+        </span>
+      ))}
+    </>
   );
 }
 
-/* ─── Overlay variant ───────────────────────────────────────────────────── */
-
-function HeroOverlay(props: Omit<Props, "variant">) {
-  const { eyebrow, heading, subheading, ctaLabel, ctaHref = "/contact", secondaryCtaLabel, secondaryCtaHref, imageSrc, imageAlt } = props;
+/* ── Component ─────────────────────────────────────────────────────────────── */
+export function Hero({
+  eyebrow,
+  heading,
+  subtext,
+  primaryCta,
+  secondaryCta,
+  imageSrc,
+  imageAlt = "",
+  align = "left",
+  size = "full",
+}: HeroProps) {
+  const centered = align === "center";
 
   return (
     <section
-      aria-label="Hero"
-      /* Slightly shorter on mobile — avoids massive blank space on phones */
-      className="relative flex items-end min-h-[70dvh] md:min-h-[calc(100dvh-5rem)]"
+      className={cn(
+        "relative flex items-end overflow-hidden bg-[#1a1714]",
+        sizeMap[size]
+      )}
+      aria-label={eyebrow ?? "Hero"}
     >
       {/* Background image */}
-      <Image
-        src={imageSrc}
-        alt={imageAlt ?? ""}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
+      {imageSrc && (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          className="object-cover"
+        />
+      )}
 
-      {/* Gradient overlay */}
+      {/* Overlay: gradient on image, warm radials on dark background */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent pointer-events-none"
-        aria-hidden
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={
+          imageSrc
+            ? {
+                background:
+                  "linear-gradient(to top, rgba(26,23,20,0.88) 0%, rgba(26,23,20,0.45) 45%, rgba(26,23,20,0.15) 75%, transparent 100%)",
+              }
+            : {
+                background:
+                  "radial-gradient(ellipse 75% 55% at 65% 30%, rgba(128,103,84,0.22) 0%, transparent 65%)," +
+                  "radial-gradient(ellipse 45% 40% at 15% 85%, rgba(128,103,84,0.12) 0%, transparent 55%)",
+              }
+        }
       />
 
-      {/* Text content — anchored bottom-left */}
-      <div className="relative z-10 container-site pb-10 md:pb-16 lg:pb-24 w-full">
-        <div className="max-w-xl md:max-w-2xl">
-          {eyebrow && (
-            <div
-              className="flex items-center gap-4 mb-5 md:mb-6 opacity-0 animate-fade-up"
-              style={{ animationDelay: "0ms" }}
-            >
-              <span className="eyebrow text-timber-300">{eyebrow}</span>
-              <span className="h-px w-10 bg-timber-500" aria-hidden />
-            </div>
-          )}
+      {/* Content */}
+      <div
+        className={cn(
+          "container-site relative z-10 pb-24 pt-16 sm:pt-0 lg:pb-32",
+          centered && "flex flex-col items-center text-center"
+        )}
+      >
+        {eyebrow && (
+          <p className="eyebrow text-brand-400 mb-8">{eyebrow}</p>
+        )}
 
-          <h1
+        <h1
+          className={cn(
+            "text-[#faf8f6] mb-8",
+            centered ? "max-w-2xl" : "max-w-3xl"
+          )}
+        >
+          <HeadingLines text={heading} />
+        </h1>
+
+        {subtext && (
+          <p
             className={cn(
-              "font-serif text-stone-50 leading-[1.02] tracking-[-0.03em]",
-              "text-[clamp(2rem,6vw,5rem)]",
-              "opacity-0 animate-fade-up",
+              "mb-12 text-[#b09a8b] leading-relaxed",
+              centered ? "max-w-xl" : "max-w-lg"
             )}
-            style={{ animationDelay: "100ms" }}
+            style={{
+              fontFamily: "var(--font-subtitle)",
+              fontSize: "clamp(1.0625rem, 1.4vw, 1.25rem)",
+            }}
           >
-            {heading}
-          </h1>
+            {subtext}
+          </p>
+        )}
 
-          {subheading && (
-            <p
-              className="subtitle text-stone-300 mt-4 md:mt-5 opacity-0 animate-fade-up"
-              style={{ animationDelay: "220ms" }}
-            >
-              {subheading}
-            </p>
-          )}
-
-          {(ctaLabel || secondaryCtaLabel) && (
-            <div
-              className="flex flex-wrap items-center gap-3 md:gap-4 mt-7 md:mt-8 opacity-0 animate-fade-up"
-              style={{ animationDelay: "340ms" }}
-            >
-              {ctaLabel && (
-                <Link href={ctaHref} className="btn-primary">
-                  {ctaLabel}
-                </Link>
-              )}
-              {secondaryCtaLabel && secondaryCtaHref && (
-                <Link href={secondaryCtaHref} className="btn-outline border-stone-400 text-stone-100 hover:bg-stone-100 hover:text-stone-900">
-                  {secondaryCtaLabel}
-                </Link>
-              )}
-            </div>
-          )}
-        </div>
+        {(primaryCta || secondaryCta) && (
+          <div className={cn("flex flex-wrap items-center gap-5", centered && "justify-center")}>
+            {primaryCta && (
+              <Link href={primaryCta.href} className="btn-inverse py-4 px-9">
+                {primaryCta.label}
+              </Link>
+            )}
+            {secondaryCta && (
+              <Link
+                href={secondaryCta.href}
+                className="inline-flex items-center gap-2 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#c8bfb8] hover:text-[#faf8f6] transition-colors duration-200"
+              >
+                {secondaryCta.label}
+                <span aria-hidden="true">→</span>
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

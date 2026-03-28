@@ -1,122 +1,101 @@
+import Image from "next/image";
 import Link from "next/link";
-import { footerNav } from "@/lib/nav";
-import { siteConfig } from "@/lib/metadata";
+import { footerColumns, legalNav } from "@/lib/nav";
 
-const currentYear = new Date().getFullYear();
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Use",   href: "/terms" },
-  { label: "Cookie Policy",  href: "/cookies" },
-];
-
-function ExternalIcon() {
-  return (
-    <svg
-      width="9"
-      height="9"
-      viewBox="0 0 9 9"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="ml-1 opacity-40 flex-shrink-0"
-      aria-hidden="true"
-    >
-      <path d="M3.5 1.5H1v6.5h6.5V5.5M5.5 1h2.5m0 0v2.5M7.5 1 4 4.5" />
-    </svg>
-  );
-}
+const footerLinkClass =
+  "inline-flex items-center gap-1 font-ui text-sm font-medium text-soleta-cream/60 transition-colors duration-200 hover:text-soleta-cream";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-stone-200 bg-stone-50">
-      <div className="container-site py-16 md:py-20">
-
-        {/* Top row */}
-        <div className="flex flex-col lg:flex-row lg:items-start gap-14">
-
-          {/* Brand column */}
-          <div className="lg:w-52 flex-shrink-0 space-y-4">
-            <Link href="/" aria-label="Soleta Homes — home">
-              <span className="font-serif text-2xl tracking-[0.12em] uppercase text-stone-900">
-                Soleta
-              </span>
+    <footer
+      style={{
+        backgroundColor: "var(--soleta-forest)",
+        color: "var(--soleta-cream)",
+      }}
+    >
+      <div className="container-site py-20 lg:py-24">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-5 lg:gap-8">
+          <div className="col-span-1 mb-2 flex flex-col gap-6 sm:col-span-2 lg:col-span-2 lg:mb-0">
+            <Link href="/" aria-label="Soleta Homes">
+              <Image
+                src="/logo/Soleta%20sigla%20text%20efe9e1.png"
+                alt="Soleta Homes"
+                width={180}
+                height={46}
+                className="h-9 w-auto"
+              />
             </Link>
-            <p className="text-sm text-stone-500 leading-relaxed">
-              {siteConfig.description}
+            <p
+              className="max-w-[18rem] text-sm leading-relaxed text-soleta-cream/50"
+            >
+              Premium timber homes designed with precision and built to endure.
             </p>
           </div>
 
-          {/* Navigation columns — 4 col grid */}
-          <nav
-            aria-label="Footer navigation"
-            className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10"
-          >
-            {footerNav.map((col, i) => (
-              <div key={i}>
-                {col.heading && (
-                  <p className="eyebrow mb-4">{col.heading}</p>
-                )}
-                <ul className="space-y-3">
-                  {col.links.map((link) => (
-                    <li key={`${link.href}-${link.label}`}>
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-sm text-stone-500 hover:text-stone-900 transition-colors"
+          {footerColumns.map((column, index) => (
+            <div key={index} className="col-span-1">
+              {column.heading && (
+                <p
+                  className="mb-5 font-ui text-[0.625rem] font-medium uppercase tracking-[0.2em] text-soleta-gold"
+                >
+                  {column.heading}
+                </p>
+              )}
+              <ul className="flex flex-col gap-3">
+                {column.links.map(({ label, href, external }) => (
+                  <li key={`${index}-${href}`}>
+                    {external ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={footerLinkClass}
+                      >
+                        {label}
+                        <span
+                          aria-hidden="true"
+                          className="text-xs text-[var(--soleta-gold)]"
                         >
-                          {link.label}
-                          <ExternalIcon />
-                        </a>
-                      ) : (
-                        <Link
-                          href={link.href}
-                          className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </nav>
+                          &nearr;
+                        </span>
+                      </a>
+                    ) : (
+                      <Link href={href} className={footerLinkClass}>
+                        {label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* CTA strip */}
-        <div className="mt-14 pt-10 border-t border-stone-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <div>
-            <p className="text-sm font-medium text-stone-900 mb-1">
-              Ready to build your Soleta home?
-            </p>
-            <p className="text-xs text-stone-400">Private consultations · Worldwide delivery</p>
-          </div>
-          <Link href="/contact" className="btn-primary flex-shrink-0 text-xs py-3 px-6 tracking-widest">
-            Request a Private Offer
-          </Link>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-10 pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-stone-400">
-            &copy; {currentYear} Soleta Homes. All rights reserved.
+      <div className="border-t border-soleta-gold/20">
+        <div className="container-site flex flex-col items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
+          <p className="font-ui text-xs font-medium tracking-wide text-soleta-cream/50">
+            &copy; {year} Soleta Homes. All rights reserved.
           </p>
-          <ul className="flex items-center gap-6">
-            {legalLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-xs text-stone-400 hover:text-stone-600 transition-colors">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {legalNav.length > 0 && (
+            <nav aria-label="Legal navigation">
+              <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                {legalNav.map(({ label, href }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="font-ui text-xs font-medium tracking-wide text-soleta-cream/50 transition-colors duration-200 hover:text-soleta-cream"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
         </div>
-
       </div>
     </footer>
   );
