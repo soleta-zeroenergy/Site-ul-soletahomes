@@ -9,7 +9,7 @@ export const inspirationHero: HeroProps = {
   subtext:
     "Images and ideas from the Soleta world — how timber ages in the landscape, how interiors hold light, how a well-made home changes how you inhabit the land.",
   size:  "large",
-  align: "left" as const,
+  align: "left",
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -18,7 +18,7 @@ export const inspirationIntro = {
   heading: "Four ways of\nlooking at a home",
   body:
     "We think about architecture through four lenses: the building itself, the interior life it contains, the atmosphere it creates at different hours and seasons, and the particular quality of living closely with natural wood.",
-  align: "center" as const,
+  align: "center",
   theme: "warm",
   size:  "sm",
 };

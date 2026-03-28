@@ -10,7 +10,7 @@ export const modelsHero: HeroProps = {
   subtext:
     "Each Soleta collection is defined by a character and a way of living. Find the one that fits how you want to inhabit the land.",
   size:  "medium",
-  align: "left" as const,
+  align: "left",
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -19,7 +19,7 @@ export const modelsIntro = {
   heading: "Designed around\nhow you want to live",
   body:
     "We do not categorise our homes by bedroom count or floor area. Each collection has its own character, its own relationship with the landscape and its own sense of what daily life should feel like.",
-  align: "center" as const,
+  align: "center",
   theme: "warm",
   size:  "sm",
 };

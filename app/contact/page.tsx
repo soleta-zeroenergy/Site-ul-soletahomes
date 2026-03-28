@@ -58,7 +58,7 @@ const hero = {
   subtext:
     "Every Soleta home starts here — with a short note about your site, your ideas, and what you want the house to do for you.",
   size:  "medium" as const,
-  align: "left" as const as const,
+  align: "left",
 };
 
 const panel = {

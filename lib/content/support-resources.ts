@@ -11,7 +11,7 @@ export const supportHero: HeroProps = {
   subtext:
     "Catalog, guidance, and answers to the questions people most often bring to their first conversation with us.",
   size:  "medium",
-  align: "left" as const,
+  align: "left",
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -20,7 +20,7 @@ export const supportIntro = {
   heading: "Information before\ncommitment",
   body:
     "We want you to arrive at a first conversation already informed — about our collections, our process, and what a typical project involves. These resources are designed to help you do that at your own pace, without any obligation.",
-  align: "left" as const,
+  align: "left",
   theme: "warm",
 };
 

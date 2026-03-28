@@ -10,7 +10,7 @@ export const servicesHero: HeroProps = {
   subtext:
     "End-to-end capability — from the first conversation about your land to long-term care of the finished home.",
   size:  "medium",
-  align: "left" as const,
+  align: "left",
 };
 
 /* ── 2. Intro ─────────────────────────────────────────────────────────────── */
@@ -19,7 +19,7 @@ export const servicesIntro = {
   heading: "One team.\nEvery discipline.",
   body:
     "We keep the full range of skills in-house — architecture, engineering, construction, interiors — so nothing falls through the gap between consultants. You work with a single team from start to finish.",
-  align: "center" as const,
+  align: "center",
   theme: "warm",
   size:  "sm",
 };

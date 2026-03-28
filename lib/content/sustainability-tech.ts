@@ -11,7 +11,7 @@ export const sustainHero: HeroProps = {
   subtext:
     "Timber is one of the oldest and most sensible building materials on earth. We work with it honestly — choosing durability over novelty, and comfort over complexity.",
   size:  "medium",
-  align: "left" as const,
+  align: "left",
 };
 
 /* ── 2. Philosophy intro ──────────────────────────────────────────────────── */
@@ -20,7 +20,7 @@ export const sustainIntro = {
   heading: "No marketing claims.\nJust considered choices.",
   body:
     "We do not publish performance figures we cannot stand behind. What we can tell you is that every decision in a Soleta home — structural system, insulation strategy, material selection — follows a single logic: build it well, build it once, and make it easy to live in for the rest of your life.",
-  align: "left" as const,
+  align: "left",
   theme: "warm",
 };
 

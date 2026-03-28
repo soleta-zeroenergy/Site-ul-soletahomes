@@ -10,7 +10,7 @@ export const discoverHero: HeroProps = {
   subtext:
     "We design timber homes that grow naturally from their setting — shaped by the landscape, the light and the people who will live within them.",
   size:  "large",
-  align: "center" as const,
+  align: "center",
 };
 
 /* ── 2. Design philosophy ─────────────────────────────────────────────────── */
@@ -43,7 +43,7 @@ export const discoverLandscape = {
   heading: "Every site tells us\nwhat to build",
   body:
     "We spend time on site before we draw a single line. The orientation of the sun, the texture of the ground, the views that deserve a window and the views that do not — all of this shapes the house before any architecture begins. The landscape is not a backdrop. It is the first material we work with.",
-  align: "center" as const,
+  align: "center",
   theme: "dark",
   size:  "md",
 };
