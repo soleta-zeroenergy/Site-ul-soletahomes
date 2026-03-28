@@ -32,10 +32,10 @@ export const headerNav: NavItem[] = [
           { label: "Classic Soleta Homes", href: "/collection/classic" },
           { label: "Large Family Homes", href: "/collection/large-family" },
           { label: "Holiday & Retreat Homes", href: "/collection/holiday-retreat" },
-          { label: "Custom Architecture", href: "/collection/custom-architecture" }
-        ]
-      }
-    ]
+          { label: "Custom Architecture", href: "/collection/custom-architecture" },
+        ],
+      },
+    ],
   },
   {
     label: "Built Projects",
@@ -47,10 +47,10 @@ export const headerNav: NavItem[] = [
           { label: "Holiday Homes", href: "/built-projects/holiday-homes" },
           { label: "Hospitality & Resorts", href: "/built-projects/hospitality-resorts" },
           { label: "Educational & Public", href: "/built-projects/educational-public" },
-          { label: "Case Studies", href: "/built-projects/case-studies" }
-        ]
-      }
-    ]
+          { label: "Case Studies", href: "/built-projects/case-studies" },
+        ],
+      },
+    ],
   },
   {
     label: "Architecture & Design",
@@ -59,12 +59,12 @@ export const headerNav: NavItem[] = [
       {
         children: [
           { label: "Soleta Design Language", href: "/architecture/design-language" },
-          { label: "Post & Beam Construction System", href: "/architecture/post-beam" },
+          { label: "Post & Beam Construction", href: "/architecture/post-beam" },
           { label: "Healthy Materials", href: "/architecture/healthy-materials" },
-          { label: "Energy Efficiency & ZeroEnergy", href: "/architecture/energy-zeroenergy" }
-        ]
-      }
-    ]
+          { label: "Energy & ZeroEnergy", href: "/architecture/energy-zeroenergy" },
+        ],
+      },
+    ],
   },
   {
     label: "Process & Services",
@@ -73,30 +73,39 @@ export const headerNav: NavItem[] = [
       {
         sectionLabel: "Process",
         children: [
-          { label: "Dream", href: "/process/dream" },
-          { label: "Design & Planning", href: "/process/design-planning" },
-          { label: "Engineering", href: "/process/engineering" },
-          { label: "Build", href: "/process/build" },
-          { label: "Turnkey Delivery", href: "/process/turnkey" }
-        ]
+          { label: "Dream", href: "/process#dream" },
+          { label: "Design & Planning", href: "/process#design" },
+          { label: "Engineering", href: "/process#engineering" },
+          { label: "Build", href: "/process#build" },
+          { label: "Turnkey Delivery", href: "/process#turnkey" },
+        ],
       },
       {
         sectionLabel: "Services",
         children: [
-          { label: "Private Consulting", href: "/services/private-consulting" },
-          { label: "Custom Design", href: "/services/custom-design" },
-          { label: "Permits & Legal", href: "/services/permits-legal" },
-          { label: "Interior Design", href: "/services/interior-design" },
-          { label: "Aftercare", href: "/services/aftercare" }
-        ]
-      }
-    ]
+          { label: "Private Consulting", href: "/process#consulting" },
+          { label: "Custom Design", href: "/process#custom-design" },
+          { label: "Permits & Legal", href: "/process#permits" },
+          { label: "Interior Design", href: "/process#interior" },
+          { label: "Aftercare", href: "/process#aftercare" },
+        ],
+      },
+    ],
   },
   {
-    label: "Explore House Plans",
-    href: "https://soletahouseplans.com",
-    external: true
-  }
+    label: "About",
+    href: "/about",
+    sections: [
+      {
+        children: [
+          { label: "Our Story", href: "/about" },
+          { label: "Sustainability", href: "/sustainability" },
+          { label: "Press & Media", href: "/press" },
+          { label: "Careers", href: "/careers" },
+        ],
+      },
+    ],
+  },
 ];
 
 export const footerColumns: FooterColumn[] = [
@@ -104,8 +113,10 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "About Soleta", href: "/about" },
       { label: "Sustainability", href: "/sustainability" },
-      { label: "Press & Media", href: "/press" }
-    ]
+      { label: "Press & Media", href: "/press" },
+      { label: "Careers", href: "/careers" },
+      { label: "Help Center", href: "/help-center" },
+    ],
   },
   {
     heading: "Part of Soleta Group",
@@ -113,16 +124,21 @@ export const footerColumns: FooterColumn[] = [
       { label: "Soleta House Plans", href: "https://soletahouseplans.com", external: true },
       { label: "Solenhus (Nordic Homes)", href: "#", external: true },
       { label: "Soleta Structures", href: "#", external: true },
-      { label: "Soleta Renovations", href: "#", external: true }
-    ]
+      { label: "Soleta Renovations", href: "#", external: true },
+    ],
   },
   {
     links: [
       { label: "Catalog Download", href: "/catalog" },
-      { label: "Careers", href: "/careers" },
-      { label: "Help Center", href: "/help-center" }
-    ]
-  }
+      { label: "The Collection", href: "/collection" },
+      { label: "Built Projects", href: "/built-projects" },
+      { label: "Process & Services", href: "/process" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
-export const legalNav: NavChild[] = [];
+export const legalNav: NavChild[] = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Use", href: "/terms" },
+];

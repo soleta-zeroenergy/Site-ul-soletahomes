@@ -2,14 +2,41 @@ import type { Metadata } from "next";
 import { ModelDetail } from "@/components/sections/ModelDetail";
 import { classicModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
+import { faqSchema, productSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/collection/classic"),
   title: "Classic Soleta Homes | Timber Frame Family Homes",
   description:
-    "The most requested Soleta home — generous proportions, enduring materials and a design that belongs in any landscape. From €X.",
+    "The most requested Soleta home — generous proportions, enduring materials and a design that belongs in any landscape.",
 };
 
 export default function ClassicPage() {
-  return <ModelDetail model={classicModel} />;
+  const schemas = [
+    productSchema({
+      name: "Classic Soleta Home",
+      description: classicModel.subheading,
+      image: "https://soletahomes.com/images/collection/classic.jpg",
+      url: "https://soletahomes.com/collection/classic",
+    }),
+    faqSchema(classicModel.faq),
+    breadcrumbSchema([
+      { name: "Home", href: "/" },
+      { name: "The Collection", href: "/collection" },
+      { name: "Classic Soleta Homes", href: "/collection/classic" },
+    ]),
+  ];
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <ModelDetail model={classicModel} />
+    </>
+  );
 }

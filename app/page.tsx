@@ -20,25 +20,30 @@ export const metadata: Metadata = {
 };
 
 /* ── WebSite JSON-LD ─────────────────────────────────────────────────────── */
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type":    "WebSite",
-  name:        siteConfig.name,
-  url:         siteConfig.url,
-  description: siteConfig.description,
-  publisher: {
-    "@type": "Organization",
-    name:    siteConfig.name,
-    url:     siteConfig.url,
-  },
-};
 
 export default function HomePage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          url: siteConfig.url,
+          description: siteConfig.description,
+          publisher: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.url,
+            logo: `${siteConfig.url}/logo/Sigla%20Verde%20%2318392B.png`,
+            foundingDate: "2013",
+            founder: {
+              "@type": "Person",
+              name: "Cătălin Butmălai",
+            },
+          },
+        })}}
       />
 
       {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}

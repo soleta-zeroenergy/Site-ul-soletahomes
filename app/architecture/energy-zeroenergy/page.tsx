@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { zeroEnergyContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { faqSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 const cta = {
   eyebrow: "Next step",
@@ -20,6 +21,26 @@ export default function ZeroEnergyPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqSchema(zeroEnergyContent.faq)
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", href: "/" },
+              { name: "Architecture & Design", href: "/architecture" },
+              { name: "ZeroEnergy", href: "/architecture/energy-zeroenergy" },
+            ])
+          ),
+        }}
+      />
       {/* ── 1. Header ── */}
       <section
         className="section-lg border-b border-[var(--color-border-light)]"

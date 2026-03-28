@@ -226,6 +226,15 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           </div>
         </div>
       </section>
+      {/* ── Sticky mobile CTA ── */}
+      <div className="sticky-cta-mobile">
+        <Link href="/contact" className="btn-primary flex-1 justify-center">
+          Request Offer
+        </Link>
+        <Link href="/catalog" className="btn-outline flex-1 justify-center">
+          Catalogue
+        </Link>
+      </div>
     </article>
   );
 }
