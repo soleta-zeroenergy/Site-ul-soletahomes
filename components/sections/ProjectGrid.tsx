@@ -18,7 +18,7 @@ export type ProjectGridProps = {
   heading?: string;
   projects: ProjectItem[];
   cta?: { label: string; href: string };
-  columns?: 2 | 3;
+  columns?: number;
   theme?: "light" | "warm" | "dark" | string;
 };
 

@@ -10,7 +10,7 @@ export type FaqPreviewProps = {
   eyebrow?:  string;
   heading?:  string;
   items:     FaqItem[];
-  columns?:  2 | 3;
+  columns?:  number;
   theme?:    "light" | "warm" | "dark" | string;
 };
 

@@ -18,7 +18,7 @@ export type CardGridProps = {
   heading?:  string;
   body?:     string;
   cards:     CardItem[];
-  columns?:  3 | 4;     // defaults to 3, or 4 if cards.length === 4
+  columns?:  number;     // defaults to 3, or 4 if cards.length === 4
   cta?:      { label: string; href: string };
   theme?:    "light" | "warm" | "dark" | string;
 };

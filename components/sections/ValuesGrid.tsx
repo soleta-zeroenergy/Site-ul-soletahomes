@@ -11,7 +11,7 @@ export type ValuesGridProps = {
   heading?:  string;     // \n for intentional line breaks
   body?:     string;
   items:     ValueItem[];
-  columns?:  2 | 3;      // default 3
+  columns?:  number;      // default 3
   theme?:    "light" | "warm" | "dark" | string;
 };
 
