@@ -32,9 +32,13 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openDesktopSection, setOpenDesktopSection] = useState<number | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 32);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 32);
+      setOpenDesktopSection(null);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -43,6 +47,7 @@ export function Header() {
   useEffect(() => {
     setMobileOpen(false);
     setOpenSection(null);
+    setOpenDesktopSection(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -83,18 +88,45 @@ export function Header() {
             />
           </Link>
 
-          <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
-            {headerNav.map((item) => {
+          <nav
+            aria-label="Primary navigation"
+            className="hidden items-center gap-7 lg:flex"
+            onMouseLeave={() => setOpenDesktopSection(null)}
+          >
+            {headerNav.map((item, index) => {
               const active = isActive(item.href, pathname) || hasActiveChild(item, pathname);
               const hasDropdown = Boolean(item.sections?.length);
+              const dropdownOpen = hasDropdown && openDesktopSection === index;
 
               return (
-                <div key={item.href} className="group relative">
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={hasDropdown ? () => setOpenDesktopSection(index) : undefined}
+                  onMouseLeave={
+                    hasDropdown
+                      ? () =>
+                          setOpenDesktopSection((current) => (current === index ? null : current))
+                      : undefined
+                  }
+                  onFocusCapture={hasDropdown ? () => setOpenDesktopSection(index) : undefined}
+                  onBlurCapture={
+                    hasDropdown
+                      ? (event) => {
+                          const nextFocused = event.relatedTarget as Node | null;
+                          if (!event.currentTarget.contains(nextFocused)) {
+                            setOpenDesktopSection((current) => (current === index ? null : current));
+                          }
+                        }
+                      : undefined
+                  }
+                >
                   {item.external ? (
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => setOpenDesktopSection(null)}
                       className="flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-ink)]/75 transition-colors duration-200 hover:text-[var(--soleta-ink)]"
                     >
                       {item.label}
@@ -103,6 +135,7 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
+                      onClick={() => setOpenDesktopSection(null)}
                       className={cn(
                         "flex items-center gap-1 border-b font-ui pb-[2px] text-[0.6875rem] font-medium uppercase tracking-[0.1em] transition-colors duration-200",
                         active
@@ -114,7 +147,10 @@ export function Header() {
                       {hasDropdown && (
                         <svg
                           aria-hidden="true"
-                          className="h-3 w-3 opacity-40 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                          className={cn(
+                            "h-3 w-3 opacity-40 transition-transform duration-200",
+                            dropdownOpen && "rotate-180"
+                          )}
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -132,8 +168,7 @@ export function Header() {
                         "absolute top-full pt-3",
                         item.sections!.length > 1 ? "left-1/2 -translate-x-1/2" : "left-0",
                         "invisible opacity-0 pointer-events-none transition-[opacity,visibility] duration-150",
-                        "group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto",
-                        "group-focus-within:visible group-focus-within:opacity-100 group-focus-within:pointer-events-auto"
+                        dropdownOpen && "visible opacity-100 pointer-events-auto"
                       )}
                     >
                       <div
@@ -162,6 +197,7 @@ export function Header() {
                                 <li key={child.href}>
                                   <Link
                                     href={child.href}
+                                    onClick={() => setOpenDesktopSection(null)}
                                     className={cn(
                                       "block px-2 py-[0.45rem] font-ui text-[0.75rem] tracking-[0.02em] transition-colors duration-150",
                                       isActive(child.href, pathname)
