@@ -82,7 +82,7 @@ export const classicModel: HomeModel = {
     {
       question: "Is this a permanent home or a holiday home?",
       answer:
-        "Both. The Classic meets all Romanian and EU building standards for permanent residence. It is equally popular as a full-time family home and as a high-quality holiday home.",
+        "Both. The Classic meets all European building standards for permanent residence. It is equally popular as a full-time family home and as a high-quality holiday home.",
     },
   ],
   relatedHref: "/collection",
@@ -271,7 +271,7 @@ export const holidayRetreatModel: HomeModel = {
     {
       question: "Do these meet planning requirements for holiday use?",
       answer:
-        "Yes — all Soleta homes meet Romanian and EU building regulations for both permanent and holiday use. We assist with all permit applications and can advise on local planning constraints before you commit.",
+        "Yes — all Soleta homes meet European building regulations for both permanent and holiday use. We assist with all permit applications and can advise on local planning constraints before you commit.",
     },
   ],
   relatedHref: "/collection",

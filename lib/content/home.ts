@@ -5,7 +5,7 @@ import type { CtaBandProps } from "@/components/sections/CtaBand";
 
 /* ── 1. Hero ──────────────────────────────────────────────────────────────── */
 export const homeHero: HeroProps = {
-  eyebrow:     "Scandinavian Timber Architecture",
+  eyebrow:     "Nordic Timber Architecture",
   heading:     "Living Architecture\nfor a Human Future",
   subtext:
     "Soleta creates premium timber homes with calm architecture, healthy materials and enduring design.",

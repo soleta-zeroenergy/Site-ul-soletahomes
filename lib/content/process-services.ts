@@ -41,7 +41,7 @@ export const processSteps = [
     heading: "Factory to site",
     duration: "6–10 weeks",
     description:
-      "Your home is manufactured in our factory in Romania. Every element is cut, drilled and finished under controlled conditions, then labelled and loaded in assembly order. When the truck arrives on your site, the structural frame goes up in 3 to 5 days. The complete weatherproof envelope — structure, insulation, cladding, windows — is achieved within 2 to 4 weeks.",
+      "Your home is manufactured in our production facility in Central Europe. Every element is cut, drilled and finished under controlled conditions, then labelled and loaded in assembly order. When the truck arrives on your site, the structural frame goes up in 3 to 5 days. The complete weatherproof envelope — structure, insulation, cladding, windows — is achieved within 2 to 4 weeks.",
     deliverable: "Manufactured home · Transported to site · Structural frame erected · Envelope complete",
     href: "/process/build",
   },
@@ -127,7 +127,7 @@ export const services = [
     label: "Permits & Legal",
     href: "/services/permits-legal",
     description:
-      "Building permit preparation and submission in Romania and, in partnership with local professionals, across Europe. We know what planners need and how to give it to them.",
+      "Building permit preparation and submission across Europe, in partnership with local planning professionals. We know what planners need and how to give it to them.",
   },
   {
     label: "Interior Design",

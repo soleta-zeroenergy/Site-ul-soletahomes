@@ -42,8 +42,8 @@ export const designLanguageContent = {
     "A Soleta home is recognisable without being uniform. There is a shared language — proportions, materials, the way light enters — but it is a language that adapts to every site, every climate and every client.",
   sections: [
     {
-      heading: "Roots: Romanian tradition, international craft",
-      body: "Cătălin Butmălai, who created Soleta, drew his early inspiration from Romanian vernacular architecture — the logic of the pitched roof, the generosity of the covered terrace, the warmth of exposed timber. These principles were then filtered through twelve years of building in France, Germany, Austria and Romania, absorbing what works across different climates and cultures.",
+      heading: "Roots: Nordic timber traditions, international craft",
+      body: "Cătălin Butmălai, who created Soleta, drew his early inspiration from Nordic timber traditions — the logic of the pitched roof, the generosity of the covered terrace, the warmth of exposed timber. These principles were then refined through twelve years of building in France, Germany, Austria and Central Europe, absorbing what works across different climates and cultures.",
     },
     {
       heading: "The Soleta palette",
@@ -64,7 +64,7 @@ export const postBeamContent = {
   eyebrow: "Post & Beam Construction",
   heading: "Precision in the factory.\nSpeed on your site.",
   intro:
-    "Every Soleta home is built twice — once in our factory in Romania, and once on your site. Factory production means controlled conditions, no weather delays and precision that is impossible to achieve on a traditional building site.",
+    "Every Soleta home is built twice — once in our production facility in Central Europe, and once on your site. Factory production means controlled conditions, no weather delays and precision that is impossible to achieve on a traditional building site.",
   sections: [
     {
       heading: "What is post and beam?",
@@ -133,7 +133,7 @@ export const zeroEnergyContent = {
   eyebrow: "Energy Efficiency & ZeroEnergy",
   heading: "A home that produces\nwhat it consumes.",
   intro:
-    "ZeroEnergy is not a marketing term. It is a measurable engineering outcome: a home that produces at least as much energy as it uses over a full year. Soleta has been building to this standard since 2013 — when the concept was still considered experimental in Romania.",
+    "ZeroEnergy is not a marketing term. It is a measurable engineering outcome: a home that produces at least as much energy as it uses over a full year. Soleta has been building to this standard since 2013 — when the concept was still considered experimental.",
   what: {
     heading: "What ZeroEnergy means in practice",
     body: "A ZeroEnergy home combines two things: a highly insulated, airtight building envelope that minimises demand, and renewable energy systems sized to meet that demand. The Soleta system achieves this through natural wood fibre insulation, triple-glazed windows, heat recovery ventilation and a renewable energy package tailored to the site.",
@@ -168,7 +168,7 @@ export const zeroEnergyContent = {
     },
     {
       name: "Geothermal heating",
-      body: "Ground-source heat pump using the stable ground temperature (8–12°C in Romania) as a heat source. COP of 4–5 — four to five units of heat for every unit of electricity consumed.",
+      body: "Ground-source heat pump using the stable ground temperature (8–12°C across Northern Europe) as a heat source. COP of 4–5 — four to five units of heat for every unit of electricity consumed.",
     },
     {
       name: "Solar thermal",
@@ -194,9 +194,9 @@ export const zeroEnergyContent = {
         "The ZeroEnergy package adds 15–25% to the base building cost, depending on the site's renewable energy potential and the home's size. Over 10 years, the energy savings typically exceed the additional investment.",
     },
     {
-      question: "Does ZeroEnergy work in Romania's climate?",
+      question: "Does ZeroEnergy work in Northern European climates?",
       answer:
-        "Yes. Romania has excellent solar potential — particularly in the southern and eastern regions — and stable ground temperatures suitable for geothermal systems. We have been building ZeroEnergy homes in Romania since 2013.",
+        "Yes. Northern Europe has excellent solar potential and stable ground temperatures well-suited for geothermal systems. We have been building ZeroEnergy homes since 2013 — in climates ranging from alpine to coastal and continental.",
     },
     {
       question: "Can I add ZeroEnergy systems after the house is built?",

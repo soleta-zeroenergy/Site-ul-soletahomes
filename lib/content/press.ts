@@ -1,7 +1,7 @@
 export const pressHero = {
   eyebrow: "Press & Media",
   heading: "Soleta in the press.",
-  body: "Since the launch of the Soleta ZeroEnergy One prototype in 2013, Soleta has been covered by international architecture and design publications across Europe and North America.",
+  body: "Since the launch of the Soleta ZeroEnergy One in 2013, Soleta has been featured by leading international architecture and design publications across Europe, North America and beyond.",
 };
 
 export const pressCoverage = [

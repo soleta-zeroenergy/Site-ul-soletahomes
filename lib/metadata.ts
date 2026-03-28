@@ -4,7 +4,7 @@ export const siteConfig = {
   name:        "Soleta Homes",
   tagline:     "Homes of enduring craft.",
   description:
-    "Soleta designs premium timber homes where precise craftsmanship meets warm, natural living. Bespoke architecture built to last generations.",
+    "Nordic timber homes designed for the way you live. ZeroEnergy architecture, healthy materials, delivered across Europe and beyond.",
   url:            "https://soletahomes.com",
   locale:         "en_US",
   type:           "website",

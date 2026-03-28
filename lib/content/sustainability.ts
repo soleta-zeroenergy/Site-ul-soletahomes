@@ -33,7 +33,7 @@ export const sustainabilityPrinciples = [
   {
     number: "06",
     heading: "Local craft, responsible sourcing",
-    body: "Our timber is sourced from certified European forests. Production is in Romania — minimising transport distances compared to homes manufactured in northern Europe and delivered south. We work with local craftspeople and regional material suppliers wherever possible.",
+    body: "Our timber is sourced from certified European forests. Production is based in Central Europe — minimising transport distances to our project markets across the continent. We work with local craftspeople and regional material suppliers wherever possible.",
   },
 ];
 

@@ -37,7 +37,7 @@ export const companyTimeline = [
   {
     year: "2018",
     event: "Factory expansion",
-    detail: "The Romanian production facility expands to meet growing demand. 40 craftspeople employed.",
+    detail: "The Central European production facility expands to meet growing demand. 40 craftspeople employed.",
   },
   {
     year: "2022",
