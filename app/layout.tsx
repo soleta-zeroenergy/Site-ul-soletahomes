@@ -19,7 +19,12 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-export const metadata: Metadata = baseMetadata;
+export const metadata: Metadata = {
+  ...baseMetadata,
+  verification: {
+    google: 'u9lbFNIsVgO3qJCJnheNK4yS_rB9V5m41dirM1Te_Z0',
+  },
+};
 
 const organizationSchema = {
   "@context": "https://schema.org",
