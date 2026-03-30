@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { baseMetadata, siteConfig } from "@/lib/metadata";
@@ -53,6 +54,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y5YM5YL7VC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y5YM5YL7VC');
+          `}
+        </Script>
+      </head>
       <body className={`${inter.variable} ${cormorant.variable} min-h-screen bg-[var(--soleta-bg)] text-[var(--soleta-ink)]`}>
         <Header />
         <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>
