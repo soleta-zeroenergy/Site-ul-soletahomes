@@ -15,6 +15,8 @@ export const homeHero: HeroProps = {
     "Soleta creates premium timber homes with calm architecture, healthy materials and enduring design.",
   primaryCta:   { label: "Request a Private Offer", href: "/contact" },
   secondaryCta: { label: "Explore House Models",    href: "/collection" },
+  imageSrc:     "/images/hero.webp",
+  imageAlt:     "Soleta ZeroEnergy home",
 };
 
 /* ── 2. Manifesto / Why Soleta ────────────────────────────────────────────── */
