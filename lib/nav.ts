@@ -122,7 +122,7 @@ export const footerColumns: FooterColumn[] = [
     heading: "Part of Soleta Group",
     links: [
       { label: "Soleta House Plans", href: "https://soletahouseplans.com", external: true },
-      { label: "Solenhus (Nordic Homes)", href: "#", external: true },
+      { label: "SolemiHus (Nordic Homes)", href: "#", external: true },
       { label: "Soleta Structures", href: "#", external: true },
       { label: "Soleta Renovations", href: "#", external: true },
     ],

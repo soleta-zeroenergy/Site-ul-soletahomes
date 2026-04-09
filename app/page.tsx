@@ -1,25 +1,28 @@
 import type { Metadata } from "next";
-import { Fragment }      from "react";
-import { Hero }          from "@/components/sections/Hero";
-import { CardGrid }      from "@/components/sections/CardGrid";
-import { ProjectGrid }   from "@/components/sections/ProjectGrid";
-import { CtaBand }       from "@/components/sections/CtaBand";
+import { Hero }           from "@/components/sections/Hero";
+import { FeatureSplit }   from "@/components/sections/FeatureSplit";
+import { CardGrid }       from "@/components/sections/CardGrid";
+import { ValuesGrid }     from "@/components/sections/ValuesGrid";
+import { ProjectGrid }    from "@/components/sections/ProjectGrid";
+import { SpecStrip }      from "@/components/sections/SpecStrip";
+import { FaqPreview }     from "@/components/sections/FaqPreview";
+import { CtaBand }        from "@/components/sections/CtaBand";
 import {
   homeHero,
+  homeManifesto,
   homeCollection,
+  homeValues,
   homeProjects,
-  homeBadges,
+  homeProcess,
+  homeFaq,
   homeCta,
 } from "@/lib/content/home";
 import { withCanonical, siteConfig } from "@/lib/seo";
 
-/* ── Page metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
   ...withCanonical("/"),
   description: siteConfig.description,
 };
-
-/* ── WebSite JSON-LD ─────────────────────────────────────────────────────── */
 
 export default function HomePage() {
   return (
@@ -46,34 +49,28 @@ export default function HomePage() {
         })}}
       />
 
-      {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}
+      {/* 1 ── Hero */}
       <Hero {...homeHero} />
 
-      {/* 2 ── Collection preview ───────────────────────────────────────────── */}
+      {/* 2 ── Manifesto */}
+      <FeatureSplit {...homeManifesto} />
+
+      {/* 3 ── Collection */}
       <CardGrid {...homeCollection} />
 
-      {/* 3 ── Built projects preview ───────────────────────────────────────── */}
+      {/* 4 ── Why Timber + ZeroEnergy */}
+      <ValuesGrid {...homeValues} />
+
+      {/* 5 ── Built projects */}
       <ProjectGrid {...homeProjects} />
 
-      {/* 4 ── Proof band ───────────────────────────────────────────────────── */}
-      <div className="border-y border-sand-400 bg-white py-11">
-        <div className="container-site">
-          <ul className="flex flex-wrap items-center justify-center">
-            {homeBadges.map((badge, i) => (
-              <Fragment key={badge}>
-                <li className="text-[0.6875rem] font-medium tracking-[0.18em] uppercase text-[#5a524c] px-8">
-                  {badge}
-                </li>
-                {i < homeBadges.length - 1 && (
-                  <li aria-hidden="true" className="w-[3px] h-[3px] rounded-full bg-sand-400 shrink-0" />
-                )}
-              </Fragment>
-            ))}
-          </ul>
-        </div>
-      </div>
+      {/* 6 ── Process */}
+      <SpecStrip {...homeProcess} />
 
-      {/* 5 ── Final CTA band ───────────────────────────────────────────────── */}
+      {/* 7 ── FAQ */}
+      <FaqPreview {...homeFaq} />
+
+      {/* 8 ── Final CTA */}
       <CtaBand {...homeCta} />
     </>
   );
