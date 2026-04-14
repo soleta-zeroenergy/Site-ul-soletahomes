@@ -28,6 +28,8 @@ export const homeManifesto: FeatureSplitProps = {
   bodySecond:
     "Every Soleta home is engineered to produce as much energy as it consumes, manufactured in controlled conditions and assembled on your site in weeks. Architecture that is honest about what it is made of, and why.",
   cta:           { label: "Our architecture & design", href: "/architecture" },
+  imageSrc:      "/images/WhySoleta900x1200.webp",
+  imageAlt:      "Interior casă Soleta",
   imagePosition: "right",
   theme:         "warm",
 };
@@ -37,6 +39,8 @@ export const homeCollection: CardGridProps = {
   heading: "Architectural families",
   cards: [
     {
+      imageSrc: "/images/Signature800x533.webp",
+      imageAlt: "Signature Homes",
       eyebrow: "Signature",
       title:   "Signature Homes",
       body:    "Statement architecture for landmark sites and clients who want something genuinely distinctive.",
@@ -44,6 +48,8 @@ export const homeCollection: CardGridProps = {
       cta:     "View collection",
     },
     {
+      imageSrc: "/images/Classic800x533.webp",
+      imageAlt: "Classic Soleta Homes",
       eyebrow: "Classic",
       title:   "Classic Soleta Homes",
       body:    "Timeless proportions, generous living spaces and enduring materials for the permanent family home.",
@@ -51,6 +57,8 @@ export const homeCollection: CardGridProps = {
       cta:     "View collection",
     },
     {
+      imageSrc: "/images/Retreat800x533.webp",
+      imageAlt: "Holiday & Retreat Homes",
       eyebrow: "Retreat",
       title:   "Holiday & Retreat Homes",
       body:    "Compact, calm architecture designed for rest and honest connection to the natural landscape.",
@@ -99,22 +107,28 @@ export const homeProjects: ProjectGridProps = {
   heading:  "Homes we have built",
   projects: [
     {
-      imageSrc: "",
+      imageSrc: "/images/Aquarius800x600.webp",
+      imageAlt: "Villa Aquarius",
       title:    "Villa AQUARIUS",
+      location: "Europe",
       category: "Private Residence",
       year:     2014,
       href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "",
+      imageSrc: "/images/Aurora800x600.webp",
+      imageAlt: "House Aurora",
       title:    "House Aurora",
+      location: "Europe",
       category: "Private Residence",
       year:     2021,
       href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "",
+      imageSrc: "/images/Life800x600.webp",
+      imageAlt: "House Life",
       title:    "House Life",
+      location: "Europe",
       category: "Holiday Home",
       year:     2024,
       href:     "/built-projects/holiday-homes",
