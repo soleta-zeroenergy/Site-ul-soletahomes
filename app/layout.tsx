@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   verification: {
     google: 'u9lbFNIsVgO3qJCJnheNK4yS_rB9V5m41dirM1Te_Z0',
   },
+  alternates: {
+    canonical: 'https://soletahomes.com',
+    languages: {
+      'ro': 'https://soleta.ro',
+      'en': 'https://soletahomes.com',
+      'x-default': 'https://soletahomes.com',
+    },
+  },
 };
 
 const organizationSchema = {

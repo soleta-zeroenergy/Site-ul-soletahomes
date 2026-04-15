@@ -99,6 +99,7 @@ export const headerNav: NavItem[] = [
       {
         children: [
           { label: "Our Story", href: "/about" },
+          { label: "FAQ", href: "/faq" },
           { label: "Sustainability", href: "/sustainability" },
           { label: "Press & Media", href: "/press" },
           { label: "Careers", href: "/careers" },
@@ -116,6 +117,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Press & Media", href: "/press" },
       { label: "Careers", href: "/careers" },
       { label: "Help Center", href: "/help-center" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
