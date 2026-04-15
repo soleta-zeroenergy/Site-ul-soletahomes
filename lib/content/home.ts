@@ -4,7 +4,7 @@ import type { ProjectGridProps }     from "@/components/sections/ProjectGrid";
 import type { CtaBandProps }         from "@/components/sections/CtaBand";
 import type { FeatureSplitProps }    from "@/components/sections/FeatureSplit";
 import type { ValuesGridProps }      from "@/components/sections/ValuesGrid";
-import type { SpecStripProps }       from "@/components/sections/SpecStrip";
+import type { ProcessTimelineProps } from "@/components/sections/ProcessTimeline";
 import type { FaqPreviewProps }      from "@/components/sections/FaqPreview";
 
 /* ── 1. Hero ──────────────────────────────────────────────────────────────── */
@@ -76,27 +76,23 @@ export const homeValues: ValuesGridProps = {
   heading: "Four reasons timber\nchanges everything",
   body:    "The decisions we made at the beginning — the material, the system, the standards — determine everything that follows.",
   theme:   "light",
-  columns: 4,
+  columns: 2,
   items: [
     {
       title: "Post & Beam Construction",
-      body:
-        "Glulam structural frames manufactured in our factory. Stronger than steel by weight, dimensionally stable, and assembled on your site in days — not months.",
+      body:  "Glulam structural frames manufactured in our factory. Stronger than steel by weight, dimensionally stable, and assembled on your site in days — not months.",
     },
     {
       title: "Healthy Materials",
-      body:
-        "97% organic by material composition. No off-gassing adhesives, no synthetic insulation. The air inside a Soleta home is measurably cleaner than the air outside.",
+      body:  "97% organic by material composition. No off-gassing adhesives, no synthetic insulation. The air inside a Soleta home is measurably cleaner than the air outside.",
     },
     {
       title: "ZeroEnergy by Design",
-      body:
-        "Engineered to produce as much energy as it consumes over a year. Not a certificate — an outcome. Your energy bills reflect it from the first winter.",
+      body:  "Engineered to produce as much energy as it consumes over a year. Not a certificate — an outcome. Your energy bills reflect it from the first winter.",
     },
     {
       title: "Built to Last 80+ Years",
-      body:
-        "Engineered timber does not degrade like masonry. A Soleta home is fully mortgageable, insurable and designed to be extended without demolition as needs change.",
+      body:  "Engineered timber does not degrade like masonry. A Soleta home is fully mortgageable, insurable and designed to be extended without demolition as needs change.",
     },
   ],
 };
@@ -138,36 +134,36 @@ export const homeProjects: ProjectGridProps = {
 };
 
 /* ── 6. Process preview ───────────────────────────────────────────────────── */
-export const homeProcess: SpecStripProps = {
+export const homeProcess: ProcessTimelineProps = {
   eyebrow: "How We Work",
-  heading: "From first conversation to handover",
+  heading: "From first conversation\nto handover",
+  body:    "A considered process — designed to keep you informed and in control at every stage.",
   theme:   "warm",
-  cta:     { label: "Discover the full process", href: "/process" },
-  items: [
+  stages: [
     {
-      label:       "Dream",
-      description:
-        "We visit your site before a single line is drawn. Architecture begins with listening.",
+      eyebrow: "Stage 01",
+      title:   "Dream",
+      body:    "We visit your site before a single line is drawn. Architecture begins with listening — about your land, how you intend to live, and what the house needs to do for you.",
     },
     {
-      label:       "Design & Planning",
-      description:
-        "Options, not a fixed direction. The design is yours by the time we submit for planning.",
+      eyebrow: "Stage 02",
+      title:   "Design & Planning",
+      body:    "Options, not a fixed direction. We present alternatives, refine with you, and submit for planning approval on your behalf.",
     },
     {
-      label:       "Engineering",
-      description:
-        "Technical decisions resolved inside the design — not bolted on afterwards.",
+      eyebrow: "Stage 03",
+      title:   "Engineering",
+      body:    "Technical decisions resolved inside the design — not bolted on afterwards. Complete construction documents before ground is broken.",
     },
     {
-      label:       "Build",
-      description:
-        "Factory-manufactured elements. Your structural frame erected in 3 to 5 days on site.",
+      eyebrow: "Stage 04",
+      title:   "Build",
+      body:    "Factory-manufactured elements delivered to your site. The structural frame erected in 3 to 5 days. Weatherproof envelope complete within 2 to 4 weeks.",
     },
     {
-      label:       "Turnkey Delivery",
-      description:
-        "Keys, documentation and aftercare. One point of responsibility, from start to finish.",
+      eyebrow: "Stage 05",
+      title:   "Turnkey Delivery",
+      body:    "Keys, full documentation and aftercare. One point of responsibility from first conversation to handover.",
     },
   ],
 };
@@ -181,29 +177,26 @@ export const homeFaq: FaqPreviewProps = {
   items: [
     {
       q: "How long does a Soleta home last?",
-      a: "Engineered glulam timber does not degrade like masonry. Our homes are designed for a minimum 80-year structural lifespan, are fully mortgageable across all markets we operate in, and can be extended without demolition.",
+      a: "Engineered glulam timber does not degrade like masonry. Our homes are designed for a minimum 80-year structural lifespan, fully mortgageable, and can be extended without demolition.",
     },
     {
-      q: "What does ZeroEnergy option mean in practice?",
-      a: "It means the home produces — through solar, heat recovery and passive design — as much energy as it consumes over a year. Most clients report energy costs 70–90% lower than a conventional home of equivalent size.",
+      q: "What does ZeroEnergy mean in practice?",
+      a: "The home produces — through solar, heat recovery and passive design — as much energy as it consumes over a year. Most clients report energy costs 70–90% lower than a conventional home.",
     },
     {
       q: "How long from first meeting to moving in?",
-      a: "Typically 12 to 18 weeks from our first site visit to handover. The timeline depends primarily on planning approval in your country, which we manage on your behalf.",
-    },
-    {
-      q: "Do you work only in Europe?",
-      a: "No. We currently deliver projects across America (N&S), Australia&New Zealand, Asia and of course, Europe. If you have a site, contact us — we will tell you honestly whether we can serve it.",
+      a: "Typically 12 to 18 months from first site visit to handover, depending primarily on planning approval in your country — which we manage on your behalf.",
     },
     {
       q: "What is included in the price?",
-      a: "Factory manufacturing, delivery, and by request: structural erection, insulation, cladding, windows and doors, and project management. Foundations and local statutory fees are scoped separately.",
-    },
-    {
-      q: "Can I see a Soleta home before I commit?",
-      a: "Yes. We arrange private visits to completed homes with the agreement of our clients. Contact us to discuss your location and we will propose the most relevant project to visit.",
+      a: "Architecture, engineering, factory manufacturing, delivery, structural erection, insulation, cladding, windows and doors, and project management. Foundations and statutory fees are scoped separately.",
     },
   ],
+};
+
+export const homeFaqCta = {
+  label: "View all frequently asked questions",
+  href:  "/faq",
 };
 
 /* ── 8. Final CTA band ────────────────────────────────────────────────────── */
