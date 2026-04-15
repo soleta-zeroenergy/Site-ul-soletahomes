@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { withCanonical } from "@/lib/seo";
 import {
@@ -18,30 +19,59 @@ export const metadata: Metadata = {
     "Explore four distinct paths — Signature, Classic, Holiday & Retreat and Custom Architecture. Timber homes shaped around the way you want to live.",
 };
 
+/** Warm atmospheric gradient — used as fallback when no real image is available */
+const CARD_PLACEHOLDER =
+  "radial-gradient(ellipse 80% 75% at 40% 55%, rgba(64,44,32,0.92) 0%, rgba(26,23,20,0.97) 60%, #1a1714 100%)";
+
 export default function CollectionPage() {
   return (
     <>
-      {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
+      {/* ── 1. Hero — split layout ────────────────────────────────────────── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] overflow-hidden"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="container-narrow">
-          <span className="eyebrow mb-6 block">The Collection</span>
-          <h1 className="mb-6 max-w-2xl">
-            Architecture shaped around<br />the way you want to live
-          </h1>
-          <p className="subtitle max-w-xl">
-            Explore four distinct paths — from timeless everyday homes to private retreats,
-            expressive signature residences and fully bespoke architecture.
-          </p>
-          <div className="mt-10">
-            <a
-              href="#collection-paths"
-              className="btn-primary"
-            >
-              Explore the Collection
-            </a>
+        <div className="container-site">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[680px]">
+
+            {/* Text column */}
+            <div className="flex flex-col justify-center py-20 lg:py-24 pr-0 lg:pr-16">
+              <span className="eyebrow mb-6 block">The Collection</span>
+              <h1 className="mb-6 max-w-xl">
+                Architecture shaped around<br />the way you want to live
+              </h1>
+              <p className="subtitle max-w-lg mb-10">
+                Explore four distinct paths — from timeless everyday homes to private retreats,
+                expressive signature residences and fully bespoke architecture.
+              </p>
+              <div>
+                <a href="#collection-paths" className="btn-primary">
+                  Explore the Collection
+                </a>
+              </div>
+            </div>
+
+            {/* Image column */}
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/WhySoleta900x1200.webp"
+                alt="Soleta timber home interior"
+                fill
+                priority
+                sizes="(max-width: 1024px) 0vw, 50vw"
+                className="object-cover"
+              />
+              {/* subtle gradient on left edge to blend into cream background */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to right, var(--soleta-cream) 0%, transparent 18%)",
+                }}
+              />
+            </div>
+
           </div>
         </div>
       </section>
@@ -78,7 +108,10 @@ export default function CollectionPage() {
           <div className="mb-12 max-w-2xl">
             <span className="eyebrow mb-4 block">The Collection</span>
             <h2 className="mb-4">Choose your path</h2>
-            <p className="text-[var(--color-text-secondary)] leading-relaxed" style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}>
+            <p
+              className="text-[var(--color-text-secondary)] leading-relaxed"
+              style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
+            >
               Each Soleta direction offers a different balance of permanence, expression, scale
               and freedom — while sharing the same architectural calm, natural materiality and
               long-term thinking.
@@ -86,31 +119,58 @@ export default function CollectionPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2">
-            {collectionFamilies.map((family) => (
-              <Link
-                key={family.href}
-                href={family.href}
-                className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
-              >
-                {/* Atmosphere placeholder — no real image dependency */}
-                <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--color-surface)]">
-                  <div className="h-full w-full bg-[var(--color-surface-raised)] transition-transform duration-500 group-hover:scale-[1.02]" />
-                </div>
+            {collectionFamilies.map((family) => {
+              const hasImage = Boolean(family.imageSrc);
 
-                <div className="flex flex-1 flex-col p-8 gap-4">
-                  <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
-                    {family.eyebrow}
-                  </span>
-                  <h3 className="text-[1.375rem] leading-[1.2]">{family.heading}</h3>
-                  <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    {family.body}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
-                    {family.cta} →
-                  </span>
-                </div>
-              </Link>
-            ))}
+              return (
+                <Link
+                  key={family.href}
+                  href={family.href}
+                  className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
+                >
+                  {/* Image area — real photo or atmospheric fallback */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    {hasImage ? (
+                      <Image
+                        src={family.imageSrc}
+                        alt={family.imageAlt ?? family.heading}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
+                        style={{ background: CARD_PLACEHOLDER }}
+                      />
+                    )}
+                    {/* Subtle bottom gradient for text legibility on hover states */}
+                    {hasImage && (
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{ background: "rgba(26,23,20,0.08)" }}
+                      />
+                    )}
+                  </div>
+
+                  {/* Card body */}
+                  <div className="flex flex-1 flex-col p-8 gap-4">
+                    <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                      {family.eyebrow}
+                    </span>
+                    <h3 className="text-[1.375rem] leading-[1.2]">{family.heading}</h3>
+                    <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                      {family.body}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
+                      {family.cta} →
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -123,7 +183,10 @@ export default function CollectionPage() {
         <div className="container-narrow">
           <span className="eyebrow mb-4 block">{collectionGuidance.eyebrow}</span>
           <h2 className="mb-4 max-w-lg">{collectionGuidance.heading}</h2>
-          <p className="mb-8 text-[var(--color-text-secondary)] leading-relaxed" style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}>
+          <p
+            className="mb-8 text-[var(--color-text-secondary)] leading-relaxed"
+            style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
+          >
             {collectionGuidance.intro}
           </p>
           <ul className="flex flex-col gap-5">
