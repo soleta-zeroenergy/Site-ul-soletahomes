@@ -30,7 +30,6 @@ export const headerNav: NavItem[] = [
         children: [
           { label: "Signature Homes", href: "/collection/signature" },
           { label: "Classic Soleta Homes", href: "/collection/classic" },
-          { label: "Large Family Homes", href: "/collection/large-family" },
           { label: "Holiday & Retreat Homes", href: "/collection/holiday-retreat" },
           { label: "Custom Architecture", href: "/collection/custom-architecture" },
         ],

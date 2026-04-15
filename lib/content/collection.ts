@@ -1,93 +1,133 @@
+import type { CtaBandProps } from "@/components/sections/CtaBand";
+
+/* ── Hero ───────────────────────────────────────────────────────────────────── */
 export const collectionHero = {
   eyebrow: "The Collection",
-  heading: "Homes built\nfor how you live",
+  heading: "Architecture shaped around\nthe way you want to live",
   subheading:
-    "Every Soleta home begins with place — your land, your light, your life. We build around it.",
-  ctaPrimary: { label: "Request a Private Offer", href: "/contact" },
-  ctaSecondary: { label: "Download Catalogue", href: "/catalog" },
+    "Explore four distinct paths — from timeless everyday homes to private retreats, expressive signature residences and fully bespoke architecture.",
+  ctaPrimary: { label: "Explore the Collection", href: "#collection-paths" },
   imageSrc: "/images/collection/collection-hero.jpg",
   imageAlt: "Soleta timber home exterior in natural landscape",
-  dark: true,
 };
 
-export const collectionIntro = {
-  eyebrow: "Our approach",
-  heading: "Architecture-first.\nNot catalogue-first.",
-  body: "Most companies start with a fixed product. We start with you. Each Soleta home is shaped by the site, the climate and the way you actually live — then engineered to last generations.",
+/* ── Approach ───────────────────────────────────────────────────────────────── */
+export const collectionApproach = {
+  eyebrow: "Our Approach",
+  heading: "Architecture-first. Always.",
+  body: "Every Soleta home begins with place — land, light, climate and the rhythm of everyday life. Rather than forcing people into a fixed model, we shape each direction around how the home will truly be used, and how it should belong in its setting over time.",
+  link: { label: "See how we design", href: "/architecture/design-language" },
 };
 
+/* ── Collection families (4 paths — Large Family removed) ────────────────── */
 export const collectionFamilies = [
   {
-    eyebrow: "Signature",
+    eyebrow: "Architectural · Distinctive",
     heading: "Signature Homes",
-    body: "Statement architecture for landmark sites and clients who want something genuinely distinctive. No two alike.",
+    body: "For exceptional sites and clients who want a home with a stronger architectural identity. Signature is for projects where expression, proportion and presence matter as much as comfort.",
     href: "/collection/signature",
-    cta: "View Signature",
+    cta: "View Signature Homes",
     imageSrc: "/images/collection/signature.jpg",
     imageAlt: "Soleta Signature home exterior",
-    badge: "Bespoke · Premium",
   },
   {
-    eyebrow: "Classic",
+    eyebrow: "Timeless · Everyday Living",
     heading: "Classic Soleta Homes",
-    body: "Timeless proportions, generous living spaces and enduring materials for the permanent family home.",
+    body: "Balanced, warm and enduring homes designed for daily life. This is the most natural starting point for permanent living, family life and long-term comfort, with the calm architectural language that defines Soleta.",
     href: "/collection/classic",
-    cta: "View Classic",
+    cta: "View Classic Homes",
     imageSrc: "/images/collection/classic.jpg",
     imageAlt: "Soleta Classic home exterior",
-    badge: "Most popular · From €X",
   },
   {
-    eyebrow: "Large Family",
-    heading: "Large Family Homes",
-    body: "Space that grows with you. Modular additions without demolition — add rooms without touching the original structure.",
-    href: "/collection/large-family",
-    cta: "View Large Family",
-    imageSrc: "/images/collection/large-family.jpg",
-    imageAlt: "Soleta Large Family home",
-    badge: "4–7 bedrooms · From €X",
-  },
-  {
-    eyebrow: "Retreat",
+    eyebrow: "Quiet · Restorative",
     heading: "Holiday & Retreat Homes",
-    body: "Compact, calm architecture designed for rest and honest connection to the natural landscape.",
+    body: "Homes designed for slower living, privacy and a closer relationship with nature. Ideal for second homes, weekend escapes and landscapes where stillness matters.",
     href: "/collection/holiday-retreat",
-    cta: "View Retreat",
+    cta: "View Retreat Homes",
     imageSrc: "/images/collection/retreat.jpg",
     imageAlt: "Soleta Holiday home in nature",
-    badge: "1–3 bedrooms · From €X",
   },
   {
-    eyebrow: "Custom",
+    eyebrow: "Bespoke · Site-Specific",
     heading: "Custom Architecture",
-    body: "Start from a sketch. We design and build entirely around your vision — site, size, style.",
+    body: "For projects that begin with a unique brief, a special piece of land or a vision that does not belong inside a predefined path. We design the architecture around the site, the lifestyle and the ambition of the project.",
     href: "/collection/custom-architecture",
-    cta: "Start Your Project",
+    cta: "Start a Custom Project",
     imageSrc: "/images/collection/custom.jpg",
     imageAlt: "Custom Soleta architectural project",
-    badge: "Fully bespoke",
   },
 ];
 
-export const collectionStats = [
-  { value: "86+", label: "Homes built" },
-  { value: "12+", label: "Years of craft" },
-  { value: "6", label: "Countries" },
-  { value: "97%", label: "Organic materials" },
-];
+/* ── Guidance ────────────────────────────────────────────────────────────────── */
+export const collectionGuidance = {
+  eyebrow: "Need Guidance?",
+  heading: "Not sure where to begin?",
+  intro: "A simple way to think about the collection:",
+  items: [
+    "Choose Classic if you want the strongest balance of permanence, comfort and everyday living.",
+    "Choose Holiday & Retreat if the home is mainly about rest, landscape and a second-home rhythm.",
+    "Choose Signature if the project calls for stronger architectural expression or a more exceptional site response.",
+    "Choose Custom if your brief does not fit a predefined path.",
+  ],
+};
 
-export const collectionMediaLogos = [
-  { name: "The Guardian", src: "/images/press/guardian.svg" },
-  { name: "Inhabitat", src: "/images/press/inhabitat.svg" },
-  { name: "HomeAdore", src: "/images/press/homeadore.svg" },
-  { name: "Daily News", src: "/images/press/dailynews.svg" },
-];
+/* ── Why Soleta ──────────────────────────────────────────────────────────────── */
+export const collectionWhySoleta = {
+  eyebrow: "Why Soleta",
+  heading: "A clearer way to build in timber",
+  items: [
+    "Designed around site, light and long-term living",
+    "Natural materials chosen for healthier spaces",
+    "A calm but distinct architectural language",
+    "Technical thinking for comfort, performance and durability",
+    "One integrated path from design to delivery",
+  ],
+  links: [
+    { label: "Soleta Design Language", href: "/architecture/design-language" },
+    { label: "Post & Beam Construction", href: "/architecture/post-beam" },
+    { label: "Healthy Materials", href: "/architecture/healthy-materials" },
+    { label: "Energy & ZeroEnergy", href: "/architecture/energy-zeroenergy" },
+    { label: "Process & Services", href: "/process" },
+  ],
+};
 
-export const collectionCta = {
-  eyebrow: "Next step",
+/* ── Explore Further ─────────────────────────────────────────────────────────── */
+export const collectionExplore = {
+  eyebrow: "Explore Further",
+  blocks: [
+    {
+      title: "Built Projects",
+      body: "See how Soleta homes take shape in real settings.",
+      href: "/built-projects",
+      cta: "View Projects",
+    },
+    {
+      title: "Our Process",
+      body: "Understand the path from first conversation to delivery.",
+      href: "/process",
+      cta: "View Process",
+    },
+    {
+      title: "Design & Construction",
+      body: "Learn more about structure, materials and performance.",
+      href: "/architecture",
+      cta: "View Architecture",
+    },
+    {
+      title: "Request a Private Offer",
+      body: "Tell us about your land, timeline and project direction.",
+      href: "/contact",
+      cta: "Get in Touch",
+    },
+  ],
+};
+
+/* ── Final CTA ───────────────────────────────────────────────────────────────── */
+export const collectionCta: CtaBandProps = {
   heading: "Begin your Soleta project",
-  body: "Tell us about your site, your vision and your timeline.",
+  body: "Whether you already know your direction or are still choosing between them, the next step is simple: tell us about your land, your timeline and the kind of home you want to create.",
   primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "Discover the Process", href: "/process" },
+  secondaryCta: { label: "Explore Built Projects", href: "/built-projects" },
   theme: "dark",
 };
