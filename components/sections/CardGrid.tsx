@@ -14,13 +14,14 @@ export type CardItem = {
 };
 
 export type CardGridProps = {
-  eyebrow?:  string;
-  heading?:  string;
-  body?:     string;
-  cards:     CardItem[];
-  columns?:  number;     // defaults to 3, or 4 if cards.length === 4
-  cta?:      { label: string; href: string };
-  theme?:    "light" | "warm" | "dark" | string;
+  eyebrow?:      string;
+  heading?:      string;
+  body?:         string;
+  cards:         CardItem[];
+  columns?:      number;     // defaults to 3, or 4 if cards.length === 4
+  cta?:          { label: string; href: string };
+  theme?:        "light" | "warm" | "dark" | string;
+  fullCardLink?: boolean;    // wraps entire card in Link; demotes inner CTA to span
 };
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
@@ -32,6 +33,7 @@ export function CardGrid({
   columns,
   cta,
   theme = "light",
+  fullCardLink = false,
 }: CardGridProps) {
   const cols      = columns ?? (cards.length === 4 ? 4 : 3);
   const isDark    = theme === "dark";
@@ -78,80 +80,123 @@ export function CardGrid({
 
         {/* Card grid — gap-px creates hairline dividers between cards */}
         <div className={cn("grid gap-px border", divider, gridCols)}>
-          {cards.map((card, i) => (
-            <article
-              key={i}
-              className={cn(
-                "group flex flex-col overflow-hidden",
-                isDark ? "bg-[#222019]" : "bg-white",
-                card.href && "cursor-pointer"
-              )}
-            >
-              {/* Image area */}
-              <div className="relative aspect-[3/2] overflow-hidden bg-[#ece9e5]">
-                {card.imageSrc ? (
-                  <Image
-                    src={card.imageSrc}
-                    alt={card.imageAlt ?? card.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                  />
-                ) : (
-                  /* Placeholder atmosphere */
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0"
+          {cards.map((card, i) => {
+            const titleId = `card-grid-title-${i}`;
+            const bodyId = card.body ? `card-grid-body-${i}` : undefined;
+
+            const cardInner = (
+              <>
+                {/* Image area */}
+                <div className="relative aspect-[3/2] overflow-hidden bg-[#ece9e5]">
+                  {card.imageSrc ? (
+                    <Image
+                      src={card.imageSrc}
+                      alt={card.imageAlt ?? card.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    /* Placeholder atmosphere */
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "radial-gradient(ellipse 80% 80% at 50% 50%, rgba(128,103,84,0.10) 0%, transparent 100%)",
+                      }}
+                    />
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-6 gap-3">
+                  {card.eyebrow && (
+                    <p className={cn("eyebrow", isDark ? "text-brand-400" : "text-brand-500")}>
+                      {card.eyebrow}
+                    </p>
+                  )}
+
+                  <h3
+                    id={titleId}
+                    className={isDark ? "text-[#faf8f6]" : "text-[#1a1714]"}
                     style={{
-                      background:
-                        "radial-gradient(ellipse 80% 80% at 50% 50%, rgba(128,103,84,0.10) 0%, transparent 100%)",
+                      fontSize: "1.125rem",
+                      lineHeight: 1.3,
+                      letterSpacing: "0.02em",
+                      fontFamily: "var(--font-heading)",
                     }}
-                  />
-                )}
-              </div>
+                  >
+                    {card.title}
+                  </h3>
 
-              {/* Content */}
-              <div className="flex flex-col flex-1 p-6 gap-3">
-                {card.eyebrow && (
-                  <p className={cn("eyebrow", isDark ? "text-brand-400" : "text-brand-500")}>
-                    {card.eyebrow}
-                  </p>
-                )}
+                  {card.body && (
+                    <p
+                      id={bodyId}
+                      className={cn("text-sm leading-relaxed flex-1", isDark ? "text-[#9a8e87]" : "text-[#6b5d56]")}
+                    >
+                      {card.body}
+                    </p>
+                  )}
 
-                <h3
-                  className={isDark ? "text-[#faf8f6]" : "text-[#1a1714]"}
-                  style={{
-                    fontSize: "1.125rem",
-                    lineHeight: 1.3,
-                    letterSpacing: "0.02em",
-                    fontFamily: "var(--font-heading)",
-                  }}
-                >
-                  {card.title}
-                </h3>
+                  {card.href && (
+                    /* When fullCardLink is active the outer element is already the Link,
+                       so render a span to avoid nested interactive elements. */
+                    fullCardLink ? (
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "mt-2 inline-flex items-center gap-1.5 text-[0.625rem] font-medium tracking-[0.14em] uppercase",
+                          isDark ? "text-brand-400" : "text-brand-500"
+                        )}
+                      >
+                        {card.cta ?? "Discover"} →
+                      </span>
+                    ) : (
+                      <Link
+                        href={card.href}
+                        className={cn(
+                          "mt-2 inline-flex items-center gap-1.5 text-[0.625rem] font-medium tracking-[0.14em] uppercase transition-colors duration-200",
+                          isDark
+                            ? "text-brand-400 hover:text-[#faf8f6]"
+                            : "text-brand-500 hover:text-[#1a1714]"
+                        )}
+                      >
+                        {card.cta ?? "Discover"}
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    )
+                  )}
+                </div>
+              </>
+            );
 
-                {card.body && (
-                  <p className={cn("text-sm leading-relaxed flex-1", isDark ? "text-[#9a8e87]" : "text-[#6b5d56]")}>
-                    {card.body}
-                  </p>
-                )}
+            const cardClass = cn(
+              "group relative flex h-full flex-col overflow-hidden",
+              isDark ? "bg-[#222019]" : "bg-white"
+            );
 
-                {card.href && (
+            if (fullCardLink && card.href) {
+              return (
+                <article key={i} className={cardClass}>
                   <Link
                     href={card.href}
-                    className={cn(
-                      "mt-2 inline-flex items-center gap-1.5 text-[0.625rem] font-medium tracking-[0.14em] uppercase transition-colors duration-200",
-                      isDark
-                        ? "text-brand-400 hover:text-[#faf8f6]"
-                        : "text-brand-500 hover:text-[#1a1714]"
-                    )}
+                    aria-labelledby={titleId}
+                    aria-describedby={bodyId}
+                    className="absolute inset-0 z-10"
                   >
-                    {card.cta ?? "Discover"}
-                    <span aria-hidden="true">→</span>
+                    <span className="sr-only">{card.cta ?? "Discover"}</span>
                   </Link>
-                )}
-              </div>
-            </article>
-          ))}
+                  {cardInner}
+                </article>
+              );
+            }
+
+            return (
+              <article key={i} className={cn(cardClass, card.href && "cursor-pointer")}>
+                {cardInner}
+              </article>
+            );
+          })}
         </div>
 
         {/* Section-level CTA */}
@@ -175,3 +220,5 @@ export function CardGrid({
     </section>
   );
 }
+
+
