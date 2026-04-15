@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero }            from "@/components/sections/Hero";
 import { FeatureSplit }    from "@/components/sections/FeatureSplit";
-import { CardGrid }        from "@/components/sections/CardGrid";
+import Image              from "next/image";
 import { ValuesGrid }      from "@/components/sections/ValuesGrid";
 import { ProjectGrid }     from "@/components/sections/ProjectGrid";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
@@ -78,7 +78,72 @@ export default function HomePage() {
       <FeatureSplit {...homeManifesto} />
 
       {/* 4 ── Collection preview */}
-      <CardGrid {...homeCollection} />
+      <section className="section bg-[#faf8f6]">
+        <div className="container-site">
+          <div className="mb-14 max-w-2xl">
+            <p className="eyebrow mb-4 text-brand-500">{homeCollection.eyebrow}</p>
+            <h2
+              className="text-[#1a1714] mb-4"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", lineHeight: 1.12, letterSpacing: "0.02em" }}
+            >
+              {homeCollection.heading}
+            </h2>
+            <p className="text-[#4a4440] leading-relaxed" style={{ fontFamily: "var(--font-subtitle)", fontSize: "1.125rem" }}>
+              {homeCollection.body}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-2">
+            {homeCollection.cards.map((card) => (
+              <Link
+                key={card.href}
+                href={card.href!}
+                className="group flex flex-col overflow-hidden bg-white"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden bg-[#ece9e5]">
+                  {card.imageSrc && (
+                    <Image
+                      src={card.imageSrc}
+                      alt={card.imageAlt ?? card.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-col flex-1 p-6 gap-3">
+                  {card.eyebrow && (
+                    <p className="eyebrow text-brand-500">{card.eyebrow}</p>
+                  )}
+                  <h3
+                    className="text-[#1a1714]"
+                    style={{ fontSize: "1.125rem", lineHeight: 1.3, letterSpacing: "0.02em", fontFamily: "var(--font-heading)" }}
+                  >
+                    {card.title}
+                  </h3>
+                  {card.body && (
+                    <p className="text-sm leading-relaxed flex-1 text-[#6b5d56]">{card.body}</p>
+                  )}
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 inline-flex items-center gap-1.5 text-[0.625rem] font-medium tracking-[0.14em] uppercase text-brand-500"
+                  >
+                    {card.cta ?? "Discover"} →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {homeCollection.cta && (
+            <div className="mt-12 flex justify-center">
+              <Link href={homeCollection.cta.href} className="btn-outline py-4 px-10">
+                {homeCollection.cta.label}
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* 5 ── Why Timber */}
       <ValuesGrid {...homeValues} />
