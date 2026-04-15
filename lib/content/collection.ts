@@ -54,7 +54,7 @@ export const collectionFamilies = [
     body: "For projects that begin with a unique brief, a special piece of land or a vision that does not belong inside a predefined path. We design the architecture around the site, the lifestyle and the ambition of the project.",
     href: "/collection/custom-architecture",
     cta: "Start a Custom Project",
-    imageSrc: "/images/collection/custom.jpg",
+    imageSrc: "/images/rezerva800x533.webp",
     imageAlt: "Custom Soleta architectural project",
   },
 ];

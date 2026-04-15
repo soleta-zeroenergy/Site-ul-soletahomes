@@ -61,15 +61,6 @@ export default function CollectionPage() {
                 sizes="(max-width: 1024px) 0vw, 50vw"
                 className="object-cover"
               />
-              {/* subtle gradient on left edge to blend into cream background */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right, var(--soleta-cream) 0%, transparent 18%)",
-                }}
-              />
             </div>
 
           </div>
