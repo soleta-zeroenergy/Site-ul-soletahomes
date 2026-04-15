@@ -27,7 +27,7 @@ export const collectionFamilies = [
     body: "For exceptional sites and clients who want a home with a stronger architectural identity. Signature is for projects where expression, proportion and presence matter as much as comfort.",
     href: "/collection/signature",
     cta: "View Signature Homes",
-    imageSrc: "/images/collection/signature.jpg",
+    imageSrc: "/images/Signature800x533.webp",
     imageAlt: "Soleta Signature home exterior",
   },
   {
@@ -36,7 +36,7 @@ export const collectionFamilies = [
     body: "Balanced, warm and enduring homes designed for daily life. This is the most natural starting point for permanent living, family life and long-term comfort, with the calm architectural language that defines Soleta.",
     href: "/collection/classic",
     cta: "View Classic Homes",
-    imageSrc: "/images/collection/classic.jpg",
+    imageSrc: "/images/Classic800x533.webp",
     imageAlt: "Soleta Classic home exterior",
   },
   {
@@ -45,7 +45,7 @@ export const collectionFamilies = [
     body: "Homes designed for slower living, privacy and a closer relationship with nature. Ideal for second homes, weekend escapes and landscapes where stillness matters.",
     href: "/collection/holiday-retreat",
     cta: "View Retreat Homes",
-    imageSrc: "/images/collection/retreat.jpg",
+    imageSrc: "/images/Retreat800x533.webp",
     imageAlt: "Soleta Holiday home in nature",
   },
   {

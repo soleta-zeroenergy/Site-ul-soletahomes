@@ -32,10 +32,11 @@ export default function CollectionPage() {
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[680px]">
+          {/* Desktop: side-by-side. Mobile: text then image stacked. */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[680px]">
 
             {/* Text column */}
-            <div className="flex flex-col justify-center py-20 lg:py-24 pr-0 lg:pr-16">
+            <div className="flex flex-col justify-center py-16 lg:py-24 pr-0 lg:pr-16">
               <span className="eyebrow mb-6 block">The Collection</span>
               <h1 className="mb-6 max-w-xl">
                 Architecture shaped around<br />the way you want to live
@@ -51,14 +52,14 @@ export default function CollectionPage() {
               </div>
             </div>
 
-            {/* Image column */}
-            <div className="relative hidden lg:block">
+            {/* Image column — stacks below text on mobile */}
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[680px]">
               <Image
                 src="/images/WhySoleta900x1200.webp"
                 alt="Soleta timber home interior"
                 fill
                 priority
-                sizes="(max-width: 1024px) 0vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
