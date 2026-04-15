@@ -16,6 +16,7 @@ export type ProjectItem = {
 export type ProjectGridProps = {
   eyebrow?: string;
   heading?: string;
+  body?: string;
   projects: ProjectItem[];
   cta?: { label: string; href: string };
   columns?: number;
@@ -41,6 +42,7 @@ const bgMap = {
 export function ProjectGrid({
   eyebrow,
   heading,
+  body,
   projects,
   cta,
   columns = 3,
@@ -55,7 +57,7 @@ export function ProjectGrid({
   return (
     <section className={cn("section", bgMap[theme])}>
       <div className="container-site">
-        {(eyebrow || heading) && (
+        {(eyebrow || heading || body) && (
           <div className="mb-14 flex items-end justify-between gap-8">
             <div className="max-w-xl">
               {eyebrow && (
@@ -79,6 +81,14 @@ export function ProjectGrid({
                 >
                   {heading}
                 </h2>
+              )}
+              {body && (
+                <p
+                  className={cn("mt-4 leading-relaxed text-sm", isDark ? "text-[#9a8e87]" : "text-[#6b5d56]")}
+                  style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.9375rem, 1.1vw, 1.0625rem)" }}
+                >
+                  {body}
+                </p>
               )}
             </div>
 

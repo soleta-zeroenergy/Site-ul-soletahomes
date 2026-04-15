@@ -9,98 +9,124 @@ import type { FaqPreviewProps }      from "@/components/sections/FaqPreview";
 
 /* ── 1. Hero ──────────────────────────────────────────────────────────────── */
 export const homeHero: HeroProps = {
-  eyebrow:     "Soleta – Art of Serenity",
-  heading:     "Living Architecture\nfor a Human Future",
+  eyebrow:     "Soleta Homes",
+  heading:     "Premium timber homes shaped by\nland, light and the way you live",
   subtext:
-    "Soleta creates premium timber homes with calm architecture, healthy materials and enduring design.",
-  primaryCta:   { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "Explore House Models",    href: "/collection" },
+    "Soleta designs and builds calm, high-performance homes in timber — from enduring family residences and private retreats to fully bespoke architecture.",
+  primaryCta:   { label: "Explore the Collection", href: "/collection" },
+  secondaryCta: { label: "Request a Private Offer", href: "/contact" },
   imageSrc:     "/images/hero.webp",
   imageAlt:     "Soleta ZeroEnergy home",
 };
 
-/* ── 2. Manifesto / Why Soleta ────────────────────────────────────────────── */
+/* ── 2. Proof strip ───────────────────────────────────────────────────────── */
+export const homeProofStrip = {
+  items: [
+    "Architecture-first",
+    "Natural materials",
+    "ZeroEnergy thinking",
+    "Design to delivery",
+  ],
+};
+
+/* ── 3. Manifesto ─────────────────────────────────────────────────────────── */
 export const homeManifesto: FeatureSplitProps = {
-  eyebrow:       "Why Soleta",
+  eyebrow:       "Our View",
   heading:       "Wooden architecture is not a trend.\nIt is a decision.",
   body:
-    "We have worked with wood for over twenty years — not because it is fashionable, but because no other material builds better homes. It stores carbon. It breathes. It ages with dignity. And it creates interiors that are demonstrably better for the people who live inside them.",
-  bodySecond:
-    "Every Soleta home is engineered to produce as much energy as it consumes, manufactured in controlled conditions and assembled on your site in weeks. Architecture that is honest about what it is made of, and why.",
+    "A decision about how a home feels, how it performs over time, and how naturally it belongs to its setting. For us, timber is not a style applied at the end. It shapes the architecture from the beginning.",
   cta:           { label: "Our architecture & design", href: "/architecture" },
   imageSrc:      "/images/WhySoleta900x1200.webp",
-  imageAlt:      "Interior casă Soleta",
+  imageAlt:      "Interior Soleta home",
   imagePosition: "right",
   theme:         "warm",
 };
 
-/* ── 3. Collection preview ────────────────────────────────────────────────── */
+/* ── 4. Collection preview ────────────────────────────────────────────────── */
 export const homeCollection: CardGridProps = {
-  heading: "Architectural families",
+  eyebrow: "Start Here",
+  heading: "Choose the path that fits your life best",
+  body:
+    "Some projects begin with a clearly defined direction. Others begin with land, a feeling or a way of living. The Collection helps you identify the most natural starting point.",
   cards: [
     {
       imageSrc: "/images/Signature800x533.webp",
       imageAlt: "Signature Homes",
-      eyebrow: "Signature",
-      title:   "Signature Homes",
-      body:    "Statement architecture for landmark sites and clients who want something genuinely distinctive.",
-      href:    "/collection/signature",
-      cta:     "View collection",
+      eyebrow:  "Signature",
+      title:    "Signature Homes",
+      body:     "Statement architecture for exceptional sites and clients who want a home with a stronger architectural identity.",
+      href:     "/collection/signature",
+      cta:      "View collection",
     },
     {
       imageSrc: "/images/Classic800x533.webp",
       imageAlt: "Classic Soleta Homes",
-      eyebrow: "Classic",
-      title:   "Classic Soleta Homes",
-      body:    "Timeless proportions, generous living spaces and enduring materials for the permanent family home.",
-      href:    "/collection/classic",
-      cta:     "View collection",
+      eyebrow:  "Classic",
+      title:    "Classic Soleta Homes",
+      body:     "Timeless proportions, natural materials and generous living spaces for the permanent family home.",
+      href:     "/collection/classic",
+      cta:      "View collection",
     },
     {
       imageSrc: "/images/Retreat800x533.webp",
       imageAlt: "Holiday & Retreat Homes",
-      eyebrow: "Retreat",
-      title:   "Holiday & Retreat Homes",
-      body:    "Compact, calm architecture designed for rest and honest connection to the natural landscape.",
-      href:    "/collection/holiday-retreat",
-      cta:     "View collection",
+      eyebrow:  "Retreat",
+      title:    "Holiday & Retreat Homes",
+      body:     "Compact, calm architecture designed for rest, nature and a closer relationship with the landscape.",
+      href:     "/collection/holiday-retreat",
+      cta:      "View collection",
+    },
+    {
+      imageSrc: "/images/rezerva800x533.webp",
+      imageAlt: "Custom Architecture",
+      eyebrow:  "Custom",
+      title:    "Custom Architecture",
+      body:     "Architecture designed around your brief, your site and your vision — without a fixed starting point.",
+      href:     "/collection/custom-architecture",
+      cta:      "Start a project",
     },
   ],
-  cta:   { label: "All house models", href: "/collection" },
-  theme: "warm",
+  cta:     { label: "Explore the Collection", href: "/collection" },
+  theme:   "warm",
+  columns: 2,
 };
 
-/* ── 4. Why Timber + ZeroEnergy ───────────────────────────────────────────── */
+/* ── 5. Why Timber ────────────────────────────────────────────────────────── */
 export const homeValues: ValuesGridProps = {
-  eyebrow: "The Soleta Difference",
-  heading: "Four reasons timber\nchanges everything",
-  body:    "The decisions we made at the beginning — the material, the system, the standards — determine everything that follows.",
-  theme:   "light",
-  columns: 2,
+  eyebrow:  "Why Timber",
+  heading:  "Why more people choose\nto live with timber",
+  body:     "The material shapes the architecture, the experience and the performance of the home — from the first day to the last.",
+  theme:    "light",
+  columns:  2,
   items: [
     {
-      title: "Post & Beam Construction",
-      body:  "Glulam structural frames manufactured in our factory. Stronger than steel by weight, dimensionally stable, and assembled on your site in days — not months.",
+      title: "Calm, natural interiors",
+      body:
+        "Timber creates interiors with a warmth and quiet that synthetic materials cannot replicate. Every surface — structure, wall, ceiling — contributes to a sense of calm that improves over time.",
     },
     {
-      title: "Healthy Materials",
-      body:  "97% organic by material composition. No off-gassing adhesives, no synthetic insulation. The air inside a Soleta home is measurably cleaner than the air outside.",
+      title: "Precision before the site",
+      body:
+        "Structural elements are manufactured in controlled conditions before arriving on site. This reduces waste, improves accuracy, and keeps the build process shorter and less disruptive.",
     },
     {
-      title: "ZeroEnergy by Design",
-      body:  "Engineered to produce as much energy as it consumes over a year. Not a certificate — an outcome. Your energy bills reflect it from the first winter.",
+      title: "Energy-conscious from the start",
+      body:
+        "Soleta homes are designed with energy performance in mind from the earliest stage — passive orientation, natural insulation, and the option to produce as much energy as the home uses.",
     },
     {
-      title: "Built to Last 80+ Years",
-      body:  "Engineered timber does not degrade like masonry. A Soleta home is fully mortgageable, insurable and designed to be extended without demolition as needs change.",
+      title: "Architecture that lasts",
+      body:
+        "Engineered timber is stable, mortgageable and designed for the long term. The structure can be extended without demolition as needs change.",
     },
   ],
 };
 
-/* ── 5. Built projects preview ────────────────────────────────────────────── */
+/* ── 6. Built projects preview ────────────────────────────────────────────── */
 export const homeProjects: ProjectGridProps = {
-  eyebrow:  "Selected Work",
-  heading:  "Homes we have built",
+  eyebrow:  "Built Work",
+  heading:  "Selected projects in real settings",
+  body:     "Each project responds differently to land, climate and daily life — but all reflect the same pursuit of calm architecture, natural materiality and long-term quality.",
   projects: [
     {
       imageSrc: "/images/Aquarius800x600.webp",
@@ -130,14 +156,43 @@ export const homeProjects: ProjectGridProps = {
       href:     "/built-projects/holiday-homes",
     },
   ],
-  cta: { label: "View all projects", href: "/built-projects" },
+  cta: { label: "Explore Built Projects", href: "/built-projects" },
 };
 
-/* ── 6. Process preview ───────────────────────────────────────────────────── */
+/* ── 7. Who We Work With ──────────────────────────────────────────────────── */
+export const homeWhoWeWorkWith = {
+  eyebrow: "Who We Work With",
+  heading: "Designed for more than one kind of project",
+  blocks: [
+    {
+      title: "Private Residences",
+      body:  "Permanent family homes, architect-designed for a specific site and way of living.",
+      href:  "/built-projects/private-residences",
+    },
+    {
+      title: "Holiday Homes & Retreats",
+      body:  "Second homes and seasonal retreats in landscapes where quiet and connection matter.",
+      href:  "/built-projects/holiday-homes",
+    },
+    {
+      title: "Hospitality & Small Resorts",
+      body:  "Small lodge groups, boutique hotel extensions and eco-resort developments.",
+      href:  "/built-projects/hospitality-resorts",
+    },
+    {
+      title: "Educational & Public Buildings",
+      body:  "Timber construction for schools, community spaces and public architecture.",
+      href:  "/built-projects/educational-public",
+    },
+  ],
+  cta: { label: "See Built Projects by Type", href: "/built-projects" },
+};
+
+/* ── 8. Process preview ───────────────────────────────────────────────────── */
 export const homeProcess: ProcessTimelineProps = {
   eyebrow: "How We Work",
-  heading: "From first conversation\nto handover",
-  body:    "A considered process — designed to keep you informed and in control at every stage.",
+  heading: "One process. One point of responsibility.",
+  body:    "From the first conversation to design, engineering, build and handover, the process stays coordinated around one architectural vision.",
   theme:   "warm",
   stages: [
     {
@@ -168,28 +223,46 @@ export const homeProcess: ProcessTimelineProps = {
   ],
 };
 
-/* ── 7. FAQ ───────────────────────────────────────────────────────────────── */
+export const homeProcessCta = {
+  label: "See the Full Process",
+  href:  "/process",
+};
+
+/* ── 9. Design & Construction bridge ─────────────────────────────────────── */
+export const homeDesignBridge = {
+  eyebrow: "Design & Construction",
+  heading: "Material intelligence, comfort and long-term performance",
+  body:
+    "From post-and-beam structure to healthy materials and energy-aware design, every Soleta home is shaped as a complete architectural system — not a collection of add-ons.",
+  links: [
+    { label: "Post & Beam Construction",  href: "/architecture/post-beam" },
+    { label: "Healthy Materials",         href: "/architecture/healthy-materials" },
+    { label: "Energy & ZeroEnergy",       href: "/architecture/energy-zeroenergy" },
+  ],
+};
+
+/* ── 10. FAQ preview ──────────────────────────────────────────────────────── */
 export const homeFaq: FaqPreviewProps = {
-  eyebrow: "Common Questions",
-  heading: "What people ask us first",
-  theme:   "light",
-  columns: 2,
+  eyebrow:  "Questions",
+  heading:  "What clients often ask first",
+  theme:    "light",
+  columns:  2,
   items: [
     {
-      q: "How long does a Soleta home last?",
-      a: "Engineered glulam timber does not degrade like masonry. Our homes are designed for a minimum 80-year structural lifespan, fully mortgageable, and can be extended without demolition.",
+      q: "Do you only build from existing models?",
+      a: "No. Alongside our defined collections — Signature, Classic, Holiday & Retreat — we offer Custom Architecture for projects that begin with a unique brief, a site or a vision that does not fit a predefined path.",
     },
     {
-      q: "What does ZeroEnergy mean in practice?",
-      a: "The home produces — through solar, heat recovery and passive design — as much energy as it consumes over a year. Most clients report energy costs 70–90% lower than a conventional home.",
+      q: "Can Soleta adapt a home to my land and local regulations?",
+      a: "Yes. All projects begin with a site visit and a review of local planning requirements. We manage permit applications on your behalf across all markets we work in.",
     },
     {
-      q: "How long from first meeting to moving in?",
-      a: "Typically 12 to 18 months from first site visit to handover, depending primarily on planning approval in your country — which we manage on your behalf.",
+      q: "Do you offer turnkey delivery?",
+      a: "Yes. Our standard process runs from design through to handover — including engineering, factory manufacturing, transport, on-site assembly and final documentation. Foundation works and utility connections are scoped separately.",
     },
     {
-      q: "What is included in the price?",
-      a: "Architecture, engineering, factory manufacturing, delivery, structural erection, insulation, cladding, windows and doors, and project management. Foundations and statutory fees are scoped separately.",
+      q: "When should we contact you?",
+      a: "As early as possible — ideally before purchasing land. Early conversations help us advise on site suitability, orientation, planning constraints and the right collection path for your project.",
     },
   ],
 };
@@ -199,11 +272,16 @@ export const homeFaqCta = {
   href:  "/faq",
 };
 
-/* ── 8. Final CTA band ────────────────────────────────────────────────────── */
+/* ── 11. Final CTA band ───────────────────────────────────────────────────── */
 export const homeCta: CtaBandProps = {
   heading:      "Begin your Soleta project",
-  body:         "Tell us about your site, your vision and your timeline.",
+  body:         "Tell us about your land, your priorities and your timeline — or start by exploring the collection and built work.",
   primaryCta:   { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "Discover the process",    href: "/process" },
+  secondaryCta: { label: "Explore the Collection",  href: "/collection" },
   theme:        "dark",
+};
+
+export const homeCtaTextLink = {
+  label: "Understand the process",
+  href:  "/process",
 };
