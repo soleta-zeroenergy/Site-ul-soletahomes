@@ -81,8 +81,6 @@ export function CardGrid({
         {/* Card grid — gap-px creates hairline dividers between cards */}
         <div className={cn("grid gap-px border", divider, gridCols)}>
           {cards.map((card, i) => {
-            const titleId = `card-grid-title-${i}`;
-            const bodyId = card.body ? `card-grid-body-${i}` : undefined;
 
             const cardInner = (
               <>
@@ -117,7 +115,6 @@ export function CardGrid({
                   )}
 
                   <h3
-                    id={titleId}
                     className={isDark ? "text-[#faf8f6]" : "text-[#1a1714]"}
                     style={{
                       fontSize: "1.125rem",
@@ -130,10 +127,7 @@ export function CardGrid({
                   </h3>
 
                   {card.body && (
-                    <p
-                      id={bodyId}
-                      className={cn("text-sm leading-relaxed flex-1", isDark ? "text-[#9a8e87]" : "text-[#6b5d56]")}
-                    >
+                    <p className={cn("text-sm leading-relaxed flex-1", isDark ? "text-[#9a8e87]" : "text-[#6b5d56]")}>
                       {card.body}
                     </p>
                   )}
@@ -171,23 +165,15 @@ export function CardGrid({
             );
 
             const cardClass = cn(
-              "group relative flex h-full flex-col overflow-hidden",
+              "group flex h-full flex-col overflow-hidden",
               isDark ? "bg-[#222019]" : "bg-white"
             );
 
             if (fullCardLink && card.href) {
               return (
-                <article key={i} className={cardClass}>
-                  <Link
-                    href={card.href}
-                    aria-labelledby={titleId}
-                    aria-describedby={bodyId}
-                    className="absolute inset-0 z-10"
-                  >
-                    <span className="sr-only">{card.cta ?? "Discover"}</span>
-                  </Link>
+                <Link key={i} href={card.href} className={cardClass}>
                   {cardInner}
-                </article>
+                </Link>
               );
             }
 
@@ -220,5 +206,4 @@ export function CardGrid({
     </section>
   );
 }
-
 
