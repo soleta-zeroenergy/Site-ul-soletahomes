@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ModelDetail } from "@/components/sections/ModelDetail";
+import { FamilyPage } from "@/components/sections/FamilyPage";
 import { classicModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
 import { faqSchema, productSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function ClassicPage() {
   const schemas = [
     productSchema({
-      name: "Classic Soleta Home",
+      name:        "Classic Soleta Home",
       description: classicModel.subheading,
-      image: "https://soletahomes.com/images/collection/classic.jpg",
-      url: "https://soletahomes.com/collection/classic",
+      image:       "https://soletahomes.com/images/Classic800x533.webp",
+      url:         "https://soletahomes.com/collection/classic",
     }),
     faqSchema(classicModel.faq),
     breadcrumbSchema([
-      { name: "Home", href: "/" },
-      { name: "The Collection", href: "/collection" },
+      { name: "Home",                 href: "/" },
+      { name: "The Collection",       href: "/collection" },
       { name: "Classic Soleta Homes", href: "/collection/classic" },
     ]),
   ];
@@ -36,7 +36,7 @@ export default function ClassicPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      <ModelDetail model={classicModel} />
+      <FamilyPage model={classicModel} />
     </>
   );
 }
