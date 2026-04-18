@@ -76,11 +76,11 @@ export const headerNav: NavItem[] = [
         sectionLabel: "Process",
         children: [
           { label: "Process & Services", href: "/process" },
-          { label: "Dream", href: "/process#process-steps" },
-          { label: "Design & Planning", href: "/process#process-steps" },
-          { label: "Engineering", href: "/process#process-steps" },
-          { label: "Build", href: "/process#process-steps" },
-          { label: "Turnkey Delivery", href: "/process#process-steps" },
+          { label: "Dream", href: "/process/dream" },
+          { label: "Design & Planning", href: "/process/design-planning" },
+          { label: "Engineering", href: "/process/engineering" },
+          { label: "Build", href: "/process/build" },
+          { label: "Turnkey Delivery", href: "/process/turnkey" },
         ],
       },
       {
