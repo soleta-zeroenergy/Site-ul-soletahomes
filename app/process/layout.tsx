@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   ...withCanonical("/process"),
   title: "Process & Services | How We Work | Soleta",
   description:
-    "Five steps from first conversation to moving in. Three levels of service — Kit Only, Turnkey or Full Service. Building permits, interior design and aftercare.",
+    "Five stages from first conversation to handover — Dream, Design & Planning, Engineering, Build and Turnkey Delivery. One team, one process, start to finish.",
 };
 
 export default function ProcessLayout({
