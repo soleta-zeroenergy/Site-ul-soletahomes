@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
 import { projects, getCategoryMeta, getCaseStudyProjects, projectHref } from "@/lib/content/built-projects";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
@@ -60,23 +61,80 @@ export default function EducationalPublicPage() {
         </div>
       </section>
 
-      {/* ── 2. Project grid ── */}
+      {/* ── 2. Project grid or capability section ── */}
       {categoryProjects.length > 0 ? (
-        <ProjectGrid projects={gridItems} theme="dark" />
+        <ProjectGrid projects={gridItems} theme="dark" columns={gridItems.length <= 2 ? 2 : 3} />
       ) : (
-        <section className="py-24" style={{ backgroundColor: "var(--color-bg)" }}>
-          <div className="container-site text-center">
-            <p className="mb-8 text-[var(--color-text-secondary)]">
-              New projects being added — check back soon.
-            </p>
-            <Link href="/contact" className="btn-primary">
-              Start a Conversation
-            </Link>
-          </div>
-        </section>
+        <>
+          {/* Capability framing */}
+          <section
+            className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+            style={{ backgroundColor: "var(--color-bg)" }}
+          >
+            <div className="container-site">
+              <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1fr]">
+                <div className="flex flex-col gap-6">
+                  <span className="eyebrow block">What We Build</span>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                    Timber construction offers schools, kindergartens and public institutions a genuinely different building — healthy indoor air quality, fast assembly with minimal site disruption and a long, low-maintenance lifespan. The Soleta system is certified for public use across multiple European markets.
+                  </p>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                    Completed public projects will be published here as they conclude. We welcome early conversations with municipalities, foundations and public procurement teams.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-4">
+                    <Link href="/contact" className="btn-primary">Start a Conversation</Link>
+                    <Link href="/built-projects" className="btn-outline">View All Projects</Link>
+                  </div>
+                </div>
+                <div
+                  className="relative overflow-hidden border border-[var(--color-border-light)]"
+                  style={{ minHeight: "320px" }}
+                >
+                  <Image
+                    src="/images/Aurora800x600.webp"
+                    alt="Soleta educational and public timber architecture"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Capability points */}
+          <section
+            className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+            style={{ backgroundColor: "var(--soleta-cream)" }}
+          >
+            <div className="container-site">
+              <span className="eyebrow mb-10 block">Why Timber for Public Buildings</span>
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+                {[
+                  {
+                    heading: "Healthy indoor environment",
+                    body: "Exposed timber regulates humidity and reduces VOC concentrations compared to concrete and steel buildings. Particularly relevant for schools and childcare facilities.",
+                  },
+                  {
+                    heading: "Minimal site disruption",
+                    body: "Prefabricated structure means on-site assembly is fast and quiet — important for buildings adjacent to operating schools, hospitals or residential areas.",
+                  },
+                  {
+                    heading: "Certifiable and auditable",
+                    body: "Soleta structural systems are CE-marked. Material provenance documentation supports green building certification requirements in public procurement.",
+                  },
+                ].map((item) => (
+                  <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
+                    <h3 style={{ fontSize: "1.0625rem", lineHeight: 1.3 }}>{item.heading}</h3>
+                    <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
       )}
 
-      {/* ── 3. Related case studies ── */}
+      {/* ── 3. Related case studies (if any) ── */}
       {relatedStudies.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -84,10 +142,7 @@ export default function EducationalPublicPage() {
         >
           <div className="container-site">
             <span className="eyebrow mb-4 block">In Depth</span>
-            <h2
-              className="mb-10"
-              style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
-            >
+            <h2 className="mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
               Case studies from this category
             </h2>
             <div className="flex flex-col gap-px border border-[var(--color-border-light)]">
@@ -116,7 +171,7 @@ export default function EducationalPublicPage() {
 
       {/* ── 4. CTA ── */}
       <CtaBand
-        eyebrow={meta.cta.heading}
+        eyebrow="Public projects"
         heading={meta.cta.heading}
         body={meta.cta.body}
         primaryCta={{ label: meta.cta.primary,    href: "/contact" }}

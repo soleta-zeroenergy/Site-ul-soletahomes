@@ -149,7 +149,7 @@ export const projects: BuiltProject[] = [
     status:   "completed",
     featured: true,
 
-    imageSrc: "/images/projects/villa-falaise.jpg",
+    imageSrc: "/images/Signature800x533.webp",
     imageAlt: "Villa Falaise exterior, Chamonix, France",
     gallery:  [],
 
@@ -225,7 +225,7 @@ export const projects: BuiltProject[] = [
     status:   "completed",
     featured: true,
 
-    imageSrc: "/images/projects/haus-tegernsee.jpg",
+    imageSrc: "/images/Classic800x533.webp",
     imageAlt: "Haus Tegernsee exterior, Bavaria, Germany",
     gallery:  [],
 
@@ -301,7 +301,7 @@ export const projects: BuiltProject[] = [
     status:   "completed",
     featured: true,
 
-    imageSrc: "/images/projects/worthersee-lodge.jpg",
+    imageSrc: "/images/Retreat800x533.webp",
     imageAlt: "Wörthersee Lodge exterior, Carinthia, Austria",
     gallery:  [],
 

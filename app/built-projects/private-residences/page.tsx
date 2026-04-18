@@ -65,6 +65,7 @@ export default function PrivateResidencesPage() {
         <ProjectGrid
           projects={gridItems}
           theme="dark"
+          columns={gridItems.length <= 2 ? 2 : 3}
         />
       ) : (
         <section className="py-24" style={{ backgroundColor: "var(--color-bg)" }}>

@@ -43,6 +43,7 @@ export const headerNav: NavItem[] = [
     sections: [
       {
         children: [
+          { label: "All Built Projects", href: "/built-projects" },
           { label: "Private Residences", href: "/built-projects/private-residences" },
           { label: "Holiday Homes", href: "/built-projects/holiday-homes" },
           { label: "Hospitality & Resorts", href: "/built-projects/hospitality-resorts" },

@@ -62,7 +62,7 @@ export default function HolidayHomesPage() {
 
       {/* ── 2. Project grid ── */}
       {categoryProjects.length > 0 ? (
-        <ProjectGrid projects={gridItems} theme="dark" />
+        <ProjectGrid projects={gridItems} theme="dark" columns={gridItems.length <= 2 ? 2 : 3} />
       ) : (
         <section className="py-24" style={{ backgroundColor: "var(--color-bg)" }}>
           <div className="container-site text-center">

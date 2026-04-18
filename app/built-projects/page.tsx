@@ -41,41 +41,14 @@ export default function BuiltProjectsPage() {
       >
         <div className="container-narrow">
           <span className="eyebrow mb-6 block">Built Projects</span>
-          <h1 className="mb-6 max-w-2xl">Homes we have built</h1>
+          <h1 className="mb-6 max-w-2xl">Architecture shaped by place, use and real life</h1>
           <p className="subtitle max-w-xl">
-            86+ homes across Romania, France, Germany, Austria and beyond.
-            Each one shaped by its site, built to last generations.
+            Explore homes and timber projects developed across private, hospitality and public contexts — each one shaped by land, climate, use and the realities of building well.
           </p>
         </div>
       </section>
 
-      {/* ── 2. Stats bar ── */}
-      <section
-        className="border-b border-[var(--color-border-light)] py-10"
-        style={{ backgroundColor: "var(--color-bg)" }}
-      >
-        <div className="container-site">
-          <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {[
-              { value: "86+",  label: "Homes built" },
-              { value: "6",    label: "Countries" },
-              { value: "12+",  label: "Years active" },
-              { value: "100%", label: "Client retention" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <dt className="font-heading text-[2.5rem] font-normal leading-none text-[var(--soleta-ink)]">
-                  {stat.value}
-                </dt>
-                <dd className="mt-2 font-ui text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ── 3. Why built work matters ── */}
+      {/* ── 2. Why built work matters ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -110,21 +83,14 @@ export default function BuiltProjectsPage() {
         <div className="container-site">
           <span className="eyebrow mb-10 block">Browse by Category</span>
           <div className="grid grid-cols-1 gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)] sm:grid-cols-2">
-            {categoryMeta.map((cat) => {
-              const count = projects.filter((p) => p.category === cat.value).length;
-              return (
+            {categoryMeta.map((cat) => (
                 <Link
                   key={cat.value}
                   href={cat.href}
                   className="group flex flex-col gap-4 bg-[var(--color-bg)] p-8 hover:bg-[var(--soleta-cream)] transition-colors duration-200"
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div>
                     <span className="eyebrow">{cat.eyebrow}</span>
-                    {count > 0 && (
-                      <span className="font-ui text-[0.5625rem] text-[var(--color-text-muted)]">
-                        {count} {count === 1 ? "project" : "projects"}
-                      </span>
-                    )}
                   </div>
                   <h3
                     className="text-[var(--color-text)]"
@@ -139,8 +105,7 @@ export default function BuiltProjectsPage() {
                     View projects →
                   </span>
                 </Link>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>
