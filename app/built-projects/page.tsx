@@ -1,38 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
-import { projects, projectCategories } from "@/lib/content/built-projects";
+import {
+  projects,
+  categoryMeta,
+  getCaseStudyProjects,
+  projectHref,
+} from "@/lib/content/built-projects";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/built-projects"),
-  title: "Built Projects | Homes We Have Built | Soleta",
+  title:       "Built Projects | Homes We Have Built | Soleta",
   description:
     "86+ Soleta homes built across Romania, France, Germany, Austria and beyond. Browse private residences, holiday homes, hospitality projects and case studies.",
 };
 
-const builtProjectsCta = {
-  eyebrow: "Start your project",
-  heading: "Begin your Soleta project",
-  body: "Tell us about your site, your vision and your timeline.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "Discover the Process", href: "/process" },
-  theme: "dark",
-};
-
 export default function BuiltProjectsPage() {
+  const featured     = projects.filter((p) => p.featured);
+  const caseStudies  = getCaseStudyProjects().slice(0, 3);
+
+  const schema = breadcrumbSchema([
+    { name: "Home",          href: "/" },
+    { name: "Built Projects", href: "/built-projects" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
       {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
           <span className="eyebrow mb-6 block">Built Projects</span>
-          <h1 className="mb-6 max-w-2xl">
-            Homes we have built
-          </h1>
+          <h1 className="mb-6 max-w-2xl">Homes we have built</h1>
           <p className="subtitle max-w-xl">
             86+ homes across Romania, France, Germany, Austria and beyond.
             Each one shaped by its site, built to last generations.
@@ -42,15 +51,15 @@ export default function BuiltProjectsPage() {
 
       {/* ── 2. Stats bar ── */}
       <section
-        className="section-sm border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-10"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
           <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {[
-              { value: "86+", label: "Homes built" },
-              { value: "6", label: "Countries" },
-              { value: "12+", label: "Years active" },
+              { value: "86+",  label: "Homes built" },
+              { value: "6",    label: "Countries" },
+              { value: "12+",  label: "Years active" },
               { value: "100%", label: "Client retention" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -66,72 +75,251 @@ export default function BuiltProjectsPage() {
         </div>
       </section>
 
-      {/* ── 3. Category filter tabs ── */}
+      {/* ── 3. Why built work matters ── */}
       <section
-        className="section-sm border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-site">
-          <nav aria-label="Project categories" className="flex flex-wrap gap-2">
-            {projectCategories.map((cat) => (
-              <span
-                key={cat.value}
-                className={
-                  cat.value === "all"
-                    ? "inline-block border border-[var(--soleta-ink)] bg-[var(--soleta-ink)] px-5 py-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-cream)]"
-                    : "inline-block border border-[var(--color-border)] px-5 py-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-text-secondary)] hover:border-[var(--soleta-ink)] hover:text-[var(--soleta-ink)] transition-colors cursor-pointer"
-                }
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <span className="eyebrow mb-4 block">Why Built Work Matters</span>
+              <h2
+                style={{ fontSize: "clamp(1.625rem, 2.5vw, 2.25rem)", lineHeight: 1.15 }}
               >
-                {cat.label}
-              </span>
-            ))}
-          </nav>
+                The proof is in the built
+              </h2>
+            </div>
+            <div className="flex flex-col gap-5">
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                Anyone can render a beautiful home on a screen. We show you the ones that exist — lived in, weather-tested, owner-assessed. Every project listed here was completed, delivered and verified.
+              </p>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                The case studies go further: the brief, the site constraints, the design decisions and what the owners say now. Useful, honest documentation for anyone planning a similar project.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── 4. Projects grid ── */}
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
+      {/* ── 4. Category navigator ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
         <div className="container-site">
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/built-projects/${project.slug}`}
-                className="group flex flex-col bg-[var(--color-bg)] transition-colors duration-200 hover:bg-[var(--soleta-cream)]"
-              >
-                {/* Image placeholder */}
-                <div className="aspect-[4/3] w-full overflow-hidden bg-[var(--color-surface)]">
-                  <div className="h-full w-full bg-[var(--color-surface-raised)] transition-transform duration-500 group-hover:scale-[1.02]" />
-                </div>
-
-                <div className="flex flex-1 flex-col p-8">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.12em] text-[var(--color-brand)]">
-                      {project.categoryLabel}
-                    </span>
-                    <span className="font-ui text-[0.625rem] tracking-[0.08em] text-[var(--color-text-muted)]">
-                      {project.year}
-                    </span>
+          <span className="eyebrow mb-10 block">Browse by Category</span>
+          <div className="grid grid-cols-1 gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)] sm:grid-cols-2">
+            {categoryMeta.map((cat) => {
+              const count = projects.filter((p) => p.category === cat.value).length;
+              return (
+                <Link
+                  key={cat.value}
+                  href={cat.href}
+                  className="group flex flex-col gap-4 bg-[var(--color-bg)] p-8 hover:bg-[var(--soleta-cream)] transition-colors duration-200"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="eyebrow">{cat.eyebrow}</span>
+                    {count > 0 && (
+                      <span className="font-ui text-[0.5625rem] text-[var(--color-text-muted)]">
+                        {count} {count === 1 ? "project" : "projects"}
+                      </span>
+                    )}
                   </div>
-                  <h3 className="mb-1 text-[1.25rem]">{project.title}</h3>
-                  <p className="mb-4 font-ui text-[0.75rem] text-[var(--color-text-muted)]">
-                    {project.location}, {project.country} · {project.area}
+                  <h3
+                    className="text-[var(--color-text)]"
+                    style={{ fontSize: "clamp(1.0625rem, 1.5vw, 1.25rem)", lineHeight: 1.25 }}
+                  >
+                    {cat.h1}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                    {cat.subheading}
                   </p>
-                  <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    {project.summary}
-                  </p>
-                  <span className="mt-6 inline-block font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
-                    View project →
+                  <span className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] group-hover:translate-x-1 transition-transform duration-200 inline-block mt-auto">
+                    View projects →
                   </span>
-                </div>
-              </Link>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Featured projects ── */}
+      {featured.length > 0 && (
+        <section
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          style={{ backgroundColor: "var(--soleta-cream)" }}
+        >
+          <div className="container-site">
+            <div className="mb-10 flex items-end justify-between gap-8">
+              <div>
+                <span className="eyebrow mb-4 block">Featured Projects</span>
+                <h2
+                  style={{ fontSize: "clamp(1.625rem, 2.5vw, 2.25rem)", lineHeight: 1.15 }}
+                >
+                  Selected recent work
+                </h2>
+              </div>
+            </div>
+            <div
+              className={`grid grid-cols-1 gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)] ${
+                featured.length === 1
+                  ? ""
+                  : featured.length === 2
+                  ? "md:grid-cols-2"
+                  : "md:grid-cols-2 lg:grid-cols-3"
+              }`}
+            >
+              {featured.map((project) => {
+                const cat = categoryMeta.find((c) => c.value === project.category);
+                return (
+                  <Link
+                    key={project.slug}
+                    href={projectHref(project)}
+                    className="group flex flex-col bg-[var(--color-bg)] hover:bg-white transition-colors duration-200"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
+                      <Image
+                        src={project.imageSrc}
+                        alt={project.imageAlt}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-8">
+                      <div className="mb-4 flex items-center justify-between">
+                        <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.12em] text-[var(--color-brand)]">
+                          {cat?.label ?? project.category}
+                        </span>
+                        <span className="font-ui text-[0.625rem] tracking-[0.08em] text-[var(--color-text-muted)]">
+                          {project.year}
+                        </span>
+                      </div>
+                      <h3 className="mb-1" style={{ fontSize: "1.25rem" }}>{project.title}</h3>
+                      <p className="mb-4 font-ui text-[0.75rem] text-[var(--color-text-muted)]">
+                        {[project.location, project.country].filter(Boolean).join(", ")}
+                        {project.area && ` · ${project.area}`}
+                      </p>
+                      <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                        {project.summary}
+                      </p>
+                      <span className="mt-6 inline-block font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] group-hover:translate-x-1 transition-transform duration-200">
+                        View project →
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 6. What these projects show ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-site">
+          <span className="eyebrow mb-10 block">What These Projects Show</span>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                heading: "Adaptability to site",
+                body:     "Alpine, lakefront, forest, urban edge. The Soleta system has been configured across every European setting. No two sites are the same; no two builds are identical.",
+              },
+              {
+                heading: "Material honesty",
+                body:     "Every project uses the same material logic: exposed structural timber, natural cladding chosen for its setting, envelope performance that does not rely on mechanical compensation.",
+              },
+              {
+                heading: "Speed without compromise",
+                body:     "Assembly times of 4–12 weeks are common. Not because corners are cut, but because the fabrication happens in parallel with site preparation — not sequentially.",
+              },
+            ].map((item) => (
+              <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
+                <h3
+                  className="text-[var(--color-text)]"
+                  style={{ fontSize: "1.0625rem", lineHeight: 1.3 }}
+                >
+                  {item.heading}
+                </h3>
+                <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                  {item.body}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. CTA ── */}
-      <CtaBand {...builtProjectsCta} />
+      {/* ── 7. Case studies preview ── */}
+      {caseStudies.length > 0 && (
+        <section
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          style={{ backgroundColor: "var(--soleta-cream)" }}
+        >
+          <div className="container-site">
+            <div className="mb-10 flex items-end justify-between gap-8">
+              <div>
+                <span className="eyebrow mb-4 block">Case Studies</span>
+                <h2
+                  style={{ fontSize: "clamp(1.625rem, 2.5vw, 2.25rem)", lineHeight: 1.15 }}
+                >
+                  The full story behind the build
+                </h2>
+              </div>
+              <Link
+                href="/built-projects/case-studies"
+                className="hidden md:inline-flex items-center gap-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.15em] text-[var(--color-brand)] hover:text-[var(--soleta-ink)] transition-colors duration-200 shrink-0"
+              >
+                All case studies <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="flex flex-col gap-px border border-[var(--color-border-light)]">
+              {caseStudies.map((project) => {
+                const cat = categoryMeta.find((c) => c.value === project.category);
+                return (
+                  <Link
+                    key={project.slug}
+                    href={projectHref(project)}
+                    className="group flex flex-col gap-1 border-b border-[var(--color-border-light)] px-8 py-6 last:border-0 hover:bg-[var(--color-bg)] transition-colors duration-200"
+                  >
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 style={{ fontSize: "1.0625rem" }}>{project.title}</h3>
+                      <span className="font-ui text-[0.625rem] text-[var(--color-text-muted)] shrink-0">
+                        {cat?.label} · {project.year}
+                      </span>
+                    </div>
+                    <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-2xl">
+                      {project.caseStudy!.challenge}
+                    </p>
+                    <span className="mt-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] group-hover:translate-x-1 transition-transform duration-200 inline-block">
+                      Read case study →
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="mt-8 md:hidden">
+              <Link href="/built-projects/case-studies" className="btn-outline py-3 px-8">
+                All case studies
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 8. Final CTA ── */}
+      <CtaBand
+        eyebrow="Start your project"
+        heading="Begin your Soleta project"
+        body="Tell us about your site, your vision and your timeline."
+        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "Discover the Process",  href: "/process" }}
+        theme="dark"
+      />
     </>
   );
 }

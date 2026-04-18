@@ -1,134 +1,398 @@
-export type Project = {
-  slug: string;
-  category: "private" | "holiday" | "hospitality" | "educational";
-  categoryLabel: string;
-  title: string;
-  location: string;
-  country: string;
-  year: string;
-  area: string;
-  model: string;
-  imageSrc: string;
-  imageAlt: string;
-  summary: string;
-  description: string[];
-  specs: { label: string; value: string }[];
-  testimonial?: { quote: string; author: string };
-  relatedSlugs: string[];
+/* ─────────────────────────────────────────────────────────────────────────────
+   Built Projects — data layer
+   ─────────────────────────────────────────────────────────────────────────────
+   Routing convention: /built-projects/[category]/[slug]
+   Category values match URL segments exactly (no mapping step needed).
+   Case studies: projects with a non-empty `caseStudy` object surface on
+   /built-projects/case-studies. They link to the canonical project URL.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Category types ─────────────────────────────────────────────────────────── */
+
+export type ProjectCategory =
+  | "private-residences"
+  | "holiday-homes"
+  | "hospitality-resorts"
+  | "educational-public";
+
+export type CategoryMeta = {
+  value:      ProjectCategory;
+  label:      string;        // "Private Residences"
+  eyebrow:    string;        // eyebrow label on category page
+  h1:         string;
+  subheading: string;
+  href:       string;        // "/built-projects/private-residences"
+  cta: {
+    heading:  string;
+    body:     string;
+    primary:  string;
+    secondary: string;
+  };
 };
 
-export const projects: Project[] = [
+/* ── Case study extension ────────────────────────────────────────────────────── */
+
+export type CaseStudy = {
+  challenge:   string;
+  approach:    string;
+  outcome:     string;
+  highlights?: string[];
+};
+
+/* ── Core project type ───────────────────────────────────────────────────────── */
+
+export type BuiltProject = {
+  slug:         string;
+  category:     ProjectCategory;
+  title:        string;
+  location:     string;
+  country?:     string;
+  year:         string;
+  area?:        string;
+  model?:       string;       // collection family (Signature, Classic, …)
+  setting?:     string;       // "Alpine" | "Lakefront" | "Forest" | etc.
+  status?:      "completed" | "in-progress";
+  featured?:    boolean;      // surfaces on the hub featured strip
+
+  imageSrc:     string;
+  imageAlt:     string;
+  gallery?:     { src: string; alt?: string }[];
+
+  summary:      string;       // used on cards
+  description:  string[];     // prose paragraphs on project page
+  siteBrief?:   string[];     // "Site & Brief" section
+  archResponse?: string[];    // "Architectural Response" section
+  materialLogic?: string[];   // "Material & Construction Logic" section
+  outcome?:     string[];     // "Outcome" section
+
+  specs:        { label: string; value: string }[];
+  testimonial?: { quote: string; author: string };
+  caseStudy?:   CaseStudy;    // presence = surfaces on case-studies hub
+
+  relatedSlugs?: string[];    // slugs from any category
+};
+
+/* ── Category metadata ───────────────────────────────────────────────────────── */
+
+export const categoryMeta: CategoryMeta[] = [
   {
-    slug: "villa-falaise",
-    category: "private",
-    categoryLabel: "Private Residence",
-    title: "Villa Falaise",
+    value:      "private-residences",
+    label:      "Private Residences",
+    eyebrow:    "Private Residences",
+    h1:         "Homes built for how you live",
+    subheading: "Permanent family homes designed around your site, your light and the way you actually live. Built to last generations.",
+    href:       "/built-projects/private-residences",
+    cta: {
+      heading:   "Begin your private residence",
+      body:      "Tell us about your site, your vision and your timeline.",
+      primary:   "Request a Private Offer",
+      secondary: "View all projects",
+    },
+  },
+  {
+    value:      "holiday-homes",
+    label:      "Holiday Homes",
+    eyebrow:    "Holiday Homes",
+    h1:         "Homes that make arriving feel like relief",
+    subheading: "Compact, calm architecture for waterfront plots, mountain sites and forest clearings. Ground screw foundations — relocatable. ZeroEnergy option.",
+    href:       "/built-projects/holiday-homes",
+    cta: {
+      heading:   "Begin your holiday home",
+      body:      "Tell us about your site, your vision and your timeline.",
+      primary:   "Request a Private Offer",
+      secondary: "View all projects",
+    },
+  },
+  {
+    value:      "hospitality-resorts",
+    label:      "Hospitality & Resorts",
+    eyebrow:    "Hospitality & Resorts",
+    h1:         "Timber hospitality, built at scale",
+    subheading: "Boutique hotels, eco-resorts and lodge clusters. The Soleta modular system makes it possible to build high-quality hospitality at speed — without compromising on materials or architecture.",
+    href:       "/built-projects/hospitality-resorts",
+    cta: {
+      heading:   "Build a hospitality project",
+      body:      "We work with developers and operators on boutique hotels, eco-resorts and lodge clusters. Tell us about your project.",
+      primary:   "Start a Conversation",
+      secondary: "View all projects",
+    },
+  },
+  {
+    value:      "educational-public",
+    label:      "Educational & Public",
+    eyebrow:    "Educational & Public",
+    h1:         "Timber buildings for the public realm",
+    subheading: "Schools, kindergartens, community centres and public spaces. The Soleta system — healthy materials, fast assembly, long lifespan — makes it an ideal choice for buildings that serve communities.",
+    href:       "/built-projects/educational-public",
+    cta: {
+      heading:   "Build a public timber building",
+      body:      "We work with municipalities, foundations and public institutions on educational and community projects.",
+      primary:   "Start a Conversation",
+      secondary: "View all projects",
+    },
+  },
+];
+
+/* ── Projects ────────────────────────────────────────────────────────────────── */
+
+export const projects: BuiltProject[] = [
+  {
+    slug:     "villa-falaise",
+    category: "private-residences",
+    title:    "Villa Falaise",
     location: "Chamonix",
-    country: "France",
-    year: "2023",
-    area: "142 m²",
-    model: "Signature",
+    country:  "France",
+    year:     "2023",
+    area:     "142 m²",
+    model:    "Signature",
+    setting:  "Alpine",
+    status:   "completed",
+    featured: true,
+
     imageSrc: "/images/projects/villa-falaise.jpg",
     imageAlt: "Villa Falaise exterior, Chamonix, France",
+    gallery:  [],
+
     summary:
       "A Signature home set against the Mont Blanc massif — designed to disappear into the alpine landscape while offering full-height glazing onto the glacier.",
+
     description: [
       "Villa Falaise presented a rare challenge: a landmark alpine site with strict planning requirements and extreme weather conditions. The brief was to create a home that felt rooted in the landscape — not imposed upon it.",
       "The structural solution uses an extended post and beam glulam frame with cantilevered sections that minimise ground contact and reduce visual mass. Charred larch cladding was chosen to weather into the surrounding pine forest.",
       "Full-height glazing on the south facade frames the Mont Blanc massif as a living artwork. Triple-glazed, thermally broken frames ensure the envelope performs at -25°C without relying on mechanical heating.",
     ],
-    specs: [
-      { label: "Location", value: "Chamonix, Haute-Savoie, France" },
-      { label: "Year", value: "2023" },
-      { label: "Area", value: "142 m²" },
-      { label: "Collection", value: "Signature" },
-      { label: "Energy", value: "A+ · Near-ZeroEnergy" },
-      { label: "Foundation", value: "Concrete strip — alpine load spec" },
-      { label: "Cladding", value: "Thermally modified larch" },
+
+    siteBrief: [
+      "The Falaise plot sits at 1,240 m elevation on the northern outskirts of Chamonix — a location with commanding views across the Arve valley to the Mont Blanc massif. Planning restrictions required a maximum ridge height of 7 m and mandatory use of natural cladding materials.",
+      "The clients' brief was precise: a home that earns its position on the mountain without announcing itself. Privacy, longevity and thermal resilience were the non-negotiables.",
     ],
+
+    archResponse: [
+      "The Signature frame was extended to allow a cantilevered section at the south-west corner — reducing the building's footprint while maximising the view angle onto the glacier. The roofline follows the valley gradient, making the mass read as an extension of the slope.",
+      "Full-height south glazing is triple-glazed and thermally broken at every frame junction. The north facade is almost entirely solid — insulated charred larch over a 400 mm timber wall — making the building perform asymmetrically in response to sun and prevailing wind.",
+    ],
+
+    materialLogic: [
+      "Charred larch cladding was the unanimous choice: it weathers to silver-grey within two seasons, disappearing into the pine forest and requiring zero maintenance. The charring process also provides a Class B fire rating — important at this altitude.",
+      "All structural timber is Austrian glulam, specified to alpine load class. The post and beam connections are exposed internally, providing warmth and structural legibility within the open-plan living space.",
+    ],
+
+    outcome: [
+      "Villa Falaise achieved planning consent on the first submission — a result the local architect attributed to the clarity of the material palette and the restraint of the massing. Build time from foundation pour to handover was 14 weeks.",
+      "The home has performed through two alpine winters with no mechanical heating required during the shoulder seasons. The clients report energy bills of approximately €60/month during full winter occupancy.",
+    ],
+
+    specs: [
+      { label: "Location",    value: "Chamonix, Haute-Savoie, France" },
+      { label: "Year",        value: "2023" },
+      { label: "Area",        value: "142 m²" },
+      { label: "Collection",  value: "Signature" },
+      { label: "Energy",      value: "A+ · Near-ZeroEnergy" },
+      { label: "Foundation",  value: "Concrete strip — alpine load spec" },
+      { label: "Cladding",    value: "Thermally modified larch" },
+    ],
+
     testimonial: {
-      quote:
-        "We wanted a home that earned its place on this mountain. Soleta understood that from the first conversation.",
+      quote:  "We wanted a home that earned its place on this mountain. Soleta understood that from the first conversation.",
       author: "Owner, Villa Falaise",
     },
+
+    caseStudy: {
+      challenge:  "A landmark alpine site at 1,240 m with strict planning height limits, extreme snow loads and the requirement to use only natural cladding materials.",
+      approach:   "Extended Signature frame with cantilevered south-west corner. Charred larch cladding chosen for fire rating and weathering behaviour. Triple-glazed south facade; near-solid north facade.",
+      outcome:    "Planning consent on first submission. 14-week build. Energy bills of ~€60/month during full winter occupancy — no mechanical heating needed during shoulder seasons.",
+      highlights: [
+        "142 m² — Signature frame with alpine extension",
+        "Charred larch — Class B fire rated, zero maintenance",
+        "14 weeks from foundation to handover",
+        "Near-ZeroEnergy at -25°C design temperature",
+      ],
+    },
+
     relatedSlugs: ["haus-tegernsee", "worthersee-lodge"],
   },
+
   {
-    slug: "haus-tegernsee",
-    category: "private",
-    categoryLabel: "Private Residence",
-    title: "Haus Tegernsee",
+    slug:     "haus-tegernsee",
+    category: "private-residences",
+    title:    "Haus Tegernsee",
     location: "Bavaria",
-    country: "Germany",
-    year: "2022",
-    area: "120 m²",
-    model: "Classic",
+    country:  "Germany",
+    year:     "2022",
+    area:     "120 m²",
+    model:    "Classic",
+    setting:  "Lakefront",
+    status:   "completed",
+    featured: true,
+
     imageSrc: "/images/projects/haus-tegernsee.jpg",
     imageAlt: "Haus Tegernsee exterior, Bavaria, Germany",
+    gallery:  [],
+
     summary:
       "A Classic Soleta home on the shores of Lake Tegernsee — designed for year-round family living with a direct connection to the water.",
+
     description: [
       "The clients had owned the lakeside plot for years but struggled to find a design that matched the quality of the setting. The brief was simple: a home that respects the lake, the trees and the Bavarian light.",
       "The Classic 120 was configured with a single open-plan ground floor opening directly onto a cantilevered terrace over the water. The upper level contains three bedrooms, each with its own view corridor through the forest.",
       "The ZeroEnergy package — geothermal heating combined with a 12kW solar array — means the family's energy bills are negligible, even through Bavarian winters.",
     ],
-    specs: [
-      { label: "Location", value: "Tegernsee, Bavaria, Germany" },
-      { label: "Year", value: "2022" },
-      { label: "Area", value: "120 m²" },
-      { label: "Collection", value: "Classic" },
-      { label: "Energy", value: "ZeroEnergy — geothermal + solar" },
-      { label: "Foundation", value: "Ground screws (KSF)" },
-      { label: "Cladding", value: "Douglas fir — natural silver weathering" },
+
+    siteBrief: [
+      "The Tegernsee plot is a rare south-facing lakeside parcel — protected forest to the north, direct water frontage to the south. Bavarian planning rules required the home to remain below the existing treeline and respect the historic setback from the water.",
+      "The family brief: a year-round home for four with enough flexibility for extended stays. Energy independence was a firm requirement.",
     ],
+
+    archResponse: [
+      "The Classic 120 was oriented to maximise south-lake exposure. The ground floor is a single open plan — kitchen, dining and living — opening via full-height sliding doors to a cantilevered terrace that steps directly to the private dock.",
+      "Each of the three upper-level bedrooms has its own view corridor framed through the forest canopy. The roof pitch follows the local vernacular but the material palette is entirely contemporary.",
+    ],
+
+    materialLogic: [
+      "Douglas fir cladding was left untreated to silver naturally, blending with the surrounding pine and birch within a single season. The structural frame is Austrian spruce glulam with visible joints at the terrace connection.",
+      "The ZeroEnergy package combines a 120-metre geothermal loop with a 12 kW rooftop solar array. The battery system stores summer surplus for the shoulder seasons.",
+    ],
+
+    outcome: [
+      "The family moved in by October 2022 — ahead of their first Bavarian winter. Energy monitoring over the first 12 months showed net-positive generation: the home exported 1,800 kWh to the grid.",
+      "The terrace-to-dock connection has become the defining feature — the clients describe the home as inseparable from the lake.",
+    ],
+
+    specs: [
+      { label: "Location",    value: "Tegernsee, Bavaria, Germany" },
+      { label: "Year",        value: "2022" },
+      { label: "Area",        value: "120 m²" },
+      { label: "Collection",  value: "Classic" },
+      { label: "Energy",      value: "ZeroEnergy — geothermal + solar" },
+      { label: "Foundation",  value: "Ground screws (KSF)" },
+      { label: "Cladding",    value: "Douglas fir — natural silver weathering" },
+    ],
+
     testimonial: {
-      quote:
-        "The build was fast, the quality was exactly what was promised. We were in by October, in time for the first winter.",
+      quote:  "The build was fast, the quality was exactly what was promised. We were in by October, in time for the first winter.",
       author: "Owner, Haus Tegernsee",
     },
+
+    caseStudy: {
+      challenge:  "A south-facing lakeside parcel with strict Bavarian height and setback rules, combined with a client requirement for full energy independence.",
+      approach:   "Classic 120 oriented fully south. Cantilevered terrace to dock. ZeroEnergy package: 120 m geothermal loop + 12 kW solar + battery storage.",
+      outcome:    "Net-positive after 12 months — 1,800 kWh exported to the grid. Family in by October, through Bavarian winter with negligible heating cost.",
+      highlights: [
+        "120 m² Classic — fully south-oriented",
+        "Net-positive ZeroEnergy — 1,800 kWh exported year one",
+        "Cantilevered terrace steps to private dock",
+        "Ground screw foundations — zero excavation on protected lakeside site",
+      ],
+    },
+
     relatedSlugs: ["villa-falaise", "worthersee-lodge"],
   },
+
   {
-    slug: "worthersee-lodge",
-    category: "holiday",
-    categoryLabel: "Holiday Home",
-    title: "Wörthersee Lodge",
+    slug:     "worthersee-lodge",
+    category: "holiday-homes",
+    title:    "Wörthersee Lodge",
     location: "Carinthia",
-    country: "Austria",
-    year: "2024",
-    area: "72 m²",
-    model: "Holiday & Retreat",
+    country:  "Austria",
+    year:     "2024",
+    area:     "72 m²",
+    model:    "Holiday & Retreat",
+    setting:  "Lakefront",
+    status:   "completed",
+    featured: true,
+
     imageSrc: "/images/projects/worthersee-lodge.jpg",
     imageAlt: "Wörthersee Lodge exterior, Carinthia, Austria",
+    gallery:  [],
+
     summary:
       "A compact retreat home on the northern shore of Lake Wörthersee — minimal footprint, maximum connection to water and forest.",
+
     description: [
       "The Wörthersee site presented a challenge: a narrow waterfront plot with strict set-back requirements and a protected tree line. The solution was a long, low form that threads between the existing trees without removing a single one.",
       "The Lodge 72 is configured as a single open living space with a sleeping mezzanine and a full-width south terrace that steps directly to the private dock. Ground screw foundations were essential — the site required zero excavation.",
       "The clients use the Lodge as a personal escape during summer and rent it through a boutique agency during the shoulder season. The ZeroEnergy systems make off-season operation cost-free.",
     ],
-    specs: [
-      { label: "Location", value: "Wörthersee, Carinthia, Austria" },
-      { label: "Year", value: "2024" },
-      { label: "Area", value: "72 m²" },
-      { label: "Collection", value: "Holiday & Retreat" },
-      { label: "Energy", value: "ZeroEnergy — solar + battery" },
-      { label: "Foundation", value: "Ground screws — zero excavation" },
-      { label: "Cladding", value: "Siberian larch" },
+
+    siteBrief: [
+      "The northern Wörthersee shoreline is one of the most protected in Carinthia — strict set-back rules, a protected mature tree line, and zero-excavation requirements on the waterfront strip. The plot is 18 m wide and 42 m deep.",
+      "The brief combined two uses: a personal summer retreat and a shoulder-season rental. The design needed to work as both without feeling like either.",
     ],
+
+    archResponse: [
+      "The Lodge form is long and low — 18 m × 4 m — threading between the existing trees with a clearance of 600 mm on each side. Ground screws were installed in a single day with no excavation and no tree root disruption.",
+      "The open ground floor flows without partition from the kitchen to the south terrace. The sleeping mezzanine is accessed by a single oak ladder — light, compact, and part of the spatial experience.",
+    ],
+
+    materialLogic: [
+      "Siberian larch cladding was chosen for its dimensional stability in high-humidity lakeside conditions. It will weather to silver-grey within two years, softening into the existing tree canopy.",
+      "The ZeroEnergy solar-plus-battery system is sized for the shoulder rental season — delivering zero energy cost during the 10 months of the year the lodge is in active use.",
+    ],
+
+    outcome: [
+      "The Lodge was assembled in four days following a single day of ground screw installation. From first stake to handover: 11 weeks.",
+      "In its first season as a rental, the Lodge generated sufficient income to cover its annual running costs entirely. The clients have extended the rental season.",
+    ],
+
+    specs: [
+      { label: "Location",    value: "Wörthersee, Carinthia, Austria" },
+      { label: "Year",        value: "2024" },
+      { label: "Area",        value: "72 m²" },
+      { label: "Collection",  value: "Holiday & Retreat" },
+      { label: "Energy",      value: "ZeroEnergy — solar + battery" },
+      { label: "Foundation",  value: "Ground screws — zero excavation" },
+      { label: "Cladding",    value: "Siberian larch" },
+    ],
+
     testimonial: {
-      quote:
-        "It arrived as a complete home and was assembled in four days. I still find that remarkable.",
+      quote:  "It arrived as a complete home and was assembled in four days. I still find that remarkable.",
       author: "Owner, Wörthersee Lodge",
     },
+
+    caseStudy: {
+      challenge:  "A narrow waterfront plot with zero-excavation rules, a protected tree line with 600 mm clearances, and dual-use requirements — personal retreat and boutique rental.",
+      approach:   "Long, low 18 m × 4 m form threading between trees. Ground screws installed in a single day. Open plan ground floor; sleeping mezzanine on oak ladder.",
+      outcome:    "Assembled in four days. 11 weeks from first stake to handover. First rental season covered all running costs.",
+      highlights: [
+        "72 m² — long/low form threading existing tree line",
+        "Zero excavation — ground screws in one day",
+        "4-day assembly after delivery",
+        "Rental income covered annual running costs in year one",
+      ],
+    },
+
     relatedSlugs: ["haus-tegernsee", "villa-falaise"],
   },
 ];
 
-export const projectCategories = [
-  { value: "all", label: "All Projects" },
-  { value: "private", label: "Private Residences" },
-  { value: "holiday", label: "Holiday Homes" },
-  { value: "hospitality", label: "Hospitality & Resorts" },
-  { value: "educational", label: "Educational & Public" },
-];
+/* ── Helpers ─────────────────────────────────────────────────────────────────── */
+
+/** Find a project by category + slug. */
+export function findProject(
+  category: ProjectCategory,
+  slug: string
+): BuiltProject | undefined {
+  return projects.find((p) => p.category === category && p.slug === slug);
+}
+
+/** Find any project by slug (cross-category — for related projects). */
+export function findProjectBySlug(slug: string): BuiltProject | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+/** Get category metadata by value. */
+export function getCategoryMeta(value: ProjectCategory): CategoryMeta {
+  const meta = categoryMeta.find((c) => c.value === value);
+  if (!meta) throw new Error(`Unknown category: ${value}`);
+  return meta;
+}
+
+/** All projects that have case study content. */
+export function getCaseStudyProjects(): BuiltProject[] {
+  return projects.filter((p) => p.caseStudy !== undefined);
+}
+
+/** Project canonical URL. */
+export function projectHref(p: BuiltProject): string {
+  return `/built-projects/${p.category}/${p.slug}`;
+}

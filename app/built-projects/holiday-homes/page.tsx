@@ -1,83 +1,130 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { withCanonical } from "@/lib/seo";
-import { projects } from "@/lib/content/built-projects";
+import { projects, getCategoryMeta, getCaseStudyProjects, projectHref } from "@/lib/content/built-projects";
+import { ProjectGrid } from "@/components/sections/ProjectGrid";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
+
+const CATEGORY = "holiday-homes" as const;
+const meta     = getCategoryMeta(CATEGORY);
 
 export const metadata: Metadata = {
-  ...withCanonical("/built-projects/holiday-homes"),
-  title: "Holiday Homes | Built Projects | Soleta",
+  ...withCanonical(meta.href),
+  title:       "Holiday Homes | Built Projects | Soleta",
   description: "Soleta holiday and retreat homes — compact timber architecture for rest, nature and honest connection to the landscape.",
 };
 
-const cta = {
-  eyebrow: "Start your project",
-  heading: "Begin your holiday home",
-  body: "Tell us about your site, your vision and your timeline.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "View all projects", href: "/built-projects" },
-  theme: "dark",
-};
-
 export default function HolidayHomesPage() {
-  const categoryProjects = projects.filter((p) => p.category === "holiday");
+  const categoryProjects = projects.filter((p) => p.category === CATEGORY);
+  const relatedStudies   = getCaseStudyProjects().filter((p) => p.category === CATEGORY);
+
+  const gridItems = categoryProjects.map((p) => ({
+    imageSrc:  p.imageSrc,
+    imageAlt:  p.imageAlt,
+    title:     p.title,
+    location:  [p.location, p.country].filter(Boolean).join(", "),
+    category:  p.model ?? meta.label,
+    year:      p.year,
+    href:      projectHref(p),
+  }));
+
+  const schema = breadcrumbSchema([
+    { name: "Home",           href: "/" },
+    { name: "Built Projects", href: "/built-projects" },
+    { name: meta.label,       href: meta.href },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link href="/built-projects" className="eyebrow mb-6 inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <Link
+            href="/built-projects"
+            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+          >
             ← Built Projects
           </Link>
-          <span className="eyebrow mb-4 block">Holiday Homes</span>
-          <h1 className="mb-6 max-w-2xl">Homes that make arriving feel like relief</h1>
-          <p className="subtitle max-w-xl">
-            Compact, calm architecture for waterfront plots, mountain sites and forest clearings. Ground screw foundations — relocatable. ZeroEnergy option.
-          </p>
+          <span className="eyebrow mb-4 block">{meta.eyebrow}</span>
+          <h1 className="mb-6 max-w-2xl">{meta.h1}</h1>
+          <p className="subtitle max-w-xl">{meta.subheading}</p>
         </div>
       </section>
 
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
-        <div className="container-site">
-          {categoryProjects.length > 0 ? (
-            <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-2 lg:grid-cols-3">
-              {categoryProjects.map((project) => (
+      {/* ── 2. Project grid ── */}
+      {categoryProjects.length > 0 ? (
+        <ProjectGrid projects={gridItems} theme="dark" />
+      ) : (
+        <section className="py-24" style={{ backgroundColor: "var(--color-bg)" }}>
+          <div className="container-site text-center">
+            <p className="mb-8 text-[var(--color-text-secondary)]">
+              New projects being added — check back soon.
+            </p>
+            <Link href="/contact" className="btn-primary">
+              Request a Private Offer
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ── 3. Related case studies ── */}
+      {relatedStudies.length > 0 && (
+        <section
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          style={{ backgroundColor: "var(--soleta-cream)" }}
+        >
+          <div className="container-site">
+            <span className="eyebrow mb-4 block">In Depth</span>
+            <h2
+              className="mb-10"
+              style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
+            >
+              Case studies from this category
+            </h2>
+            <div className="flex flex-col gap-px border border-[var(--color-border-light)]">
+              {relatedStudies.map((p) => (
                 <Link
-                  key={project.slug}
-                  href={`/built-projects/${project.slug}`}
-                  className="group flex flex-col bg-[var(--color-bg)] hover:bg-[var(--soleta-cream)] transition-colors"
+                  key={p.slug}
+                  href={projectHref(p)}
+                  className="group flex flex-col gap-1 border-b border-[var(--color-border-light)] px-8 py-6 last:border-0 hover:bg-[var(--color-bg)] transition-colors duration-200"
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
-                    <div className="h-full w-full bg-[var(--color-surface-raised)] transition-transform duration-500 group-hover:scale-[1.02]" />
-                  </div>
-                  <div className="flex flex-1 flex-col p-8">
-                    <div className="mb-4 flex items-center justify-between">
-                      <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.12em] text-[var(--color-brand)]">{project.model}</span>
-                      <span className="font-ui text-[0.625rem] text-[var(--color-text-muted)]">{project.year}</span>
-                    </div>
-                    <h3 className="mb-1 text-[1.25rem]">{project.title}</h3>
-                    <p className="mb-4 font-ui text-[0.75rem] text-[var(--color-text-muted)]">{project.location}, {project.country} · {project.area}</p>
-                    <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">{project.summary}</p>
-                    <span className="mt-6 inline-block font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
-                      View project →
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="text-[1.0625rem]">{p.title}</h3>
+                    <span className="font-ui text-[0.625rem] text-[var(--color-text-muted)] shrink-0">
+                      {p.year}
                     </span>
                   </div>
+                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-2xl">
+                    {p.caseStudy!.challenge}
+                  </p>
+                  <span className="mt-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] group-hover:translate-x-1 transition-transform duration-200 inline-block">
+                    Read case study →
+                  </span>
                 </Link>
               ))}
             </div>
-          ) : (
-            <div className="py-24 text-center">
-              <p className="mb-8 text-[var(--color-text-secondary)]">New projects being added — check back soon.</p>
-              <Link href="/contact" className="btn-primary">Request a Private Offer</Link>
-            </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
-      <CtaBand {...cta} />
+      {/* ── 4. CTA ── */}
+      <CtaBand
+        eyebrow={meta.cta.heading}
+        heading={meta.cta.heading}
+        body={meta.cta.body}
+        primaryCta={{ label: meta.cta.primary,    href: "/contact" }}
+        secondaryCta={{ label: meta.cta.secondary, href: "/built-projects" }}
+        theme="dark"
+      />
     </>
   );
 }
