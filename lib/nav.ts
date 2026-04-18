@@ -43,7 +43,7 @@ export const headerNav: NavItem[] = [
     sections: [
       {
         children: [
-          { label: "All Built Projects", href: "/built-projects" },
+          { label: "Built Projects", href: "/built-projects" },
           { label: "Private Residences", href: "/built-projects/private-residences" },
           { label: "Holiday Homes", href: "/built-projects/holiday-homes" },
           { label: "Hospitality & Resorts", href: "/built-projects/hospitality-resorts" },
@@ -59,6 +59,7 @@ export const headerNav: NavItem[] = [
     sections: [
       {
         children: [
+          { label: "Architecture & Design", href: "/architecture" },
           { label: "Soleta Design Language", href: "/architecture/design-language" },
           { label: "Post & Beam Construction", href: "/architecture/post-beam" },
           { label: "Healthy Materials", href: "/architecture/healthy-materials" },
@@ -74,6 +75,7 @@ export const headerNav: NavItem[] = [
       {
         sectionLabel: "Process",
         children: [
+          { label: "Process & Services", href: "/process" },
           { label: "Dream", href: "/process#process-steps" },
           { label: "Design & Planning", href: "/process#process-steps" },
           { label: "Engineering", href: "/process#process-steps" },
@@ -99,7 +101,7 @@ export const headerNav: NavItem[] = [
     sections: [
       {
         children: [
-          { label: "Our Story", href: "/about" },
+          { label: "About", href: "/about" },
           { label: "FAQ", href: "/faq" },
           { label: "Sustainability", href: "/sustainability" },
           { label: "Press & Media", href: "/press" },
