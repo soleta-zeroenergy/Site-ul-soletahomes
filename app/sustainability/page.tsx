@@ -7,8 +7,6 @@ import {
   sustainabilityHero,
   sustainabilityFraming,
   sustainabilityPrinciples,
-  sustainabilityStats,
-  sustainabilityStatNote,
   sustainabilitySupportBlock,
   sustainabilityCta,
 } from "@/lib/content/sustainability";
@@ -74,31 +72,7 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      {/* ── 4. Stats strip ── */}
-      <section
-        className="border-b border-[var(--color-border-light)] py-12 lg:py-16"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
-      >
-        <div className="container-narrow">
-          <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4 mb-8">
-            {sustainabilityStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <dt className="font-heading text-[2.5rem] font-normal leading-none text-[var(--soleta-ink)]">
-                  {stat.value}
-                </dt>
-                <dd className="mt-2 font-ui text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
-          <p className="font-ui text-[0.6875rem] leading-relaxed text-[var(--color-text-muted)] border-t border-[var(--color-border-light)] pt-6">
-            {sustainabilityStatNote}
-          </p>
-        </div>
-      </section>
-
-      {/* ── 5. Principles ── */}
+      {/* ── 4. Principles ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}

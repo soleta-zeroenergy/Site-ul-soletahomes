@@ -161,35 +161,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 8. Supporting image split — founder portrait ── */}
+      {/* ── 8. Founder editorial block ── */}
       <section
         className="border-b border-[var(--color-border-light)]"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(340px, 40vw, 580px)" }}
-          >
-            <Image
-              src="/images/Catalin Butmalai.jpg"
-              alt="Cătălin Butmălai — Founder & Design Director, Soleta"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">{aboutSupportBlock.eyebrow}</span>
-            <p className="leading-relaxed text-[var(--color-text-secondary)]">{aboutSupportBlock.body}</p>
-            <blockquote className="mt-4 border-l-2 border-[var(--color-brand)] pl-6">
-              <p className="font-heading text-[1.125rem] italic leading-relaxed text-[var(--color-text)]">
-                "I drew the first Soleta in 2013. Everything since then has been an attempt to make the next one better."
-              </p>
-              <footer className="mt-3 font-ui text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
-                — Cătălin Butmălai, Founder
-              </footer>
-            </blockquote>
+        <div className="container-narrow py-14 lg:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] md:gap-14">
+            <div
+              className="relative w-full shrink-0"
+              style={{ height: "clamp(240px, 22vw, 320px)" }}
+            >
+              <Image
+                src="/images/Catalin Butmalai.jpg"
+                alt="Cătălin Butmălai — Founder & Design Director, Soleta"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 240px"
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-6">
+              <span className="eyebrow block">{aboutSupportBlock.eyebrow}</span>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">{aboutSupportBlock.body}</p>
+              <blockquote className="mt-2 border-l-2 border-[var(--color-brand)] pl-6">
+                <p className="font-heading text-[1.125rem] italic leading-relaxed text-[var(--color-text)]">
+                  "I drew the first Soleta in 2013. Everything since then has been an attempt to make the next one better."
+                </p>
+                <footer className="mt-3 font-ui text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+                  — Cătălin Butmălai, Founder
+                </footer>
+              </blockquote>
+            </div>
           </div>
         </div>
       </section>
