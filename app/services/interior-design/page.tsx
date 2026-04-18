@@ -1,100 +1,171 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
+import { servicesDetail } from "@/lib/content/services-detail";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/services/interior-design"),
   title: "Interior Design | Services | Soleta",
-  description: "Material selections, furniture specification, lighting design and coordination. Available as a full service or as a consultation to support your own designer.",
+  description:
+    "Material continuity, built-in design and lighting as spatial structure. The interior design service extends the logic of the architecture to every surface and fitting.",
 };
 
-const cta = {
-  eyebrow: "Interior design",
-  heading: "Design the inside too",
-  body: "Tell us about your project and we will explain how our interior design service works.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark",
-};
+const svc = servicesDetail.find((s) => s.slug === "interior-design")!;
+
+const schema = breadcrumbSchema([
+  { name: "Home",     href: "/" },
+  { name: "Services", href: "/services" },
+  { name: svc.label, href: "/services/interior-design" },
+]);
 
 export default function InteriorDesignPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link href="/process" className="eyebrow mb-6 inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
-            ← Process & Services
+          <Link
+            href="/services"
+            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+          >
+            ← Services
           </Link>
-          <span className="eyebrow mb-4 block">Interior Design</span>
-          <h1 className="mb-6 max-w-2xl">The inside, designed with the same care</h1>
-          <p className="subtitle max-w-xl">
-            Material selections, furniture specification, lighting design and coordination. The interior palette is part of the architecture — not an afterthought.
-          </p>
+          <span className="eyebrow mb-2 block">{svc.label}</span>
+          <h1 className="mb-6 max-w-2xl">{svc.heading}</h1>
+          <p className="subtitle max-w-xl">{svc.intro}</p>
         </div>
       </section>
 
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
-        <div className="container-site">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_340px]">
-            <div className="flex flex-col gap-8">
-              <div>
-                <span className="eyebrow mb-4 block">Our approach to interiors</span>
-                <div className="flex flex-col gap-4 text-[var(--color-text-secondary)]">
-                  <p className="leading-relaxed">A Soleta home has a natural material logic — exposed glulam structure, wood fibre insulation, natural finishes. The interior design service extends this logic to every surface, every fitting and every piece of furniture. The result is a home that is coherent from outside to inside.</p>
-                  <p className="leading-relaxed">We work with a curated set of suppliers — natural stone, handmade ceramic tiles, solid timber cabinetry, linen upholstery — chosen for durability, sustainability and authentic material character. We do not specify synthetics that mimic natural materials.</p>
-                  <p className="leading-relaxed">The service is available as a full interior design package (material selections through to furniture procurement) or as a consultation to support your own designer. In both cases, we provide a physical sample board of all proposed finishes before anything is ordered.</p>
-                </div>
-              </div>
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/Aurora800x600.webp"
+          alt="Soleta Aurora — material continuity from structure to surface"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
 
-              <div>
-                <span className="eyebrow mb-4 block">Full service includes</span>
-                <ul className="flex flex-col gap-3">
-                  {[
-                    "Floor, wall and ceiling finish selections — all rooms",
-                    "Kitchen design and specification",
-                    "Bathroom design and specification",
-                    "Built-in joinery design",
-                    "Lighting design — fixed and decorative",
-                    "Furniture specification and procurement",
-                    "Physical sample board for client approval",
-                    "Coordination with construction team",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-[var(--color-text-secondary)]">
-                      <span className="mt-1 h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--color-brand)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <aside>
-              <div className="border border-[var(--color-border-light)] p-8" style={{ backgroundColor: "var(--soleta-cream)" }}>
-                <span className="eyebrow mb-6 block">Service options</span>
-                <dl className="flex flex-col gap-5">
-                  {[
-                    { label: "Full interior design", value: "Material selections through to furniture procurement" },
-                    { label: "Consultation only", value: "3-hour session to support your own designer" },
-                    { label: "Finishes only", value: "Material selections for floors, walls, ceilings" },
-                    { label: "Included in", value: "Full Service package (optional in Turnkey)" },
-                  ].map((spec) => (
-                    <div key={spec.label} className="border-b border-[var(--color-border-light)] pb-5 last:border-0 last:pb-0">
-                      <dt className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.12em] text-[var(--color-text-muted)] mb-1">{spec.label}</dt>
-                      <dd className="font-ui text-sm text-[var(--color-text)]">{spec.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </aside>
+      {/* ── 3. Editorial framing ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.framing.left}</p>
+            <p className="leading-relaxed text-[var(--color-text-secondary)] md:border-l md:border-[var(--color-border-light)] md:pl-16">{svc.framing.right}</p>
           </div>
         </div>
       </section>
 
-      <CtaBand {...cta} />
+      {/* ── 4. What this service covers ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div className="flex flex-col gap-14">
+            {svc.sections.map((section, i) => (
+              <div key={section.heading} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+                <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{section.heading}</h2>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">{section.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. What the client receives ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-narrow">
+          <span className="eyebrow mb-6 block">Full service includes</span>
+          <ul className="flex flex-col gap-4">
+            {svc.deliverables.map((item) => (
+              <li key={item} className="flex items-start gap-4 border-b border-[var(--color-border-light)] pb-4 last:border-0 last:pb-0">
+                <span className="mt-[6px] h-[4px] w-[4px] shrink-0 rounded-full bg-[var(--color-brand)]" />
+                <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">{item}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── 6. What depends on scope ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">Note</span>
+            <div>
+              <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.caveat.heading}</h2>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.caveat.body}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. Supporting image split ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          <div
+            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
+          >
+            <Image
+              src="/images/WhySoleta900x1200.webp"
+              alt="Soleta — surfaces chosen for how they age, not how they photograph"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
+            <span className="eyebrow block">{svc.supportBlock.eyebrow}</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.supportBlock.body}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. CTA ── */}
+      <CtaBand
+        eyebrow={svc.cta.eyebrow}
+        heading={svc.cta.heading}
+        body={svc.cta.body}
+        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "Back to Services", href: "/services" }}
+        theme="dark"
+      />
     </>
   );
 }

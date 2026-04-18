@@ -86,11 +86,11 @@ export const headerNav: NavItem[] = [
       {
         sectionLabel: "Services",
         children: [
-          { label: "Private Consulting", href: "/process#services" },
-          { label: "Custom Design", href: "/process#services" },
-          { label: "Permits & Legal", href: "/process#services" },
-          { label: "Interior Design", href: "/process#services" },
-          { label: "Aftercare", href: "/process#services" },
+          { label: "Private Consulting", href: "/services/private-consulting" },
+          { label: "Custom Design", href: "/services/custom-design" },
+          { label: "Permits & Legal", href: "/services/permits-legal" },
+          { label: "Interior Design", href: "/services/interior-design" },
+          { label: "Aftercare", href: "/services/aftercare" },
         ],
       },
     ],
