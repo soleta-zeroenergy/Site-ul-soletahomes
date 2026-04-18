@@ -1,154 +1,150 @@
-"use client";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { withCanonical } from "@/lib/seo";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { breadcrumbSchema, faqSchema } from "@/lib/structured-data-helpers";
+import { faqCategories } from "@/lib/content/faq";
 
-import { useState } from "react";
-import { cn } from "@/lib/cn";
+export const metadata: Metadata = {
+  ...withCanonical("/faq"),
+  title: "Frequently Asked Questions | Soleta",
+  description:
+    "Answers to the most common questions about Soleta homes — models and custom design, pricing, process, permits, materials, performance and aftercare.",
+};
 
-const faqCategories = [
-  {
-    category: "Price & Budget",
-    items: [
-      { q: "What is included in the price?", a: "Architecture, engineering, factory manufacturing, delivery, structural erection, insulation, cladding, windows and doors, and project management. Foundations and local statutory fees are scoped separately." },
-      { q: "Do you offer a fixed price guarantee?", a: "Yes. Once the design is finalised and the contract signed, the price is fixed. There are no surprises at handover." },
-      { q: "What is the starting price for a Soleta home?", a: "Prices depend on model, size, specification and site. Contact us for a private offer tailored to your project." },
-      { q: "Are foundations included?", a: "No. Foundation costs vary significantly by site, soil type and local regulations. We provide a scope and cost estimate during the Dream stage." },
-    ],
-  },
-  {
-    category: "Process & Timeline",
-    items: [
-      { q: "How long from first meeting to moving in?", a: "Typically 12 to 18 months from our first site visit to handover. The timeline depends primarily on planning approval in your country, which we manage on your behalf." },
-      { q: "Can I visit a Soleta home before committing?", a: "Yes. We arrange private visits to completed homes with the agreement of our clients. Contact us with your location and we will propose the most relevant project." },
-      { q: "Do I need an architect?", a: "No. Our in-house architects handle the full design process, from concept to planning submission and construction documents." },
-      { q: "What happens after handover?", a: "We provide full documentation, a maintenance guide, and aftercare support. Our team remains available for any technical questions after you move in." },
-    ],
-  },
-  {
-    category: "Construction & Technology",
-    items: [
-      { q: "How long does a Soleta home last?", a: "Our homes are designed for a minimum 80-year structural lifespan. Engineered glulam timber does not degrade like masonry and can be extended without demolition." },
-      { q: "What is Post & Beam construction?", a: "Vertical posts and horizontal beams made from glulam carry all structural loads. This eliminates load-bearing interior walls, giving complete freedom in the floor plan." },
-      { q: "How is the home assembled on site?", a: "All elements are factory-manufactured, labelled and delivered in assembly order. The structural frame is typically erected in 3 to 5 days. The complete weatherproof envelope is achieved within 2 to 4 weeks." },
-      { q: "Can the home be extended in the future?", a: "Yes. The Soleta structural system is designed with pre-planned junction points. New modules can connect without demolishing the original structure." },
-    ],
-  },
-  {
-    category: "Energy & Sustainability",
-    items: [
-      { q: "What does ZeroEnergy mean in practice?", a: "The home produces — through solar, heat recovery and passive design — as much energy as it consumes over a year. Most clients report energy costs 70–90% lower than a conventional home of equivalent size." },
-      { q: "What materials are used?", a: "97% organic by material composition. No off-gassing adhesives, no synthetic insulation. The air inside a Soleta home is measurably cleaner than outside." },
-      { q: "Is a Soleta home carbon neutral?", a: "Timber stores carbon throughout the life of the building. Combined with ZeroEnergy systems, the carbon footprint over the building's lifetime is significantly lower than any masonry alternative." },
-      { q: "What heating system is used?", a: "Typically underfloor heating combined with a heat pump and MVHR (mechanical ventilation with heat recovery). The system is sized for each project based on climate and programme." },
-    ],
-  },
-  {
-    category: "Delivery & International",
-    items: [
-      { q: "Do you work outside Romania?", a: "Yes. We currently deliver projects across Europe, and by arrangement in North and South America, Australia, New Zealand and Asia. Contact us with your site location." },
-      { q: "Do you handle planning permission?", a: "Yes. We manage planning submissions on your behalf in all markets we operate in, liaising directly with local authorities through to decision." },
-      { q: "How is the home transported?", a: "Factory-manufactured elements are shipped by road freight to your site. International projects use standard container shipping. Delivery costs are scoped per project." },
-      { q: "Is the home mortgageable?", a: "Yes. Soleta homes meet the structural and durability standards required by mortgage lenders across all markets we operate in." },
-    ],
-  },
-];
+const breadcrumb = breadcrumbSchema([
+  { name: "Home", href: "/" },
+  { name: "FAQ",  href: "/faq" },
+]);
+
+// Flatten all FAQ items for faqSchema
+const allFaqItems = faqCategories.flatMap((cat) => cat.items);
+const faq = faqSchema(allFaqItems);
 
 export default function FaqPage() {
-  const [activeCategory, setActiveCategory] = useState(0);
-  const [openItem, setOpenItem] = useState<string | null>(null);
-
   return (
-    <main className="page-top">
-      {/* Header */}
-      <section className="section-sm bg-[#faf8f6]">
-        <div className="container-site">
-          <p className="eyebrow mb-4">Support</p>
-          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.08 }}>
-            Frequently asked questions
-          </h1>
-          <p className="subtitle mt-4 max-w-xl">
-            Everything you need to know about Soleta homes — before you ask.
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+
+      {/* ── 1. Page header ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <span className="eyebrow mb-2 block">FAQ</span>
+          <h1 className="mb-6 max-w-2xl">Frequently asked questions</h1>
+          <p className="subtitle max-w-xl">
+            Answers to the questions we hear most often — about models, pricing, process, permits, materials and aftercare. If your question is not here, the best starting point is a Private Consulting session.
           </p>
         </div>
       </section>
 
-      {/* FAQ body */}
-      <section className="section bg-white">
-        <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12 lg:gap-16">
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/Classic800x533.webp"
+          alt="Soleta Classic — questions answered before you commit"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
 
-            {/* Category nav */}
-            <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
-              {faqCategories.map((cat, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setActiveCategory(i); setOpenItem(null); }}
-                  className={cn(
-                    "text-left px-4 py-3 text-sm font-medium transition-colors duration-200 whitespace-nowrap lg:whitespace-normal border-l-2",
-                    activeCategory === i
-                      ? "border-brand-500 text-[#1a1714] bg-[#faf8f6]"
-                      : "border-transparent text-[#6b5d56] hover:text-[#1a1714] hover:border-sand-400"
-                  )}
-                >
-                  {cat.category}
-                </button>
-              ))}
-            </nav>
-
-            {/* Accordion */}
-            <div>
-              <h2
-                className="mb-8 text-[#1a1714]"
-                style={{ fontSize: "clamp(1.25rem, 2vw, 1.75rem)", fontFamily: "var(--font-heading)", lineHeight: 1.15 }}
+      {/* ── 3. Category anchor navigation ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-8"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-narrow">
+          <nav aria-label="FAQ categories" className="flex flex-wrap gap-x-8 gap-y-3">
+            {faqCategories.map((cat) => (
+              <a
+                key={cat.id}
+                href={`#${cat.id}`}
+                className="eyebrow no-underline opacity-60 hover:opacity-100 transition-opacity"
               >
-                {faqCategories[activeCategory].category}
-              </h2>
-              <div className="flex flex-col divide-y divide-sand-400">
-                {faqCategories[activeCategory].items.map((item, i) => {
-                  const key = `${activeCategory}-${i}`;
-                  const isOpen = openItem === key;
-                  return (
-                    <div key={key}>
-                      <button
-                        onClick={() => setOpenItem(isOpen ? null : key)}
-                        className="flex w-full items-center justify-between gap-6 py-5 text-left"
-                        aria-expanded={isOpen}
-                      >
-                        <span style={{ fontFamily: "var(--font-heading)", fontSize: "1.0625rem", lineHeight: 1.35, color: "#1a1714" }}>
-                          {item.q}
-                        </span>
-                        <span
-                          className={cn("shrink-0 text-brand-500 text-xl transition-transform duration-200", isOpen && "rotate-45")}
-                          aria-hidden="true"
-                        >
-                          +
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <p className="pb-6 text-sm leading-relaxed text-[#6b5d56]" style={{ fontFamily: "var(--font-body)" }}>
-                          {item.a}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                {cat.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </section>
+
+      {/* ── 4. FAQ sections — one per category ── */}
+      {faqCategories.map((cat, catIdx) => (
+        <section
+          key={cat.id}
+          id={cat.id}
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          style={{ backgroundColor: catIdx % 2 === 0 ? "var(--soleta-cream)" : "var(--color-bg)" }}
+        >
+          <div className="container-narrow">
+            <div className="mb-10">
+              <span className="eyebrow mb-2 block">{cat.label}</span>
+              <h2 style={{ fontSize: "1.375rem", lineHeight: 1.25 }}>{cat.heading}</h2>
             </div>
+            <FaqAccordion items={cat.items} />
+          </div>
+        </section>
+      ))}
 
+      {/* ── 5. Supporting image split ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          <div
+            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
+          >
+            <Image
+              src="/images/Signature800x533.webp"
+              alt="Soleta Signature — clarity before commitment"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
+            <span className="eyebrow block">Still have a question?</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">
+              The Private Consulting session exists for questions that are too specific to answer in a general FAQ. We review your site, your brief and your budget range and give you a direct, honest assessment of what is possible. The session is structured, not open-ended, and produces a written summary of our recommendations.
+            </p>
+            <Link
+              href="/services/private-consulting"
+              className="eyebrow no-underline opacity-70 hover:opacity-100 transition-opacity"
+            >
+              Private Consulting →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="section-sm bg-[#faf8f6] border-t border-sand-400">
-        <div className="container-site flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p className="eyebrow mb-2">Still have questions?</p>
-            <p className="text-[#4a4440] text-sm">Our team responds personally within two business days.</p>
-          </div>
-          <a href="/contact" className="btn-primary py-4 px-9 shrink-0">
-            Contact us directly
-          </a>
-        </div>
-      </section>
-    </main>
+      {/* ── 6. CTA ── */}
+      <CtaBand
+        eyebrow="Ready to begin"
+        heading="Start with a conversation"
+        body="Tell us about your site and your vision. The first conversation carries no obligation."
+        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "Back to Process & Services", href: "/process" }}
+        theme="dark"
+      />
+    </>
   );
 }

@@ -1,113 +1,145 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { withCanonical } from "@/lib/seo";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ValuesGrid } from "@/components/sections/ValuesGrid";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 import {
   aboutHero,
-  founderStory,
+  aboutFraming,
+  aboutStorySections,
+  aboutValues,
+  aboutRecognition,
+  aboutSupportBlock,
   companyTimeline,
-  companyNumbers,
 } from "@/lib/content/about";
 
 export const metadata: Metadata = {
   ...withCanonical("/about"),
   title: "About Soleta | Founded 2013 | Timber Homes Romania",
   description:
-    "Soleta was founded in 2013 by Cătălin Butmălai. 86+ homes built across Europe. The story behind Romania's most internationally recognised timber home brand.",
+    "Soleta was founded in 2013 by Cătălin Butmălai. Over 86 homes delivered across Europe. The story, the system and the values behind Romania's most internationally recognised timber home brand.",
 };
 
-const aboutCta = {
-  eyebrow: "Next step",
-  heading: "Begin your Soleta project",
-  body: "The first conversation is free. Tell us about your site and your vision.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "View Built Projects", href: "/built-projects" },
-  theme: "dark",
-};
+const schema = breadcrumbSchema([
+  { name: "Home",  href: "/" },
+  { name: "About", href: "/about" },
+]);
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── 1. Hero ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <span className="eyebrow mb-6 block">{aboutHero.eyebrow}</span>
+          <span className="eyebrow mb-2 block">{aboutHero.eyebrow}</span>
           <h1 className="mb-6 max-w-2xl whitespace-pre-line">{aboutHero.heading}</h1>
           <p className="subtitle max-w-xl">{aboutHero.body}</p>
         </div>
       </section>
 
-      {/* ── 2. Numbers ── */}
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/hero.webp"
+          alt="Soleta — designed and built from conviction"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* ── 3. What Soleta is — framing block ── */}
       <section
-        className="section-sm border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="container-site">
-          <dl className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-            {companyNumbers.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <dt className="font-heading text-[2rem] font-normal leading-none text-[var(--soleta-ink)]">
-                  {stat.value}
-                </dt>
-                <dd className="mt-2 font-ui text-[0.625rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">{aboutFraming.left}</p>
+            <p className="leading-relaxed text-[var(--color-text-secondary)] md:border-l md:border-[var(--color-border-light)] md:pl-16">{aboutFraming.right}</p>
+          </div>
         </div>
       </section>
 
-      {/* ── 3. Founder story ── */}
-      <section className="section" style={{ backgroundColor: "var(--soleta-cream)" }}>
-        <div className="container-site">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[380px_1fr]">
-
-            {/* Founder card */}
-            <div className="flex flex-col gap-6">
-              <div
-                className="aspect-[3/4] w-full bg-[var(--color-surface)]"
-                aria-hidden="true"
-              />
-              <div>
-                <p className="font-heading text-[1.375rem]">{founderStory.heading}</p>
-                <p className="font-ui text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--color-brand)]">
-                  {founderStory.role}
-                </p>
+      {/* ── 4. The Soleta Story ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <span className="eyebrow mb-10 block">The Soleta Story</span>
+          <div className="flex flex-col gap-14">
+            {aboutStorySections.map((section, i) => (
+              <div key={section.heading} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+                <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{section.heading}</h2>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">{section.body}</p>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Story text */}
-            <div className="flex flex-col justify-center gap-6">
-              <span className="eyebrow block">{founderStory.eyebrow}</span>
-              {founderStory.paragraphs.map((para, i) => (
-                <p key={i} className="leading-relaxed text-[var(--color-text-secondary)]">
-                  {para}
-                </p>
-              ))}
-              <blockquote className="mt-4 border-l-2 border-[var(--color-brand)] pl-6">
-                <p className="font-heading text-[1.25rem] italic leading-relaxed text-[var(--color-text)]">
-                  "{founderStory.quote}"
-                </p>
-                <footer className="mt-3 font-ui text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
-                  — {founderStory.quoteAuthor}
-                </footer>
-              </blockquote>
+      {/* ── 5. What Soleta stands for — ValuesGrid ── */}
+      <div className="border-b border-[var(--color-border-light)]">
+        <ValuesGrid
+          eyebrow="What Soleta stands for"
+          items={aboutValues}
+          columns={3}
+          theme="light"
+        />
+      </div>
+
+      {/* ── 6. Recognition / proof layer ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">Record</span>
+            <div>
+              <h2 className="mb-6" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>What makes Soleta different</h2>
+              <p className="mb-8 leading-relaxed text-[var(--color-text-secondary)]">{aboutRecognition.intro}</p>
+              <ul className="flex flex-col gap-4">
+                {aboutRecognition.points.map((point) => (
+                  <li key={point} className="flex items-start gap-4 border-b border-[var(--color-border-light)] pb-4 last:border-0 last:pb-0">
+                    <span className="mt-[6px] h-[4px] w-[4px] shrink-0 rounded-full bg-[var(--color-brand)]" />
+                    <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">{point}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 4. Timeline ── */}
+      {/* ── 7. Timeline ── */}
       <section
-        className="section border-t border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="container-site">
-          <span className="eyebrow mb-4 block">History</span>
-          <h2 className="mb-12 text-[2rem]">From prototype to platform</h2>
+        <div className="container-narrow">
+          <span className="eyebrow mb-10 block">History</span>
           <div className="flex flex-col gap-px bg-[var(--color-border-light)]">
             {companyTimeline.map((item) => (
               <div
@@ -129,7 +161,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaBand {...aboutCta} />
+      {/* ── 8. Supporting image split — founder portrait ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          <div
+            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+            style={{ minHeight: "clamp(340px, 40vw, 580px)" }}
+          >
+            <Image
+              src="/images/Catalin Butmalai.jpg"
+              alt="Cătălin Butmălai — Founder & Design Director, Soleta"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
+            <span className="eyebrow block">{aboutSupportBlock.eyebrow}</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">{aboutSupportBlock.body}</p>
+            <blockquote className="mt-4 border-l-2 border-[var(--color-brand)] pl-6">
+              <p className="font-heading text-[1.125rem] italic leading-relaxed text-[var(--color-text)]">
+                "I drew the first Soleta in 2013. Everything since then has been an attempt to make the next one better."
+              </p>
+              <footer className="mt-3 font-ui text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+                — Cătălin Butmălai, Founder
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. CTA ── */}
+      <CtaBand
+        eyebrow="Next step"
+        heading="Begin your Soleta project"
+        body="The first conversation is free and carries no obligation. Tell us about your site and your vision."
+        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "View Built Projects", href: "/built-projects" }}
+        theme="dark"
+      />
     </>
   );
 }
