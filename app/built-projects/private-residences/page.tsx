@@ -73,7 +73,7 @@ export default function PrivateResidencesPage() {
             <p className="mb-8 text-[var(--color-text-secondary)]">
               New projects being added — check back soon.
             </p>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/request-private-offer" className="btn-primary">
               Request a Private Offer
             </Link>
           </div>
@@ -125,7 +125,7 @@ export default function PrivateResidencesPage() {
         eyebrow={meta.cta.heading}
         heading={meta.cta.heading}
         body={meta.cta.body}
-        primaryCta={{ label: meta.cta.primary,   href: "/contact" }}
+        primaryCta={{ label: meta.cta.primary,   href: "/request-private-offer" }}
         secondaryCta={{ label: meta.cta.secondary, href: "/built-projects" }}
         theme="dark"
       />

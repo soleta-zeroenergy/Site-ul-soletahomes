@@ -174,7 +174,7 @@ export default function AftercarePage() {
         eyebrow={svc.cta.eyebrow}
         heading={svc.cta.heading}
         body={svc.cta.body}
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Back to Services", href: "/services" }}
         theme="dark"
       />

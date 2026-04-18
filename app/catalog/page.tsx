@@ -8,7 +8,7 @@ const catalogCta = {
   eyebrow: "Ready to build?",
   heading: "Begin your Soleta project",
   body: "The catalogue is the starting point. The conversation is where it becomes real.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
+  primaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "View the Collection", href: "/collection" },
   theme: "dark",
 };

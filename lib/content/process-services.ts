@@ -321,7 +321,7 @@ export const processCta = {
   eyebrow: "Ready to start",
   heading: "Begin your Soleta project",
   body: "The first conversation is free. Tell us about your site and your vision — we will tell you what is possible.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
+  primaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "Download the Catalogue", href: "/catalog" },
   theme: "dark",
 };

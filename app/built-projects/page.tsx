@@ -281,7 +281,7 @@ export default function BuiltProjectsPage() {
         eyebrow="Start your project"
         heading="Begin your Soleta project"
         body="Tell us about your site, your vision and your timeline."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Discover the Process",  href: "/process" }}
         theme="dark"
       />

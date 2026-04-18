@@ -201,7 +201,7 @@ export default function AboutPage() {
         eyebrow="Next step"
         heading="Begin your Soleta project"
         body="The first conversation is free and carries no obligation. Tell us about your site and your vision."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "View Built Projects", href: "/built-projects" }}
         theme="dark"
       />

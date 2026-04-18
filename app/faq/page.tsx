@@ -141,7 +141,7 @@ export default function FaqPage() {
         eyebrow="Ready to begin"
         heading="Start with a conversation"
         body="Tell us about your site and your vision. The first conversation carries no obligation."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Back to Process & Services", href: "/process" }}
         theme="dark"
       />

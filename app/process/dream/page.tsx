@@ -194,7 +194,7 @@ export default function DreamPage() {
         eyebrow="Start here"
         heading="Begin the conversation"
         body="Tell us about your site and your vision. The first conversation carries no obligation."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Back to Process overview", href: "/process" }}
         theme="dark"
       />

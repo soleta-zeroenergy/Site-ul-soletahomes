@@ -117,7 +117,7 @@ export const collectionExplore = {
     {
       title: "Request a Private Offer",
       body: "Tell us about your land, timeline and project direction.",
-      href: "/contact",
+      href: "/request-private-offer",
       cta: "Get in Touch",
     },
   ],
@@ -127,7 +127,7 @@ export const collectionExplore = {
 export const collectionCta: CtaBandProps = {
   heading: "Begin your Soleta project",
   body: "Whether you already know your direction or are still choosing between them, the next step is simple: tell us about your land, your timeline and the kind of home you want to create.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
+  primaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "Explore Built Projects", href: "/built-projects" },
   theme: "dark",
 };

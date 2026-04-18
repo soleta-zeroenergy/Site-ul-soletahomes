@@ -274,7 +274,7 @@ export default function ZeroEnergyPage() {
         eyebrow="Next step"
         heading="Begin your ZeroEnergy project"
         body="Tell us about your site and we will calculate the ZeroEnergy system for your specific location and consumption."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "View the Collection",   href: "/collection" }}
         theme="dark"
       />

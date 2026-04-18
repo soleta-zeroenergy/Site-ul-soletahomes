@@ -14,7 +14,7 @@ export const homeHero: HeroProps = {
   subtext:
     "Soleta designs and builds calm, high-performance homes in timber — from enduring family residences and private retreats to fully bespoke architecture.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
-  secondaryCta: { label: "Request a Private Offer", href: "/contact" },
+  secondaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   imageSrc:     "/images/hero.webp",
   imageAlt:     "Soleta ZeroEnergy home",
 };
@@ -86,9 +86,10 @@ export const homeCollection: CardGridProps = {
       cta:      "Start a project",
     },
   ],
-  cta:     { label: "Explore the Collection", href: "/collection" },
-  theme:   "warm",
-  columns: 2,
+  cta:          { label: "Explore the Collection", href: "/collection" },
+  theme:        "warm",
+  columns:      2,
+  fullCardLink: true,
 };
 
 /* ── 5. Why Timber ────────────────────────────────────────────────────────── */
@@ -276,7 +277,7 @@ export const homeFaqCta = {
 export const homeCta: CtaBandProps = {
   heading:      "Begin your Soleta project",
   body:         "Tell us about your land, your priorities and your timeline — or start by exploring the collection and built work.",
-  primaryCta:   { label: "Request a Private Offer", href: "/contact" },
+  primaryCta:   { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "Explore the Collection",  href: "/collection" },
   theme:        "dark",
 };

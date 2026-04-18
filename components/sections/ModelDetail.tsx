@@ -26,7 +26,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           <h1 className="mb-6 max-w-2xl whitespace-pre-line">{model.heading}</h1>
           <p className="subtitle max-w-xl">{model.subheading}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/request-private-offer" className="btn-primary">
               Request a Private Offer
             </Link>
             <Link href="/catalog" className="btn-outline">
@@ -213,7 +213,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
             Tell us about your site, your vision and your timeline.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-inverse">
+            <Link href="/request-private-offer" className="btn-inverse">
               Request a Private Offer
             </Link>
             <Link

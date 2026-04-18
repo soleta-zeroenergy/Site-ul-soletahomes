@@ -222,7 +222,7 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="/contact"
+              href="/request-private-offer"
               className="btn-primary hidden px-7 py-[0.75rem] text-[0.625rem] lg:inline-flex"
             >
               Request a Private Offer
@@ -366,7 +366,7 @@ export function Header() {
           })}
 
           <Link
-            href="/contact"
+            href="/request-private-offer"
             className="btn-primary mt-8 self-start px-8 py-4 text-[0.625rem]"
           >
             Request a Private Offer

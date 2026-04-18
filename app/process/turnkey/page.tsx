@@ -188,7 +188,7 @@ export default function TurnkeyPage() {
         eyebrow="Ready to begin"
         heading="Start your Soleta project"
         body="The first conversation is free and carries no obligation. Tell us about your site and your vision — we will tell you what is possible."
-        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Back to Process overview", href: "/process" }}
         theme="dark"
       />

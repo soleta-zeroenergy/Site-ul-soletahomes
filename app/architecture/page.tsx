@@ -133,7 +133,7 @@ export default function ArchitecturePage() {
         heading="See how we build in practice"
         body="Browse our completed projects or start a conversation about your site."
         primaryCta={{ label: "View Built Projects",      href: "/built-projects" }}
-        secondaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         theme="dark"
       />
     </>
