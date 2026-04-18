@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
 import { healthyMaterialsContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -44,7 +45,23 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* ── 2. Stats strip ── */}
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/Aurora800x600.webp"
+          alt="Soleta Aurora — natural timber materials"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* ── 3. Stats strip ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-10 lg:py-12"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -65,7 +82,7 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* ── 3. Material principles ── */}
+      {/* ── 4. Material principles ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -91,11 +108,40 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* ── 4. Material honesty block ── */}
+      {/* ── 5. Visual support block — material atmosphere ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          {/* Image side — portrait, left */}
+          <div
+            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+            style={{ minHeight: "clamp(300px, 36vw, 560px)" }}
+          >
+            <Image
+              src="/images/WhySoleta900x1200.webp"
+              alt="Soleta — natural timber interior"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          {/* Text side */}
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
+            <span className="eyebrow block">Surfaces over time</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">
+              Timber weathers. Larch silvers. Stone darkens. The materials inside a Soleta home are selected not for how they look on completion day, but for how they behave over a decade — aging visibly, honestly, and well.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Material honesty block ── */}
       {healthyMaterialsContent.honesty && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-          style={{ backgroundColor: "var(--color-bg)" }}
+          style={{ backgroundColor: "var(--soleta-cream)" }}
         >
           <div className="container-narrow">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
@@ -118,7 +164,7 @@ export default function HealthyMaterialsPage() {
         </section>
       )}
 
-      {/* ── 5. CTA ── */}
+      {/* ── 7. CTA ── */}
       <CtaBand
         eyebrow="Next"
         heading="Energy &amp; ZeroEnergy"

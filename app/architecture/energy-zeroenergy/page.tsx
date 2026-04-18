@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
 import { zeroEnergyContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -53,7 +54,23 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 2. Design-led energy sections (envelope → glazing → ventilation) ── */}
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/Classic800x533.webp"
+          alt="Soleta Classic — energy performance and glazing design"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* ── 3. Design-led energy sections (envelope → glazing → ventilation) ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -86,10 +103,39 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 3. What ZeroEnergy means ── */}
+      {/* ── 4. Visual support block — envelope / glazing / performance ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          {/* Text side */}
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
+            <span className="eyebrow block">Envelope before systems</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">
+              A Soleta home reduces its energy demand through the quality of its envelope — insulation, airtightness, glazing orientation — before any renewable system is sized. This sequence produces homes that perform consistently, regardless of how the energy landscape changes over the building&apos;s lifetime.
+            </p>
+          </div>
+          {/* Image side */}
+          <div
+            className="relative w-full"
+            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
+          >
+            <Image
+              src="/images/Life800x600.webp"
+              alt="Soleta — passive solar glazing and envelope performance"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. What ZeroEnergy means ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-narrow">
           <h2 className="mb-6" style={{ fontSize: "1.75rem" }}>
@@ -101,10 +147,10 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 4. Three energy levels ── */}
+      {/* ── 6. Three energy levels ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--color-bg)" }}
+        style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-site">
           <span className="eyebrow mb-4 block">Energy levels</span>
@@ -119,7 +165,7 @@ export default function ZeroEnergyPage() {
                   "flex flex-col gap-4 p-10",
                   i === 1
                     ? "bg-[var(--soleta-forest)] text-[var(--soleta-cream)]"
-                    : "bg-[var(--color-bg)]"
+                    : "bg-[var(--soleta-cream)]"
                 )}
               >
                 {i === 1 && (
@@ -168,10 +214,10 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 5. Systems ── */}
+      {/* ── 7. Systems ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
           <span className="eyebrow mb-4 block">The systems</span>
@@ -180,7 +226,7 @@ export default function ZeroEnergyPage() {
           </h2>
           <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-2 lg:grid-cols-3">
             {zeroEnergyContent.systems.map((system, i) => (
-              <div key={i} className="flex flex-col gap-3 bg-[var(--soleta-cream)] p-8">
+              <div key={i} className="flex flex-col gap-3 bg-[var(--color-bg)] p-8">
                 <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)]">
                   0{i + 1}
                 </span>
@@ -194,10 +240,10 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 6. Site note (what performance depends on) ── */}
+      {/* ── 8. Site note (what performance depends on) ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--color-bg)" }}
+        style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
           <h2 className="mb-4" style={{ fontSize: "1.375rem" }}>
@@ -209,10 +255,10 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 7. FAQ ── */}
+      {/* ── 9. FAQ ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-narrow">
           <span className="eyebrow mb-4 block">Frequently asked</span>
@@ -223,7 +269,7 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 8. CTA ── */}
+      {/* ── 10. CTA ── */}
       <CtaBand
         eyebrow="Next step"
         heading="Begin your ZeroEnergy project"

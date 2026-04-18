@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
 import { postBeamContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -45,7 +46,23 @@ export default function PostBeamPage() {
         </div>
       </section>
 
-      {/* ── 2. Numbered prose sections ── */}
+      {/* ── 2. Hero image ── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ height: "clamp(260px, 36vw, 520px)" }}
+      >
+        <Image
+          src="/images/Signature800x533.webp"
+          alt="Soleta post and beam glulam timber structure"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* ── 3. Numbered prose sections ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -74,7 +91,7 @@ export default function PostBeamPage() {
         </div>
       </section>
 
-      {/* ── 3. Technical specs ── */}
+      {/* ── 4. Technical specs ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -102,11 +119,40 @@ export default function PostBeamPage() {
         </div>
       </section>
 
-      {/* ── 4. FAQ ── */}
+      {/* ── 5. Image support block — construction quality ── */}
+      <section
+        className="border-b border-[var(--color-border-light)]"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          {/* Text side */}
+          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
+            <span className="eyebrow block">Factory precision</span>
+            <p className="leading-relaxed text-[var(--color-text-secondary)]">
+              Every structural element is cut, drilled and finished in controlled conditions before it reaches your site. The result is a frame that is dimensionally exact — no site variation, no wet trades, no waiting on weather.
+            </p>
+          </div>
+          {/* Image side */}
+          <div
+            className="relative w-full"
+            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
+          >
+            <Image
+              src="/images/Classic800x533.webp"
+              alt="Soleta Classic — glulam post and beam construction"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. FAQ ── */}
       {postBeamContent.faq && postBeamContent.faq.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-          style={{ backgroundColor: "var(--color-bg)" }}
+          style={{ backgroundColor: "var(--soleta-cream)" }}
         >
           <div className="container-narrow">
             <span className="eyebrow mb-4 block">Questions</span>
@@ -118,7 +164,7 @@ export default function PostBeamPage() {
         </section>
       )}
 
-      {/* ── 5. CTA ── */}
+      {/* ── 7. CTA ── */}
       <CtaBand
         eyebrow="Next"
         heading="Healthy materials"
