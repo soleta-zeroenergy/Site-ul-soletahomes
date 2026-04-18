@@ -171,21 +171,39 @@ export async function POST(req: NextRequest) {
   console.log("  Budget:  ", d.budget);
   console.log("  Timeline:", d.timeline);
 
-  /* 4. Send email */
+  /* 4. Verify SMTP config is present before attempting to connect */
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
   const recipient = process.env.PRIVATE_OFFER_RECIPIENT;
+
   if (!recipient) {
-    console.error("[offer] PRIVATE_OFFER_RECIPIENT is not set — email not sent.");
+    console.error("[offer] CONFIG_MISSING PRIVATE_OFFER_RECIPIENT not set");
     return NextResponse.json(
-      { error: "Server configuration error: email delivery is not configured." },
+      { error: "Server configuration error: recipient address is not configured." },
       { status: 500 }
     );
   }
 
+  if (!smtpHost || !smtpUser || !smtpPass) {
+    console.error(
+      "[offer] CONFIG_MISSING SMTP vars —",
+      `SMTP_HOST: ${smtpHost ? "set" : "MISSING"},`,
+      `SMTP_USER: ${smtpUser ? "set" : "MISSING"},`,
+      `SMTP_PASS: ${smtpPass ? "set" : "MISSING"}`
+    );
+    return NextResponse.json(
+      { error: "Server configuration error: SMTP credentials are not configured." },
+      { status: 500 }
+    );
+  }
+
+  /* 5. Send email */
   try {
     const transporter = createTransporter();
 
     await transporter.sendMail({
-      from:    process.env.SMTP_FROM ?? `"Soleta Website" <${process.env.SMTP_USER}>`,
+      from:    process.env.SMTP_FROM ?? `"Soleta Website" <${smtpUser}>`,
       to:      recipient,
       replyTo: `"${d.name}" <${d.email}>`,
       subject: `New Private Offer Request — ${d.name} — ${d.location}`,
@@ -193,11 +211,20 @@ export async function POST(req: NextRequest) {
       html:    buildHtmlBody(d),
     });
 
-    console.log("[offer] Email sent to", recipient);
+    console.log("[offer] Email delivered to", recipient);
   } catch (err) {
-    console.error("[offer] Failed to send email:", err);
+    /* Log structured error info for Vercel logs — no secrets exposed */
+    const e = err as Record<string, unknown>;
+    console.error("[offer] SMTP_SEND_FAILED", {
+      code:    e?.code    ?? "unknown",
+      command: e?.command ?? "unknown",
+      message: typeof e?.message === "string" ? e.message.slice(0, 200) : "unknown",
+      host:    smtpHost,
+      port:    process.env.SMTP_PORT ?? "587",
+      user:    smtpUser.replace(/(?<=.).(?=.*@)/g, "*"),  // mask middle chars only
+    });
     return NextResponse.json(
-      { error: "Your brief was received but could not be delivered. Please email office@soletahomes.com directly." },
+      { error: "Your brief was received but could not be delivered by email. Please contact us directly at office@soletahomes.com." },
       { status: 500 }
     );
   }

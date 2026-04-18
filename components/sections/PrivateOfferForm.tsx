@@ -263,9 +263,20 @@ function CheckboxGroup({
 
 function GroupDivider({ number, label }: { number: string; label: string }) {
   return (
-    <div className="flex items-center gap-4 pt-2 pb-4 border-t border-[var(--color-border-light)]">
-      <span style={{ ...groupHeadingStyle }}>{number}</span>
-      <span style={{ ...groupHeadingStyle, color: "var(--color-text-muted)" }}>{label}</span>
+    <div className="flex items-baseline gap-4 border-t border-[var(--color-border-light)] pt-8 pb-2">
+      <span style={{ ...groupHeadingStyle, color: "var(--color-brand)", lineHeight: 1 }}>{number}</span>
+      <span
+        style={{
+          fontFamily:    "var(--font-serif)",
+          fontSize:      "1.0625rem",
+          fontWeight:    400,
+          letterSpacing: "0.01em",
+          color:         "#1a1714",
+          lineHeight:    1.2,
+        }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
@@ -461,7 +472,7 @@ export function PrivateOfferForm() {
       )}
 
       {/* ── GROUP 1 — About you ─────────────────────────────────────────── */}
-      <div className="px-10 py-10 lg:px-14 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-7">
+      <div className="px-10 pt-6 pb-10 lg:px-14 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-7">
         <GroupDivider number="01" label="About you" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <TextField
