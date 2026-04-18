@@ -3,51 +3,69 @@ import Link from "next/link";
 import { withCanonical } from "@/lib/seo";
 import { designLanguageContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/architecture/design-language"),
-  title: "Soleta Design Language | Timber Architecture Aesthetic",
+  title: "Design Language | Architecture & Design | Soleta",
   description:
-    "The principles behind Soleta's architectural aesthetic — proportions, materials, light and the exoskeleton system that allows homes to grow.",
+    "The principles behind Soleta's architectural approach — site response, light and glazing, proportion, interior continuity, and designed flexibility.",
 };
 
-const cta = {
-  eyebrow: "Next",
-  heading: "See the construction system",
-  body: "How post and beam glulam timber frame turns design into a built reality.",
-  primaryCta: { label: "Post & Beam System", href: "/architecture/post-beam" },
-  secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark",
-};
+const schema = breadcrumbSchema([
+  { name: "Home",                href: "/" },
+  { name: "Architecture & Design", href: "/architecture" },
+  { name: "Design Language",     href: "/architecture/design-language" },
+]);
 
 export default function DesignLanguagePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link href="/architecture" className="eyebrow mb-6 inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <Link
+            href="/architecture"
+            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+          >
             ← Architecture & Design
           </Link>
           <span className="eyebrow mb-4 block">{designLanguageContent.eyebrow}</span>
-          <h1 className="mb-6 max-w-2xl">{designLanguageContent.heading}</h1>
+          <h1 className="mb-6 max-w-2xl whitespace-pre-line">{designLanguageContent.heading}</h1>
           <p className="subtitle max-w-xl">{designLanguageContent.intro}</p>
         </div>
       </section>
 
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
+      {/* ── 2. Numbered prose sections ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
         <div className="container-narrow">
           <div className="flex flex-col gap-16">
             {designLanguageContent.sections.map((section, i) => (
               <div key={i} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
-                <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] pt-1">
+                <span
+                  className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1"
+                  aria-hidden="true"
+                >
                   0{i + 1}
                 </span>
                 <div>
-                  <h2 className="mb-4 text-[1.5rem]">{section.heading}</h2>
-                  <p className="leading-relaxed text-[var(--color-text-secondary)]">{section.body}</p>
+                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
+                    {section.heading}
+                  </h2>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                    {section.body}
+                  </p>
                 </div>
               </div>
             ))}
@@ -55,7 +73,15 @@ export default function DesignLanguagePage() {
         </div>
       </section>
 
-      <CtaBand {...cta} />
+      {/* ── 3. CTA ── */}
+      <CtaBand
+        eyebrow="Next"
+        heading="See the construction system"
+        body="How post and beam glulam timber frame turns design into a built reality."
+        primaryCta={{ label: "Post & Beam System",  href: "/architecture/post-beam" }}
+        secondaryCta={{ label: "View the Collection", href: "/collection" }}
+        theme="dark"
+      />
     </>
   );
 }

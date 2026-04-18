@@ -3,32 +3,39 @@ import Link from "next/link";
 import { withCanonical } from "@/lib/seo";
 import { healthyMaterialsContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/architecture/healthy-materials"),
-  title: "Healthy Materials | Natural Timber Construction | Soleta",
+  title: "Healthy Materials | Architecture & Design | Soleta",
   description:
-    "97% organic materials, no synthetic insulation, formaldehyde-free adhesives. Why the materials in a Soleta home are better for the people inside.",
+    "Natural wood fibre insulation, formaldehyde-free adhesives, vapour-permeable construction. Materials selected for durability, indoor quality and honest behaviour over time.",
 };
 
-const cta = {
-  eyebrow: "Next",
-  heading: "Energy & ZeroEnergy",
-  body: "A home that produces what it consumes — and what that means in practice.",
-  primaryCta: { label: "Explore ZeroEnergy", href: "/architecture/energy-zeroenergy" },
-  secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark",
-};
+const schema = breadcrumbSchema([
+  { name: "Home",                href: "/" },
+  { name: "Architecture & Design", href: "/architecture" },
+  { name: "Healthy Materials",   href: "/architecture/healthy-materials" },
+]);
 
 export default function HealthyMaterialsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link href="/architecture" className="eyebrow mb-6 inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <Link
+            href="/architecture"
+            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+          >
             ← Architecture & Design
           </Link>
           <span className="eyebrow mb-4 block">{healthyMaterialsContent.eyebrow}</span>
@@ -37,9 +44,9 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* ── 2. Stats strip ── */}
       <section
-        className="section-sm border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-10 lg:py-12"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
@@ -58,10 +65,13 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* Principles */}
-      <section className="section" style={{ backgroundColor: "var(--soleta-cream)" }}>
+      {/* ── 3. Material principles ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
         <div className="container-site">
-          <span className="eyebrow mb-6 block">Our principles</span>
+          <span className="eyebrow mb-10 block">Material principles</span>
           <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-2">
             {healthyMaterialsContent.principles.map((principle, i) => (
               <div
@@ -71,7 +81,7 @@ export default function HealthyMaterialsPage() {
                 <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)]">
                   0{i + 1}
                 </span>
-                <h2 className="text-[1.375rem]">{principle.heading}</h2>
+                <h2 style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{principle.heading}</h2>
                 <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                   {principle.body}
                 </p>
@@ -81,7 +91,42 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      <CtaBand {...cta} />
+      {/* ── 4. Material honesty block ── */}
+      {healthyMaterialsContent.honesty && (
+        <section
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          style={{ backgroundColor: "var(--color-bg)" }}
+        >
+          <div className="container-narrow">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span
+                className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1"
+                aria-hidden="true"
+              >
+                ⌁
+              </span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
+                  {healthyMaterialsContent.honesty.heading}
+                </h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                  {healthyMaterialsContent.honesty.body}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 5. CTA ── */}
+      <CtaBand
+        eyebrow="Next"
+        heading="Energy &amp; ZeroEnergy"
+        body="Design-led energy performance — from the envelope to the renewable systems."
+        primaryCta={{ label: "Explore ZeroEnergy",  href: "/architecture/energy-zeroenergy" }}
+        secondaryCta={{ label: "View the Collection", href: "/collection" }}
+        theme="dark"
+      />
     </>
   );
 }

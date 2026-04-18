@@ -1,53 +1,50 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { cn } from "@/lib/cn";
+import { withCanonical } from "@/lib/seo";
 import { zeroEnergyContent } from "@/lib/content/architecture";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { faqSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
+import { cn } from "@/lib/cn";
 
-const cta = {
-  eyebrow: "Next step",
-  heading: "Begin your ZeroEnergy project",
-  body: "Tell us about your site and we will calculate the ZeroEnergy system for your specific location and consumption.",
-  primaryCta: { label: "Request a Private Offer", href: "/contact" },
-  secondaryCta: { label: "View the Collection", href: "/collection" },
-  theme: "dark",
+export const metadata: Metadata = {
+  ...withCanonical("/architecture/energy-zeroenergy"),
+  title:       "ZeroEnergy | Architecture & Design | Soleta",
+  description: "Soleta ZeroEnergy — design-led energy performance for timber homes. Envelope-first approach, passive solar, MVHR, and renewable systems sized to site.",
 };
 
 export default function ZeroEnergyPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const faqItems = zeroEnergyContent.faq;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            faqSchema(zeroEnergyContent.faq)
-          ),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema([
-              { name: "Home", href: "/" },
+              { name: "Home",                href: "/" },
               { name: "Architecture & Design", href: "/architecture" },
-              { name: "ZeroEnergy", href: "/architecture/energy-zeroenergy" },
+              { name: "ZeroEnergy",          href: "/architecture/energy-zeroenergy" },
             ])
           ),
         }}
       />
-      {/* ── 1. Header ── */}
+
+      {/* ── 1. Page header ── */}
       <section
-        className="section-lg border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link href="/architecture" className="eyebrow mb-6 inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <Link
+            href="/architecture"
+            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+          >
             ← Architecture & Design
           </Link>
           <span className="eyebrow mb-4 block">{zeroEnergyContent.eyebrow}</span>
@@ -56,24 +53,64 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 2. What ZeroEnergy means ── */}
-      <section className="section" style={{ backgroundColor: "var(--color-bg)" }}>
+      {/* ── 2. Design-led energy sections (envelope → glazing → ventilation) ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
         <div className="container-narrow">
-          <h2 className="mb-6 text-[1.75rem]">{zeroEnergyContent.what.heading}</h2>
+          <span className="eyebrow mb-10 block">Design first</span>
+          <div className="flex flex-col gap-14">
+            {zeroEnergyContent.designSections.map((section, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-1 gap-4 md:grid-cols-[120px_1fr]"
+              >
+                <span
+                  className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] md:pt-1"
+                  aria-hidden="true"
+                >
+                  0{i + 1}
+                </span>
+                <div className="flex flex-col gap-3">
+                  <h2 style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
+                    {section.heading}
+                  </h2>
+                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                    {section.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. What ZeroEnergy means ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <h2 className="mb-6" style={{ fontSize: "1.75rem" }}>
+            {zeroEnergyContent.what.heading}
+          </h2>
           <p className="leading-relaxed text-[var(--color-text-secondary)]">
             {zeroEnergyContent.what.body}
           </p>
         </div>
       </section>
 
-      {/* ── 3. Three levels ── */}
+      {/* ── 4. Three energy levels ── */}
       <section
-        className="section border-t border-[var(--color-border-light)]"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
           <span className="eyebrow mb-4 block">Energy levels</span>
-          <h2 className="mb-10 text-[2rem]">Choose your level of independence</h2>
+          <h2 className="mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            Choose your level of independence
+          </h2>
           <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-3">
             {zeroEnergyContent.levels.map((level, i) => (
               <div
@@ -82,7 +119,7 @@ export default function ZeroEnergyPage() {
                   "flex flex-col gap-4 p-10",
                   i === 1
                     ? "bg-[var(--soleta-forest)] text-[var(--soleta-cream)]"
-                    : "bg-[var(--soleta-cream)]"
+                    : "bg-[var(--color-bg)]"
                 )}
               >
                 {i === 1 && (
@@ -105,8 +142,8 @@ export default function ZeroEnergyPage() {
                 <p
                   className="text-sm leading-relaxed"
                   style={{
-                    color: i === 1 ? "var(--soleta-cream)" : "var(--color-text-secondary)",
-                    opacity: i === 1 ? 0.8 : 1,
+                    color:   i === 1 ? "var(--soleta-cream)" : "var(--color-text-secondary)",
+                    opacity: i === 1 ? 0.85 : 1,
                   }}
                 >
                   {level.description}
@@ -131,14 +168,19 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 4. Systems ── */}
-      <section className="section border-t border-[var(--color-border-light)]" style={{ backgroundColor: "var(--color-bg)" }}>
+      {/* ── 5. Systems ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
         <div className="container-site">
           <span className="eyebrow mb-4 block">The systems</span>
-          <h2 className="mb-10 text-[2rem]">How ZeroEnergy works</h2>
+          <h2 className="mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            How ZeroEnergy works
+          </h2>
           <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] md:grid-cols-2 lg:grid-cols-3">
             {zeroEnergyContent.systems.map((system, i) => (
-              <div key={i} className="flex flex-col gap-3 bg-[var(--color-bg)] p-8">
+              <div key={i} className="flex flex-col gap-3 bg-[var(--soleta-cream)] p-8">
                 <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)]">
                   0{i + 1}
                 </span>
@@ -152,48 +194,44 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 5. FAQ ── */}
+      {/* ── 6. Site note (what performance depends on) ── */}
       <section
-        className="section border-t border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-narrow">
+          <h2 className="mb-4" style={{ fontSize: "1.375rem" }}>
+            {zeroEnergyContent.siteNote.heading}
+          </h2>
+          <p className="leading-relaxed text-[var(--color-text-secondary)]">
+            {zeroEnergyContent.siteNote.body}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 7. FAQ ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
           <span className="eyebrow mb-4 block">Frequently asked</span>
-          <h2 className="mb-10 text-[2rem]">Questions about ZeroEnergy</h2>
-          <div className="flex flex-col divide-y divide-[var(--color-border-light)]">
-            {zeroEnergyContent.faq.map((item, i) => (
-              <div key={i}>
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  aria-expanded={openFaq === i}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
-                >
-                  <span className="font-heading text-[1.125rem] text-[var(--color-text)]">
-                    {item.question}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className={cn(
-                      "shrink-0 text-[var(--color-brand)] transition-transform duration-200 text-xl",
-                      openFaq === i && "rotate-45"
-                    )}
-                  >
-                    +
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <p className="pb-6 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    {item.answer}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+          <h2 className="mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            Questions about ZeroEnergy
+          </h2>
+          <FaqAccordion items={faqItems} />
         </div>
       </section>
 
-      <CtaBand {...cta} />
+      {/* ── 8. CTA ── */}
+      <CtaBand
+        eyebrow="Next step"
+        heading="Begin your ZeroEnergy project"
+        body="Tell us about your site and we will calculate the ZeroEnergy system for your specific location and consumption."
+        primaryCta={{ label: "Request a Private Offer", href: "/contact" }}
+        secondaryCta={{ label: "View the Collection",   href: "/collection" }}
+        theme="dark"
+      />
     </>
   );
 }
