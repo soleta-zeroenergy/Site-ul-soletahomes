@@ -15,7 +15,7 @@ export const homeHero: HeroProps = {
     "Soleta designs and builds calm, high-performance homes in timber — from enduring family residences and private retreats to fully bespoke architecture.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
   secondaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
-  imageSrc:     "/images/hero.webp",
+  imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
   imageAlt:     "Soleta ZeroEnergy home",
 };
 
@@ -36,7 +36,7 @@ export const homeManifesto: FeatureSplitProps = {
   body:
     "A decision about how a home feels, how it performs over time, and how naturally it belongs to its setting. For us, timber is not a style applied at the end. It shapes the architecture from the beginning.",
   cta:           { label: "Our architecture & design", href: "/architecture" },
-  imageSrc:      "/images/WhySoleta900x1200.webp",
+  imageSrc:      "https://img.soletahomes.com/sh-home-our-view-02-1699X2000-4x5.webp",
   imageAlt:      "Interior Soleta home",
   imagePosition: "right",
   theme:         "warm",
@@ -50,7 +50,7 @@ export const homeCollection: CardGridProps = {
     "Some projects begin with a clearly defined direction. Others begin with land, a feeling or a way of living. The Collection helps you identify the most natural starting point.",
   cards: [
     {
-      imageSrc: "/images/Signature800x533.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-start-here-signature-09-800x533-3x2.webp",
       imageAlt: "Signature Homes",
       eyebrow:  "Signature",
       title:    "Signature Homes",
@@ -59,7 +59,7 @@ export const homeCollection: CardGridProps = {
       cta:      "View collection",
     },
     {
-      imageSrc: "/images/Classic800x533.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-start-here-classic-10-800x533-3x2.webp",
       imageAlt: "Classic Soleta Homes",
       eyebrow:  "Classic",
       title:    "Classic Soleta Homes",
@@ -68,7 +68,7 @@ export const homeCollection: CardGridProps = {
       cta:      "View collection",
     },
     {
-      imageSrc: "/images/Retreat800x533.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-start-here-retreat-11-800x533-3x2.webp",
       imageAlt: "Holiday & Retreat Homes",
       eyebrow:  "Retreat",
       title:    "Holiday & Retreat Homes",
@@ -77,7 +77,7 @@ export const homeCollection: CardGridProps = {
       cta:      "View collection",
     },
     {
-      imageSrc: "/images/rezerva800x533.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-start-here-custom-12-800x533-3x2.webp",
       imageAlt: "Custom Architecture",
       eyebrow:  "Custom",
       title:    "Custom Architecture",
@@ -130,7 +130,7 @@ export const homeProjects: ProjectGridProps = {
   body:     "Each project responds differently to land, climate and daily life — but all reflect the same pursuit of calm architecture, natural materiality and long-term quality.",
   projects: [
     {
-      imageSrc: "/images/Aquarius800x600.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-built-work-Aquarius-04-800x600-4x3.webp",
       imageAlt: "Villa Aquarius",
       title:    "Villa AQUARIUS",
       location: "Europe",
@@ -139,7 +139,7 @@ export const homeProjects: ProjectGridProps = {
       href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "/images/Aurora800x600.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-built-work-Aurora-05-800x600-4x3.webp",
       imageAlt: "House Aurora",
       title:    "House Aurora",
       location: "Europe",
@@ -148,7 +148,7 @@ export const homeProjects: ProjectGridProps = {
       href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "/images/Life800x600.webp",
+      imageSrc: "https://img.soletahomes.com/sh-home-built-work-Life-06-800x600-4x3.webp",
       imageAlt: "House Life",
       title:    "House Life",
       location: "Europe",

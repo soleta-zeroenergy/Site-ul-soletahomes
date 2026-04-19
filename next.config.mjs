@@ -12,6 +12,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "placehold.co",
       },
+      {
+        protocol: "https",
+        hostname: "img.soletahomes.com",
+      },
     ],
   },
   async redirects() {
