@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Hero }            from "@/components/sections/Hero";
 import { FeatureSplit }    from "@/components/sections/FeatureSplit";
 import Image              from "next/image";
-import { ValuesGrid }      from "@/components/sections/ValuesGrid";
 import { ProjectGrid }     from "@/components/sections/ProjectGrid";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FaqPreview }      from "@/components/sections/FaqPreview";
@@ -146,7 +145,73 @@ export default function HomePage() {
       </section>
 
       {/* 5 ── Why Timber */}
-      <ValuesGrid {...homeValues} />
+      <section className="py-14 lg:py-20 bg-white overflow-hidden">
+        <div className="container-site">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14 lg:items-center">
+
+            {/* Left — full portrait image at native 1000×1450 proportions, no crop */}
+            <Image
+              src="https://img.soletahomes.com/sh-home-why-timber-03-1000x1450-.webp"
+              alt="Soleta timber home interior"
+              width={1000}
+              height={1450}
+              className="w-full h-auto"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+
+            {/* Right — full content stack: eyebrow + heading + body + 2×2 grid */}
+            <div className="flex flex-col justify-center gap-8">
+              {/* Header block */}
+              <div className="flex flex-col gap-4">
+                <p className="eyebrow text-brand-500">{homeValues.eyebrow}</p>
+                <h2
+                  className="text-[#1a1714]"
+                  style={{
+                    fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                    lineHeight: 1.1,
+                    letterSpacing: "0.02em",
+                    fontFamily: "var(--font-heading)",
+                  }}
+                >
+                  {homeValues.heading!.split("\n").map((line, i) => (
+                    <span key={i}>{i > 0 && <br />}{line}</span>
+                  ))}
+                </h2>
+                <p
+                  className="leading-relaxed text-[#4a4440]"
+                  style={{ fontFamily: "var(--font-subtitle)", fontSize: "clamp(1rem, 1.2vw, 1.125rem)" }}
+                >
+                  {homeValues.body}
+                </p>
+              </div>
+              {/* 2×2 benefit grid */}
+              <div className="grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2">
+                {homeValues.items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col gap-2 border-t border-sand-400 pt-6 pb-7"
+                  >
+                    <div aria-hidden="true" className="w-6 h-px mb-1 bg-brand-500" />
+                    <h3
+                      className="text-[#1a1714]"
+                      style={{
+                        fontSize: "1.0625rem",
+                        lineHeight: 1.3,
+                        letterSpacing: "0.02em",
+                        fontFamily: "var(--font-heading)",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-[#6b5d56]">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* 6 ── Built Projects */}
       <ProjectGrid {...homeProjects} />
