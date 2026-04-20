@@ -170,13 +170,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] md:gap-14">
             <div
               className="relative w-full shrink-0"
-              style={{ height: "clamp(240px, 22vw, 320px)" }}
+              style={{ height: "clamp(320px, 22vw, 360px)" }}
             >
               <Image
                 src="/images/Catalin Butmalai.jpg"
                 alt="Cătălin Butmălai — Founder & Design Director, Soleta"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[center_15%] md:object-top"
                 sizes="(max-width: 768px) 100vw, 240px"
               />
             </div>
