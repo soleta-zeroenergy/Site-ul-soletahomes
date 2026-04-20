@@ -613,16 +613,16 @@ export const customArchModel: HomeModel = {
   eyebrow:    "Custom Architecture",
   heading:    "Start from a sketch.\nWe build around your vision.",
   subheading:
-    "Bring your own architect's design — or start with a brief and let our team shape it. We manufacture and assemble any timber-frame architecture.",
+    "Bring your own architect's design — or start with a brief and let our team shape it. We adapt, manufacture, and assemble almost any architecture in the Soleta system.",
   badge: "Fully bespoke",
   description: [
-    "Custom Architecture is for clients who arrive with a vision — or a sketch — rather than a catalogue preference. Perhaps you have already worked with an architect and have drawings. Perhaps you have a site and a feeling, but no fixed design.",
-    "In both cases, our role is to translate architectural intention into built reality — with the manufacturing precision, structural expertise and construction management that the Soleta system provides.",
-    "We work with external architects as a specialist manufacturing and delivery partner, or we lead the full design process ourselves. Either way, the result is a home that is entirely yours.",
+    "Custom Architecture is for clients who arrive with a vision — or a sketch — not a catalogue preference. Perhaps you have already worked with an architect and have some drawings. Perhaps you have a site and a feeling, but no fixed design.",
+    "In both cases, our role is to translate architectural intent into built Soleta reality — with the manufacturing precision, structural expertise, and construction management that our system provides.",
+    "We work both with external architects, as specialist partners, and by leading the entire design process ourselves. In both cases, the result is a home that is entirely yours.",
   ],
   specs: [
     { label: "Design origin", value: "Client's architect or Soleta design team" },
-    { label: "Structure",     value: "Any timber-frame configuration" },
+    { label: "Structure",     value: "Any Soleta structural configuration" },
     { label: "Size",          value: "No minimum or maximum" },
     { label: "Energy",        value: "A+ to Passive House — as specified" },
     { label: "Warranty",      value: "10 years full structural warranty" },
@@ -652,17 +652,17 @@ export const customArchModel: HomeModel = {
     {
       question: "Can I use my own architect?",
       answer:
-        "Yes. We work with external architects as a manufacturing and delivery partner. We review the design for structural and manufacturing feasibility, then produce and assemble all timber elements to the architect's specification.",
+        "Yes. We work with external architects as manufacturing and delivery partners. We assess the project from the perspective of structural and manufacturing feasibility, then produce and assemble all timber elements according to the Soleta specification.",
     },
     {
       question: "What if I only have a rough idea?",
       answer:
-        "That is a perfectly valid starting point. Our design team can develop a full architectural brief from a site, a lifestyle description and a budget. We then design, engineer and build the complete home.",
+        "That is a perfectly valid starting point. Our design team can develop a complete architectural brief based on a site, a lifestyle description, and a budget. We then design, engineer, and build the entire home.",
     },
     {
       question: "Is there a minimum project size?",
       answer:
-        "No. We have delivered Custom projects from 40 m² cabins to 400 m² family estates. The approach is the same — rigorous manufacturing, careful assembly, long-term quality.",
+        "No. We have delivered custom projects ranging from 30 m² cabins to 1000 m² family estates. The approach remains the same — rigorous manufacturing, careful assembly, and long-term quality.",
     },
   ],
   relatedHref:  "/collection",

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection/custom-architecture"),
   title: "Custom Architecture | Bespoke Timber Homes | Soleta",
   description:
-    "Bring your own architect's design or start with a brief. We manufacture and assemble any timber-frame architecture to the highest standard.",
+    "Bring your own architect's design or start with a brief. We adapt it to the Soleta system, and manufacture and assemble almost any architecture to the highest standard.",
 };
 
 /* ── Static page content ─────────────────────────────────────────────────── */
@@ -18,24 +18,24 @@ export const metadata: Metadata = {
 const whoItIsFor = [
   {
     title: "You already have an architect",
-    body:  "You have drawings, a design direction or a completed specification. You need a manufacturer and builder who understands timber construction and can deliver it with precision.",
+    body:  "You have drawings, a design direction, or a completed specification. Soleta is a manufacturer and builder that understands timber construction and can deliver it with precision.",
   },
   {
     title: "You have a site and a brief",
-    body:  "You know roughly what you want and where you want it, but have not started working with an architect. Our design team can develop the architecture from your brief.",
+    body:  "You know roughly what you want and where you want to build, but have not yet started working with an architect. Our design team can develop the architecture from your brief.",
   },
   {
     title: "Your project doesn't fit a catalogue",
-    body:  "The site is unusual, the brief is specific, or the vision doesn't map to any standard collection. Custom Architecture begins where the defined paths end.",
+    body:  "Your site is unusual, the design brief is special, or your vision does not align with any standard collection. Custom Architecture begins where the defined paths end.",
   },
 ];
 
 const whatWeDesign = [
   "Single-family residences with architecturally specific briefs",
-  "Multi-unit or phased residential developments in timber",
+  "Multi-unit or phased residential developments in engineered timber",
   "Hospitality and small resort projects — lodges, pavilions, retreats",
   "Educational and community buildings",
-  "Hybrid structures combining timber with stone, concrete or steel",
+  "Hybrid structures combining timber with stone, concrete, or steel",
   "Off-grid and fully autonomous buildings",
   "Experimental or unconventional spatial programmes",
 ];
@@ -43,23 +43,23 @@ const whatWeDesign = [
 const processSteps = [
   {
     step: "01 — First conversation",
-    body: "We talk through your site, your brief and your current stage — whether you have drawings already or are starting from a feeling. No obligation, no pressure.",
+    body: "We talk through your site, your design brief, and the stage you are currently at — whether you already have drawings or are starting only from a feeling. No obligation, no pressure.",
   },
   {
     step: "02 — Feasibility and scope",
-    body: "We assess the design for structural and manufacturing feasibility. If you have drawings, we review them. If not, we scope the design phase and what it will involve.",
+    body: "We assess the project from the perspective of structural and manufacturing feasibility. If you have drawings, we review them. If not, we define the design phase and what it will involve.",
   },
   {
     step: "03 — Engineering and documentation",
-    body: "Structural calculations, manufacturing drawings and full construction documentation are developed. This is where we translate architectural intent into precise buildable information.",
+    body: "Structural calculations, manufacturing drawings, and full construction documentation are developed. This is where we translate architectural intent into precise information that can be built.",
   },
   {
     step: "04 — Factory manufacturing",
-    body: "All timber elements are produced in our factory under controlled conditions. Quality is independent of weather, site access or seasonal constraints.",
+    body: "All timber elements are produced in our factory, under controlled conditions. Quality remains independent of weather, site access, or seasonal constraints.",
   },
   {
     step: "05 — On-site assembly",
-    body: "Our teams deliver and assemble the structure on your site. We manage the build process and provide continuous supervision to the point of handover.",
+    body: "Our teams deliver and assemble the structure on your site. We manage the construction process and provide continuous supervision through to handover.",
   },
 ];
 
@@ -67,11 +67,11 @@ const scopeItems = [
   {
     category: "What Soleta provides",
     items: [
-      "Structural review and engineering of any timber-frame design",
+      "Structural review and engineering for any Soleta-type structural project",
       "Factory manufacturing of all structural timber elements",
-      "Transport and crane-assisted on-site assembly",
+      "Transport and, where needed, crane-assisted on-site assembly",
       "Site supervision throughout the construction phase",
-      "Building permit support where applicable",
+      "Support for permitting documentation, where applicable",
       "10-year full structural warranty",
     ],
   },
