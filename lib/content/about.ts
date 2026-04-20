@@ -3,14 +3,14 @@
 export const aboutHero = {
   eyebrow: "About Soleta",
   heading: "Built from conviction.\nNot from a catalogue.",
-  body: "Soleta was founded in 2013 by Cătălin Butmălai. Twelve years later, over 86 homes have been delivered across Romania and Western Europe — each one built with the same timber system, the same factory, the same team.",
+  body: "Soleta was founded in 2011 by Cătălin Butmălai. Since then, over 86 homes have been delivered across Romania and Western Europe — each one built with the same timber system, in the same factory, by the same team.",
 };
 
 /* ── Framing block ────────────────────────────────────────────────────────── */
 
 export const aboutFraming = {
-  left: "Soleta is a timber home manufacturer based in Romania. We design, engineer, manufacture and assemble homes for clients across Europe — from initial brief to keys in hand. We do not subcontract design to one party and fabrication to another. The same team holds both, which is why the quality is consistent and the accountability is undivided.",
-  right: "The structural system is post-and-beam, factory-fabricated to CNC tolerance. The materials are predominantly natural — timber, wood fibre, natural finishes. The energy strategy starts with the envelope, not with the technology added to it. These are not features layered onto a standard building. They are the starting points of every home we design.",
+  left: "Soleta is a timber home manufacturer based in Sweden, with its factory in Romania. We design, engineer, manufacture, and assemble homes for clients across Europe and beyond — from the initial brief through to keys in hand. We do not subcontract technological design to one company and fabrication to another. The same team handles both, which is why quality remains consistent and accountability undivided.",
+  right: "The structural system of Soleta homes is post-and-beam, manufactured in our workshops to CNC tolerances. The materials are predominantly natural — timber, wood fibre, natural finishes. The energy strategy starts with the envelope, not with technology added afterwards. These are not features layered onto a standard building. They are the starting points of every home we design.",
 };
 
 /* ── The Soleta Story ─────────────────────────────────────────────────────── */
@@ -18,15 +18,15 @@ export const aboutFraming = {
 export const aboutStorySections = [
   {
     heading: "From timber craft to architectural system",
-    body: "Cătălin Butmălai spent sixteen years in timber construction before founding Soleta — not as a designer observing from outside, but as someone who had built with the material. That accumulated knowledge shaped every decision that followed: the post-and-beam structural system, the factory fabrication approach, the insistence on natural materials specified to performing standards rather than trend. Soleta was not conceived as a product company. It was built around a technical conviction about how a timber home should be made.",
+    body: "Cătălin Butmălai has more than thirty-five years of experience in timber construction and furniture, and in 2011 he founded Soleta — not as a designer observing from the outside, but as someone who had built with the material itself. That accumulated knowledge shaped every decision that followed: the post-and-beam structural system, the workshop-based fabrication approach, and the insistence on natural materials specified to performance standards rather than trends. Soleta was not conceived as a product company. It was built around a technical conviction about how a premium timber home should be made.",
   },
   {
     heading: "The ZeroEnergy prototype and the international response",
-    body: "In 2011, working within the Justin Capră Foundation for Inventics and Sustainable Technologies, Butmălai began developing the Soleta ZeroEnergy One — a home prototype designed to produce at least as much energy as it consumed. The prototype launched in Bucharest in 2013. Within weeks it was covered by The Guardian, Inhabitat, Daily News and HomeAdore, reaching architecture and design audiences across three continents. That coverage was not a marketing outcome. It was the press responding to a genuinely new proposition at a time when very few timber home manufacturers were operating at that technical level.",
+    body: "In 2011, while working within the Justin Capră Foundation for Inventics and Sustainable Technologies, Cătălin Butmălai began developing Soleta ZeroEnergy One — a home prototype designed to produce at least as much energy as it consumed. The prototype launched in Bucharest in 2013. In the period immediately after, it was featured by The Guardian, Inhabitat, Daily News, HomeAdore, Discovery, and many other outlets, reaching architecture and design audiences across five continents. That coverage was not a marketing outcome. It was the press responding to a genuinely new proposition at a time when very few timber home manufacturers were operating at that technical level.",
   },
   {
     heading: "Scale, continuity and what has not changed",
-    body: "Soleta has delivered over 86 homes since 2013, across Romania, France, Germany, Austria, Switzerland and beyond. The production facility in Romania employs around 40 craftspeople. The collection has evolved across four generations — each one more refined than the last. What has not changed is the design philosophy, the structural system, or the commitment to a single integrated delivery model. We do not offer more than we can execute to standard.",
+    body: "Soleta focuses on quality and craft. It is not a volume-driven industrial company. Since 2013, it has delivered over 86 homes across Sweden, Romania, France, Germany, Austria, Switzerland, and Croatia. The home collection has evolved through four generations — each one more refined than the last. What has not changed is the design philosophy, the structural system, and the commitment to a single integrated delivery model. We do not promise more than we can execute to our standard.",
   },
 ];
 
@@ -35,11 +35,11 @@ export const aboutStorySections = [
 export const aboutValues = [
   {
     title: "System-led architecture",
-    body: "Every Soleta home is built on the same post-and-beam structural logic — factory-fabricated, CNC-precise, assembled on site in sequence. The system is not a constraint on design. It is the condition that makes quality consistent and repeatable across projects and countries.",
+    body: "Every Soleta home is built on the same post-and-beam structural logic — manufactured in the workshop, CNC-precise, assembled on site in sequence. The system is not a constraint on design. It is the condition that makes quality and beauty consistent and repeatable across projects and countries.",
   },
   {
     title: "Honest materials",
-    body: "We specify materials for what they are, not for what they resemble. Natural timber, wood fibre insulation, natural finishes. No cladding that pretends to be stone. No synthetic insulation substituted for cost. The home performs well because the materials perform honestly.",
+    body: "We specify materials for what they are, not for what they imitate. Natural timber, insulation made from natural fibres, ecological finishes. No cladding that pretends to be stone. No synthetic insulation chosen purely for cost. The home performs well because the materials perform honestly.",
   },
   {
     title: "Long-term responsibility",
@@ -50,11 +50,11 @@ export const aboutValues = [
 /* ── Recognition layer ────────────────────────────────────────────────────── */
 
 export const aboutRecognition = {
-  intro: "The Soleta ZeroEnergy One launched in Bucharest in 2013 and was covered within weeks by The Guardian (UK), Inhabitat (US), Daily News (US), HomeAdore (International) and Mr Mondialisation (France). That international recognition was followed by the first deliveries to Western European clients in 2015 — earlier than most Romanian manufacturers had considered the market ready.",
+  intro: "Soleta ZeroEnergy One launched in 2013 and, within just a few weeks, was featured by The Guardian and Grand Designs / Discovery (UK), Inhabitat (US), Daily News (US), HomeAdore (international), Mr Mondialisation (France), and many others around the world. That international recognition was followed immediately by the first client deliveries — Soleta was already a complete, mature product.",
   points: [
-    "Featured in The Guardian, Inhabitat, Daily News, HomeAdore and dozens of international architecture publications since 2013",
-    "Homes delivered across Romania, France, Germany, Austria, Switzerland and Poland",
-    "Production facility operating continuously since 2013, currently employing around 40 craftspeople",
+    "Featured in The Guardian, Inhabitat, Daily News, HomeAdore, and dozens of international architecture publications since 2013",
+    "Homes delivered across Sweden, Romania, France, Germany, Austria, Switzerland, and Croatia",
+    "Production facility in continuous operation since 1998",
     "Four generations of collection models developed and refined since the ZeroEnergy One prototype",
   ],
 };
@@ -77,25 +77,25 @@ export const companyTimeline = [
   {
     year: "2013",
     event: "Soleta ZeroEnergy One launched",
-    detail: "The prototype launches in Bucharest. The Guardian, Daily News, Inhabitat and HomeAdore cover the story across three continents.",
+    detail: "The prototype launches in Bucharest. Almost immediately, online, television, and print media from around the world carry the Soleta story across five continents.",
   },
   {
     year: "2015",
     event: "First international deliveries",
-    detail: "Soleta homes reach clients in Western Europe for the first time.",
+    detail: "Soleta moves to its second generation of homes, with visible improvements in both architecture and technical solutions.",
   },
   {
     year: "2018",
     event: "Factory expansion",
-    detail: "The Central European production facility expands. Around 40 craftspeople employed.",
+    detail: "The production facility for Central Europe expands and is further technologically upgraded.",
   },
   {
-    year: "2022",
+    year: "2023",
     event: "Fourth generation collection",
     detail: "The current collection — Signature, Classic, Holiday & Retreat, Custom Architecture — is released.",
   },
   {
-    year: "2024",
+    year: "2026",
     event: "soletahomes.com",
     detail: "Soleta's international platform launches for clients across Europe and beyond.",
   },
