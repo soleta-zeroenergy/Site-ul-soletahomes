@@ -259,7 +259,7 @@ export const signatureModel: HomeModel = {
   eyebrow:    "Signature Homes",
   heading:    "Architecture that\ndefines its landscape.",
   subheading:
-    "For landmark sites and clients who want something genuinely distinctive. Every Signature home is a one-of-a-kind collaboration.",
+    "For landmark sites and clients who want something genuinely distinct. Every Signature home is a one-of-a-kind collaboration.",
   badge: "Bespoke · Premium",
 
   heroImageSrc: "/images/Signature800x533.webp",
@@ -268,9 +268,9 @@ export const signatureModel: HomeModel = {
   priceDisplay: "on-request",
 
   description: [
-    "The Signature collection exists for projects where the ordinary is not an option. These are homes designed from first principles — shaped by the specific character of the site, the client's way of living and a commitment to architectural integrity that goes beyond style.",
-    "Signature homes are fully custom. We begin with an extended discovery process — studying the land, the light, the views and the brief — before a single line is drawn. The result is architecture that could only exist in that exact place.",
-    "Materials are selected for longevity and authenticity. Exposed glulam structure, hand-selected timber cladding, bespoke glazing systems and natural stone are combined to create spaces that improve with age.",
+    "The Signature collection exists for projects where the ordinary is not an option. These are homes designed from first principles — shaped by the specific character of the site, the client's way of living, and a commitment to architectural integrity that goes beyond style.",
+    "Signature homes are fully custom. We begin with an extended discovery process — studying the land, the light, the views, and the brief — before a single line is drawn. The result is architecture that could only exist in that exact place.",
+    "Materials are selected for longevity and authenticity. Exposed glulam structure, hand-selected timber cladding, bespoke glazing systems, and natural stone are combined to create spaces that improve with age.",
   ],
 
   audience: [
@@ -283,7 +283,7 @@ export const signatureModel: HomeModel = {
   differentiators: [
     {
       title: "No standard plans",
-      body:  "Every Signature home begins from first principles. The massing, orientation, spatial sequence and material choices are determined entirely by the site and the brief — not by a template.",
+      body:  "Every Signature home begins from first principles. The massing, orientation, spatial sequence, and material choices are determined entirely by the site and the brief — not by a template.",
     },
     {
       title: "Exposed glulam structure",
@@ -291,18 +291,18 @@ export const signatureModel: HomeModel = {
     },
     {
       title: "Bespoke material selection",
-      body:  "Timber species, cladding profiles, stone, glazing systems and hardware are all specified for the individual project. Nothing comes from a standard menu.",
+      body:  "Timber species, cladding profiles, stone, glazing systems, and hardware are all specified for the individual project. Nothing comes from a standard menu.",
     },
     {
       title: "Extended site analysis",
-      body:  "We study the land, the light, the seasonal conditions and the views before a line is drawn. The result is architecture that belongs to its place — not a home that has been placed on a site.",
+      body:  "We study the land, the light, the seasonal conditions, and the views before a line is drawn. The result is architecture that belongs to its place — not a home that has simply been placed on a site.",
     },
   ],
 
   specs: [
     { label: "Design",       value: "Fully custom — no standard plans" },
     { label: "Structure",    value: "Exposed glulam post & beam" },
-    { label: "Cladding",     value: "Bespoke — timber, stone, metal or composite" },
+    { label: "Cladding",     value: "Bespoke — timber, stone, metal, or composite" },
     { label: "Glazing",      value: "Custom triple-glazed systems" },
     { label: "Energy class", value: "A+ standard · Passive House on request" },
     { label: "Lifespan",     value: "100+ years" },
@@ -318,12 +318,12 @@ export const signatureModel: HomeModel = {
   ],
 
   customizable: [
-    "Site-specific massing, orientation and sectional profile",
-    "All structural dimensions, spans and ceiling heights",
-    "Cladding system — timber, stone, metal, composite or combined",
+    "Site-specific massing, orientation, and sectional profile",
+    "All structural dimensions, spans, and ceiling heights",
+    "Cladding system — timber, stone, metal, composite, or combinations",
     "Glazing configuration — custom formats, pivot systems, corner glazing",
     "Interior spatial sequence and material palette",
-    "Integration of pool, spa, garage or ancillary studio volumes",
+    "Integration of volumes for pool, spa, garage, or ancillary studio",
     "ZeroEnergy and Passive House energy systems",
   ],
 
@@ -331,9 +331,9 @@ export const signatureModel: HomeModel = {
     "Extended brief and site analysis — land, light, views, planning context",
     "Concept design and client review — alternatives presented, not a single fixed option",
     "Design development and planning permission submission (managed by Soleta)",
-    "Engineering, structural calculations and full construction documentation",
+    "Engineering, structural calculations, and full construction documentation",
     "Factory manufacturing of all timber elements — 8–12 weeks",
-    "On-site assembly, finishing and commissioning",
+    "On-site assembly, finishing, and commissioning",
     "Handover with full documentation and 10-year structural warranty",
   ],
 
@@ -380,17 +380,17 @@ export const signatureModel: HomeModel = {
     {
       question: "How is a Signature home different from a Custom Architecture project?",
       answer:
-        "Signature homes are full-service bespoke projects — we lead the entire process from site analysis to handover. Custom Architecture allows you to bring your own architect's design and have Soleta manufacture and assemble it.",
+        "Signature homes are full-service bespoke projects — we lead the entire process, from site analysis to handover. Custom Architecture allows you to bring your own architect's design, and have Soleta manufacture and assemble it.",
     },
     {
       question: "What is the minimum budget for a Signature home?",
       answer:
-        "Signature projects start from €250,000 for the building (excluding land, foundation and site works). We discuss budget and feasibility in the first consultation — there is no obligation.",
+        "Signature projects start from €250,000 for the building (excluding land, foundation, and site works). We discuss budget and feasibility in the first consultation — with no obligation.",
     },
     {
       question: "Can we specify our own materials?",
       answer:
-        "Yes. We work with a curated palette of premium materials and can source specific materials on request. All selections are reviewed for durability, sustainability and compatibility with our construction system.",
+        "Yes. We work with a curated palette of premium materials and can source specific materials on request. All selections are reviewed from the perspective of durability, sustainability, and compatibility with our construction system.",
     },
   ],
 
