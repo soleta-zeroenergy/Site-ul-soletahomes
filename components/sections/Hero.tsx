@@ -81,7 +81,7 @@ export function Hero({
           imageSrc
             ? {
                 background:
-                  "linear-gradient(to top, rgba(26,23,20,0.88) 0%, rgba(26,23,20,0.45) 45%, rgba(26,23,20,0.15) 75%, transparent 100%)",
+                  "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
               }
             : {
                 background:
