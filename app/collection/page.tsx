@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection"),
   title: "The Collection | Soleta Homes",
   description:
-    "Explore four distinct paths — Signature, Classic, Holiday & Retreat and Custom Architecture. Timber homes shaped around the way you want to live.",
+    "Explore four distinct directions — Signature, Classic, Holiday & Retreat, and Custom Architecture. Timber homes shaped around the way you want to live.",
 };
 
 /** Warm atmospheric gradient — used as fallback when no real image is available */
@@ -42,8 +42,8 @@ export default function CollectionPage() {
                 Architecture shaped around<br />the way you want to live
               </h1>
               <p className="subtitle max-w-lg mb-10">
-                Explore four distinct paths — from timeless everyday homes to private retreats,
-                expressive signature residences and fully bespoke architecture.
+                Explore four distinct directions — from timeless homes for everyday living to private retreats,
+                expressive Signature residences, and fully bespoke architecture.
               </p>
               <div>
                 <a href="#collection-paths" className="btn-primary">
@@ -56,7 +56,7 @@ export default function CollectionPage() {
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[680px]">
               <Image
                 src="/images/WhySoleta900x1200.webp"
-                alt="Soleta timber home interior"
+                alt="Interior of a Soleta timber home"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -104,9 +104,9 @@ export default function CollectionPage() {
               className="text-[var(--color-text-secondary)] leading-relaxed"
               style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
             >
-              Each Soleta direction offers a different balance of permanence, expression, scale
-              and freedom — while sharing the same architectural calm, natural materiality and
-              long-term thinking.
+              Each Soleta direction offers a different balance of permanence, expression, scale,
+              and freedom — while keeping the same calm architecture, the same natural materiality,
+              and the same long-term thinking.
             </p>
           </div>
 

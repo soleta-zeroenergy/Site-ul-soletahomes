@@ -15,16 +15,16 @@ export const collectionHero = {
 export const collectionApproach = {
   eyebrow: "Our Approach",
   heading: "Architecture-first. Always.",
-  body: "Every Soleta home begins with place — land, light, climate and the rhythm of everyday life. Rather than forcing people into a fixed model, we shape each direction around how the home will truly be used, and how it should belong in its setting over time.",
+  body: "Every Soleta home begins with place — land, light, climate, and the rhythm of everyday life. Rather than forcing people into a fixed model, we shape each direction around how the home will truly be used, and how it should belong to its setting over time.",
   link: { label: "See how we design", href: "/architecture/design-language" },
 };
 
 /* ── Collection families (4 paths — Large Family removed) ────────────────── */
 export const collectionFamilies = [
   {
-    eyebrow: "Architectural · Distinctive",
+    eyebrow: "Architectural · Distinct",
     heading: "Signature Homes",
-    body: "For exceptional sites and clients who want a home with a stronger architectural identity. Signature is for projects where expression, proportion and presence matter as much as comfort.",
+    body: "For exceptional sites and clients who want a home with a stronger architectural identity. Signature is for projects in which expression, proportion, and presence matter as much as comfort.",
     href: "/collection/signature",
     cta: "View Signature Homes",
     imageSrc: "/images/Signature800x533.webp",
@@ -33,7 +33,7 @@ export const collectionFamilies = [
   {
     eyebrow: "Timeless · Everyday Living",
     heading: "Classic Soleta Homes",
-    body: "Balanced, warm and enduring homes designed for daily life. This is the most natural starting point for permanent living, family life and long-term comfort, with the calm architectural language that defines Soleta.",
+    body: "Balanced, warm, and enduring homes designed for daily life. This is the most natural starting point for permanent living, family life, and long-term comfort, in the calm architectural language that defines Soleta.",
     href: "/collection/classic",
     cta: "View Classic Homes",
     imageSrc: "/images/Classic800x533.webp",
@@ -42,16 +42,16 @@ export const collectionFamilies = [
   {
     eyebrow: "Quiet · Restorative",
     heading: "Holiday & Retreat Homes",
-    body: "Homes designed for slower living, privacy and a closer relationship with nature. Ideal for second homes, weekend escapes and landscapes where stillness matters.",
+    body: "Homes designed for a slower rhythm, privacy, and a closer relationship with nature. Ideal for second homes, weekend escapes, and landscapes where stillness matters.",
     href: "/collection/holiday-retreat",
     cta: "View Retreat Homes",
     imageSrc: "/images/Retreat800x533.webp",
-    imageAlt: "Soleta Holiday home in nature",
+    imageAlt: "Soleta holiday home in nature",
   },
   {
     eyebrow: "Bespoke · Site-Specific",
     heading: "Custom Architecture",
-    body: "For projects that begin with a unique brief, a special piece of land or a vision that does not belong inside a predefined path. We design the architecture around the site, the lifestyle and the ambition of the project.",
+    body: "For projects that begin with a unique brief, a special piece of land, or a vision that does not belong within a predefined path. We design the architecture around the site, the lifestyle, and the ambition of the project.",
     href: "/collection/custom-architecture",
     cta: "Start a Custom Project",
     imageSrc: "/images/rezerva800x533.webp",
@@ -63,11 +63,11 @@ export const collectionFamilies = [
 export const collectionGuidance = {
   eyebrow: "Need Guidance?",
   heading: "Not sure where to begin?",
-  intro: "A simple way to think about the collection:",
+  intro: "A simple way to understand the collection:",
   items: [
-    "Choose Classic if you want the strongest balance of permanence, comfort and everyday living.",
-    "Choose Holiday & Retreat if the home is mainly about rest, landscape and a second-home rhythm.",
-    "Choose Signature if the project calls for stronger architectural expression or a more exceptional site response.",
+    "Choose Classic if you want the strongest balance of permanence, comfort, and everyday living.",
+    "Choose Holiday & Retreat if the home is primarily about rest, landscape, and the rhythm of a second home.",
+    "Choose Signature if the project calls for a stronger architectural expression or a more exceptional response to the site.",
     "Choose Custom if your brief does not fit a predefined path.",
   ],
 };
@@ -77,10 +77,10 @@ export const collectionWhySoleta = {
   eyebrow: "Why Soleta",
   heading: "A clearer way to build in timber",
   items: [
-    "Designed around site, light and long-term living",
+    "Designed around site, light, and long-term living",
     "Natural materials chosen for healthier spaces",
     "A calm but distinct architectural language",
-    "Technical thinking for comfort, performance and durability",
+    "Technical thinking for comfort, performance, and durability",
     "One integrated path from design to delivery",
   ],
   links: [
@@ -104,19 +104,19 @@ export const collectionExplore = {
     },
     {
       title: "Our Process",
-      body: "Understand the path from first conversation to delivery.",
+      body: "Understand the path from the first conversation to delivery.",
       href: "/process",
       cta: "View Process",
     },
     {
       title: "Design & Construction",
-      body: "Learn more about structure, materials and performance.",
+      body: "Learn more about structure, materials, and performance.",
       href: "/architecture",
       cta: "View Architecture",
     },
     {
       title: "Request a Private Offer",
-      body: "Tell us about your land, timeline and project direction.",
+      body: "Tell us about your land, your timeline, and your project direction.",
       href: "/request-private-offer",
       cta: "Get in Touch",
     },
@@ -126,7 +126,7 @@ export const collectionExplore = {
 /* ── Final CTA ───────────────────────────────────────────────────────────────── */
 export const collectionCta: CtaBandProps = {
   heading: "Begin your Soleta project",
-  body: "Whether you already know your direction or are still choosing between them, the next step is simple: tell us about your land, your timeline and the kind of home you want to create.",
+  body: "Whether you already know which direction you want, or are still choosing between them, the next step is simple: tell us about your land, your timeline, and the kind of home you want to create.",
   primaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "Explore Built Projects", href: "/built-projects" },
   theme: "dark",
