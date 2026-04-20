@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection/holiday-retreat"),
   title: "Holiday & Retreat Homes | Timber Cabins & Lodges | Soleta",
   description:
-    "Compact timber homes for rest, nature and honest connection to the landscape. Ground screw foundations — relocatable. ZeroEnergy option.",
+    "Compact homes in engineered timber for rest, nature, and an authentic connection to the landscape. Ground screw foundations are possible — the homes can be relocated. ZeroEnergy option.",
 };
 
 export default function HolidayRetreatPage() {

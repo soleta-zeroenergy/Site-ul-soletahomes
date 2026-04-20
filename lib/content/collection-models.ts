@@ -475,18 +475,18 @@ export const holidayRetreatModel: HomeModel = {
   eyebrow:    "Holiday & Retreat Homes",
   heading:    "A second home that\nfeels like a first escape.",
   subheading:
-    "Compact, calm architecture designed for rest, nature and honest connection to the landscape.",
+    "Compact, calm architecture designed for rest, nature, and an authentic connection to the landscape.",
   badge: "1–3 bedrooms",
 
   heroImageSrc: "/images/Retreat800x533.webp",
-  heroImageAlt: "Soleta Holiday & Retreat home in natural setting",
+  heroImageAlt: "A Soleta Holiday & Retreat home in a natural setting",
 
   priceDisplay: "on-request",
 
   description: [
-    "The Holiday & Retreat collection is designed for one purpose: to make arriving feel like relief. Compact, thoughtfully planned spaces that maximise natural light, outdoor connection and the quality of quiet.",
-    "These homes are built for challenging locations — coastal headlands, mountain sites, lakeside plots and dense forests. Ground screw foundations mean minimal site disruption and the option to relocate if circumstances change.",
-    "Holiday homes can also generate income. We advise on layouts optimised for short-term rental — including separate entrance options, outdoor shower and sauna configurations, and the ZeroEnergy systems that make off-grid operation viable.",
+    "The Soleta Holiday & Retreat collection is designed for one purpose: to make arrival feel like relief. Compact, thoughtfully planned spaces that maximise natural light, connection to the outdoors, and the quality of quiet.",
+    "These homes can also be built for challenging sites — sloping terrain, plots near water, forest settings, and more. The option of ground screw foundations disturbs the land very little and allows the house to be moved if circumstances change.",
+    "Holiday homes can also generate income. We advise on configurations optimised for tourism — including separate entrance options, outdoor shower and sauna layouts, and ZeroEnergy systems that make off-grid operation viable.",
   ],
 
   audience: [
@@ -498,8 +498,8 @@ export const holidayRetreatModel: HomeModel = {
 
   differentiators: [
     {
-      title: "Built for difficult terrain",
-      body:  "Ground screw foundations work on slopes, rocky ground and wetland-adjacent sites where conventional foundations are problematic or require significant earthworks.",
+      title: "Also designed for challenging terrain",
+      body:  "Ground screw foundations work on slopes, rocky ground, and sites near wetland areas, where conventional foundations are problematic or require significant earthworks.",
     },
     {
       title: "Relocatable",
@@ -507,11 +507,11 @@ export const holidayRetreatModel: HomeModel = {
     },
     {
       title: "Off-grid capable",
-      body:  "Solar, battery storage and rainwater harvesting make independent operation viable even in locations without reliable grid access.",
+      body:  "Solar systems, battery storage, and rainwater harvesting make independent operation possible even in locations without reliable grid access.",
     },
     {
       title: "Short build time",
-      body:  "From signed contract to keys in 3–4 months. The structural frame is erected in days. No prolonged site disturbance in sensitive or remote landscapes.",
+      body:  "From signed contract to full completion with keys in hand, in 3–4 months. The structure is erected in a matter of days. No prolonged site disturbance in sensitive or remote landscapes.",
     },
   ],
 
@@ -536,36 +536,36 @@ export const holidayRetreatModel: HomeModel = {
 
   customizable: [
     "Number of bedrooms and sleeping configuration",
-    "Terrace orientation and size — maximise view or ensure privacy",
-    "Sauna, outdoor shower and wood-fired hot tub (optional add-ons)",
-    "Off-grid system specification — solar, battery, rainwater harvesting",
-    "Exterior cladding finish — natural, charred or painted timber",
-    "Interior finish level — base specification through to full turnkey",
+    "Terrace orientation and size — to maximise views or ensure privacy",
+    "Sauna, outdoor shower, and wood-fired hot tub (optional add-ons)",
+    "Off-grid system specification — solar, batteries, rainwater harvesting",
+    "Exterior cladding finish — natural timber or painted timber",
+    "Interior finish level — from base specification to full turnkey",
   ],
 
   deliverySummary: [
-    "Site consultation — terrain, access, orientation, planning constraints reviewed",
-    "Design and specification — compact, site-specific layout developed for your brief",
-    "Building permit submission (managed by Soleta where applicable)",
+    "Site consultation — terrain, access, orientation, and planning constraints are reviewed",
+    "Design and specification — a compact, site-specific layout developed for your brief",
+    "Where possible and legally permitted, Soleta provides all necessary support for preparing the permitting documentation",
     "Factory manufacturing — 4–6 weeks for all structural elements",
     "Ground screw installation and on-site structural assembly — 1–2 weeks",
-    "Handover with documentation and 3-year structural warranty",
+    "Handover with documentation and a 3-year structural warranty",
   ],
 
   includes: [
-    "Full timber frame structure",
-    "Natural insulation and weatherproof envelope",
+    "Full exoskeleton in engineered timber",
+    "Insulation with natural materials and a weather-protected envelope",
     "All exterior finishes",
-    "Windows, external doors and terrace",
+    "Windows, external doors, and terrace",
     "Bathroom and compact kitchen",
     "Electrical and plumbing rough-in",
-    "Transport and ground screw foundation placement",
+    "Transport and, optionally, installation of the ground screw foundation",
     "3-year structural warranty",
   ],
 
   excludes: [
     "Utility connections (off-grid systems quoted separately)",
-    "Building permits (assisted)",
+    "Support for preparing building permit documentation",
     "Interior furniture",
     "Sauna and outdoor shower (optional add-ons)",
   ],
@@ -584,9 +584,9 @@ export const holidayRetreatModel: HomeModel = {
 
   faq: [
     {
-      question: "Can I use this as a rental property?",
+      question: "Can I use this home as a rental property?",
       answer:
-        "Yes. We advise on layouts optimised for short-term rental. Many clients use their Holiday & Retreat home as a personal escape and rent it out when not in use — the ZeroEnergy option and ground screw foundation make this particularly attractive for remote locations.",
+        "Yes. We advise on layouts optimised for short-term rental. Many clients use their Holiday & Retreat home as a personal escape and rent it out when not using it — the ZeroEnergy option and ground screw foundation make this model particularly attractive for remote locations.",
     },
     {
       question: "Can the home be moved to a different site?",
@@ -594,9 +594,9 @@ export const holidayRetreatModel: HomeModel = {
         "Homes built on ground screw foundations can be relocated. This is one of the advantages of the Soleta system — particularly useful for plots with temporary permits or clients whose circumstances may change.",
     },
     {
-      question: "Do these meet planning requirements for holiday use?",
+      question: "Do these models meet permitting requirements for use as a holiday home?",
       answer:
-        "Yes — all Soleta homes meet European building regulations for both permanent and holiday use. We assist with all permit applications and can advise on local planning constraints before you commit.",
+        "Yes — all Soleta homes meet European building regulations for both permanent residence and holiday use. Optionally, we provide technical support for all permit applications and can advise on local planning constraints before you make a decision.",
     },
   ],
 
