@@ -101,7 +101,7 @@ export function Hero({
         {eyebrow && (
           <p
             className="text-brand-400 mb-8 uppercase tracking-widest"
-            style={{ fontFamily: "var(--font-ui)", fontSize: "0.9375rem", fontWeight: 500, letterSpacing: "0.18em" }}
+            style={{ fontFamily: "var(--font-ui)", fontSize: "1.5rem", fontWeight: 400, letterSpacing: "0.14em" }}
           >
             {eyebrow}
           </p>
