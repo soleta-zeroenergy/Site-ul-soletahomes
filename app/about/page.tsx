@@ -53,7 +53,7 @@ export default function AboutPage() {
         style={{ height: "clamp(260px, 36vw, 520px)" }}
       >
         <Image
-          src="/images/hero.webp"
+          src="https://img.soletahomes.com/sh-about-hero-01-2038x771.webp"
           alt="Soleta — designed and built from conviction"
           fill
           priority
