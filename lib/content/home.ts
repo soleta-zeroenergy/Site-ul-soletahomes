@@ -10,7 +10,7 @@ import type { FaqPreviewProps }      from "@/components/sections/FaqPreview";
 /* ── 1. Hero ──────────────────────────────────────────────────────────────── */
 export const homeHero: HeroProps = {
   eyebrow:     "Soleta Homes",
-  heading:     "Premium timber homes shaped by\nland, light and the way you live",
+  heading:     "Quiet distinction,\ndesigned around\nyour life",
   subtext:
     "Soleta designs and builds calm, high-performance homes in timber — from enduring family residences and private retreats to fully bespoke architecture.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
