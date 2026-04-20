@@ -12,7 +12,7 @@ export const homeHero: HeroProps = {
   eyebrow:     "Soleta Homes",
   heading:     "Quiet distinction,\ndesigned around\nyour life",
   subtext:
-    "Soleta designs and builds calm, high-performance homes in timber — from enduring family residences and private retreats to fully bespoke architecture.",
+    "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to fully bespoke architecture.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
   secondaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
   imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
@@ -47,14 +47,14 @@ export const homeCollection: CardGridProps = {
   eyebrow: "Start Here",
   heading: "Choose the path that fits your life best",
   body:
-    "Some projects begin with a clearly defined direction. Others begin with land, a feeling or a way of living. The Collection helps you identify the most natural starting point.",
+    "Some projects begin with a clearly defined direction. Others begin with land, a feeling, or a particular way of living. The Collection helps you identify the most natural starting point.",
   cards: [
     {
       imageSrc: "https://img.soletahomes.com/sh-home-start-here-signature-09-800x533-3x2.webp",
       imageAlt: "Signature Homes",
       eyebrow:  "Signature",
       title:    "Signature Homes",
-      body:     "Statement architecture for exceptional sites and clients who want a home with a stronger architectural identity.",
+      body:     "Architecture with a stronger character for exceptional sites and for people who want a home with a more distinctive architectural identity.",
       href:     "/collection/signature",
       cta:      "View collection",
     },
@@ -63,7 +63,7 @@ export const homeCollection: CardGridProps = {
       imageAlt: "Classic Soleta Homes",
       eyebrow:  "Classic",
       title:    "Classic Soleta Homes",
-      body:     "Timeless proportions, natural materials and generous living spaces for the permanent family home.",
+      body:     "Timeless proportions, natural materials, and generous living spaces for the permanent family home.",
       href:     "/collection/classic",
       cta:      "View collection",
     },
@@ -72,7 +72,7 @@ export const homeCollection: CardGridProps = {
       imageAlt: "Holiday & Retreat Homes",
       eyebrow:  "Retreat",
       title:    "Holiday & Retreat Homes",
-      body:     "Compact, calm architecture designed for rest, nature and a closer relationship with the landscape.",
+      body:     "Compact, calm architecture designed for rest, nature, and a very close relationship with the landscape.",
       href:     "/collection/holiday-retreat",
       cta:      "View collection",
     },
@@ -81,7 +81,7 @@ export const homeCollection: CardGridProps = {
       imageAlt: "Custom Architecture",
       eyebrow:  "Custom",
       title:    "Custom Architecture",
-      body:     "Architecture designed around your brief, your site and your vision — without a fixed starting point.",
+      body:     "Architecture designed around your brief, your site, and your vision — without a fixed starting point.",
       href:     "/collection/custom-architecture",
       cta:      "Start a project",
     },
@@ -95,8 +95,8 @@ export const homeCollection: CardGridProps = {
 /* ── 5. Why Timber ────────────────────────────────────────────────────────── */
 export const homeValues: ValuesGridProps = {
   eyebrow:  "Why Timber",
-  heading:  "Why more people choose\nto live with timber",
-  body:     "The material shapes the architecture, the experience and the performance of the home — from the first day to the last.",
+  heading:  "Why more and more people choose\nto live in timber homes",
+  body:     "The material shapes the architecture, the experience, and the performance of the home — from the first day to the last.",
   theme:    "light",
   columns:  2,
   items: [
@@ -108,12 +108,12 @@ export const homeValues: ValuesGridProps = {
     {
       title: "Precision before the site",
       body:
-        "Structural elements are manufactured in controlled conditions before arriving on site. This reduces waste, improves accuracy, and keeps the build process shorter and less disruptive.",
+        "Structural elements are manufactured in controlled conditions before arriving on site. This reduces waste, increases precision, and makes the building process shorter and less intrusive.",
     },
     {
       title: "Energy-conscious from the start",
       body:
-        "Soleta homes are designed with energy performance in mind from the earliest stage — passive orientation, natural insulation, and the option to produce as much energy as the home uses.",
+        "Soleta homes are designed with energy performance in mind from the very first stage — passive orientation, natural insulation, and the possibility of producing at least as much energy as the home consumes.",
     },
     {
       title: "Architecture that lasts",
@@ -127,7 +127,7 @@ export const homeValues: ValuesGridProps = {
 export const homeProjects: ProjectGridProps = {
   eyebrow:  "Built Work",
   heading:  "Selected projects in real settings",
-  body:     "Each project responds differently to land, climate and daily life — but all reflect the same pursuit of calm architecture, natural materiality and long-term quality.",
+  body:     "Each project responds differently to land, climate, and daily life — but all reflect the same pursuit of calm architecture, natural materiality, and long-term quality.",
   projects: [
     {
       imageSrc: "https://img.soletahomes.com/sh-home-built-work-Aquarius-04-800x600-4x3.webp",
@@ -167,7 +167,7 @@ export const homeWhoWeWorkWith = {
   blocks: [
     {
       title: "Private Residences",
-      body:  "Permanent family homes, architect-designed for a specific site and way of living.",
+      body:  "Permanent family homes, architect-designed for a specific site and a specific way of living.",
       href:  "/built-projects/private-residences",
     },
     {
@@ -177,12 +177,12 @@ export const homeWhoWeWorkWith = {
     },
     {
       title: "Hospitality & Small Resorts",
-      body:  "Small lodge groups, boutique hotel extensions and eco-resort developments.",
+      body:  "Small lodge groups, boutique hotel extensions, and eco-resort developments.",
       href:  "/built-projects/hospitality-resorts",
     },
     {
       title: "Educational & Public Buildings",
-      body:  "Timber construction for schools, community spaces and public architecture.",
+      body:  "Timber construction for education, community spaces, and public architecture.",
       href:  "/built-projects/educational-public",
     },
   ],
@@ -193,7 +193,7 @@ export const homeWhoWeWorkWith = {
 export const homeProcess: ProcessTimelineProps = {
   eyebrow: "How We Work",
   heading: "One process. One point of responsibility.",
-  body:    "From the first conversation to design, engineering, build and handover, the process stays coordinated around one architectural vision.",
+  body:    "From the first conversation to design, engineering, construction, and handover, the process stays coordinated around one architectural vision.",
   theme:   "warm",
   stages: [
     {
@@ -204,22 +204,22 @@ export const homeProcess: ProcessTimelineProps = {
     {
       eyebrow: "Stage 02",
       title:   "Design & Planning",
-      body:    "Options, not a fixed direction. We present alternatives, refine with you, and submit for planning approval on your behalf.",
+      body:    "Options, not a fixed direction. We present alternatives, refine them together with you, and support the preparation of the documentation required for construction approval.",
     },
     {
       eyebrow: "Stage 03",
       title:   "Engineering",
-      body:    "Technical decisions resolved inside the design — not bolted on afterwards. Complete construction documents before ground is broken.",
+      body:    "Technical decisions are resolved within the design — not added afterwards. Complete construction documentation before the site works begin.",
     },
     {
       eyebrow: "Stage 04",
       title:   "Build",
-      body:    "Factory-manufactured elements delivered to your site. The structural frame erected in 3 to 5 days. Weatherproof envelope complete within 2 to 4 weeks.",
+      body:    "Elements manufactured in the workshop and delivered to site. The structure is erected in 5 to 15 days. The weather-protected envelope is completed in 4 to 10 weeks.",
     },
     {
       eyebrow: "Stage 05",
       title:   "Turnkey Delivery",
-      body:    "Keys, full documentation and aftercare. One point of responsibility from first conversation to handover.",
+      body:    "Keys, full documentation, and aftercare. One point of responsibility from the first conversation to handover.",
     },
   ],
 };
@@ -232,9 +232,9 @@ export const homeProcessCta = {
 /* ── 9. Design & Construction bridge ─────────────────────────────────────── */
 export const homeDesignBridge = {
   eyebrow: "Design & Construction",
-  heading: "Material intelligence, comfort and long-term performance",
+  heading: "Material intelligence, comfort, and long-term performance",
   body:
-    "From post-and-beam structure to healthy materials and energy-aware design, every Soleta home is shaped as a complete architectural system — not a collection of add-ons.",
+    "From post-and-beam structure to healthy materials and energy-aware design, every Soleta home is conceived as a complete architectural system — not a collection of add-ons.",
   links: [
     { label: "Post & Beam Construction",  href: "/architecture/post-beam" },
     { label: "Healthy Materials",         href: "/architecture/healthy-materials" },
@@ -245,25 +245,25 @@ export const homeDesignBridge = {
 /* ── 10. FAQ preview ──────────────────────────────────────────────────────── */
 export const homeFaq: FaqPreviewProps = {
   eyebrow:  "Questions",
-  heading:  "What clients often ask first",
+  heading:  "What clients most often ask first",
   theme:    "light",
   columns:  2,
   items: [
     {
-      q: "Do you only build from existing models?",
-      a: "No. Alongside our defined collections — Signature, Classic, Holiday & Retreat — we offer Custom Architecture for projects that begin with a unique brief, a site or a vision that does not fit a predefined path.",
+      q: "Do you build only from existing models?",
+      a: "No. Alongside our defined collections — Signature, Classic, Holiday & Retreat — we also offer Custom Architecture for projects that begin with a unique brief, a site, or a vision that does not fit a predefined path.",
     },
     {
       q: "Can Soleta adapt a home to my land and local regulations?",
-      a: "Yes. All projects begin with a site visit and a review of local planning requirements. We manage permit applications on your behalf across all markets we work in.",
+      a: "Yes, projects begin with a site visit and a review of local approval requirements. We manage permit and approval applications on your behalf across all the markets we work in.",
     },
     {
       q: "Do you offer turnkey delivery?",
-      a: "Yes. Our standard process runs from design through to handover — including engineering, factory manufacturing, transport, on-site assembly and final documentation. Foundation works and utility connections are scoped separately.",
+      a: "Yes. Our standard process runs from design through to handover — including engineering, manufacturing, transport, on-site assembly, and final documentation. Foundation works and utility connections are defined separately and may or must, depending on the case, be carried out by other local companies.",
     },
     {
       q: "When should we contact you?",
-      a: "As early as possible — ideally before purchasing land. Early conversations help us advise on site suitability, orientation, planning constraints and the right collection path for your project.",
+      a: "As early as possible — ideally before purchasing land. Early conversations help us advise you on site suitability, orientation, planning constraints, and the right collection path for your project.",
     },
   ],
 };
@@ -276,7 +276,7 @@ export const homeFaqCta = {
 /* ── 11. Final CTA band ───────────────────────────────────────────────────── */
 export const homeCta: CtaBandProps = {
   heading:      "Begin your Soleta project",
-  body:         "Tell us about your land, your priorities and your timeline — or start by exploring the collection and built work.",
+  body:         "Tell us about your land, your priorities, and your timeline — or begin by exploring the collection and built work.",
   primaryCta:   { label: "Request a Private Offer", href: "/request-private-offer" },
   secondaryCta: { label: "Explore the Collection",  href: "/collection" },
   theme:        "dark",

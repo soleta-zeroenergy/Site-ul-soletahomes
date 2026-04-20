@@ -99,7 +99,12 @@ export function Hero({
         )}
       >
         {eyebrow && (
-          <p className="eyebrow text-brand-400 mb-8">{eyebrow}</p>
+          <p
+            className="text-brand-400 mb-8 uppercase tracking-widest"
+            style={{ fontFamily: "var(--font-ui)", fontSize: "0.9375rem", fontWeight: 500, letterSpacing: "0.18em" }}
+          >
+            {eyebrow}
+          </p>
         )}
 
         <h1
