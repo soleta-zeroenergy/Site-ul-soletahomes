@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection/classic"),
   title: "Classic Soleta Homes | Timber Frame Family Homes",
   description:
-    "The most requested Soleta home — generous proportions, enduring materials and a design that belongs in any landscape.",
+    "The most requested Soleta family of homes — generous proportions, enduring materials, and a design that feels naturally at home in any landscape.",
 };
 
 export default function ClassicPage() {

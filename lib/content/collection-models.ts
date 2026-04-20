@@ -99,51 +99,51 @@ export const classicModel: HomeModel = {
   eyebrow:    "Classic Soleta Homes",
   heading:    "Timeless timber.\nBuilt to last generations.",
   subheading:
-    "The Classic Soleta is our most requested home — generous proportions, enduring materials and a design that belongs in any landscape.",
+    "Classic is the most requested Soleta family of homes. It offers generous proportions, is built with enduring materials, and its architecture makes it feel naturally at home in any landscape.",
   badge: "Most popular",
 
   heroImageSrc: "/images/Classic800x533.webp",
-  heroImageAlt: "Classic Soleta timber home exterior",
+  heroImageAlt: "Exterior of a Classic Soleta home",
 
   priceDisplay: "on-request",
 
   description: [
-    "The Classic Soleta was born from a simple conviction: a home should work with nature, not against it. Post and beam timber construction, natural insulation and passive solar orientation combine to create a home that stays warm in winter and cool in summer — without relying on expensive systems.",
-    "Every Classic Soleta is built in our factory under controlled conditions, then transported and assembled on your site in days, not months. The result is a home with the quality of fine joinery and the speed of modern manufacturing.",
-    "Our modular exoskeleton system means the Classic can grow with your family. Add a new wing, a studio or a covered terrace — without demolishing or disturbing the existing structure.",
+    "Soleta Classic was born from a simple conviction: a home should work with nature, not against it. Post-and-beam construction in engineered timber, natural insulation, and passive solar orientation combine to create a home that stays warm in winter and cool in summer — without relying on costly systems.",
+    "Every Soleta Classic home is built in our factory, under controlled conditions, then transported and assembled on your site in a matter of weeks, depending on the model and size. The result is a home with the quality of fine joinery and the speed of modern manufacturing.",
+    "Our modular exoskeleton system means the Classic can grow with your family. Add a new wing, a studio, or a covered terrace — without demolishing or disturbing the existing structure.",
   ],
 
   audience: [
-    "Permanent family residences with a 20-plus year horizon",
+    "Permanent family residences with an 80-plus-year horizon",
     "Multi-generational families who need space that can adapt over time",
-    "Clients who want full-time living quality in a natural material home",
-    "First-time timber home owners looking for a clear, proven starting point",
+    "Clients who want the quality of full-time living in a home made from natural materials",
+    "First-time home owners looking for a clear, mature, and proven starting point",
   ],
 
   differentiators: [
     {
       title: "Post & beam structure",
-      body:  "Exposed glulam frame provides structural honesty — you see what holds the home up. The posts and beams become part of the architecture rather than being hidden behind finishes.",
+      body:  "The exposed glulam structure provides structural honesty — you see exactly what holds the home up. The posts and beams become part of the architecture instead of being hidden behind finishes.",
     },
     {
       title: "Modular by design",
-      body:  "The Soleta exoskeleton is engineered for future additions from day one. New rooms, wings or covered terraces connect at pre-planned structural points — no demolition, no disruption.",
+      body:  "The Soleta exoskeleton is designed from day one for future extensions. New rooms, wings, or covered terraces connect at structural points planned in advance — no demolition, no disruption.",
     },
     {
       title: "Natural insulation system",
-      body:  "35 cm wood fibre walls provide thermal mass and acoustic calm. No synthetic foams. No petrochemical insulation. The material breathes with the climate.",
+      body:  "Walls insulated with natural materials provide thermal mass and acoustic calm. No synthetic foams. No petrochemical insulation. The material breathes with the climate.",
     },
     {
       title: "ZeroEnergy ready",
-      body:  "Solar, geothermal or micro-hydro systems can be integrated at design stage or added later without structural modification. The Classic is designed for the long term.",
+      body:  "Solar, geothermal, or micro-hydro systems can be integrated from the design stage or added later without structural modifications. Soleta Classic homes are designed for the long term.",
     },
   ],
 
   specs: [
     { label: "Structure",     value: "Post & beam glulam timber frame" },
-    { label: "Insulation",    value: "Natural wood fibre — 35 cm wall" },
+    { label: "Insulation",    value: "Natural wood fibre." },
     { label: "Energy class",  value: "A+ — ZeroEnergy option available" },
-    { label: "Build time",    value: "Factory: 6 weeks · On-site: 2–4 weeks" },
+    { label: "Build time",    value: "Factory: 6–12 weeks · On-site: 4–10 weeks" },
     { label: "Lifespan",      value: "80+ years" },
     { label: "Foundation",    value: "Ground screws (KSF) or concrete" },
   ],
@@ -160,38 +160,38 @@ export const classicModel: HomeModel = {
 
   customizable: [
     "Internal layout configuration and room distribution",
-    "Exterior cladding material — timber species, finish and colour",
-    "Window placement, size and glazing specification",
-    "Kitchen and bathroom layout and finish level",
-    "Terrace, carport or studio wing additions",
+    "Exterior cladding material — timber species, finish, and colour",
+    "Window placement, size, and glazing specification",
+    "Kitchen and bathroom layout, as well as the level of finish",
+    "Addition of a terrace, a carport, or a studio wing",
     "Foundation type — ground screws or concrete slab",
     "ZeroEnergy system specification",
   ],
 
   deliverySummary: [
-    "Initial consultation and site visit — we study your land before any design begins",
-    "Design and planning phase — options presented, permit submitted on your behalf",
-    "Factory manufacturing of all structural elements — 6 weeks, off-site",
-    "On-site assembly — structural frame erected in 3–5 days, weatherproof envelope in 2–4 weeks",
-    "Interior finishing and systems installation",
-    "Handover with full documentation and 3-year structural warranty",
+    "Initial consultation and site visit — we study the property before any design begins",
+    "Design and planning phase — options are presented, and the documentation for permitting is handled on your behalf",
+    "Factory manufacturing of all structural elements — 6–12 weeks, off-site",
+    "On-site assembly — the structure is erected in 3–5 days, and the weather-protected envelope in 6–10 weeks",
+    "Interior finishes and systems installation",
+    "Handover with full documentation and a 3-year structural warranty",
   ],
 
   includes: [
-    "Full timber frame structure, manufactured in our factory",
-    "Natural wood fibre insulation (35 cm wall)",
+    "Full timber structure, manufactured in our factory",
+    "Insulation made from natural materials (wood fibre, hemp, sheep's wool)",
     "Exterior cladding and roofing",
     "Triple-glazed windows and external doors",
-    "Internal finishes — floors, walls, ceilings",
+    "Interior finishes — floors, walls, ceilings",
     "Kitchen and bathroom installations",
     "Electrical and plumbing rough-in",
-    "Transport and crane placement on site",
+    "Transport and placement on site, with or without crane",
     "3-year structural warranty",
   ],
 
   excludes: [
     "Land and site preparation",
-    "Foundation works (quoted separately per site)",
+    "Foundation works (quoted separately for each site)",
     "Utility connections — electricity, water, sewage",
     "Building permit (we assist — see Permits & Legal)",
     "Interior furniture and appliances",
@@ -222,27 +222,27 @@ export const classicModel: HomeModel = {
     {
       question: "Can I extend the Classic after it is built?",
       answer:
-        "Yes. The Soleta exoskeleton system is designed for modular additions. You can add new rooms, a covered terrace or a studio wing at any point — without demolishing or disturbing the existing structure.",
+        "Yes. The Soleta Exoskeleton system is designed for modular extensions. You can add new rooms, a covered terrace, or a studio wing at any time — without demolishing or disturbing the existing structure.",
     },
     {
       question: "How long does the whole process take?",
       answer:
-        "From signed contract to moving in: typically 3–6 months. Factory production takes 6 weeks. On-site assembly takes 2–4 weeks. Building permits vary by municipality — we guide you through the process.",
+        "From signed contract to moving in: typically 3–6 months. Factory production takes 6–12 weeks. On-site assembly takes 6–10 weeks. Permits vary by municipality — we guide you through the entire process.",
     },
     {
       question: "Does the price include the foundation?",
       answer:
-        "Foundation works are quoted separately, as they depend on your specific site. We recommend and work with ground screw (KSF) foundations — fast, low-impact and earthquake-resilient.",
+        "Foundation works are quoted separately, as they depend on your specific site. We recommend and work both with ground screw (KSF) foundations — fast, low-impact, and earthquake-resilient — and with concrete slab foundations. The final choice belongs to the structural engineer.",
     },
     {
-      question: "Can the Classic run on ZeroEnergy?",
+      question: "Can Soleta Classic models operate as ZeroEnergy homes?",
       answer:
-        "Yes. The Classic is engineered for the ZeroEnergy upgrade — solar, geothermal or micro-hydro systems can be integrated at the design stage or added later.",
+        "Yes. Soleta Classic homes can be designed for the ZeroEnergy upgrade — solar, geothermal, or micro-hydro systems can be integrated from the design stage. They can also be added later.",
     },
     {
       question: "Is this a permanent home or a holiday home?",
       answer:
-        "Both. The Classic meets all European building standards for permanent residence. It is equally popular as a full-time family home and as a high-quality holiday home.",
+        "Both. Classic meets all European building standards for permanent residence. It is equally popular as a full-time family home and as a high-quality holiday home.",
     },
   ],
 
