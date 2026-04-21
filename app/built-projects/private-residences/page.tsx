@@ -12,7 +12,7 @@ const meta       = getCategoryMeta(CATEGORY);
 export const metadata: Metadata = {
   ...withCanonical(meta.href),
   title:       "Private Residences | Built Projects | Soleta",
-  description: "Soleta private residences — architect-designed timber homes built across Romania, France, Germany, Austria and beyond.",
+  description: "Soleta private residences — architect-designed timber homes built across Europe.",
 };
 
 export default function PrivateResidencesPage() {

@@ -84,7 +84,7 @@ export const categoryMeta: CategoryMeta[] = [
     href:       "/built-projects/private-residences",
     cta: {
       heading:   "Begin your private residence",
-      body:      "Tell us about your site, your vision and your timeline.",
+      body:      "Tell us about your site, your vision, and your timeline.",
       primary:   "Request a Private Offer",
       secondary: "View all projects",
     },
@@ -479,39 +479,39 @@ export const projects: BuiltProject[] = [
     category: "private-residences",
     title:    "House Soleta Edge",
     location: "Europe",
-    year:     "2020",
-    model:    "Signature",
+    year:     "2022",
+    model:    "Classic",
     status:   "completed",
 
     imageSrc: "/images/Signature800x533.webp",
-    imageAlt: "House Soleta Edge exterior",
+    imageAlt: "Exterior of House Soleta Edge",
     gallery:  [],
 
     summary:
-      "A Signature home on a benchmark hilly site at 740 m altitude — strict planning height limits, heavy snow loads, and exclusively natural materials.",
+      "A Classic home on the outskirts of a suburban settlement — south-facing, strict setback rules, with a requirement for enhanced thermal and acoustic insulation.",
 
     description: [
-      "House Soleta Edge presented a demanding brief on a hilly site at 740 m altitude — strict height limits for planning approval, heavy snow loads, and a requirement to use exclusively natural materials throughout.",
-      "The Signature frame was engineered for alpine load class. Charred timber cladding was chosen for its fire rating and its weathering behaviour in exposed upland conditions.",
-      "The result is a home that meets every planning constraint while delivering the spatial quality and material integrity that the site demanded.",
+      "House Soleta Edge occupies a plot on the outskirts of a suburban settlement — south-facing, with strict setback rules from the property boundaries that shaped every aspect of the massing.",
+      "The client's requirement for enhanced thermal and acoustic insulation drove the wall build-up specification beyond standard. Natural wood fibre insulation at increased thickness, combined with a vapour-permeable membrane, delivers measurably superior performance.",
+      "The result is a home that performs at the top of its envelope specification while remaining within all planning constraints.",
     ],
 
     specs: [
       { label: "Location",   value: "Europe" },
-      { label: "Year",       value: "2020" },
-      { label: "Collection", value: "Signature" },
+      { label: "Year",       value: "2022" },
+      { label: "Collection", value: "Classic" },
       { label: "Energy",     value: "A+" },
     ],
 
     caseStudy: {
-      challenge:  "A benchmark hilly site at 740 m altitude, with strict height limits for planning approval, heavy snow loads, and the requirement to use exclusively natural materials.",
-      approach:   "Signature frame engineered for alpine load class. Charred timber cladding for fire rating and weathering. Envelope performance calibrated for upland conditions.",
-      outcome:    "Planning consent on first submission. Build completed within the alpine season. Home performs without mechanical heating during shoulder seasons.",
+      challenge:  "A plot on the outskirts of a suburban settlement, south-facing, with strict setback rules from the property boundaries, combined with the client's requirement for enhanced thermal and acoustic insulation.",
+      approach:   "Classic frame with increased insulation specification. Natural wood fibre at greater thickness. Vapour-permeable membrane throughout. Massing resolved within strict boundary setbacks.",
+      outcome:    "Enhanced thermal and acoustic performance verified on completion. Home within all planning constraints. Client reports measurably quieter interior than conventional construction.",
       highlights: [
-        "740 m altitude — alpine structural specification",
-        "Exclusively natural materials throughout",
-        "Planning consent on first submission",
-        "No mechanical heating required in shoulder seasons",
+        "South-facing within strict setback envelope",
+        "Enhanced insulation — natural wood fibre at increased thickness",
+        "Acoustic performance verified on completion",
+        "Vapour-permeable construction throughout",
       ],
     },
 
@@ -521,41 +521,41 @@ export const projects: BuiltProject[] = [
   {
     slug:     "soleta-aurora",
     category: "private-residences",
-    title:    "Soleta Aurora",
+    title:    "HOUSE Soleta Aurora",
     location: "Europe",
-    year:     "2022",
-    model:    "Classic",
+    year:     "2023",
+    model:    "Signature",
     status:   "completed",
 
     imageSrc: "/images/Aurora800x600.webp",
-    imageAlt: "Soleta Aurora exterior",
+    imageAlt: "Exterior of House Soleta Aurora",
     gallery:  [],
 
     summary:
-      "A Classic home on the edge of the city — south-facing, strict height and setback rules, with a requirement for superior energy performance.",
+      "A Signature home in a pre-alpine area at 810 m altitude — strict height limits for planning approval, moderate snow loads, exclusively natural materials.",
 
     description: [
-      "Soleta Aurora occupies a plot on the edge of the city — south-facing, with strict planning rules on height and setbacks that left limited room for error in the massing.",
-      "The client's requirement for superior energy performance shaped every decision: orientation, glazing ratio, insulation specification, and the ZeroEnergy system package.",
-      "The result is a home that achieves near-zero annual energy consumption while maintaining generous interior proportions within a constrained envelope.",
+      "HOUSE Soleta Aurora sits in a pre-alpine area at 810 m altitude — a location with pronounced seasonal variation and strict planning height limits that shaped the massing from the outset.",
+      "The Signature frame was specified for the site's snow load class. Natural materials were used exclusively throughout — charred timber cladding, natural wood fibre insulation, stone thresholds.",
+      "The result is a home that belongs to its pre-alpine landscape while meeting every planning requirement and delivering the spatial quality the site and brief demanded.",
     ],
 
     specs: [
       { label: "Location",   value: "Europe" },
-      { label: "Year",       value: "2022" },
-      { label: "Collection", value: "Classic" },
-      { label: "Energy",     value: "Near-ZeroEnergy" },
+      { label: "Year",       value: "2023" },
+      { label: "Collection", value: "Signature" },
+      { label: "Energy",     value: "A+" },
     ],
 
     caseStudy: {
-      challenge:  "A plot on the edge of the city, south-facing, with strict rules on height and setbacks, combined with the client's requirement for superior energy performance.",
-      approach:   "Classic frame oriented fully south. Glazing ratio calibrated for passive solar gain without overheating. ZeroEnergy package: solar + geothermal + MVHR.",
-      outcome:    "Near-zero annual energy consumption. Home performs within all planning constraints. Client energy bills negligible after first full year.",
+      challenge:  "A site in a pre-alpine area, located at 810 m altitude, with height limits for planning approval, moderate snow loads, and the requirement to use only natural materials for construction.",
+      approach:   "Signature frame specified for pre-alpine snow load class. Exclusively natural materials — charred timber cladding, wood fibre insulation, stone thresholds. Massing calibrated to planning height limits.",
+      outcome:    "Planning consent on first submission. Build completed within the alpine construction season. Home performs with exclusively natural materials at 810 m altitude.",
       highlights: [
-        "South-facing within strict planning envelope",
-        "Near-ZeroEnergy — solar + geothermal + MVHR",
-        "Negligible energy bills after first full year",
-        "Generous interior proportions within constrained massing",
+        "810 m altitude — pre-alpine structural specification",
+        "Exclusively natural materials throughout",
+        "Planning consent on first submission",
+        "Charred timber cladding — fire rated, zero maintenance",
       ],
     },
 
