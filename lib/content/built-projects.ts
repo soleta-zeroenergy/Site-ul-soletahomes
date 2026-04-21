@@ -80,7 +80,7 @@ export const categoryMeta: CategoryMeta[] = [
     label:      "Private Residences",
     eyebrow:    "Private Residences",
     h1:         "Homes built for how you live",
-    subheading: "Permanent family homes designed around your site, your light and the way you actually live. Built to last generations.",
+    subheading: "Permanent family homes designed around your site, your light, and the way you truly live. Built to last generations.",
     href:       "/built-projects/private-residences",
     cta: {
       heading:   "Begin your private residence",
@@ -94,7 +94,7 @@ export const categoryMeta: CategoryMeta[] = [
     label:      "Holiday Homes",
     eyebrow:    "Holiday Homes",
     h1:         "Homes that make arriving feel like relief",
-    subheading: "Compact, calm architecture for waterfront plots, mountain sites and forest clearings. Ground screw foundations — relocatable. ZeroEnergy option.",
+    subheading: "Compact, calm architecture for plots at the edge of towns, by the water, on mountain sites, and in forest clearings. Concrete slab or ground screw foundations — relocatable. ZeroEnergy option.",
     href:       "/built-projects/holiday-homes",
     cta: {
       heading:   "Begin your holiday home",
@@ -108,7 +108,7 @@ export const categoryMeta: CategoryMeta[] = [
     label:      "Hospitality & Resorts",
     eyebrow:    "Hospitality & Resorts",
     h1:         "Timber hospitality, built at scale",
-    subheading: "Boutique hotels, eco-resorts and lodge clusters. The Soleta modular system makes it possible to build high-quality hospitality at speed — without compromising on materials or architecture.",
+    subheading: "Guesthouses, eco-resorts, and lodge clusters. The Soleta modular system makes it possible to build hospitality projects of a very high standard, quickly, without compromising on materials or architecture.",
     href:       "/built-projects/hospitality-resorts",
     cta: {
       heading:   "Build a hospitality project",
@@ -122,7 +122,7 @@ export const categoryMeta: CategoryMeta[] = [
     label:      "Educational & Public",
     eyebrow:    "Educational & Public",
     h1:         "Timber buildings for the public realm",
-    subheading: "Schools, kindergartens, community centres and public spaces. The Soleta system — healthy materials, fast assembly, long lifespan — makes it an ideal choice for buildings that serve communities.",
+    subheading: "Schools, kindergartens, community centres, and public spaces. The Soleta system — healthy materials, fast assembly, and long lifespan — makes it an ideal choice for buildings that serve communities.",
     href:       "/built-projects/educational-public",
     cta: {
       heading:   "Build a public timber building",
@@ -147,7 +147,7 @@ export const projects: BuiltProject[] = [
     model:    "Signature",
     setting:  "Alpine",
     status:   "completed",
-    featured: true,
+    featured: false,
 
     imageSrc: "/images/Signature800x533.webp",
     imageAlt: "Villa Falaise exterior, Chamonix, France",
@@ -223,7 +223,7 @@ export const projects: BuiltProject[] = [
     model:    "Classic",
     setting:  "Lakefront",
     status:   "completed",
-    featured: true,
+    featured: false,
 
     imageSrc: "/images/Classic800x533.webp",
     imageAlt: "Haus Tegernsee exterior, Bavaria, Germany",
@@ -299,7 +299,7 @@ export const projects: BuiltProject[] = [
     model:    "Holiday & Retreat",
     setting:  "Lakefront",
     status:   "completed",
-    featured: true,
+    featured: false,
 
     imageSrc: "/images/Retreat800x533.webp",
     imageAlt: "Wörthersee Lodge exterior, Carinthia, Austria",
@@ -362,6 +362,249 @@ export const projects: BuiltProject[] = [
     },
 
     relatedSlugs: ["haus-tegernsee", "villa-falaise"],
+  },
+
+  /* ── Featured projects ──────────────────────────────────────────────────── */
+
+  {
+    slug:     "villa-vanau",
+    category: "private-residences",
+    title:    "Villa Vanau",
+    location: "Romania",
+    year:     "2016",
+    area:     "194 m²",
+    model:    "Signature",
+    status:   "completed",
+    featured: true,
+
+    imageSrc: "/images/Signature800x533.webp",
+    imageAlt: "Villa Vanau exterior, Romania",
+    gallery:  [],
+
+    summary:
+      "A Signature home set in a green urban area, on the edge of a lake, designed to bring the calm of nature while offering full-height glazing oriented towards the water.",
+
+    description: [
+      "Villa Vanau occupies a rare urban site — a green parcel on the edge of a lake within a residential district. The brief asked for a home that brought the calm of nature into daily life without surrendering any of the quality of a permanent city residence.",
+      "Full-height south glazing frames the lake as a constant presence throughout the interior. The Signature frame extends to allow a cantilevered terrace at the waterfront boundary.",
+      "Natural materials throughout — exposed glulam structure, timber cladding, stone thresholds — reinforce the connection between the interior and the landscape beyond.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Romania" },
+      { label: "Year",       value: "2016" },
+      { label: "Area",       value: "194 m²" },
+      { label: "Collection", value: "Signature" },
+      { label: "Energy",     value: "A+" },
+    ],
+
+    relatedSlugs: ["house-bezmalinovic"],
+  },
+
+  {
+    slug:     "house-bezmalinovic",
+    category: "private-residences",
+    title:    "House Bezmalinovic",
+    location: "Croatia",
+    year:     "2019",
+    area:     "150 m²",
+    model:    "Classic",
+    status:   "completed",
+    featured: true,
+
+    imageSrc: "/images/Classic800x533.webp",
+    imageAlt: "House Bezmalinovic exterior, Croatia",
+    gallery:  [],
+
+    summary:
+      "A Classic Soleta home in a mountainous area of Croatia, designed for year-round family living.",
+
+    description: [
+      "House Bezmalinovic sits in a mountainous region of Croatia — a site with pronounced seasonal variation and a landscape that demanded careful orientation and material choices.",
+      "The Classic 120 was configured for full-time family occupation, with generous living spaces on the ground floor and three bedrooms oriented to capture morning light and mountain views.",
+      "Natural wood fibre insulation and a passive solar orientation ensure thermal comfort through both summer and winter without reliance on mechanical systems.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Croatia" },
+      { label: "Year",       value: "2019" },
+      { label: "Area",       value: "150 m²" },
+      { label: "Collection", value: "Classic" },
+      { label: "Energy",     value: "A+" },
+    ],
+
+    relatedSlugs: ["villa-vanau", "soleta-life"],
+  },
+
+  {
+    slug:     "soleta-life",
+    category: "holiday-homes",
+    title:    "Soleta Life",
+    location: "Europe",
+    year:     "2021",
+    area:     "72 m²",
+    model:    "Holiday & Retreat",
+    status:   "completed",
+    featured: true,
+
+    imageSrc: "/images/Life800x600.webp",
+    imageAlt: "Soleta Life exterior, Europe",
+    gallery:  [],
+
+    summary:
+      "A compact retreat home set at the foot of the mountain — minimal footprint, maximum connection to the sky and the forest.",
+
+    description: [
+      "Soleta Life sits at the foot of a mountain — a position that demanded a home with strong visual and thermal connection to its setting while remaining compact and low-impact.",
+      "The 72 m² form is arranged as a single open living space opening to a south-facing terrace. The sleeping mezzanine keeps the ground floor generous without expanding the footprint.",
+      "Ground screw foundations ensured zero excavation on the sensitive mountain-adjacent terrain. The ZeroEnergy solar-plus-battery system makes the home fully self-sufficient during the active seasons.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2021" },
+      { label: "Area",       value: "72 m²" },
+      { label: "Collection", value: "Holiday & Retreat" },
+      { label: "Energy",     value: "ZeroEnergy — solar + battery" },
+      { label: "Foundation", value: "Ground screws" },
+    ],
+
+    relatedSlugs: ["house-bezmalinovic"],
+  },
+
+  /* ── Case study projects ────────────────────────────────────────────────── */
+
+  {
+    slug:     "soleta-edge",
+    category: "private-residences",
+    title:    "House Soleta Edge",
+    location: "Europe",
+    year:     "2020",
+    model:    "Signature",
+    status:   "completed",
+
+    imageSrc: "/images/Signature800x533.webp",
+    imageAlt: "House Soleta Edge exterior",
+    gallery:  [],
+
+    summary:
+      "A Signature home on a benchmark hilly site at 740 m altitude — strict planning height limits, heavy snow loads, and exclusively natural materials.",
+
+    description: [
+      "House Soleta Edge presented a demanding brief on a hilly site at 740 m altitude — strict height limits for planning approval, heavy snow loads, and a requirement to use exclusively natural materials throughout.",
+      "The Signature frame was engineered for alpine load class. Charred timber cladding was chosen for its fire rating and its weathering behaviour in exposed upland conditions.",
+      "The result is a home that meets every planning constraint while delivering the spatial quality and material integrity that the site demanded.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2020" },
+      { label: "Collection", value: "Signature" },
+      { label: "Energy",     value: "A+" },
+    ],
+
+    caseStudy: {
+      challenge:  "A benchmark hilly site at 740 m altitude, with strict height limits for planning approval, heavy snow loads, and the requirement to use exclusively natural materials.",
+      approach:   "Signature frame engineered for alpine load class. Charred timber cladding for fire rating and weathering. Envelope performance calibrated for upland conditions.",
+      outcome:    "Planning consent on first submission. Build completed within the alpine season. Home performs without mechanical heating during shoulder seasons.",
+      highlights: [
+        "740 m altitude — alpine structural specification",
+        "Exclusively natural materials throughout",
+        "Planning consent on first submission",
+        "No mechanical heating required in shoulder seasons",
+      ],
+    },
+
+    relatedSlugs: ["soleta-aurora"],
+  },
+
+  {
+    slug:     "soleta-aurora",
+    category: "private-residences",
+    title:    "Soleta Aurora",
+    location: "Europe",
+    year:     "2022",
+    model:    "Classic",
+    status:   "completed",
+
+    imageSrc: "/images/Aurora800x600.webp",
+    imageAlt: "Soleta Aurora exterior",
+    gallery:  [],
+
+    summary:
+      "A Classic home on the edge of the city — south-facing, strict height and setback rules, with a requirement for superior energy performance.",
+
+    description: [
+      "Soleta Aurora occupies a plot on the edge of the city — south-facing, with strict planning rules on height and setbacks that left limited room for error in the massing.",
+      "The client's requirement for superior energy performance shaped every decision: orientation, glazing ratio, insulation specification, and the ZeroEnergy system package.",
+      "The result is a home that achieves near-zero annual energy consumption while maintaining generous interior proportions within a constrained envelope.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2022" },
+      { label: "Collection", value: "Classic" },
+      { label: "Energy",     value: "Near-ZeroEnergy" },
+    ],
+
+    caseStudy: {
+      challenge:  "A plot on the edge of the city, south-facing, with strict rules on height and setbacks, combined with the client's requirement for superior energy performance.",
+      approach:   "Classic frame oriented fully south. Glazing ratio calibrated for passive solar gain without overheating. ZeroEnergy package: solar + geothermal + MVHR.",
+      outcome:    "Near-zero annual energy consumption. Home performs within all planning constraints. Client energy bills negligible after first full year.",
+      highlights: [
+        "South-facing within strict planning envelope",
+        "Near-ZeroEnergy — solar + geothermal + MVHR",
+        "Negligible energy bills after first full year",
+        "Generous interior proportions within constrained massing",
+      ],
+    },
+
+    relatedSlugs: ["soleta-edge", "soleta-gabrielle"],
+  },
+
+  {
+    slug:     "soleta-gabrielle",
+    category: "holiday-homes",
+    title:    "Soleta Gabrielle",
+    location: "Europe",
+    year:     "2025",
+    model:    "Signature",
+    status:   "completed",
+
+    imageSrc: "/images/Retreat800x533.webp",
+    imageAlt: "Soleta Gabrielle exterior",
+    gallery:  [],
+
+    summary:
+      "A moderately sloped hillside plot with panoramic views over the city — designed for permanent residence use.",
+
+    description: [
+      "Soleta Gabrielle sits on a moderately sloped plot at the top of a hill, with panoramic views over the city. The requirement to use it as a permanent residence — not merely a holiday home — shaped the brief from the outset.",
+      "The slope was resolved through a split-level section that follows the terrain without significant excavation. Ground screws provided a precise, low-impact foundation with minimal earthworks.",
+      "The panoramic orientation to the city was balanced against privacy requirements and solar performance — the glazing strategy is calibrated to capture views without sacrificing thermal comfort.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2025" },
+      { label: "Collection", value: "Signature" },
+      { label: "Energy",     value: "A+" },
+      { label: "Foundation", value: "Ground screws" },
+    ],
+
+    caseStudy: {
+      challenge:  "A moderately sloped plot on top of a hill, with panoramic views over the city and the requirement to be used as a permanent residence.",
+      approach:   "Split-level section following the terrain. Ground screws for low-impact foundation. Glazing calibrated for panoramic views balanced against solar performance and privacy.",
+      outcome:    "Permanent residence quality achieved on a hillside plot. Minimal site disturbance. Panoramic views preserved from all principal living spaces.",
+      highlights: [
+        "Hillside split-level — ground screws, zero excavation",
+        "Panoramic city views from all principal spaces",
+        "Permanent residence standard on a holiday-category site",
+        "2025 — most recently completed Soleta project",
+      ],
+    },
+
+    relatedSlugs: ["soleta-aurora"],
   },
 ];
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ...withCanonical("/built-projects"),
   title:       "Built Projects | Homes We Have Built | Soleta",
   description:
-    "86+ Soleta homes built across Romania, France, Germany, Austria and beyond. Browse private residences, holiday homes, hospitality projects and case studies.",
+    "More than 86 Soleta homes built across Romania, France, Germany, Austria, and beyond. Explore private residences, holiday homes, hospitality projects, and case studies.",
 };
 
 export default function BuiltProjectsPage() {
@@ -41,9 +41,9 @@ export default function BuiltProjectsPage() {
       >
         <div className="container-narrow">
           <span className="eyebrow mb-6 block">Built Projects</span>
-          <h1 className="mb-6 max-w-2xl">Architecture shaped by place, use and real life</h1>
+          <h1 className="mb-6 max-w-2xl">Architecture shaped by place, use, and real life</h1>
           <p className="subtitle max-w-xl">
-            Explore homes and timber projects developed across private, hospitality and public contexts — each one shaped by land, climate, use and the realities of building well.
+            Explore homes and timber projects developed across private, hospitality, and public contexts — each one shaped by land, climate, use, and the realities of building well.
           </p>
         </div>
       </section>
@@ -60,15 +60,15 @@ export default function BuiltProjectsPage() {
               <h2
                 style={{ fontSize: "clamp(1.625rem, 2.5vw, 2.25rem)", lineHeight: 1.15 }}
               >
-                The proof is in the built
+                The proof is in what has been built
               </h2>
             </div>
             <div className="flex flex-col gap-5">
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                Anyone can render a beautiful home on a screen. We show you the ones that exist — lived in, weather-tested, owner-assessed. Every project listed here was completed, delivered and verified.
+                We show beautiful homes that truly exist — lived in, weather-tested, and assessed by their owners. Every project listed here has been completed, delivered, and verified.
               </p>
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                The case studies go further: the brief, the site constraints, the design decisions and what the owners say now. Useful, honest documentation for anyone planning a similar project.
+                The case studies go further: the brief, the site constraints, the design decisions, and what the owners say now. Useful and honest documentation for anyone planning a similar project.
               </p>
             </div>
           </div>
@@ -192,15 +192,15 @@ export default function BuiltProjectsPage() {
             {[
               {
                 heading: "Adaptability to site",
-                body:     "Alpine, lakefront, forest, urban edge. The Soleta system has been configured across every European setting. No two sites are the same; no two builds are identical.",
+                body:     "Alpine, lakeside, forest, urban edge. The Soleta system has been configured across all types of European settings. No two sites are the same; no two builds are identical.",
               },
               {
                 heading: "Material honesty",
-                body:     "Every project uses the same material logic: exposed structural timber, natural cladding chosen for its setting, envelope performance that does not rely on mechanical compensation.",
+                body:     "Every project follows the same material logic: exposed timber structure, natural cladding chosen for its context, and envelope performance that does not rely on mechanical compensation.",
               },
               {
                 heading: "Speed without compromise",
-                body:     "Assembly times of 4–12 weeks are common. Not because corners are cut, but because the fabrication happens in parallel with site preparation — not sequentially.",
+                body:     "Assembly times of 4–12 weeks are common. Not because corners are cut, but because fabrication happens in parallel with site preparation — not sequentially.",
               },
             ].map((item) => (
               <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
@@ -280,7 +280,7 @@ export default function BuiltProjectsPage() {
       <CtaBand
         eyebrow="Start your project"
         heading="Begin your Soleta project"
-        body="Tell us about your site, your vision and your timeline."
+        body="Tell us about your site, your vision, and your timeline."
         primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Discover the Process",  href: "/process" }}
         theme="dark"
