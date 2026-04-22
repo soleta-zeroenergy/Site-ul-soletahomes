@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 export const metadata: Metadata = {
   ...withCanonical("/built-projects/case-studies"),
   title:       "Case Studies | Built Projects | Soleta",
-  description: "In-depth case studies of Soleta homes — the site, the challenge, the design decisions and the outcome.",
+  description: "In-depth case studies of Soleta homes — the site, the challenge, the design decisions, and the outcome.",
 };
 
 export default function CaseStudiesPage() {
@@ -43,7 +43,7 @@ export default function CaseStudiesPage() {
           <span className="eyebrow mb-4 block">Case Studies</span>
           <h1 className="mb-6 max-w-2xl">The full story behind the build</h1>
           <p className="subtitle max-w-xl">
-            Each case study documents the site, the challenge, the design decisions and the outcome — in enough detail to be genuinely useful to someone planning a similar project.
+            Each case study documents the site, the challenge, the design decisions, and the outcome — in enough depth to be genuinely useful to someone planning a similar project.
           </p>
         </div>
       </section>
@@ -56,8 +56,8 @@ export default function CaseStudiesPage() {
         <div className="container-site">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "The Site & Brief",              body: "What made the plot unusual. What the client actually needed." },
-              { label: "Architectural Response",        body: "How the design solved the site. Which decisions were non-obvious." },
+              { label: "The Site & Brief",              body: "What made the site unusual. What the client truly needed." },
+              { label: "Architectural Response",        body: "How the design resolved the site. Which decisions were not obvious." },
               { label: "Material & Construction Logic", body: "Why those materials. How the system was assembled." },
               { label: "Outcome",                       body: "Performance, cost, timeline. What happened after handover." },
             ].map((item) => (
@@ -146,7 +146,7 @@ export default function CaseStudiesPage() {
           ) : (
             <div className="py-24 text-center">
               <p className="text-[var(--color-text-secondary)]">
-                Case studies being prepared — check back soon.
+                Case studies are being prepared — check back soon.
               </p>
             </div>
           )}
@@ -157,7 +157,7 @@ export default function CaseStudiesPage() {
       <CtaBand
         eyebrow="Start your project"
         heading="Begin your Soleta project"
-        body="Tell us about your site, your vision and your timeline."
+        body="Tell us about your site, your vision, and your timeline."
         primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "View all projects",     href: "/built-projects" }}
         theme="dark"

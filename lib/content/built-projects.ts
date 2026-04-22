@@ -137,11 +137,10 @@ export const categoryMeta: CategoryMeta[] = [
 
 export const projects: BuiltProject[] = [
   {
-    slug:     "villa-falaise",
+    slug:     "soleta-aquarius",
     category: "private-residences",
-    title:    "Villa Falaise",
-    location: "Chamonix",
-    country:  "France",
+    title:    "Soleta Aquarius",
+    location: "Europe",
     year:     "2023",
     area:     "142 m²",
     model:    "Signature",
@@ -149,8 +148,8 @@ export const projects: BuiltProject[] = [
     status:   "completed",
     featured: false,
 
-    imageSrc: "/images/Signature800x533.webp",
-    imageAlt: "Villa Falaise exterior, Chamonix, France",
+    imageSrc: "/images/Aquarius800x600.webp",
+    imageAlt: "Soleta Aquarius exterior — alpine Signature home",
     gallery:  [],
 
     summary:
@@ -198,7 +197,7 @@ export const projects: BuiltProject[] = [
     },
 
     caseStudy: {
-      challenge:  "A landmark alpine site at 1,240 m with strict planning height limits, extreme snow loads and the requirement to use only natural cladding materials.",
+      challenge:  "An alpine site at 1,240 m altitude, with footprint limits for planning approval, heavy snow loads, and the requirement to use only natural construction materials.",
       approach:   "Extended Signature frame with cantilevered south-west corner. Charred larch cladding chosen for fire rating and weathering behaviour. Triple-glazed south facade; near-solid north facade.",
       outcome:    "Planning consent on first submission. 14-week build. Energy bills of ~€60/month during full winter occupancy — no mechanical heating needed during shoulder seasons.",
       highlights: [
@@ -209,7 +208,53 @@ export const projects: BuiltProject[] = [
       ],
     },
 
-    relatedSlugs: ["haus-tegernsee", "worthersee-lodge"],
+    relatedSlugs: ["haus-tegernsee"],
+  },
+
+  {
+    slug:     "soleta-aurora",
+    category: "private-residences",
+    title:    "Soleta Aurora",
+    location: "Europe",
+    year:     "2022",
+    area:     "120 m²",
+    model:    "Signature",
+    status:   "completed",
+
+    imageSrc: "/images/Aurora800x600.webp",
+    imageAlt: "Exterior of Soleta Aurora",
+    gallery:  [],
+
+    summary:
+      "A Signature home in a pre-alpine area at 810 m altitude — strict height limits for planning approval, moderate snow loads, exclusively natural materials.",
+
+    description: [
+      "Soleta Aurora sits in a pre-alpine area at 810 m altitude — a location with pronounced seasonal variation and strict planning height limits that shaped the massing from the outset.",
+      "The Signature frame was specified for the site's snow load class. Natural materials were used exclusively throughout — charred timber cladding, natural wood fibre insulation, stone thresholds.",
+      "The result is a home that belongs to its pre-alpine landscape while meeting every planning requirement and delivering the spatial quality the site and brief demanded.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2022" },
+      { label: "Area",       value: "120 m²" },
+      { label: "Collection", value: "Signature" },
+      { label: "Energy",     value: "A+" },
+    ],
+
+    caseStudy: {
+      challenge:  "A suburban, south-facing plot with rules governing height and setbacks, combined with the requirement to use natural building materials.",
+      approach:   "Signature frame specified for site conditions. Exclusively natural materials — charred timber cladding, wood fibre insulation, stone thresholds. Massing resolved within planning height and setback limits.",
+      outcome:    "Planning consent on first submission. Build completed within the construction season. Home performs with exclusively natural materials.",
+      highlights: [
+        "South-facing within strict height and setback limits",
+        "Exclusively natural materials throughout",
+        "Planning consent on first submission",
+        "Charred timber cladding — fire rated, zero maintenance",
+      ],
+    },
+
+    relatedSlugs: ["soleta-edge", "soleta-gabrielle"],
   },
 
   {
@@ -273,19 +318,7 @@ export const projects: BuiltProject[] = [
       author: "Owner, Haus Tegernsee",
     },
 
-    caseStudy: {
-      challenge:  "A south-facing lakeside parcel with strict Bavarian height and setback rules, combined with a client requirement for full energy independence.",
-      approach:   "Classic 120 oriented fully south. Cantilevered terrace to dock. ZeroEnergy package: 120 m geothermal loop + 12 kW solar + battery storage.",
-      outcome:    "Net-positive after 12 months — 1,800 kWh exported to the grid. Family in by October, through Bavarian winter with negligible heating cost.",
-      highlights: [
-        "120 m² Classic — fully south-oriented",
-        "Net-positive ZeroEnergy — 1,800 kWh exported year one",
-        "Cantilevered terrace steps to private dock",
-        "Ground screw foundations — zero excavation on protected lakeside site",
-      ],
-    },
-
-    relatedSlugs: ["villa-falaise"],
+    relatedSlugs: ["soleta-aquarius"],
   },
 
   /* ── Featured projects ──────────────────────────────────────────────────── */
@@ -357,48 +390,48 @@ export const projects: BuiltProject[] = [
       { label: "Energy",     value: "A+" },
     ],
 
-    relatedSlugs: ["villa-vanau", "soleta-life"],
+    relatedSlugs: ["villa-vanau", "house-soleta-fly"],
   },
 
   {
-    slug:     "soleta-life",
+    slug:     "house-soleta-fly",
     category: "holiday-homes",
-    title:    "House Soleta Life",
+    title:    "House Soleta Fly",
     location: "Europe",
     year:     "2024",
-    area:     "72 m²",
+    area:     "42 m²",
     model:    "Holiday & Retreat",
     status:   "completed",
     featured: true,
 
     imageSrc: "/images/Life800x600.webp",
-    imageAlt: "Exterior, Soleta Life",
+    imageAlt: "Exterior, House Soleta Fly",
     gallery:  [],
 
     summary:
-      "A compact retreat home set at the foot of the mountain — minimal footprint, maximum connection to the sky and the forest.",
+      "A compact mountain village retreat — 42 m², zero excavation, designed for both personal use and boutique rental.",
 
     description: [
-      "House Soleta Life sits at the foot of a mountain — a position that demanded a home with strong visual and thermal connection to its setting while remaining compact and low-impact.",
-      "The 72 m² form is arranged as a single open living space opening to a south-facing terrace. The sleeping mezzanine keeps the ground floor generous without expanding the footprint.",
-      "Ground screw foundations ensured zero excavation on the sensitive mountain-adjacent terrain. The ZeroEnergy solar-plus-battery system makes the home fully self-sufficient during the active seasons.",
+      "House Soleta Fly occupies a narrow plot in a mountain village — a position that required zero excavation and precise placement to respect the existing built fabric.",
+      "The 42 m² form is compact by intent: a single space that opens fully to its setting, with a sleeping mezzanine that keeps the ground plan generous without expanding the footprint.",
+      "Ground screw foundations were installed in a single day. The ZeroEnergy solar-plus-battery system makes the home fully self-sufficient throughout the active seasons.",
     ],
 
     specs: [
       { label: "Location",   value: "Europe" },
       { label: "Year",       value: "2024" },
-      { label: "Area",       value: "72 m²" },
+      { label: "Area",       value: "42 m²" },
       { label: "Collection", value: "Holiday & Retreat" },
       { label: "Energy",     value: "ZeroEnergy — solar + battery" },
       { label: "Foundation", value: "Ground screws" },
     ],
 
     caseStudy: {
-      challenge:  "A narrow waterfront plot with zero-excavation rules, a protected tree line with 600 mm clearances, and dual-use requirements — personal retreat and boutique rental.",
-      approach:   "Long, low form threading between existing trees. Ground screws installed in a single day. Open plan ground floor; sleeping mezzanine.",
-      outcome:    "Assembled in under a week. Minimal site disturbance on a sensitive waterfront plot. Dual-use operation — personal retreat and boutique rental — working as designed.",
+      challenge:  "A narrow plot in a mountain village, with zero-excavation rules and dual-use requirements — personal retreat and boutique rental.",
+      approach:   "Compact 42 m² form. Ground screws installed in a single day. Open plan ground floor; sleeping mezzanine. ZeroEnergy solar + battery.",
+      outcome:    "Assembled in under a week. Minimal site disturbance. Dual-use operation — personal retreat and boutique rental — working as designed.",
       highlights: [
-        "72 m² — form threading existing tree line with 600 mm clearances",
+        "42 m² — compact form, mountain village setting",
         "Zero excavation — ground screws in one day",
         "Dual-use: personal retreat and boutique rental",
         "ZeroEnergy — solar + battery",
@@ -452,50 +485,6 @@ export const projects: BuiltProject[] = [
     },
 
     relatedSlugs: ["soleta-aurora"],
-  },
-
-  {
-    slug:     "soleta-aurora",
-    category: "private-residences",
-    title:    "HOUSE Soleta Aurora",
-    location: "Europe",
-    year:     "2023",
-    model:    "Signature",
-    status:   "completed",
-
-    imageSrc: "/images/Aurora800x600.webp",
-    imageAlt: "Exterior of House Soleta Aurora",
-    gallery:  [],
-
-    summary:
-      "A Signature home in a pre-alpine area at 810 m altitude — strict height limits for planning approval, moderate snow loads, exclusively natural materials.",
-
-    description: [
-      "HOUSE Soleta Aurora sits in a pre-alpine area at 810 m altitude — a location with pronounced seasonal variation and strict planning height limits that shaped the massing from the outset.",
-      "The Signature frame was specified for the site's snow load class. Natural materials were used exclusively throughout — charred timber cladding, natural wood fibre insulation, stone thresholds.",
-      "The result is a home that belongs to its pre-alpine landscape while meeting every planning requirement and delivering the spatial quality the site and brief demanded.",
-    ],
-
-    specs: [
-      { label: "Location",   value: "Europe" },
-      { label: "Year",       value: "2023" },
-      { label: "Collection", value: "Signature" },
-      { label: "Energy",     value: "A+" },
-    ],
-
-    caseStudy: {
-      challenge:  "A site in a pre-alpine area, located at 810 m altitude, with height limits for planning approval, moderate snow loads, and the requirement to use only natural materials for construction.",
-      approach:   "Signature frame specified for pre-alpine snow load class. Exclusively natural materials — charred timber cladding, wood fibre insulation, stone thresholds. Massing calibrated to planning height limits.",
-      outcome:    "Planning consent on first submission. Build completed within the alpine construction season. Home performs with exclusively natural materials at 810 m altitude.",
-      highlights: [
-        "810 m altitude — pre-alpine structural specification",
-        "Exclusively natural materials throughout",
-        "Planning consent on first submission",
-        "Charred timber cladding — fire rated, zero maintenance",
-      ],
-    },
-
-    relatedSlugs: ["soleta-edge", "soleta-gabrielle"],
   },
 
   {
