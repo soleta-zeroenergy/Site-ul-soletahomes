@@ -285,83 +285,7 @@ export const projects: BuiltProject[] = [
       ],
     },
 
-    relatedSlugs: ["villa-falaise", "worthersee-lodge"],
-  },
-
-  {
-    slug:     "worthersee-lodge",
-    category: "holiday-homes",
-    title:    "Wörthersee Lodge",
-    location: "Carinthia",
-    country:  "Austria",
-    year:     "2024",
-    area:     "72 m²",
-    model:    "Holiday & Retreat",
-    setting:  "Lakefront",
-    status:   "completed",
-    featured: false,
-
-    imageSrc: "/images/Retreat800x533.webp",
-    imageAlt: "Wörthersee Lodge exterior, Carinthia, Austria",
-    gallery:  [],
-
-    summary:
-      "A compact retreat home on the northern shore of Lake Wörthersee — minimal footprint, maximum connection to water and forest.",
-
-    description: [
-      "The Wörthersee site presented a challenge: a narrow waterfront plot with strict set-back requirements and a protected tree line. The solution was a long, low form that threads between the existing trees without removing a single one.",
-      "The Lodge 72 is configured as a single open living space with a sleeping mezzanine and a full-width south terrace that steps directly to the private dock. Ground screw foundations were essential — the site required zero excavation.",
-      "The clients use the Lodge as a personal escape during summer and rent it through a boutique agency during the shoulder season. The ZeroEnergy systems make off-season operation cost-free.",
-    ],
-
-    siteBrief: [
-      "The northern Wörthersee shoreline is one of the most protected in Carinthia — strict set-back rules, a protected mature tree line, and zero-excavation requirements on the waterfront strip. The plot is 18 m wide and 42 m deep.",
-      "The brief combined two uses: a personal summer retreat and a shoulder-season rental. The design needed to work as both without feeling like either.",
-    ],
-
-    archResponse: [
-      "The Lodge form is long and low — 18 m × 4 m — threading between the existing trees with a clearance of 600 mm on each side. Ground screws were installed in a single day with no excavation and no tree root disruption.",
-      "The open ground floor flows without partition from the kitchen to the south terrace. The sleeping mezzanine is accessed by a single oak ladder — light, compact, and part of the spatial experience.",
-    ],
-
-    materialLogic: [
-      "Siberian larch cladding was chosen for its dimensional stability in high-humidity lakeside conditions. It will weather to silver-grey within two years, softening into the existing tree canopy.",
-      "The ZeroEnergy solar-plus-battery system is sized for the shoulder rental season — delivering zero energy cost during the 10 months of the year the lodge is in active use.",
-    ],
-
-    outcome: [
-      "The Lodge was assembled in four days following a single day of ground screw installation. From first stake to handover: 11 weeks.",
-      "In its first season as a rental, the Lodge generated sufficient income to cover its annual running costs entirely. The clients have extended the rental season.",
-    ],
-
-    specs: [
-      { label: "Location",    value: "Wörthersee, Carinthia, Austria" },
-      { label: "Year",        value: "2024" },
-      { label: "Area",        value: "72 m²" },
-      { label: "Collection",  value: "Holiday & Retreat" },
-      { label: "Energy",      value: "ZeroEnergy — solar + battery" },
-      { label: "Foundation",  value: "Ground screws — zero excavation" },
-      { label: "Cladding",    value: "Siberian larch" },
-    ],
-
-    testimonial: {
-      quote:  "It arrived as a complete home and was assembled in four days. I still find that remarkable.",
-      author: "Owner, Wörthersee Lodge",
-    },
-
-    caseStudy: {
-      challenge:  "A narrow waterfront plot with zero-excavation rules, a protected tree line with 600 mm clearances, and dual-use requirements — personal retreat and boutique rental.",
-      approach:   "Long, low 18 m × 4 m form threading between trees. Ground screws installed in a single day. Open plan ground floor; sleeping mezzanine on oak ladder.",
-      outcome:    "Assembled in four days. 11 weeks from first stake to handover. First rental season covered all running costs.",
-      highlights: [
-        "72 m² — long/low form threading existing tree line",
-        "Zero excavation — ground screws in one day",
-        "4-day assembly after delivery",
-        "Rental income covered annual running costs in year one",
-      ],
-    },
-
-    relatedSlugs: ["haus-tegernsee", "villa-falaise"],
+    relatedSlugs: ["villa-falaise"],
   },
 
   /* ── Featured projects ──────────────────────────────────────────────────── */
@@ -439,35 +363,47 @@ export const projects: BuiltProject[] = [
   {
     slug:     "soleta-life",
     category: "holiday-homes",
-    title:    "Soleta Life",
+    title:    "House Soleta Life",
     location: "Europe",
-    year:     "2021",
+    year:     "2024",
     area:     "72 m²",
     model:    "Holiday & Retreat",
     status:   "completed",
     featured: true,
 
     imageSrc: "/images/Life800x600.webp",
-    imageAlt: "Soleta Life exterior, Europe",
+    imageAlt: "Exterior, Soleta Life",
     gallery:  [],
 
     summary:
       "A compact retreat home set at the foot of the mountain — minimal footprint, maximum connection to the sky and the forest.",
 
     description: [
-      "Soleta Life sits at the foot of a mountain — a position that demanded a home with strong visual and thermal connection to its setting while remaining compact and low-impact.",
+      "House Soleta Life sits at the foot of a mountain — a position that demanded a home with strong visual and thermal connection to its setting while remaining compact and low-impact.",
       "The 72 m² form is arranged as a single open living space opening to a south-facing terrace. The sleeping mezzanine keeps the ground floor generous without expanding the footprint.",
       "Ground screw foundations ensured zero excavation on the sensitive mountain-adjacent terrain. The ZeroEnergy solar-plus-battery system makes the home fully self-sufficient during the active seasons.",
     ],
 
     specs: [
       { label: "Location",   value: "Europe" },
-      { label: "Year",       value: "2021" },
+      { label: "Year",       value: "2024" },
       { label: "Area",       value: "72 m²" },
       { label: "Collection", value: "Holiday & Retreat" },
       { label: "Energy",     value: "ZeroEnergy — solar + battery" },
       { label: "Foundation", value: "Ground screws" },
     ],
+
+    caseStudy: {
+      challenge:  "A narrow waterfront plot with zero-excavation rules, a protected tree line with 600 mm clearances, and dual-use requirements — personal retreat and boutique rental.",
+      approach:   "Long, low form threading between existing trees. Ground screws installed in a single day. Open plan ground floor; sleeping mezzanine.",
+      outcome:    "Assembled in under a week. Minimal site disturbance on a sensitive waterfront plot. Dual-use operation — personal retreat and boutique rental — working as designed.",
+      highlights: [
+        "72 m² — form threading existing tree line with 600 mm clearances",
+        "Zero excavation — ground screws in one day",
+        "Dual-use: personal retreat and boutique rental",
+        "ZeroEnergy — solar + battery",
+      ],
+    },
 
     relatedSlugs: ["house-bezmalinovic"],
   },

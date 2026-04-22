@@ -12,7 +12,7 @@ const meta     = getCategoryMeta(CATEGORY);
 export const metadata: Metadata = {
   ...withCanonical(meta.href),
   title:       "Holiday Homes | Built Projects | Soleta",
-  description: "Soleta holiday and retreat homes — compact timber architecture for rest, nature and honest connection to the landscape.",
+  description: "Soleta holiday and retreat homes — premium compact architecture for rest, nature, and an authentic connection to the landscape.",
 };
 
 export default function HolidayHomesPage() {
