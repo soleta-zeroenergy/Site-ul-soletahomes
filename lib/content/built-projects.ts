@@ -126,7 +126,7 @@ export const categoryMeta: CategoryMeta[] = [
     href:       "/built-projects/educational-public",
     cta: {
       heading:   "Build a public timber building",
-      body:      "We work with municipalities, foundations and public institutions on educational and community projects.",
+      body:      "We work with municipalities, foundations, and public institutions on educational and community projects.",
       primary:   "Start a Conversation",
       secondary: "View all projects",
     },

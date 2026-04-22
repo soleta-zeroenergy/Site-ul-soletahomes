@@ -13,7 +13,7 @@ const meta     = getCategoryMeta(CATEGORY);
 export const metadata: Metadata = {
   ...withCanonical(meta.href),
   title:       "Educational & Public | Built Projects | Soleta",
-  description: "Soleta educational and public buildings — timber architecture for schools, kindergartens, community centres and public spaces.",
+  description: "Soleta educational and public buildings — timber architecture for schools, kindergartens, community centres, and public spaces.",
 };
 
 export default function EducationalPublicPage() {
@@ -76,10 +76,10 @@ export default function EducationalPublicPage() {
                 <div className="flex flex-col gap-6">
                   <span className="eyebrow block">What We Build</span>
                   <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                    Timber construction offers schools, kindergartens and public institutions a genuinely different building — healthy indoor air quality, fast assembly with minimal site disruption and a long, low-maintenance lifespan. The Soleta system is certified for public use across multiple European markets.
+                    Timber construction offers schools, kindergartens, and public institutions a genuinely different kind of building — healthy indoor air quality, fast assembly with minimal site disruption, and a long lifespan with low maintenance.
                   </p>
                   <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                    Completed public projects will be published here as they conclude. We welcome early conversations with municipalities, foundations and public procurement teams.
+                    Completed public projects will be published here as they conclude. We welcome early conversations with municipalities, foundations, and public procurement teams.
                   </p>
                   <div className="mt-2 flex flex-wrap gap-4">
                     <Link href="/contact" className="btn-primary">Start a Conversation</Link>
@@ -92,7 +92,7 @@ export default function EducationalPublicPage() {
                 >
                   <Image
                     src="/images/Aurora800x600.webp"
-                    alt="Soleta educational and public timber architecture"
+                    alt="Soleta timber architecture for educational and public use"
                     fill
                     className="object-cover"
                   />
@@ -112,15 +112,15 @@ export default function EducationalPublicPage() {
                 {[
                   {
                     heading: "Healthy indoor environment",
-                    body: "Exposed timber regulates humidity and reduces VOC concentrations compared to concrete and steel buildings. Particularly relevant for schools and childcare facilities.",
+                    body: "Exposed timber regulates humidity and reduces concentrations of volatile organic compounds compared with concrete and steel buildings. Particularly relevant for schools and childcare facilities.",
                   },
                   {
                     heading: "Minimal site disruption",
-                    body: "Prefabricated structure means on-site assembly is fast and quiet — important for buildings adjacent to operating schools, hospitals or residential areas.",
+                    body: "A prefabricated structure means on-site assembly is fast and quiet — important for buildings located next to operating schools, hospitals, or residential areas.",
                   },
                   {
                     heading: "Certifiable and auditable",
-                    body: "Soleta structural systems are CE-marked. Material provenance documentation supports green building certification requirements in public procurement.",
+                    body: "Soleta structural systems are CE-marked. Documentation of material provenance supports green building certification requirements in public procurement.",
                   },
                 ].map((item) => (
                   <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
@@ -172,8 +172,8 @@ export default function EducationalPublicPage() {
       {/* ── 4. CTA ── */}
       <CtaBand
         eyebrow="Public projects"
-        heading={meta.cta.heading}
-        body={meta.cta.body}
+        heading="Build a public timber building"
+        body="We work with municipalities, foundations, and public institutions on educational and community projects."
         primaryCta={{ label: meta.cta.primary,    href: "/contact" }}
         secondaryCta={{ label: meta.cta.secondary, href: "/built-projects" }}
         theme="dark"
