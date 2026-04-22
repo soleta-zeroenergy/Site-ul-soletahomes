@@ -108,11 +108,11 @@ export const categoryMeta: CategoryMeta[] = [
     label:      "Hospitality & Resorts",
     eyebrow:    "Hospitality & Resorts",
     h1:         "Timber hospitality, built at scale",
-    subheading: "Guesthouses, eco-resorts, and lodge clusters. The Soleta modular system makes it possible to build hospitality projects of a very high standard, quickly, without compromising on materials or architecture.",
+    subheading: "Boutique hotels, eco-resorts, lodge clusters, and restaurant terraces. The Soleta modular system makes it possible to build high-quality hospitality projects quickly — without compromising on materials or architecture.",
     href:       "/built-projects/hospitality-resorts",
     cta: {
       heading:   "Build a hospitality project",
-      body:      "We work with developers and operators on boutique hotels, eco-resorts and lodge clusters. Tell us about your project.",
+      body:      "We work with developers and operators on boutique hotels, eco-resorts, and lodge clusters. Tell us about your project.",
       primary:   "Start a Conversation",
       secondary: "View all projects",
     },

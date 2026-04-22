@@ -13,7 +13,7 @@ const meta     = getCategoryMeta(CATEGORY);
 export const metadata: Metadata = {
   ...withCanonical(meta.href),
   title:       "Hospitality & Resorts | Built Projects | Soleta",
-  description: "Soleta hospitality and resort projects — timber architecture for boutique hotels, eco-resorts and guest lodges.",
+  description: "Soleta hospitality and resort projects — timber architecture for hotels, restaurants, and summer terraces.",
 };
 
 export default function HospitalityResortsPage() {
@@ -76,7 +76,7 @@ export default function HospitalityResortsPage() {
                 <div className="flex flex-col gap-6">
                   <span className="eyebrow block">What We Build</span>
                   <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                    The Soleta system is well-suited to hospitality development — fast fabrication, controlled quality and a material palette that reads as premium in any European setting. We work with developers and operators on boutique hotels, lodge clusters and eco-resort units.
+                    The Soleta system is highly suited to hospitality development — fast fabrication, controlled quality, and a material palette that reads as premium-luxury in any European context. We work with developers and operators on boutique hotels, lodge clusters, and eco-resort units.
                   </p>
                   <p className="leading-relaxed text-[var(--color-text-secondary)]">
                     Hospitality projects in this category are in progress. Completed work will be published here as it concludes. In the meantime, speak to us directly about your brief.
@@ -112,7 +112,7 @@ export default function HospitalityResortsPage() {
                 {[
                   {
                     heading: "Speed to operation",
-                    body: "Prefabricated units arrive complete. Assembly of a lodge cluster can run parallel with site infrastructure — reducing the gap between investment and revenue.",
+                    body: "Prefabricated units arrive complete. Assembly of a lodge cluster can run in parallel with site infrastructure, reducing the gap between investment and revenue.",
                   },
                   {
                     heading: "Consistent quality at scale",
@@ -120,7 +120,7 @@ export default function HospitalityResortsPage() {
                   },
                   {
                     heading: "A material story guests respond to",
-                    body: "Exposed timber, natural cladding and ZeroEnergy systems are increasingly central to how guests choose boutique accommodation. The Soleta palette gives operators a genuine narrative.",
+                    body: "Exposed timber, other premium natural materials, and ZeroEnergy systems are increasingly important in how guests choose boutique accommodation. The Soleta palette gives operators a genuine narrative.",
                   },
                 ].map((item) => (
                   <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
@@ -172,8 +172,8 @@ export default function HospitalityResortsPage() {
       {/* ── 4. CTA ── */}
       <CtaBand
         eyebrow="Develop with Soleta"
-        heading={meta.cta.heading}
-        body={meta.cta.body}
+        heading="Build a hospitality project"
+        body="We work with developers and operators on boutique hotels, eco-resorts, and lodge clusters. Tell us about your project."
         primaryCta={{ label: meta.cta.primary,    href: "/contact" }}
         secondaryCta={{ label: meta.cta.secondary, href: "/built-projects" }}
         theme="dark"
