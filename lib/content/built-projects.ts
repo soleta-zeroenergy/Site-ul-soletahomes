@@ -326,36 +326,108 @@ export const projects: BuiltProject[] = [
   {
     slug:     "villa-vanau",
     category: "private-residences",
-    title:    "Villa Vanau",
-    location: "Romania",
-    year:     "2016",
-    area:     "194 m²",
+    title:    "Soleta VANAU, Europe",
+    location: "Europe",
+    country:  "Romania",
+    year:     "2015",
+    area:     "342 m²",
     model:    "Signature",
+    setting:  "three levels",
     status:   "completed",
     featured: true,
 
     imageSrc: "/images/Signature800x533.webp",
-    imageAlt: "Villa Vanau exterior, Romania",
+    imageAlt: "Soleta VANAU, Europe",
     gallery:  [],
 
     summary:
-      "A Signature home set in a green urban area, on the edge of a lake, designed to bring the calm of nature while offering full-height glazing oriented towards the water.",
+      "A Soleta Signature home set in a green suburban neighbourhood, designed to stand out in the landscape while offering full-height glazing on all sides.",
 
     description: [
-      "Villa Vanau occupies a rare urban site — a green parcel on the edge of a lake within a residential district. The brief asked for a home that brought the calm of nature into daily life without surrendering any of the quality of a permanent city residence.",
-      "Full-height south glazing frames the lake as a constant presence throughout the interior. The Signature frame extends to allow a cantilevered terrace at the waterfront boundary.",
-      "Natural materials throughout — exposed glulam structure, timber cladding, stone thresholds — reinforce the connection between the interior and the landscape beyond.",
+      "House Soleta VANAU presented a rare challenge: a flat site, with strict planning requirements for a setback from the edge of the lake and seismic conditions. The brief was to create a home that felt rooted in the landscape — not imposed upon it.",
+      "The structural solution uses a combination of masonry and reinforced concrete with an extended post-and-beam glulam frame, with cantilevered sections that minimise ground contact and reduce visual mass. The visible glulam elements gradually integrate the building into the character of the neighbourhood.",
+      "Full-height glazing on the façades and side elevations frames the surrounding landscape like a living artwork. Triple-glazed units with thermal breaks ensure envelope performance down to -25°C; the house is heated by a heat pump.",
+    ],
+
+    siteBrief: [
+      "The VANAU house site sits at 240 m altitude, on the north-eastern side of Bucharest, on the edge of the lake. A location with calm views, weeping willows, swans, and blooming water lilies. Planning restrictions imposed a maximum ridge height of 8 m and the mandatory use of natural cladding materials.",
+      "The design brief was precise: a home that deserves its place in the neighbourhood without announcing itself ostentatiously. Privacy, longevity, and thermal resilience were non-negotiable.",
+    ],
+
+    archResponse: [
+      "The house includes a large upper-floor terrace overlooking the lake, with a cantilevered zone on the eastern side that maximises the viewing angle towards the water.",
+      "The broad glazing is executed in triple glazing with thermal breaks at every joint. The glazed façades make the building perform symmetrically in relation to the sun and prevailing winds.",
+    ],
+
+    materialLogic: [
+      "The natural stone exterior cladding was a unanimous choice: its beige-grey tones are perfectly assimilated into the surrounding neighbourhood and require virtually no maintenance. The upper part of the house preserves the warmth of timber through its finishes.",
+      "All timber in the upper-floor structure is glulam, specified for load classes compliant with seismic standards. The post-and-beam joints are left visible inside, bringing warmth and structural legibility to the open-plan living space.",
+    ],
+
+    outcome: [
+      "Soleta VANAU obtained planning approval on the first submission — a result the local architect attributed to the clarity of the material palette and the restraint of the massing. Build time, from foundation pour to handover, was 22 weeks.",
+      "The house has been through many winters so far without requiring major heating costs. Energy bills are approximately €220/month during full winter occupancy.",
     ],
 
     specs: [
-      { label: "Location",   value: "Romania" },
-      { label: "Year",       value: "2016" },
-      { label: "Area",       value: "194 m²" },
+      { label: "Location",                              value: "Europe, Romania" },
+      { label: "Year",                                  value: "2015" },
+      { label: "Area",                                  value: "342 m²" },
+      { label: "Collection",                            value: "Soleta Signature" },
+      { label: "Energy",                                value: "A+ · Near-ZeroEnergy" },
+      { label: "Foundation + Basement + Ground Floor",  value: "Reinforced concrete and masonry — technical specifications for a seismic area." },
+      { label: "Exterior cladding",                     value: "Natural stone" },
+    ],
+
+    testimonial: {
+      quote:  "We wanted a house that truly deserved its place on this extraordinary site. Soleta understood that from the very first conversation.",
+      author: "Owner, Soleta VANAU",
+    },
+
+    caseStudy: {
+      challenge:  "A benchmark site at 240 m altitude, with strict height limits for planning approval, moderate snow loads, seismic conditions, and the requirement to use only natural materials for finishing.",
+      approach:   "An extended Soleta Signature construction solution, with wide cantilevers on the eastern side. Natural stone cladding chosen for durability against weathering. South façade fully triple-glazed across its full surface.",
+      outcome:    "Planning approval obtained on the first submission. Construction completed in 22 weeks. Energy bills of approximately €220/month during full winter occupancy — with no supplementary heating during the shoulder seasons.",
+      highlights: [
+        "342 m² — Signature frame with alpine extension",
+        "Natural stone — zero maintenance",
+        "22 weeks from foundation to handover",
+        "Near-ZeroEnergy at a design temperature of -25°C",
+      ],
+    },
+
+    relatedSlugs: ["soleta-aquarius", "soleta-aquarius-michael"],
+  },
+
+  {
+    slug:     "soleta-aquarius-michael",
+    category: "private-residences",
+    title:    "Soleta Aquarius - Michael",
+    location: "Europe",
+    year:     "2024",
+    area:     "155 m²",
+    model:    "Signature",
+    status:   "completed",
+    featured: false,
+
+    imageSrc: "/images/Aquarius800x600.webp",
+    imageAlt: "Soleta Aquarius Michael exterior",
+    gallery:  [],
+
+    summary:
+      "A Signature home designed for a challenging site — built to the highest standards of natural materials and energy performance.",
+
+    description: [
+      "Soleta Aquarius — Michael is a Signature home adapted to a site with demanding planning and environmental constraints. Natural materials throughout, high envelope performance.",
+    ],
+
+    specs: [
+      { label: "Location",   value: "Europe" },
+      { label: "Year",       value: "2024" },
+      { label: "Area",       value: "155 m²" },
       { label: "Collection", value: "Signature" },
       { label: "Energy",     value: "A+" },
     ],
-
-    relatedSlugs: ["house-bezmalinovic"],
   },
 
   {
