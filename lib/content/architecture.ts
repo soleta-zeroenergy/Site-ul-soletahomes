@@ -179,34 +179,34 @@ export const zeroEnergyContent = {
   eyebrow: "Energy Efficiency & ZeroEnergy",
   heading: "Energy performance\ndesigned in from the start.",
   intro:
-    "At Soleta, energy performance begins with the building envelope — insulation, airtightness, glazing strategy and orientation. Renewable energy systems are added on top of a highly efficient base. This sequence matters: a poorly insulated home with solar panels is still a poorly insulated home.",
+    "At Soleta, energy performance begins with the building envelope: insulation, airtightness, glazing strategy, and orientation. Renewable systems are added on top of a highly efficient base. This order matters: a poorly insulated home with solar panels is still a poorly insulated home.",
 
   /* Design-led energy narrative — rendered before the levels grid */
   designSections: [
     {
       heading: "Envelope, insulation and airtightness",
-      body: "A standard Soleta wall achieves a U-value of 0.15 W/m²K with 35 cm of natural wood fibre insulation. The roof reaches 0.12 W/m²K. Airtightness is tested on completion: n₅₀ ≤ 0.6 h⁻¹, equivalent to the Passive House standard. This level of envelope performance reduces heating demand to a point where modest renewable systems can cover the remainder.",
+      body: "A Soleta ZeroEnergy wall achieves a U-value of 0.15 W/m²K with 35 cm of natural wood fibre insulation. The roof reaches 0.12 W/m²K. Airtightness is tested on completion: n₅₀ ≤ 0.6 h⁻¹, equivalent to the Passive House standard. This level of envelope performance reduces heating demand to a point where modest renewable systems can cover the remainder.",
     },
     {
       heading: "Glazing, shading and passive solar",
-      body: "Glazing is oriented and sized deliberately. South-facing glazing captures winter solar gain; summer shading — via roof overhangs, external blinds or deciduous planting — prevents overheating. The glazing strategy is calibrated per site: latitude, surrounding landscape and client programme all affect the right balance. Triple-glazed units with Uw ≤ 0.8 W/m²K are standard across all configurations.",
+      body: "Glazing is oriented and sized deliberately. South-facing glazing captures winter solar gain; summer shading is handled through roof overhangs, external blinds, or pergolas with deciduous planting, preventing overheating. The glazing strategy is calibrated for each site: latitude, the surrounding landscape, and the client's programme all influence the right balance. Triple-glazed units with Uw ≤ 0.8 W/m²K are standard across all configurations.",
     },
     {
       heading: "Ventilation and indoor comfort",
-      body: "Airtight buildings require controlled ventilation. We specify mechanical ventilation with heat recovery (MVHR) as standard on all ZeroEnergy configurations. Incoming fresh air is preheated by outgoing stale air at efficiency above 90%. The system maintains air quality and eliminates condensation without energy penalty — and without the draughts and noise of trickle ventilators.",
+      body: "Airtight buildings require controlled ventilation. We specify mechanical ventilation with heat recovery (MVHR) as standard for all ZeroEnergy configurations. Incoming fresh air is preheated by outgoing exhaust air, at an efficiency above 90%. The system maintains air quality and eliminates condensation without energy penalty — and without the draughts and noise of simple ventilators.",
     },
   ],
 
   what: {
     heading: "What ZeroEnergy means in practice",
-    body: "A ZeroEnergy home combines a highly insulated, airtight building envelope that minimises demand, with renewable energy systems sized to meet that demand. The Soleta system achieves this through natural wood fibre insulation, triple-glazed windows, heat recovery ventilation and a renewable energy package tailored to the site. Performance figures reflect modelled typical conditions; actual results vary by location, use and occupant behaviour.",
+    body: "A ZeroEnergy home combines a highly insulated, airtight building envelope that minimises demand with renewable energy systems sized to cover that demand. The Soleta system achieves this through natural insulation, triple-glazed windows, heat-recovery ventilation, and a renewable energy package adapted to the site. Performance values reflect modelled typical conditions; actual results vary according to location, use, and occupant behaviour.",
   },
 
   levels: [
     {
       name:        "Standard",
       label:       "Energy class A+",
-      description: "All Soleta homes meet Energy Class A+ as standard. High-performance envelope, natural insulation, triple glazing. Annual heating demand below 30 kWh/m² in Central European conditions.",
+      description: "All Soleta homes, both standard and the ZeroEnergy option, achieve Energy Class A+ as standard. High-performance envelope, natural insulation, triple glazing. Annual heating demand below 30 kWh/m² in Central European conditions.",
       included:    true,
     },
     {
@@ -226,61 +226,61 @@ export const zeroEnergyContent = {
   systems: [
     {
       name: "Solar photovoltaic",
-      body: "Roof-integrated or ground-mounted PV array, sized to the home's modelled annual consumption. Excess production fed to the grid or stored in battery. Yield depends on roof orientation and local solar irradiance.",
+      body: "Roof-integrated or ground-mounted PV system, sized according to the home's modelled annual consumption. Excess production is fed to the grid or stored in batteries. Yield depends on roof orientation and local solar irradiance.",
     },
     {
       name: "Geothermal heating",
-      body: "Ground-source heat pump using stable ground temperature (typically 8–12°C in Central and Northern Europe) as a heat source. COP of 4–5 under design conditions — meaning four to five units of heat for every unit of electricity consumed.",
+      body: "Ground-source heat pump using the stable ground temperature (typically 8–12°C in Central and Northern Europe) as a heat source. COP of 4–5 under design conditions — meaning four to five units of heat for every unit of electricity consumed.",
     },
     {
       name: "Solar thermal",
-      body: "Roof-mounted solar collectors for domestic hot water and space heating support. Reduces heat pump load during spring and autumn. Most effective at latitudes with consistent spring/autumn sun.",
+      body: "Roof-mounted solar collectors for domestic hot water and heating support. They reduce the heat pump load in spring and autumn. They are most effective at latitudes with consistent spring and autumn sun.",
     },
     {
       name: "Heat recovery ventilation",
-      body: "Mechanical ventilation with heat recovery (MVHR) — incoming fresh air is preheated by outgoing stale air. Heat recovery efficiency above 90%. Maintains air quality and eliminates condensation in airtight buildings.",
+      body: "Mechanical ventilation with heat recovery (MVHR) — incoming fresh air is preheated by outgoing exhaust air. Heat-recovery efficiency above 90%. It maintains air quality and eliminates condensation in airtight buildings.",
     },
     {
       name: "Battery storage",
-      body: "Lithium-ion battery storage allows solar production to be used at night and during low-production periods. Sizing is project-specific; typically covers 2–3 days of average consumption at current battery costs.",
+      body: "Lithium-ion battery storage allows solar production to be used at night and during periods of low production. Sizing is specific to each project; it typically covers 2–3 days of average consumption at current battery costs.",
     },
     {
       name: "Smart energy management",
-      body: "Integrated energy management system monitors production, consumption, grid import/export and indoor conditions. Accessible via smartphone. System optimises self-consumption and provides alerts for anomalies.",
+      body: "The integrated energy-management system monitors production, consumption, grid import/export, and indoor conditions. It is accessible by smartphone. The system optimises self-consumption and provides alerts for anomalies.",
     },
   ],
 
   /* Site-dependency caveat — rendered after systems grid */
   siteNote: {
     heading: "What performance depends on",
-    body: "ZeroEnergy performance is site-specific. Solar yield varies significantly by latitude, roof pitch and shading. Geothermal potential depends on ground conditions and available land for collectors. We model energy performance for each project using site-specific data before specifying systems. Published energy class figures reflect standard Central European conditions; actual performance figures are provided at design stage.",
+    body: "ZeroEnergy performance is site-specific. Solar production varies significantly depending on latitude, roof pitch, and shading. Geothermal potential depends on soil conditions and the land available for collectors. We model energy performance for each project using site-specific data before specifying systems. Published energy-class figures reflect standard Central European conditions; actual performance values are provided at design stage.",
   },
 
   faq: [
     {
       question: "How much does the ZeroEnergy upgrade add to cost?",
       answer:
-        "The ZeroEnergy package typically adds 15–25% to the base building cost, depending on the site's renewable energy potential and the home's size and use. The range reflects significant site variation — a south-facing site with good solar access requires a smaller, cheaper system than a shaded or northerly site.",
+        "The ZeroEnergy package typically adds 15–25% to the base building cost, depending on the site's renewable-energy potential and the size and use of the home. The range reflects significant variation between sites — a south-facing site with good solar access requires a smaller, cheaper system than a shaded or northerly site.",
     },
     {
       question: "Does ZeroEnergy work in Northern European climates?",
       answer:
-        "Yes. Northern and Central Europe have solar irradiance and ground temperatures well-suited to the Soleta system. We have completed ZeroEnergy homes in climates ranging from alpine to coastal. Site-specific modelling is done before system specification — we do not apply a standard package without checking the numbers.",
+        "Yes. Northern and Central Europe have solar irradiance and ground temperatures well suited to the Soleta system. We have completed ZeroEnergy homes in climates ranging from alpine to coastal. Site-specific modelling is done before system specification — we do not apply a standard package without checking the numbers.",
     },
     {
       question: "Can ZeroEnergy systems be added after the home is built?",
       answer:
-        "Yes, but it is more cost-effective to design for them from the start. We plan conduit routes, structural penetrations and electrical capacity for ZeroEnergy systems in all homes, even when they are not initially installed. Retrofit is possible; pre-planned retrofit is cheaper.",
+        "Yes, but it is more cost-effective to design for them from the start. We plan cable routes, structural penetrations, and electrical capacity for ZeroEnergy systems in all homes, even when they are not initially installed. Retrofit is possible; retrofit planned in advance is cheaper.",
     },
     {
       question: "What is the difference between ZeroEnergy and Passive House?",
       answer:
-        "Passive House is a certification standard focused on the building envelope — insulation thickness, airtightness, thermal bridge elimination. ZeroEnergy is an energy balance outcome — the building produces as much energy as it uses over a year. A Passive House is not necessarily ZeroEnergy, and a ZeroEnergy home is not necessarily Passive House certified. Soleta homes meet Passive House envelope performance standards and achieve ZeroEnergy balance with the renewable energy package.",
+        "Passive House is a certification standard focused on the building envelope — insulation thickness, airtightness, and elimination of thermal bridges. ZeroEnergy is an energy-balance outcome — the building produces over a year as much energy as it consumes. A Passive House is not necessarily ZeroEnergy, and a ZeroEnergy home is not necessarily Passive House certified. Soleta homes achieve Passive House envelope-performance standards and obtain ZeroEnergy balance with the renewable-energy package.",
     },
     {
       question: "Can a Soleta home operate completely off-grid?",
       answer:
-        "Yes. Our Off-Grid configuration adds battery storage, backup generation and — where required — water harvesting and treatment. This is appropriate for remote mountain or lakeside sites where grid connection is expensive or unreliable. Off-grid sizing is calculated per site; it is not a standard package.",
+        "Yes. Our Off-Grid configuration adds battery storage, backup generation, and — where required — water harvesting and treatment. This is suitable for remote mountain or waterfront plots where grid connection is expensive or unreliable. Off-grid sizing is calculated for each site; it is not a standard package.",
     },
   ],
 };

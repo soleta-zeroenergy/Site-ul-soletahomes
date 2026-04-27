@@ -11,7 +11,7 @@ import { cn } from "@/lib/cn";
 export const metadata: Metadata = {
   ...withCanonical("/architecture/energy-zeroenergy"),
   title:       "ZeroEnergy | Architecture & Design | Soleta",
-  description: "Soleta ZeroEnergy — design-led energy performance for timber homes. Envelope-first approach, passive solar, MVHR, and renewable systems sized to site.",
+  description: "Soleta ZeroEnergy, design-led energy performance for timber homes. Envelope-first approach, passive solar, MVHR, and renewable systems sized according to the site.",
 };
 
 export default function ZeroEnergyPage() {
@@ -61,7 +61,7 @@ export default function ZeroEnergyPage() {
       >
         <Image
           src="/images/Classic800x533.webp"
-          alt="Soleta Classic — energy performance and glazing design"
+          alt="Soleta Classic, energy performance and glazing design"
           fill
           priority
           className="object-cover"
@@ -113,7 +113,7 @@ export default function ZeroEnergyPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
             <span className="eyebrow block">Envelope before systems</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              A Soleta home reduces its energy demand through the quality of its envelope — insulation, airtightness, glazing orientation — before any renewable system is sized. This sequence produces homes that perform consistently, regardless of how the energy landscape changes over the building&apos;s lifetime.
+              A Soleta home reduces its energy demand through the quality of its envelope — insulation, airtightness, glazing orientation — before any renewable system is sized. This order produces homes that perform consistently, regardless of how the energy context changes over the building&apos;s lifetime.
             </p>
           </div>
           {/* Image side */}
@@ -123,7 +123,7 @@ export default function ZeroEnergyPage() {
           >
             <Image
               src="/images/Life800x600.webp"
-              alt="Soleta — passive solar glazing and envelope performance"
+              alt="Soleta - passive solar glazing and envelope performance"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
