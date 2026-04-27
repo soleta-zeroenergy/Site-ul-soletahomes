@@ -133,7 +133,7 @@ export default function ProcessPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">Built once in the factory, once on your site</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Every structural element is cut, drilled and finished under controlled conditions before it reaches your plot. When the truck arrives, the frame goes up in 3 to 5 days. The quality comes from preparation — not from working faster on site.
+              Every structural element is cut, drilled and finished under controlled conditions before it reaches your site. When the truck arrives, the frame goes up in 3 to 10 days. Quality comes from preparation, not from working faster on site.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function ProcessPage() {
                 What depends on site, country and planning
               </h2>
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                Foundation type and cost depend on ground conditions assessed at your specific plot. Building permit requirements — documents required, timeline, fees — vary significantly by country, region and municipality. Where local planning professionals are required, we coordinate with trusted partners, but local fees and timelines are outside our direct control. We clarify what is required and what is included before the engineering stage begins.
+                Foundation type and cost depend on ground conditions assessed at your specific plot. Building-permit requirements, the required documents, timelines, fees, and similar items, vary significantly by country, region, and municipality. Where local planning professionals are required, we provide our support and experience, but local legislation, fees, and timelines are outside our direct control. We clarify what is required and what is included before the engineering stage begins.
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function ProcessPage() {
         <ValuesGrid
           eyebrow="Services"
           heading="Around the process"
-          body="These services sit alongside the five-stage process. Some are included in specific project scopes; others are separately bookable. We confirm what applies to your project at the Dream stage."
+          body="These services sit alongside the five-stage process. Some are included in certain project types; others can be contracted separately. We confirm what applies to your project during the Dream stage."
           items={processServices}
           columns={3}
           theme="light"
@@ -233,7 +233,7 @@ export default function ProcessPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
             <span className="eyebrow block">Handover is not the end</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              At handover you receive full technical documentation, system manuals and your warranty pack. Our aftercare programme covers annual inspections, maintenance support and warranty management — because a home that performs at year one should perform at year twenty.
+              At handover you receive full technical documentation, system manuals, and your warranty pack. Our aftercare programme covers annual inspections, maintenance support, and warranty management — because a home that performs in year one should still perform in year twenty.
             </p>
           </div>
           {/* Image side */}
@@ -243,7 +243,7 @@ export default function ProcessPage() {
           >
             <Image
               src="/images/Classic800x533.webp"
-              alt="Soleta Classic — completed home at handover"
+              alt="Soleta Classic - completed home at handover"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -268,7 +268,7 @@ export default function ProcessPage() {
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <p className="font-ui text-[0.6875rem] text-[var(--color-text-muted)] max-w-2xl">
-          Timelines are indicative and reflect typical Central European conditions. Actual durations depend on project complexity, planning authority timelines, site access and client review cycles. We confirm project-specific timelines at the engineering stage.
+          Timelines are indicative and reflect typical European conditions. Actual durations depend on project complexity, authority timelines, site access, and client review cycles. We confirm the project-specific schedule during the engineering stage.
         </p>
       </div>
 
