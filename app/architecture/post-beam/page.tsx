@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ...withCanonical("/architecture/post-beam"),
   title: "Post & Beam Construction | Timber Frame System | Soleta",
   description:
-    "Glulam post and beam timber frame — manufactured in our factory, assembled on your site in days. Full technical specifications and wall build-up.",
+    "The glulam post-and-beam timber frame is manufactured in our factory and assembled on your site in just a few days. Full technical specifications and wall build-up.",
 };
 
 const schema = breadcrumbSchema([
@@ -53,7 +53,7 @@ export default function PostBeamPage() {
       >
         <Image
           src="/images/Signature800x533.webp"
-          alt="Soleta post and beam glulam timber structure"
+          alt="Soleta glulam post-and-beam timber structure"
           fill
           priority
           className="object-cover"
@@ -129,7 +129,7 @@ export default function PostBeamPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
             <span className="eyebrow block">Factory precision</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Every structural element is cut, drilled and finished in controlled conditions before it reaches your site. The result is a frame that is dimensionally exact — no site variation, no wet trades, no waiting on weather.
+              Every structural element is cut, drilled, and finished in controlled conditions before it reaches your site. The result is a dimensionally exact frame — no site variation, no fabrication mistakes, no waiting on weather.
             </p>
           </div>
           {/* Image side */}
@@ -139,7 +139,7 @@ export default function PostBeamPage() {
           >
             <Image
               src="/images/Classic800x533.webp"
-              alt="Soleta Classic — glulam post and beam construction"
+              alt="Soleta Classic - glulam post-and-beam construction"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -168,7 +168,7 @@ export default function PostBeamPage() {
       <CtaBand
         eyebrow="Next"
         heading="Healthy materials"
-        body="What goes into a Soleta wall — and why it matters for the people inside."
+        body="What goes into a Soleta wall and why that matters for the people inside."
         primaryCta={{ label: "Healthy Materials",    href: "/architecture/healthy-materials" }}
         secondaryCta={{ label: "View the Collection", href: "/collection" }}
         theme="dark"

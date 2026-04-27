@@ -83,29 +83,29 @@ export const designLanguageContent = {
 
 export const postBeamContent = {
   eyebrow: "Post & Beam Construction",
-  heading: "Structural clarity that supports architecture, flexibility and long-term durability.",
+  heading: "Structural clarity that supports beautiful architecture, flexibility, and long-term durability.",
   intro:
-    "Every Soleta home is built twice — once in our production facility in Central Europe, and once on your site. Factory production means controlled conditions, no weather delays and precision that is impossible to achieve on a traditional building site.",
+    "Every Soleta home is built twice: once in our production facility and once on your site. Factory production means controlled conditions, no weather delays, and a precision impossible to achieve on a traditional building site.",
   sections: [
     {
-      heading: "What the system is",
-      body: "Post and beam is a structural system in which vertical posts and horizontal beams — made from glued laminated timber (glulam) — carry all the loads of the building. There are no load-bearing internal walls. This gives complete freedom in the floor plan and allows large openings and spans that masonry construction cannot achieve without steel reinforcement.",
+      heading: "What this system is",
+      body: "The Soleta triple post-and-beam system is a structural system in which vertical posts and horizontal beams made from glued laminated timber (glulam) carry all the loads of the building. There are no load-bearing internal walls. This gives complete freedom in the floor plan and allows large openings and structural spans that masonry construction cannot achieve easily or elegantly.",
     },
     {
       heading: "What it means for spatial quality",
-      body: "Because the structure is external and clearly legible, the interior is genuinely free. Rooms can be arranged, merged or divided without structural consequence. Large glazed openings are possible without the visual interruption of columns or lintels. The structural grid becomes a quiet ordering principle — present but not dominant.",
+      body: "Because the external structure is visible, the interior is not constrained by mandatory structural elements and remains genuinely free. Rooms can be arranged, merged, or divided without structural consequences. Large glazed openings are possible without the visual interruption of columns or lintels. The structural grid becomes a quiet ordering principle — present, but not dominant.",
     },
     {
       heading: "Precision and prefabrication",
-      body: "Every structural element is cut, drilled and finished in our factory under controlled conditions. Elements are labelled, loaded in assembly order and transported to site. The structural frame of a Classic Soleta home is typically erected in 3 to 5 days. The complete weatherproof envelope — structure, insulation, cladding, windows — is achieved within 2 to 4 weeks. This speed is a consequence of preparation, not of shortcuts.",
+      body: "Every structural element is cut, drilled, and finished in our factory under controlled conditions. Elements are labelled, loaded in assembly order, and transported to site. The structural frame of a Classic Soleta home is typically erected in 3 to 10 days, depending on the size of the house. The complete weatherproof envelope — structure, insulation, cladding, and windows — is achieved within 3 to 10 weeks. This speed is a consequence of preparation, not shortcuts.",
     },
     {
       heading: "Flexibility over time",
-      body: "The post and beam system allows additions and reconfigurations that are structurally impossible in masonry. Pre-planned junction points in the original structure allow new modules to be connected without demolishing existing fabric. A home built for two can grow to accommodate four without rebuilding — provided the original structure was designed with this in mind. We design for it as a matter of course.",
+      body: "The post-and-beam system allows additions and reconfigurations that are structurally impossible in masonry. Junction points planned into the original structure allow new modules to be connected without demolishing the existing building. A home built for two can grow to accommodate four without reconstruction, provided the original structure was designed with this in mind. We design this way as a matter of course.",
     },
     {
       heading: "Durability and maintenance",
-      body: "Glulam structural timber, correctly designed and protected from direct moisture exposure, has a service life exceeding 80 years. The Soleta wall build-up — vapour-permeable membrane, natural insulation, ventilated cladding — is designed to allow moisture to move and escape, preventing the condensation damage that shortens the life of airtight synthetic constructions. Cladding is the sacrificial layer, designed to be replaced without touching the structure.",
+      body: "Glulam structural timber, correctly designed and protected from direct moisture exposure, has a service life exceeding 80 years. The Soleta wall build-up — vapour-permeable membrane, natural insulation, ventilated cladding — is designed to allow moisture to move and escape, preventing condensation damage that shortens the life of airtight synthetic constructions. Cladding is the sacrificial layer, designed to be replaced without touching the structure.",
     },
   ],
   specs: [
@@ -121,17 +121,17 @@ export const postBeamContent = {
     {
       question: "How long does the structural frame take to assemble on site?",
       answer:
-        "The structural frame of a Classic Soleta home is typically erected in 3 to 5 working days. The complete weatherproof envelope — structure, insulation, cladding, windows — is achieved within 2 to 4 weeks. Final fit-out and systems installation follows on site.",
+        "The structural frame of a Classic Soleta home is typically erected in 3 to 10 working days. The complete weatherproof envelope — structure, insulation, cladding, and windows — is achieved within 3 to 10 weeks. Duration depends on the size of the house and, to a lesser extent, on difficult site conditions. Final fit-out and systems installation then follow on site.",
     },
     {
       question: "Can the floor plan be changed after the home is built?",
       answer:
-        "Internal partitions are non-load-bearing and can be moved or removed without structural consequence. The post and beam system means there are no hidden structural walls. Additions and extensions are possible by connecting to pre-planned junction points in the original structure.",
+        "Internal partitions are non-load-bearing and, in general, can be moved or removed without structural consequences. The post-and-beam system means there are no hidden structural walls. Additions and extensions are possible by connecting to junction points planned into the original structure.",
     },
     {
       question: "Is glulam timber structurally equivalent to steel or concrete?",
       answer:
-        "Glulam is stronger than steel by weight — meaning it achieves equivalent structural performance at lower mass. It is dimensionally stable, precisely predictable in its behaviour and does not corrode. For residential and light commercial spans, glulam is structurally preferable to both steel and reinforced concrete in most respects.",
+        "Glulam is stronger than steel by weight, which means it achieves equivalent structural performance at lower mass. It is dimensionally stable, its behaviour is highly predictable, and it does not corrode. For residential and light commercial spans, glulam is structurally preferable to both steel and reinforced concrete in most respects, including fire resistance.",
     },
   ],
 };
