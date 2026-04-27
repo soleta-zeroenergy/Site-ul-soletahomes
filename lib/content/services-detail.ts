@@ -224,14 +224,14 @@ export const servicesDetail: ServiceDetailContent[] = [
       "Material continuity, built-in design, lighting as spatial structure. The interior design service extends the logic of the architecture to every surface and fitting — not as decoration added after, but as part of the same considered whole.",
     framing: {
       left:
-        "A Soleta home has a natural material language before the interior design work begins: exposed glulam structure, wood fibre surfaces, carefully proportioned openings. The interior design service works within and extends that language — selecting the finishes, fittings and built-ins that maintain its coherence rather than contradicting it. The result is a home that reads as one thing, from the structural frame to the kitchen worktop.",
+        "A Soleta home has a natural material language before the interior design work begins: exposed glulam structure, natural fibre-based surfaces, carefully proportioned openings. The interior design service works within and extends that language — selecting the finishes, fittings and built-ins that maintain its coherence rather than contradicting it. The result is a home that reads as one thing, from the structural frame to the kitchen worktop.",
       right:
         "We do not source furniture from catalogues or assemble interiors from trend boards. We design surfaces, specify materials, detail built-ins and resolve lighting — working directly with craftspeople and manufacturers whose output we know.",
     },
     sections: [
       {
         heading: "Material and finish continuity",
-        body: "Floor, wall and ceiling finishes are selected to continue the material register of the architecture. Timber species are matched or complemented, not contrasted for effect. Stone and ceramic selections are made for authenticity of material — not for visual impact divorced from the spatial context. Every finish is presented as a physical sample before it is ordered. You see and handle the actual material, not a screen approximation.",
+        body: "Floor, wall and ceiling finishes are selected to continue the material register of the architecture. The visible structural timber species is pine, which is complemented rather than contrasted for effect. Ceramic selections for bathrooms are made for authenticity of material — not for visual impact divorced from the spatial context. Every finish is presented as a physical sample before it is ordered. You see and handle the actual material, not a screen approximation.",
       },
       {
         heading: "Built-in design and spatial logic",
@@ -244,21 +244,21 @@ export const servicesDetail: ServiceDetailContent[] = [
     ],
     deliverables: [
       "Floor, wall and ceiling finish selections — all rooms",
-      "Physical sample board for client approval before ordering",
+      "Finish examples for walls, flooring and visible timber structure",
       "Kitchen design and specification",
       "Bathroom design and specification",
       "Built-in joinery design and specification",
       "Lighting design — fixed and architectural",
       "Furniture specification (full service option)",
-      "Coordination with construction team during build",
+      "Coordination with construction team during Build",
     ],
     caveat: {
       heading: "Scope and what is confirmed separately",
-      body: "The Interior Design service is available as a full package — from finish selections through to furniture specification and procurement coordination — or as a finishes-only service covering floors, walls and ceilings. Furniture procurement, where included, is coordinated by our team but priced separately from the interior design fee. The scope of the service for your project is confirmed in writing before work begins. Interior design is most effective when it begins at the design stage, not after the build is complete — late-stage changes to built-ins or finish substrates carry significant cost implications.",
+      body: "The Interior Design service is available as a full package — from finish selections through to furniture specification and procurement coordination — or as a finishes-only service covering floors, walls and ceilings. Furniture procurement, where included, is coordinated by our team but priced separately from the interior design fee. The scope of the service for your project is confirmed in writing before work begins. Interior design is most effective when it begins at the design stage, not after Build is complete — late-stage changes to built-ins or finish substrates carry significant cost implications.",
     },
     supportBlock: {
       eyebrow: "Materials that age well",
-      body: "The materials we specify are chosen partly for how they look on the day the home is completed, and partly for how they will look in ten or twenty years. Natural timber darkens and mellows. Stone develops a patina. Linen softens. We consider this trajectory when making selections — a home should improve with habitation, not look its best in the first photographs.",
+      body: "The materials we specify are chosen partly for how they look on the day the home is completed, and partly for how they will look in ten or twenty years. Natural timber darkens slightly and mellows. Stone develops a patina. Linen softens. We consider this trajectory when making selections — a home should improve with habitation, not look its best only in the first photographs.",
     },
     cta: {
       eyebrow: "Interior design",

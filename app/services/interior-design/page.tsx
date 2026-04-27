@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/services/interior-design"),
   title: "Interior Design | Services | Soleta",
   description:
-    "Material continuity, built-in design and lighting as spatial structure. The interior design service extends the logic of the architecture to every surface and fitting.",
+    "Material continuity, built-in design and lighting as spatial structure. The interior design service extends the logic of the architecture to every surface and every integrated element.",
 };
 
 const svc = servicesDetail.find((s) => s.slug === "interior-design")!;
