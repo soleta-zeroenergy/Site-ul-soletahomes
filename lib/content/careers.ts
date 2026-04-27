@@ -7,7 +7,7 @@ export const careersHero = {
   eyebrow: "Careers",
   heading: "Work that is made to last",
   intro:
-    "Soleta is a small, precise organisation. We design, engineer, manufacture and build timber homes across Europe. The work is technically demanding, the standards are high, and the output is permanent. We recruit carefully, and not often.",
+    "Soleta is a small, precise organisation. We design, engineer, manufacture and build premium Post&Beam homes worldwide. The work is technically demanding, the standards are high, and the output is permanent. We recruit carefully, and not often.",
 };
 
 export const careersSections = [
@@ -20,8 +20,8 @@ export const careersSections = [
     body: "We do not offer a list of lifestyle benefits as a recruitment argument. What we offer is serious work on a product we are proud of, with colleagues who are good at what they do. The standard of output matters here in a way that is not common in construction. A detail resolved incorrectly in the engineering drawing becomes a problem in the factory. A problem in the factory becomes a problem on site. Everyone understands this chain. The rigour is not bureaucratic — it is the direct consequence of building something that has to perform for 80 years.",
   },
   {
-    heading: "International scope from a Romanian base",
-    body: "Soleta is headquartered in Romania and manufactures in Central Europe. Our clients are spread across Romania, France, Germany, Austria, Switzerland and beyond. The work involves regular engagement with international clients, international site conditions and international regulatory contexts. We are not a local contractor that occasionally goes abroad. We are a European manufacturer that happens to be based in Romania — and we consider that a position of advantage, not a limitation.",
+    heading: "International scope from a European base",
+    body: "Soleta is headquartered in Sweden and manufactures in Central Europe. Our clients are spread across multiple European countries. The work involves regular engagement with international clients, international site conditions and international regulatory contexts. We are not a local contractor that occasionally goes abroad.",
   },
 ];
 

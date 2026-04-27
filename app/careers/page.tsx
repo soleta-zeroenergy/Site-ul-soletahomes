@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...withCanonical("/careers"),
   title: "Careers | Soleta",
   description:
-    "Soleta is a small, precise organisation building timber homes across Europe. We recruit carefully and not often — for architects, engineers and production specialists who want work that lasts.",
+    "Soleta is a small, precise organisation building timber homes across Europe and worldwide. We recruit carefully and not often — architects, engineers, production specialists, and specialists in local permitting legislation who want to do work that lasts.",
 };
 
 const schema = breadcrumbSchema([
@@ -138,7 +138,7 @@ export default function CareersPage() {
       <CtaBand
         eyebrow="Get in touch"
         heading="Send us your work"
-        body="If your experience is relevant and your work is serious, we would like to hear from you. Send your portfolio and a short introduction to studio@soletahomes.com"
+        body="If your experience is relevant and your work is serious, we would like to hear from you. Send your portfolio and a short introduction to office@soletahomes.com"
         primaryCta={{ label: "Contact us", href: "/contact" }}
         secondaryCta={{ label: "About Soleta", href: "/about" }}
         theme="dark"
