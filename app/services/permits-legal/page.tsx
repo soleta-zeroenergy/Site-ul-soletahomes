@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ...withCanonical("/services/permits-legal"),
   title: "Permits & Legal Coordination | Services | Soleta",
   description:
-    "Building permit preparation and coordination. We prepare technical documentation and work with local professionals across European markets. Permit outcomes depend on local authorities.",
+    "Support for building permit preparation and coordination. Depending on local requirements, Soleta can provide technical support and documentation and collaborate with local professionals in any country. Permit outcomes depend on local authorities.",
 };
 
 const svc = servicesDetail.find((s) => s.slug === "permits-legal")!;
@@ -111,7 +111,7 @@ export default function PermitsLegalPage() {
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-narrow">
-          <span className="eyebrow mb-6 block">What we prepare and coordinate</span>
+          <span className="eyebrow mb-6 block">What we can prepare and deliver</span>
           <ul className="flex flex-col gap-4">
             {svc.deliverables.map((item) => (
               <li key={item} className="flex items-start gap-4 border-b border-[var(--color-border-light)] pb-4 last:border-0 last:pb-0">

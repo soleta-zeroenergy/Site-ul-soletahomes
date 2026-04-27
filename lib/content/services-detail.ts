@@ -154,25 +154,25 @@ export const servicesDetail: ServiceDetailContent[] = [
     label: "Permits & Legal Coordination",
     heading: "Permit preparation and coordination",
     intro:
-      "We prepare the technical documentation for building permit submissions and coordinate with the relevant local professionals. Permit requirements differ by country, municipality and plot. We navigate this — we do not guarantee outcomes.",
+      "Soleta provides the relevant local specialists with the technical documents available for completing building permit application files. Permit requirements differ by country, municipality and plot. We navigate this process together with the local specialist, but we do not guarantee outcomes.",
     framing: {
       left:
-        "Building permit requirements across Europe vary more than most clients expect. The same structural system, the same energy specification and the same architectural approach can be straightforward to permit in one municipality and complex in another. What we bring is experience across multiple jurisdictions, a technical documentation standard that planners recognise, and a clear understanding of where the work is ours and where it requires a licensed local professional.",
+        "Building permit requirements vary from country to country more than most clients expect. The same structural system, the same energy specification and the same architectural approach can be straightforward to permit in one country or municipality and complex in another. What we bring is experience across multiple situations, a technical documentation standard that authorities usually recognise, and a clear understanding of where the work is ours and where it requires a licensed local professional.",
       right:
-        "We prepare. We coordinate. We support. The permit decision rests with the authority, not with us — and we are honest about that from the first conversation.",
+        "We prepare, we support, but the permit decision rests with the authorities, not with us. We are honest about that from the first conversation.",
     },
     sections: [
       {
         heading: "What we prepare",
-        body: "Our technical team produces the documentation that permit authorities typically require for a timber-frame residential building: architectural drawings to planning authority standards, structural calculation summaries, energy performance documentation, fire safety and access statements, and site plans. For projects in Romania, we have direct experience across a wide range of municipalities and can handle submission and follow-up directly. The documentation quality is consistent regardless of market.",
+        body: "Our technical team can produce the technical documentation that permit authorities typically require for a timber-frame residential building: architectural drawings to planning authority standards, structural calculation summaries, energy performance documentation, fire safety and access statements, and site plans. The quality of the documentation remains consistent regardless of market.",
       },
       {
         heading: "How we work with local professionals",
-        body: "For projects outside Romania, building permit submission and planning liaison must be handled by a locally registered professional — this is a legal requirement in most European jurisdictions, not a preference. We work alongside those professionals: we provide the technical package, they handle the submission, the correspondence with the authority and any planning hearings. We select or work with local professionals whose experience with timber-frame construction reduces the risk of technical misunderstandings.",
+        body: "Building permit submission and liaison with the planning authority must be handled by a locally registered architect or professional — this is a legal requirement in most jurisdictions, not a preference. We work alongside these professionals: we provide the documents that fall within our scope, and they handle file assembly and submission, correspondence with the authority and any planning hearings. Choosing a local professional whose experience with timber-frame construction is relevant is important, because it reduces the risk of technical misunderstandings.",
       },
       {
         heading: "Pre-purchase site advice",
-        body: "If you are considering a plot and have not yet committed to a purchase, we can review the zoning classification, the planning history and any known restrictions before you buy. We cannot tell you what a planning authority will decide — but we can help you understand what questions to ask and what conditions are typical for that site type. This review is available as part of the Private Consulting service.",
+        body: "For certain markets, if you are considering a plot and have not yet committed to a purchase, we can review the zoning classification, the planning history and any known restrictions before you buy. We cannot tell you what a planning authority will decide — but we can help you understand what questions to ask and what conditions are typical for that site type. This review is available as part of the Private Consulting service.",
       },
     ],
     deliverables: [
@@ -180,23 +180,23 @@ export const servicesDetail: ServiceDetailContent[] = [
       "Structural calculation summary for planning submission",
       "Energy performance documentation",
       "Fire safety and access statement",
-      "Site and location plans",
-      "Submission coordination and follow-up (Romania — direct)",
-      "Technical package handover to local professional (other markets)",
+      "Site layout and location plans",
+      "Suggestions for strong, vetted local collaborators",
+      "Technical package handover to the local professional",
       "Response to technical queries from planning authorities",
     ],
     caveat: {
       heading: "Important: what this service does not include",
-      body: "We are not a law firm. We do not provide legal advice, represent you in legal proceedings or guarantee planning approval. Permit outcomes depend on local authority policy, site-specific conditions and factors outside our control. In markets other than Romania, permit submission and planning liaison is handled by a locally licensed professional — our role is technical preparation and coordination. Timelines for permit decisions vary by municipality and cannot be guaranteed. We will give you our honest assessment of likely timelines based on comparable projects, but we will not make promises that planning authorities have not authorised us to make.",
+      body: "We are not a law firm. We do not provide legal advice, represent you in legal proceedings or guarantee planning approval. Permit outcomes depend on local authority policy, site-specific conditions and factors outside our control. In most cases, permit submission and liaison with the planning authority are handled by a locally licensed professional; our role is technical preparation and coordination. Timelines for permit decisions vary by municipality and cannot be guaranteed. We will give you our honest assessment of likely timelines based on comparable projects, but we will not make promises that planning authorities have not authorised us to make.",
     },
     supportBlock: {
-      eyebrow: "Technical documentation that planners recognise",
-      body: "The most common cause of permit delays is documentation that does not meet the technical standard the authority expects. Our permit documentation is prepared by the same team that produces the manufacturing drawings — the level of technical precision is the same. Planners rarely need to ask twice for information we have already provided.",
+      eyebrow: "Technical documentation that authorities recognise",
+      body: "The most common cause of permit delays is documentation that does not meet the technical standard the authority expects. Our permit documentation is prepared by the same team that produces the manufacturing drawings — the level of technical precision is the same. Authorities rarely need to ask twice for information we have already provided.",
     },
     faq: [
       {
-        question: "Do you handle permits in all European countries?",
-        answer: "We handle permits directly in Romania. For other European markets — including France, Germany, Austria, Switzerland and Italy — we prepare the technical documentation and coordinate with a locally licensed professional who handles the submission. The availability of suitable local professionals and the complexity of the permit process varies by market. We confirm the coordination approach for your specific country during the engineering stage.",
+        question: "Do you offer support for building permits in all countries?",
+        answer: "For any European market and beyond, we provide technical support for preparing technical documentation and collaborate with licensed local professionals who handle submission. The availability of suitable local professionals and the complexity of the permit process vary by market. We confirm the coordination approach for your specific country during the Engineering stage.",
       },
       {
         question: "What happens if my permit application is refused?",
@@ -204,7 +204,7 @@ export const servicesDetail: ServiceDetailContent[] = [
       },
       {
         question: "How long does a building permit typically take?",
-        answer: "In Romania, the statutory period for most residential building permits is 30 days from submission of a complete application, though practical timelines vary by municipality and case complexity. In other European markets, timelines range from 6 weeks to several months. We will give you a realistic estimate based on comparable projects in your specific location — not a best-case figure.",
+        answer: "In most cases, the statutory period for most residential building permits is 30 to 90 days from submission of a complete application, but actual timelines vary by country, municipality and case complexity. Across Europe, timelines range from 6 weeks to several months. We will give you a realistic estimate based on comparable projects in your specific location — not a best-case figure.",
       },
     ],
     cta: {
