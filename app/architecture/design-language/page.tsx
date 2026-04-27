@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/architecture/design-language"),
   title: "Design Language | Architecture & Design | Soleta",
   description:
-    "The principles behind Soleta's architectural approach — site response, light and glazing, proportion, interior continuity, and designed flexibility.",
+    "The principles behind Soleta's architectural approach: site response, light and glazing, proportion, interior continuity, and designed flexibility.",
 };
 
 const schema = breadcrumbSchema([
@@ -52,7 +52,7 @@ export default function DesignLanguagePage() {
       >
         <Image
           src="/images/WhySoleta900x1200.webp"
-          alt="Soleta design language — architecture that belongs where it stands"
+          alt="Soleta design language - architecture that belongs where it stands"
           fill
           priority
           className="object-cover object-center"
@@ -155,7 +155,7 @@ export default function DesignLanguagePage() {
       <CtaBand
         eyebrow="Next"
         heading="See the construction system"
-        body="How post and beam glulam timber frame turns design into a built reality."
+        body="How the post-and-beam glulam timber frame turns design into built reality."
         primaryCta={{ label: "Post & Beam System",  href: "/architecture/post-beam" }}
         secondaryCta={{ label: "View the Collection", href: "/collection" }}
         theme="dark"

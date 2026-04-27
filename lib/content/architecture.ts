@@ -54,27 +54,27 @@ export const designLanguageContent = {
   eyebrow: "Soleta Design Language",
   heading: "Architecture that belongs\nwhere it stands.",
   intro:
-    "A Soleta home is recognisable without being uniform. There is a shared language — proportions, materials, the way light enters — but it is a language that adapts to every site, every climate and every client.",
+    "A Soleta home is recognisable without being uniform. There is a shared language: proportions, colours, the way light enters, terraces, pergolas. But it is a language that adapts to every site, every climate, and every client.",
   sections: [
     {
       heading: "First principles: site before style",
-      body: "Every Soleta project begins with the land, not the catalogue. Orientation, topography, prevailing wind, tree lines, view corridors, planning constraints — these are read before a line is drawn. The design emerges from what the site asks for, not from what we have built before. The result is homes that feel inevitable in their location — not placed upon it.",
+      body: "Every Soleta project begins with the land, not the catalogue: orientation, topography, prevailing wind, tree lines, view corridors, planning constraints. All of these are read before a single line is drawn. The design emerges from what the site asks for, not from what we have built before. The result is homes that feel inevitable in their place, not placed upon it.",
     },
     {
       heading: "Light, glazing and privacy",
-      body: "Every Soleta home is planned around natural light as a thermal and experiential resource. South-facing glazing for passive solar gain, controlled north light for studios and workspaces, east-facing bedrooms for morning quality. Glazing ratios are calibrated — large enough to connect interior to landscape, disciplined enough to avoid glare and overheating. Privacy is resolved through orientation and landscape, not frosted glass.",
+      body: "Every Soleta home is planned around natural light as a thermal and experiential resource. South-facing glazing for passive solar gain, controlled north light for studios and workspaces, east-facing bedrooms for the quality of morning light. Glazing ratios are calibrated: large enough to connect the interior to the landscape, and disciplined enough to avoid glare and overheating. Most of the time, privacy is resolved through orientation and landscape, not frosted glass.",
     },
     {
       heading: "Proportion, rhythm and restraint",
-      body: "The Soleta palette is deliberately narrow: warm whites, natural timber tones, dark-stained or charred cladding, large planes of glass. Restraint is not poverty — it is what allows a home to belong to its landscape rather than compete with it. The same logic governs interior proportion: ceiling heights, window placement, the relationship between structural bays and inhabitable space. Nothing is arbitrary.",
+      body: "The Soleta palette is deliberately restrained: warm whites, natural timber tones, dark terraces and roofs, large planes of glass. Restraint is not a lack of imagination; it is what allows a home to belong to its landscape rather than compete with it. The same logic governs interior proportion: ceiling heights, window placement, the relationship between structural bays and inhabitable space. Nothing is arbitrary.",
     },
     {
       heading: "Interior continuity",
-      body: "The design logic of the exterior carries through to the interior. Structural timber appears inside as well as out — not as decoration but as the honest expression of how the building stands. Material thresholds between inside and outside are reduced: the same stone or timber continues across the threshold. Ceilings follow roof geometry. The home reads as one thing, not as a facade applied over a conventional interior.",
+      body: "The exterior design logic continues into the interior. Structural timber appears both inside and out, not as decoration but as an honest expression of how the building stands. Material thresholds between inside and outside are reduced: the same timber continues across the threshold. Ceilings follow the roof geometry. The home reads as one thing, not as a façade applied over a conventional interior.",
     },
     {
       heading: "Flexibility without drift",
-      body: "The Soleta structural system is designed to be extended without demolition. New modules connect to pre-planned junction points in the original structure — allowing a home to grow with a family, or be reconfigured as needs change, without the disruption and waste of conventional renovation. Flexibility is designed in from the start, not retrofitted as an afterthought.",
+      body: "The Soleta structural system is designed to be extended without demolition. New modules connect to junction points planned into the original structure, allowing the home to grow with the family or be reconfigured as needs change, without the disruption and waste of conventional renovation. Flexibility is designed in from the start, not added later as an afterthought.",
     },
   ],
 };
