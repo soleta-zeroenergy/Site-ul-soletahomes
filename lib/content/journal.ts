@@ -318,7 +318,7 @@ export const journalArticles: JournalArticle[] = [
     slug:        "what-changes-when-building-across-different-climates-and-regions",
     title:       "What changes when building across different climates and regions",
     excerpt:
-      "Timber construction adapts to climate. But the adaptations are not cosmetic — they affect structure, insulation strategy, mechanical systems, and the fundamental approach to moisture and weather.",
+      "Timber construction adapts to climate. But the adaptations are not just cosmetic — they affect structure, insulation strategy, mechanical systems, and the fundamental approach to moisture and weather.",
     category:    "Planning & Land",
     image:       "/images/Aurora800x600.webp",
     imageAlt:    "Soleta Aurora — alpine climate build",
