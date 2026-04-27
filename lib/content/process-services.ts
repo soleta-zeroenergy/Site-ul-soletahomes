@@ -42,7 +42,7 @@ export const processSteps = [
     heading: "Your home takes shape",
     duration: "4–8 weeks",
     description:
-      "Our design team develops the architectural plan around your brief. Floor plans, elevations, section drawings, material selections and 3D visualisations. You review, revise and approve before anything moves forward. Nothing is fixed until you say so.",
+      "The design team develops the architectural plan around your brief. Plans, elevations, sections, material selections, and 3D visualisations. You review, revise, and approve before anything moves forward. Nothing is fixed until you say so.",
     deliverable: "Architectural drawings · 3D visuals · Material schedule · Final offer",
     deliverables: [
       "Architectural drawings — plans, elevations, sections",
