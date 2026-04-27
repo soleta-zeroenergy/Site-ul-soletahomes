@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...withCanonical("/request-private-offer"),
   title: "Request a Private Offer | Soleta",
   description:
-    "Submit your project brief to Soleta. Tell us about your site, your intended use, your timeline and your budget — and we will respond with a specific, written assessment of what is feasible.",
+    "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget — and we will reply with a specific written assessment of what is feasible.",
 };
 
 const schema = breadcrumbSchema([
@@ -98,7 +98,7 @@ export default function RequestPrivateOfferPage() {
               <div>
                 <span className="eyebrow mb-4 block">Before you fill in the form</span>
                 <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer — estimates and ranges are fine.
+                  The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer exactly — estimates and ranges are fine.
                 </p>
               </div>
               <div className="flex flex-col gap-4 border-t border-[var(--color-border-light)] pt-6">
@@ -107,7 +107,7 @@ export default function RequestPrivateOfferPage() {
                   { label: "Format",         value: "Written, project-specific" },
                   { label: "Cost",           value: "No charge" },
                   { label: "Obligation",     value: "None" },
-                  { label: "Contact",        value: "studio@soletahomes.com" },
+                  { label: "Contact",        value: "office@soletahomes.com" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex flex-col gap-0.5 pb-4 border-b border-[var(--color-border-light)] last:border-0 last:pb-0">
                     <span
@@ -189,7 +189,7 @@ export default function RequestPrivateOfferPage() {
       <CtaBand
         eyebrow="Not ready yet?"
         heading="Browse before you commit"
-        body="Explore our completed projects or the collection before deciding on a direction."
+        body="Explore our completed projects or the collection before choosing a direction."
         primaryCta={{ label: "View Built Projects",      href: "/built-projects" }}
         secondaryCta={{ label: "Explore the Collection", href: "/collection" }}
         theme="dark"
