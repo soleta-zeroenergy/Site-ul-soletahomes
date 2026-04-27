@@ -58,7 +58,7 @@ export const processSteps = [
     heading: "The technical foundation",
     duration: "4–12 weeks",
     description:
-      "Structural engineering, energy calculations and detailed manufacturing drawings. If your project requires building permit support, this is the stage where technical documentation is prepared. This is the stage most builders rush. We do not. Every joint, every connection and every thermal bridge is calculated before production begins.",
+      "Structural engineering, energy calculations, and detailed manufacturing drawings. If your project requires permit support, this is the stage where the technical documentation is prepared. This is the stage most builders rush. We do not. Every joint, every connection, and every thermal bridge are calculated before production begins.",
     deliverable: "Structural calculations · Energy model · Building permit (if required)",
     deliverables: [
       "Structural engineering calculations",

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/process/engineering"),
   title: "Engineering — Stage 3 | Process & Services | Soleta",
   description:
-    "Structural calculations, energy model, manufacturing drawings and permit documentation. Every technical decision resolved before a single element is produced.",
+    "Structural calculations, energy model, manufacturing drawings, and support for permit documentation. Every technical decision must be resolved before a single element is produced.",
 };
 
 const step     = processSteps[2];
@@ -78,7 +78,7 @@ export default function EngineeringPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Precision protects the design</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  The approved architectural drawings are passed to our structural engineering team. Every connection, every joint and every load path is calculated — not assumed. This is the stage where the design is stress-tested against physical reality. A connection detail that looks clean on a drawing must also be structurally sound, thermally continuous and manufacturable to tolerance. Engineering resolves all three at once.
+                  The approved architectural drawings are passed to our structural engineering team. Every connection, every joint, and every load path are calculated, not assumed. This is the stage where the design is tested against physical reality. A connection detail that looks clean on a drawing must also be structurally correct, thermally continuous, and manufacturable within precise tolerances. Engineering resolves all three at once.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function EngineeringPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Energy model and thermal analysis</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  In parallel with structural engineering, our energy team produces a full dynamic energy model of the home — calculating heating and cooling demand, solar gain, thermal bridge analysis and the output of any renewable energy systems. The model is site-specific: it uses the actual latitude, orientation and window configuration of your home, not a generic approximation. This is the basis for the energy performance certification and for sizing the ZeroEnergy systems, if included.
+                  In parallel with structural engineering, our energy team produces a complete dynamic energy model of the house — calculating heating and cooling demand, solar gain, thermal-bridge analysis, and the performance of any renewable-energy systems. The model is site-specific: it uses the real latitude, real orientation, and real window configuration of your house, not a generic approximation. This becomes the basis for energy-performance certification and for sizing the ZeroEnergy systems, if included.
                 </p>
               </div>
             </div>
@@ -96,9 +96,9 @@ export default function EngineeringPage() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
               <div>
-                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Manufacturing drawings, not construction drawings</h2>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>3D manufacturing drawings, not just construction drawings</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  The output of the engineering stage is a complete set of manufacturing drawings — the files that go directly to our CNC machines. These are not construction drawings in the traditional sense. Every element is specified to the millimetre: its dimensions, connection points, insulation pockets, window openings, service penetrations. Nothing is left to interpretation on site. When the machine runs, the result is identical to what was designed.
+                  The output of the engineering stage is a complete set of manufacturing drawings — the files that go directly to our CNC machines. These are not construction drawings in the traditional sense. Every element is specified precisely: dimensions, connection points, insulation pockets, window openings, and service penetrations. Nothing is left to interpretation on site. When the machine runs, the result is identical to what was designed.
                 </p>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function EngineeringPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">This is the stage most builders rush</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Engineering takes 4 to 12 weeks depending on project complexity and whether building permit documentation is required. That range is not inefficiency — it reflects the difference between a straightforward standard-model project and a custom design with complex planning requirements. We do not compress this stage to meet an arbitrary schedule, because errors discovered at manufacturing are significantly more expensive than errors resolved at engineering.
+              Engineering takes 4 to 8 weeks, depending on project complexity and whether permit documentation is required. That range does not indicate inefficiency — it reflects the difference between a straightforward standard project and a custom design with complex permitting requirements. We do not compress this stage to meet an arbitrary schedule, because errors discovered during manufacturing are significantly more expensive than errors resolved during engineering.
             </p>
           </div>
         </div>
