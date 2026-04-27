@@ -27,7 +27,7 @@ export const processSteps = [
     heading: "First conversation",
     duration: "1–2 weeks",
     description:
-      "We begin with a conversation — not a sales pitch. Tell us about your site, your vision, how you live and what matters most to you. We listen, ask questions and give you an honest assessment of what is feasible within your budget and timeline.",
+      "We begin with a conversation, not a sales pitch. Tell us about your site, your vision, how you live, and what matters most to you. We listen, ask questions, and give you an honest assessment of what is feasible within your budget and timeline.",
     deliverable: "Project brief · Model recommendation · Budget estimate",
     deliverables: [
       "Project brief documenting your requirements",

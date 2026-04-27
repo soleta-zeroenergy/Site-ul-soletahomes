@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/process/dream"),
   title: "Dream — Stage 1 | Process & Services | Soleta",
   description:
-    "The first conversation — understanding your site, your vision and your brief. No sales pitch. An honest assessment of what is feasible before any commitment.",
+    "The first conversation — understanding your site, your vision, and your brief. No sales pitch. An honest assessment of what is feasible before any commitment.",
 };
 
 const step     = processSteps[0];
@@ -77,7 +77,7 @@ export default function DreamPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Site first, brief second</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  We begin by understanding your site — its location, orientation, topography, access, planning context and any known constraints. The site is not background information; it is the design starting point. A brief developed without a clear site tends to produce a home that is adapted later rather than designed correctly from the beginning.
+                  We begin by understanding your site — its location, orientation, topography, access, planning context, and any known constraints. The site is not background information; it is the starting point of design. A brief developed without a clear site tends to produce a home that is adapted later, not designed correctly from the beginning.
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function DreamPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Understanding how you live</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  We ask about your household — who lives there now, who might live there in five or ten years, how you use space, whether you work from home, how you entertain, what privacy means to you. These questions shape the brief more than any reference image. A home that fits the way you actually live is more valuable than one that fits a catalogue.
+                  We ask about your household: who lives there now, who might live there in five or ten years, how you use space, whether you work from home, how you host guests, and what privacy means to you. These questions shape the brief more than any reference image. A home that fits the way you actually live is more valuable than one that fits a catalogue.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function DreamPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>An honest assessment, not a pitch</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  At the end of the Dream stage, we give you our honest read: which path fits your brief — a collection model, an adapted design or a fully custom home — and what the budget range looks like for each. If the numbers do not work, we say so. If the timeline is tighter than you expect, we say that too. The Dream stage exists to give you clarity, not to commit you to anything.
+                  At the end of the Dream stage, we tell you which path fits your brief — a collection model, an adapted design, or a fully custom home — and what the budget range looks like for each. If the numbers do not work, we say so. If the timeline is tighter than you expect, we say that too. The Dream stage exists to give you clarity, not to lock you into anything.
                 </p>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function DreamPage() {
             <div>
               <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>What helps you get the most from this stage</h2>
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                The more clearly you can describe your site — ideally with a cadastral plan, photos and a rough sense of orientation — the more useful the Dream conversation will be. Budget clarity, even approximate, helps us recommend the right path honestly. If your site has known planning constraints or is in a sensitive area, bring that information too. We will not be able to tell you what a planning authority will decide, but we can tell you what questions to ask.
+                The more clearly you can describe your site — ideally with a cadastral plan, photos, and a rough sense of orientation — the more useful the Dream conversation will be. Budget clarity, even approximate, helps us recommend the right path honestly. If your site has known planning constraints or is in a sensitive area, bring that information too. We cannot tell you what the authority will decide, but we can tell you what questions to ask.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function DreamPage() {
           >
             <Image
               src="/images/WhySoleta900x1200.webp"
-              alt="Soleta — site, brief and the first conversation"
+              alt="Soleta - site, brief, and the first conversation"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -163,7 +163,7 @@ export default function DreamPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">Indicative timing</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              The Dream stage typically takes one to two weeks from first conversation to signed project brief — longer if you need time to gather site information or align with a partner or family. There is no pressure to move quickly. The brief only moves to Design & Planning when you are ready to proceed.
+              The Dream stage typically takes one to two weeks from the first conversation to the signing of the project brief — longer if you need time to gather site information or align with your partner or family. There is no pressure to move quickly. The project moves into Design &amp; Planning only when you are ready to proceed.
             </p>
           </div>
         </div>
