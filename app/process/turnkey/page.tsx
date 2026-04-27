@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/process/turnkey"),
   title: "Turnkey Delivery — Stage 5 | Process & Services | Soleta",
   description:
-    "Final finishes, systems commissioning and structured handover. What turnkey includes, what the documentation pack contains, and what happens after you move in.",
+    "Final finishes, systems commissioning, and structured handover. What turnkey includes, what the documentation pack contains, and what happens after you move in.",
 };
 
 const step     = processSteps[4];
@@ -77,7 +77,7 @@ export default function TurnkeyPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>What turnkey actually means</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  Turnkey at Soleta means a home that is finished, tested and documented — ready to move into. It includes completed internal finishes, installed and commissioned kitchen and bathrooms, completed electrical and plumbing installations, and all systems operational. What it does not include — unless separately scoped — are items such as interior furniture, soft furnishings, landscaping and external works beyond the immediate building footprint. We confirm the exact scope in writing before the build stage begins.
+                  Turnkey at Soleta means a home that is finished, tested, and documented — ready to move into. It includes complete interior finishes, kitchen and bathrooms installed and commissioned, completed electrical and plumbing installations, and all systems operational. What it does not include — unless separately defined — are items such as interior furniture, textiles, landscaping, and external works beyond the immediate footprint of the building. We confirm the exact scope in writing before the Build stage begins.
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function TurnkeyPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Systems commissioning</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  Heating and ventilation systems are commissioned, tested and adjusted before handover. ZeroEnergy systems — if installed — are run for a monitored period before the handover date to confirm they are operating within design parameters. The energy management system is configured for your household, and you are shown how to read it, adjust it and interpret alerts. Everything that runs is verified before you take the keys.
+                  Heating and ventilation systems are commissioned, tested, and adjusted before handover. ZeroEnergy systems — if installed — operate for a monitored period before the handover date to confirm that they perform within the design parameters. The energy-management system is configured for your household, and we show you how to read it, adjust it, and interpret alerts. Everything that operates is verified before you receive the keys.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function TurnkeyPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>A structured handover, not a rushed key exchange</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  Handover is a structured walkthrough — typically 3 to 4 hours, with our project manager and the relevant technical lead on site. We go through every room, every system and every detail. Snagging items identified during the walkthrough are recorded, prioritised and resolved before or shortly after the handover date. You do not receive the documentation pack until the walkthrough is complete and both parties are satisfied.
+                  Handover is a structured walkthrough — typically 3 to 4 hours, with our project manager and the relevant technical lead present on site. We go through every room, every system, and every detail. Snagging items identified during the walkthrough are recorded, prioritised, and resolved before or shortly after the handover date. You do not receive the documentation pack until the walkthrough is complete and both parties are satisfied.
                 </p>
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function TurnkeyPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">Handover is not the end of the relationship</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Our aftercare programme covers annual inspection visits, maintenance guidance, warranty management and technical support. A Soleta home is designed to perform for 80 years or more — we take a direct interest in whether it does. Aftercare is available as a separately booked programme after handover and is particularly relevant for clients in countries where we do not have a permanent local presence.
+              Our aftercare programme covers annual inspection visits, maintenance guidance, warranty management, and technical support. A Soleta home is designed to perform for 80 years or more — and we have a direct interest in making sure that happens. Aftercare is available as a separately contracted programme after handover and is particularly relevant for clients in countries where we do not have a permanent local presence.
             </p>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function TurnkeyPage() {
       <CtaBand
         eyebrow="Ready to begin"
         heading="Start your Soleta project"
-        body="The first conversation is free and carries no obligation. Tell us about your site and your vision — we will tell you what is possible."
+        body="The first conversation is free and carries no obligation. Tell us about your site and your vision — and we will tell you what is possible."
         primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
         secondaryCta={{ label: "Back to Process overview", href: "/process" }}
         theme="dark"

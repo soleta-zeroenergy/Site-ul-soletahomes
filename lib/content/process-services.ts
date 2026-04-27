@@ -90,7 +90,7 @@ export const processSteps = [
     heading: "Keys in hand",
     duration: "2–6 weeks",
     description:
-      "Final finishes, installations, systems commissioning and handover. We walk you through every system — heating, ventilation, energy management, smart home controls. You receive full documentation, warranties and a direct line to our aftercare team.",
+      "Final finishes, installations, systems commissioning, and handover. We guide you through every system — heating, ventilation, energy management, and smart-home controls. You receive the full documentation, the warranties, and a direct connection to our aftercare team.",
     deliverable: "Completed home · Systems commissioned · Full documentation · Warranty pack",
     deliverables: [
       "Completed, move-in-ready home",
