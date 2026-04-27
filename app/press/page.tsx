@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ...withCanonical("/press"),
   title: "Press & Media | Soleta in the Press",
   description:
-    "Soleta has been featured by The Guardian, Inhabitat, Daily News, HomeAdore and international architecture publications across Europe and North America since 2013.",
+    "Soleta has been featured by The Guardian, Inhabitat, Daily News, HomeAdore and international architecture publications across all five continents since 2013.",
 };
 
 const schema = breadcrumbSchema([
@@ -50,7 +50,7 @@ export default function PressPage() {
       >
         <Image
           src="/images/Signature800x533.webp"
-          alt="Soleta Signature — featured in international architecture press"
+          alt="Soleta ZeroEnergy One — featured in international architecture press"
           fill
           priority
           className="object-cover"
@@ -181,7 +181,7 @@ export default function PressPage() {
         eyebrow="Press contact"
         heading="Working on a story?"
         body="We are available for interview, site visits and technical briefings. Contact the press team directly."
-        primaryCta={{ label: "Contact the Press Team", href: "mailto:press@soletahomes.com" }}
+        primaryCta={{ label: "Contact the Press Team", href: "mailto:office@soletahomes.com" }}
         secondaryCta={{ label: "About Soleta", href: "/about" }}
         theme="dark"
       />

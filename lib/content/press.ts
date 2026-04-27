@@ -3,13 +3,13 @@
 export const pressHero = {
   eyebrow: "Press & Media",
   heading: "Soleta in the press",
-  body: "Since the launch of the Soleta ZeroEnergy One in 2013, Soleta has been featured by leading international architecture and design publications across Europe, North America and beyond.",
+  body: "Since the launch of the Soleta ZeroEnergy One in 2013, Soleta has been featured by leading international architecture and design publications across Europe, the Americas, Australia, Asia and beyond.",
 };
 
 /* ── Context framing ──────────────────────────────────────────────────────── */
 
 export const pressFraming = {
-  body: "The 2013 international press response to the ZeroEnergy One prototype was significant not because it was coordinated — it was not — but because architecture and design publications across three continents independently identified it as a genuinely new proposition. That coverage established Soleta's international profile before we had a single client outside Romania. It has been followed by consistent coverage across European design and architecture media in the years since.",
+  body: "The 2013 international press response to the ZeroEnergy One prototype was significant not because it was coordinated — it was not — but because architecture and design publications across five continents independently identified it as a genuinely new proposition. That coverage established Soleta's international profile before we had a single client outside Romania. It was followed by a consistent presence in European design and architecture media in the years that followed.",
 };
 
 /* ── Coverage ─────────────────────────────────────────────────────────────── */
@@ -70,7 +70,7 @@ export const pressCoverage = [
 export const pressKit = {
   heading: "Press resources",
   body: "High-resolution images, logo files, founder biography and company fact sheet are available to editorial teams on request. We respond to press enquiries directly.",
-  contact: "press@soletahomes.com",
+  contact: "office@soletahomes.com",
   items: [
     "Logo files — SVG and PNG, all colour variants",
     "Product photography — high-resolution, licence-free for editorial use",
@@ -84,5 +84,5 @@ export const pressKit = {
 
 export const pressSupportBlock = {
   eyebrow: "Working on a story?",
-  body: "We are available for interview, site visits and technical briefings. If you are covering timber construction, prefabrication, sustainable housing or the European residential market, we can provide context, images and access to completed projects. Contact the press team directly at press@soletahomes.com.",
+  body: "We are available for interview, site visits and technical briefings. If you are covering timber construction, prefabrication, sustainable housing or the European residential market, we can provide context, images and access to completed projects. Contact the press team directly at office@soletahomes.com.",
 };
