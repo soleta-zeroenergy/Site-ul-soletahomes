@@ -3,7 +3,7 @@
 export const sustainabilityHero = {
   eyebrow: "Sustainability",
   heading: "Built light.\nBuilt to last.",
-  body: "Sustainability at Soleta is the starting logic of every decision — material selection, structural system, foundation approach, energy strategy. The choices compound: a home built from natural materials, on minimal foundations, with a high-performance envelope, designed for 80 years of use, is sustainable in a way that no single specification can claim on its own.",
+  body: "Sustainability at Soleta is the starting logic of every decision — material selection, structural system, foundation approach, energy strategy. The choices compound: a home built from natural materials, on carefully considered foundations, with a high-performance envelope, designed for 80 years of use, is sustainable in a way that no single specification can claim on its own.",
 };
 
 /* ── Framing block ────────────────────────────────────────────────────────── */
@@ -36,12 +36,12 @@ export const sustainabilityPrinciples = [
   {
     number: "02",
     heading: "97% organic materials by mass",
-    body: "By mass, 97% of the materials in a Soleta home are of organic or natural origin — structural timber, wood fibre insulation, natural finishes, stone. No EPS foam, no mineral wool, no synthetic membranes. At the end of its life, a Soleta home can be almost entirely composted, reclaimed or recycled. That is a consequence of material selection made from the start, not a retrospective claim.",
+    body: "By mass, 97% of the materials in a Soleta home are of organic or natural origin — structural timber, insulation materials, natural finishes, stone. No EPS foam, no mineral wool, no synthetic membranes. At the end of its life, a Soleta home can be almost entirely composted, reclaimed or recycled. That is a consequence of material selection made from the start, not a retrospective claim.",
   },
   {
     number: "03",
     heading: "Minimum site disruption",
-    body: "Ground screw foundations are installed without excavation — typically one day's work that leaves the soil structure, drainage and root systems of the site undisturbed. No concrete poured, no spoil removed, no permanent alteration of the ground profile. Where site conditions require a different foundation approach, it is specified clearly at the engineering stage.",
+    body: "For some Soleta models, ground screw foundations are recommended. They are installed without excavation — typically one day's work that leaves the soil structure, drainage and root systems of the site undisturbed. No concrete poured, no spoil removed, no permanent alteration of the ground profile. Where site conditions require a different foundation approach, it is specified clearly at the engineering stage.",
   },
   {
     number: "04",
@@ -56,7 +56,7 @@ export const sustainabilityPrinciples = [
   {
     number: "06",
     heading: "Responsible sourcing and local production",
-    body: "Structural timber is sourced from certified European forests. Production is based in Central Europe, minimising transport distances to our main project markets. We work with regional material suppliers and local craftspeople wherever the quality standard is met. Certification and sourcing documentation is available on request.",
+    body: "Structural timber comes from certified European forests, especially from Sweden. We make every effort to reduce transport distances to our main project markets. For very distant markets, we work with regional material suppliers and local craftspeople wherever the quality standard is met. Certification and sourcing documentation is available on request.",
   },
 ];
 
