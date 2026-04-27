@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/process/build"),
   title: "Build — Stage 4 | Process & Services | Soleta",
   description:
-    "Factory manufacturing and on-site assembly. Every structural element produced under controlled conditions, loaded in assembly order, and erected on your site by our team.",
+    "Factory manufacturing and on-site assembly. Every structural element is produced under controlled conditions, loaded in assembly order, and erected on your site by our team.",
 };
 
 const step     = processSteps[3];
@@ -78,7 +78,7 @@ export default function BuildPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Controlled production, not site improvisation</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  Manufacturing begins only after engineering sign-off — and, where required, after building permit approval. Every structural element is cut, drilled, routed and finished in our production facility under controlled indoor conditions. Factory production eliminates the two largest sources of quality failure on traditional building sites: weather and inconsistent craftsmanship. Every element is made by the same team, on the same machines, to the same tolerances.
+                  Manufacturing begins only after engineering approval. Every structural element is cut, drilled, routed, and finished in our production facility under controlled indoor conditions. Factory production eliminates the two major sources of quality failure on traditional sites: weather and inconsistent execution. Every element is produced by the same team, on the same machines, to the same tolerances.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function BuildPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Loaded in sequence, assembled in order</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  Elements are labelled, wrapped and loaded onto transport vehicles in precise assembly sequence. When the truck arrives on your site, there is no sorting, no improvisation, no waiting. The assembly team follows a choreographed sequence derived directly from the manufacturing drawings. The speed you see on site is a consequence of the preparation done in the factory — not of shortcuts taken during erection.
+                  Elements are labelled, protected, and loaded onto transport vehicles in assembly sequence. When the truck arrives on your site, there is no improvisation or wasted time. The assembly team follows a clear sequence derived directly from the manufacturing drawings. The speed you see on site is the consequence of preparation done in the factory — not shortcuts taken during erection.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function BuildPage() {
               <div>
                 <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>Indicative on-site timeline</h2>
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                  The structural frame of a Classic or Signature is typically erected in 3 to 5 working days. The complete weatherproof envelope — structure, insulation, cladding, windows and external doors — is achieved within 2 to 4 weeks from the start of assembly, weather permitting. Internal works begin once the envelope is closed. Total build-stage duration, factory and site combined, is typically 6 to 10 weeks for a standard project.
+                  The structural frame of a Classic or Signature model is typically erected in 3 to 10 working days. The complete weatherproof envelope — structure, insulation, cladding, windows, and external doors — is achieved within 3 to 10 weeks from the start of assembly, weather permitting. Internal works begin once the envelope is closed. The total duration of the Build stage, factory and site combined, is typically 6 to 13 weeks for a standard project.
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function BuildPage() {
             <div>
               <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>What site readiness means in practice</h2>
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                The foundation must be complete and cured before manufacturing begins — or at minimum before transport is scheduled. Foundation type and construction timeline depend on ground conditions at your specific site and are separately scoped during the engineering stage. Access for a crane and a heavy-goods vehicle must be confirmed in advance. We review all site readiness requirements with you before the build stage begins so there are no surprises when the truck arrives.
+                The foundation must be complete and cured before the Build stage begins. Foundation type and construction timeline depend on the conditions of your specific site and are defined separately during the engineering stage. Access for a crane, if needed, and for a heavy truck must be confirmed in advance. We review all site-readiness requirements with you before the Build stage begins so there are no surprises when the truck arrives.
               </p>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function BuildPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">Factory precision, visible on site</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Because every element is manufactured to CNC tolerance, the assembly process is unusually quiet. There is no cutting on site, no adjustment, no rework. What arrives fits. That predictability is not incidental — it is the direct consequence of resolving every dimension in the factory, before transport begins.
+              Because every element is manufactured to CNC tolerances, the assembly process is unusually clean and quiet. What arrives on site fits. That predictability is not accidental — it is the direct consequence of resolving every dimension in the factory before transport begins.
             </p>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function BuildPage() {
       <CtaBand
         eyebrow="Next step"
         heading="Final finishes and handover"
-        body="Once the envelope is complete, internal works begin. Turnkey Delivery takes the home from structure to move-in ready."
+        body="Once the envelope is complete, internal works begin. Turnkey Delivery takes the home from structure to move-in-ready."
         primaryCta={{ label: nextStep.number + " " + nextStep.label + " →", href: nextStep.href }}
         secondaryCta={{ label: "Back to Process & Services", href: "/process" }}
         theme="dark"

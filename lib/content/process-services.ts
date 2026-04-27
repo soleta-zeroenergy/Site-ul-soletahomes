@@ -74,7 +74,7 @@ export const processSteps = [
     heading: "Factory to site",
     duration: "6–10 weeks",
     description:
-      "Your home is manufactured in our production facility in Central Europe. Every element is cut, drilled and finished under controlled conditions, then labelled and loaded in assembly order. When the truck arrives on your site, the structural frame goes up in 3 to 5 days. The complete weatherproof envelope — structure, insulation, cladding, windows — is achieved within 2 to 4 weeks.",
+      "Your home is manufactured in our production facility. Every element is cut, drilled, and finished under controlled conditions, then labelled and loaded in assembly order. When the truck arrives on your site, the structural frame goes up in 3 to 10 days. The complete weatherproof envelope — structure, insulation, cladding, and windows — is achieved within 3 to 10 weeks. These timelines depend to a large extent on the size of the house.",
     deliverable: "Manufactured home · Transported to site · Structural frame erected · Envelope complete",
     deliverables: [
       "Home manufactured in our production facility",
