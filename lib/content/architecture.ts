@@ -151,25 +151,25 @@ export const healthyMaterialsContent = {
   ],
   principles: [
     {
-      heading: "Natural wood fibre insulation throughout",
-      body: "We use natural wood fibre insulation in walls, roof and floor assemblies. It regulates humidity, stores carbon and is produced without petrochemical inputs. Its thermal and hygric performance is well-documented and stable over the life of the building.",
+      heading: "Natural insulation throughout",
+      body: "We use natural insulation in walls, roof, and floor assemblies. It regulates humidity, stores carbon, and is produced without petrochemical inputs. Its thermal and hygric performance is well documented and stable over the life of the building.",
     },
     {
       heading: "Vapour-permeable construction",
-      body: "A Soleta wall breathes. The vapour-permeable membrane and natural insulation allow moisture to move through the wall assembly and escape — preventing the condensation that damages airtight buildings with synthetic membranes. Moisture management is passive, structural and permanent.",
+      body: "A Soleta wall breathes. The vapour-permeable membrane and natural insulation allow moisture to move through the wall assembly and escape, preventing the condensation that damages airtight buildings with synthetic membranes. Moisture management is passive, structural, and permanent.",
     },
     {
       heading: "Formaldehyde-free adhesives",
-      body: "Our glulam structural elements use formaldehyde-free adhesives certified to the strictest European indoor air quality standards. We specify this as a supply chain requirement — not as a marketing position — and verify it through material certification documentation.",
+      body: "Our glulam structural elements use formaldehyde-free adhesives certified to the strictest European indoor air quality standards. We specify this as a supply-chain requirement, not as a marketing position, and verify it through material certification documentation.",
     },
     {
       heading: "Surfaces that age visibly and well",
-      body: "Timber weathers. Larch cladding silvers. Stone darkens. We select materials that improve with age rather than deteriorate — and that signal their age honestly rather than concealing it. A Soleta home at fifteen years should look better than at year one, not worse.",
+      body: "Timber changes over time. Its appearance improves with age rather than deteriorating, provided it is properly maintained, and it shows its age honestly rather than concealing it. A Soleta home at fifteen years should look better than in year one, not worse.",
     },
   ],
   honesty: {
     heading: "Material honesty",
-    body: "No surface in a Soleta home pretends to be something it is not. Structural timber appears as structural timber. Stone is stone. Cladding is the sacrificial weather layer — not the structural skin. This commitment to material honesty is practical as well as aesthetic: honest materials are easier to inspect, easier to maintain and easier to repair.",
+    body: "No surface in a Soleta home pretends to be something it is not. Structural timber appears as structural timber. Stone is stone. Exterior cladding protects against the weather. This commitment to material honesty is practical as well as aesthetic: honest materials are easier to inspect, easier to maintain, and easier to repair.",
   },
 };
 

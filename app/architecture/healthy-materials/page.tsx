@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...withCanonical("/architecture/healthy-materials"),
   title: "Healthy Materials | Architecture & Design | Soleta",
   description:
-    "Natural wood fibre insulation, formaldehyde-free adhesives, vapour-permeable construction. Materials selected for durability, indoor quality and honest behaviour over time.",
+    "Natural insulation (wood fibre, hemp, wool, etc.), formaldehyde-free adhesives, vapour-permeable construction. Materials selected for durability, indoor quality, and honest behaviour over time.",
 };
 
 const schema = breadcrumbSchema([
@@ -121,7 +121,7 @@ export default function HealthyMaterialsPage() {
           >
             <Image
               src="/images/WhySoleta900x1200.webp"
-              alt="Soleta — natural timber interior"
+              alt="Soleta - natural timber interior"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -131,7 +131,7 @@ export default function HealthyMaterialsPage() {
           <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
             <span className="eyebrow block">Surfaces over time</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Timber weathers. Larch silvers. Stone darkens. The materials inside a Soleta home are selected not for how they look on completion day, but for how they behave over a decade — aging visibly, honestly, and well.
+              The materials in Soleta homes change over time. They acquire a beautiful patina and are selected not for how they look on completion day, but for how they behave over a decade — aging visibly, honestly, and well.
             </p>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function HealthyMaterialsPage() {
       <CtaBand
         eyebrow="Next"
         heading="Energy &amp; ZeroEnergy"
-        body="Design-led energy performance — from the envelope to the renewable systems."
+        body="Design-led energy performance, from the envelope to the renewable systems."
         primaryCta={{ label: "Explore ZeroEnergy",  href: "/architecture/energy-zeroenergy" }}
         secondaryCta={{ label: "View the Collection", href: "/collection" }}
         theme="dark"
