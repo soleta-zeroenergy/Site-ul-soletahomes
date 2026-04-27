@@ -18,7 +18,7 @@ export const servicesIntro = {
   eyebrow: "Full scope",
   heading: "One team.\nEvery discipline.",
   body:
-    "We keep the full range of skills in-house — architecture, engineering, construction, interiors — so nothing falls through the gap between consultants. You work with a single team from start to finish.",
+    "We keep the full range of skills under our coordination — architecture, engineering, construction, interiors — so nothing falls through the gaps between consultants. You work with a single team from start to finish.",
   align: "center",
   theme: "warm",
   size:  "sm",
@@ -34,7 +34,7 @@ export const servicesList: ValuesGridProps = {
     {
       title: "Private Consulting",
       body:
-        "A one-on-one session with a senior architect — before you commit to anything. We discuss your site, your brief, your budget, and what is realistically achievable. No obligation. No sales pitch.",
+        "A one-on-one session with a senior consultant — before you commit to anything. We discuss your site, your brief, your budget, and what is realistically achievable. No obligation. No sales pitch.",
     },
     {
       title: "Custom Architectural Design",
@@ -44,7 +44,7 @@ export const servicesList: ValuesGridProps = {
     {
       title: "Permits & Planning",
       body:
-        "We prepare and submit planning applications on your behalf and manage the dialogue with local authorities through to a decision. You are not left to navigate the process alone.",
+        "As an additional service, we provide documents that complete the building permit file for the house and advise the dialogue with local authorities through to a decision. You are not left to navigate the process alone.",
     },
     {
       title: "Interior Design",
@@ -52,14 +52,14 @@ export const servicesList: ValuesGridProps = {
         "Interiors conceived as a continuation of the architecture — not a separate layer applied on top. Material palettes, furniture selection, lighting, joinery and bespoke built-ins, all co-ordinated by the same team.",
     },
     {
-      title: "Timber Frame Construction",
+      title: "Post&Beam Construction",
       body:
-        "In-house fabrication and erection of the structural timber frame. We do not sub-contract this to a third party. Our carpenters built the design — they understand what it requires.",
+        "In-house fabrication and erection of the Soleta structural system. We do not sub-contract this to a third party. Our carpenters built the design — they understand what it requires.",
     },
     {
       title: "Aftercare",
       body:
-        "After handover, you have a named contact for the first year. Any issues that emerge in the early life of the building are addressed by the team that built it, not passed to a call centre.",
+        "After handover, you can contract a Soleta Aftercare programme. Any issues that emerge in the early life of the building are addressed by the team that built it, not passed to a call centre.",
     },
   ],
 };
@@ -69,7 +69,7 @@ export const servicesConsulting: FeatureSplitProps = {
   eyebrow:       "Private Consulting",
   heading:       "Begin with a\nconversation",
   body:
-    "Not everyone who comes to us is ready to commission a house. Some want clarity on what is possible before they commit time and money to a full brief. We offer a single confidential session with a senior architect — on your site, in our studio, or remotely.",
+    "Not everyone who comes to us is ready to commission a house. Some want clarity on what is possible before they commit time and money to a full brief. We offer a single confidential session with a senior consultant — on your site, in our studio, or remotely.",
   bodySecond:
     "We cover what the site can support, what your programme might cost to build, and which collection or approach makes most sense for your circumstances. The conversation is candid and the advice is independent.",
   imagePosition: "right",

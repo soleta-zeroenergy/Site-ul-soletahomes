@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "End-to-end capability — private consulting, custom architectural design, permits, interior design, timber frame construction, and long-term aftercare.",
+    "End-to-end capability — private consulting, custom architectural design, permits, interior design, post&beam construction, and long-term aftercare.",
 };
 
 export default function ServicesPage() {
