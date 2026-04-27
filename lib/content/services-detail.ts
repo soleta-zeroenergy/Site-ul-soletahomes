@@ -279,7 +279,7 @@ export const servicesDetail: ServiceDetailContent[] = [
       left:
         "Most building companies consider their responsibility complete at handover. We do not. A home built to Soleta standards will perform reliably for decades — but only if it is maintained correctly. Natural materials are durable, but they require periodic attention. Systems need servicing. Timber cladding needs re-treatment on a schedule. The aftercare programme puts that attention on a structure, so nothing is left to chance or memory.",
       right:
-        "Our aftercare team is the same team that designed and built your home. When something needs attention, we understand the context immediately — we do not investigate from scratch.",
+        "Our aftercare team is highly specialized in this type of work. When something needs attention, we understand the context immediately — we do not investigate from scratch.",
     },
     sections: [
       {
@@ -307,7 +307,7 @@ export const servicesDetail: ServiceDetailContent[] = [
     ],
     caveat: {
       heading: "Programme scope and geography",
-      body: "Aftercare is a separately booked programme, not an automatic extension of the build contract. It is available from the year of handover and can be arranged at any point after that — including for Soleta homes built before the programme existed. Response times and visit scheduling depend on your location: for homes in Romania, inspections are conducted directly by our team. For homes in other European countries, we arrange inspections through trusted local partners who are briefed on Soleta construction standards. Emergency response times vary by geography and are confirmed in the programme agreement. The programme does not cover damage caused by misuse, modifications made without our involvement or events outside normal use conditions.",
+      body: "Aftercare is a separately booked programme, not an automatic extension of the Build contract. It is available from the year of handover and can be arranged at any point after that — including for Soleta homes built before the programme existed. Response times and visit scheduling depend on your location: for homes in Europe, inspections are conducted directly by our team. For homes in other parts of the world, we arrange inspections through trusted local partners who are briefed on Soleta construction standards. Emergency response times vary by geography and are confirmed in the programme agreement. The programme does not cover damage caused by misuse, modifications made without our involvement or events outside normal use conditions.",
     },
     supportBlock: {
       eyebrow: "The same team, long after handover",
@@ -316,15 +316,15 @@ export const servicesDetail: ServiceDetailContent[] = [
     faq: [
       {
         question: "When can I join the aftercare programme?",
-        answer: "The aftercare programme is available from the point of handover and can be arranged at any time after that — including for homes that have been in use for several years. There is no penalty for joining late, though homes that have not been inspected for a period may require an initial assessment visit before the standard annual programme begins.",
+        answer: "The aftercare programme is available from the point of handover and can be arranged at any time after that — including for homes that have been in use for several years. There is no penalty for joining late, though homes that have not been inspected for a period may require an initial assessment visit before the standard annual programme begins. In this situation, additional renovation works beyond ordinary maintenance may be very likely.",
       },
       {
         question: "Is aftercare included in the build contract?",
-        answer: "Aftercare is a separate programme, not part of the standard build contract. It is priced and agreed independently from the build offer. We discuss aftercare availability during the Turnkey Delivery stage and provide programme details at handover, but enrolment is always your choice.",
+        answer: "Aftercare is a separate programme, not part of the standard Build contract. It is priced and agreed independently from the build offer. We discuss aftercare availability during the Turnkey Delivery stage and provide programme details at handover, but enrolment is always your choice.",
       },
       {
-        question: "What if my home is not in Romania?",
-        answer: "For homes outside Romania, inspections are conducted by local partners selected and briefed by our team. We remain the point of contact and the technical authority — the local partner carries out the physical inspection and reports back to us. Emergency response times and visit scheduling for non-Romanian homes are confirmed in your programme agreement and reflect the practical constraints of geography.",
+        question: "What if my home is not in Europe?",
+        answer: "For homes outside Europe, inspections are conducted by local partners selected and briefed by our team. We remain the point of contact and the technical authority — the local partner carries out the physical inspection and reports back to us. Emergency response times and visit scheduling for homes outside Europe are confirmed in your programme agreement and reflect the practical constraints of geography.",
       },
     ],
     cta: {
