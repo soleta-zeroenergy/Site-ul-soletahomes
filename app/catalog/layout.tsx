@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { withCanonical } from "@/lib/seo";
+import { EcosystemSplit } from "@/components/sections/EcosystemSplit";
 
 export const metadata: Metadata = {
   ...withCanonical("/catalog"),
@@ -13,5 +14,10 @@ export default function CatalogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <EcosystemSplit />
+    </>
+  );
 }

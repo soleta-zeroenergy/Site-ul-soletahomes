@@ -160,7 +160,7 @@ export function ProcessTimeline({
               </div>
 
               {/* ── Right column: content ────────────────────────────────── */}
-              <div className={cn("flex-1 pb-14", isLast && "pb-0")}>
+              <div className={cn("flex-1 pb-14 sm:pb-10", isLast && "pb-0 sm:pb-0")}>
                 {stage.eyebrow && (
                   <p className={cn("eyebrow mb-2", tok.stageEye)}>
                     {stage.eyebrow}

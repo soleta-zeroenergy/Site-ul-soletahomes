@@ -6,15 +6,16 @@ import { cn } from "@/lib/cn";
 type Cta = { label: string; href: string };
 
 export type HeroProps = {
-  eyebrow?:      string;
-  heading:       string;   // use \n for intentional line breaks
-  subtext?:      string;
-  primaryCta?:   Cta;
-  secondaryCta?: Cta;
-  imageSrc?:     string;
-  imageAlt?:     string;
-  align?:        "left" | "center" | string;
-  size?:         "full" | "large" | "medium" | string;
+  eyebrow?:        string;
+  heading:         string;   // use \n for intentional line breaks
+  subtext?:        string;
+  primaryCta?:     Cta;
+  secondaryCta?:   Cta;
+  imageSrc?:       string;
+  imageAlt?:       string;
+  align?:          "left" | "center" | string;
+  size?:           "full" | "large" | "medium" | string;
+  overlayVariant?: "bottom" | "side-left";
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -51,6 +52,7 @@ export function Hero({
   imageAlt = "",
   align = "left",
   size = "full",
+  overlayVariant = "bottom",
 }: HeroProps) {
   const centered = align === "center";
 
@@ -81,7 +83,9 @@ export function Hero({
           imageSrc
             ? {
                 background:
-                  "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
+                  overlayVariant === "side-left"
+                    ? "linear-gradient(to right, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 32%, rgba(26,23,20,0.10) 65%, transparent 80%), linear-gradient(to top, rgba(26,23,20,0.70) 0%, rgba(26,23,20,0.30) 25%, transparent 50%)"
+                    : "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
               }
             : {
                 background:

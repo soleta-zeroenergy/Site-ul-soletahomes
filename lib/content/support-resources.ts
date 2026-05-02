@@ -33,7 +33,7 @@ export const supportCards: CardGridProps = {
       eyebrow: "Catalog",
       title:   "The Soleta Collection Catalog",
       body:
-        "An overview of our five house model families — Signature, Classic, Large Family, Holiday & Retreat, and Custom — with representative plans, imagery, and specification notes. Available to download or request by post.",
+        "An overview of our three collection directions — Signature, Classic, and Holiday & Retreat — with representative plans, imagery, and specification notes. Available to download or request by post.",
       cta:  "Request the catalog",
       href: "/contact",
     },
@@ -81,7 +81,7 @@ export const supportFaq: ValuesGridProps = {
     {
       title: "Can we modify a standard collection design?",
       body:
-        "The collection designs are starting points, not fixed products. Most clients adapt them to their site and brief through the design development phase. Significant departures from a collection type may be better served by our Custom Architecture service.",
+        "The collection designs are starting points, not fixed products. Most clients adapt them to their site and brief through the design development phase. Significant departures from a collection type are addressed through the Soleta Signature path.",
     },
     {
       title: "What is included in a turnkey delivery?",

@@ -5,7 +5,7 @@ export function organizationSchema() {
     name: "Soleta Homes",
     url: "https://soletahomes.com",
     logo: "https://soletahomes.com/logo/Sigla%20Verde%20%2318392B.png",
-    foundingDate: "2013",
+    foundingDate: "2011",
     founder: {
       "@type": "Person",
       name: "Cătălin Butmălai",

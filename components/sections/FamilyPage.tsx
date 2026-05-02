@@ -44,7 +44,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           <p className="subtitle max-w-xl mb-10">{model.subheading}</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/request-private-offer" className="btn-primary">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link href="/catalog" className="btn-outline">
               Download Catalogue
@@ -241,7 +241,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                   href="/contact"
                   className="mt-2 inline-flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
                 >
-                  Request offer →
+                  Request consultation →
                 </Link>
               </div>
             ))}
@@ -545,7 +545,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/request-private-offer" className="btn-inverse">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link
               href="/collection"
@@ -560,8 +560,8 @@ export function FamilyPage({ model }: { model: HomeModel }) {
 
       {/* ── Sticky mobile CTA ─────────────────────────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-white/10 bg-[var(--soleta-forest)] p-3 md:hidden">
-        <Link href="/contact" className="btn-primary flex-1 justify-center text-center">
-          Request Offer
+        <Link href="/request-private-offer" className="btn-primary flex-1 justify-center text-center">
+          Consult
         </Link>
         <Link
           href="/catalog"

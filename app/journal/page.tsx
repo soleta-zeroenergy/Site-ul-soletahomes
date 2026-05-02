@@ -341,8 +341,8 @@ export default function JournalPage() {
       {/* ── 5. Final CTA ────────────────────────────────────────────────── */}
       <CtaBand
         heading="Ready to move from reading to clarity?"
-        body="If your project is beginning to take shape, a Private Offer request gives us the context needed to respond with more precision."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your project is beginning to take shape, a Private Consultation request gives us the context needed to respond with more precision."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         secondaryCta={{ label: "Request the Catalog",   href: "/catalog" }}
         theme="dark"
       />

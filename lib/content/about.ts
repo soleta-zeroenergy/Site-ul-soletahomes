@@ -92,7 +92,7 @@ export const companyTimeline = [
   {
     year: "2023",
     event: "Fourth generation collection",
-    detail: "The current collection — Signature, Classic, Holiday & Retreat, Custom Architecture — is released.",
+    detail: "The current collection — Signature, Classic, and Holiday & Retreat — is released.",
   },
   {
     year: "2026",
@@ -109,7 +109,7 @@ export const companyNumbers = [
   { value: "6", label: "Countries" },
   { value: "40", label: "Craftspeople" },
   { value: "97%", label: "Organic materials" },
-  { value: "2013", label: "Founded" },
+  { value: "2011", label: "Founded" },
 ];
 
 export const founderStory = {

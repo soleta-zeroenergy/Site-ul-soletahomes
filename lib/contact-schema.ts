@@ -2,11 +2,9 @@
 /* Shared between the API route (server) and the form component (client).    */
 
 export const PROJECT_TYPES = [
-  "New build — Signature",
+  "New build — Soleta Signature",
   "New build — Classic",
-  "New build — Large Family",
   "New build — Holiday & Retreat",
-  "Custom Architecture",
   "Professional / Developer inquiry",
   "General question",
 ];

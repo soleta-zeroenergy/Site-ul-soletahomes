@@ -27,7 +27,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           <p className="subtitle max-w-xl">{model.subheading}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/request-private-offer" className="btn-primary">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link href="/catalog" className="btn-outline">
               Download Catalogue
@@ -109,7 +109,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
                   href="/contact"
                   className="mt-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
                 >
-                  Request offer →
+                  Request consultation →
                 </Link>
               </div>
             ))}
@@ -214,7 +214,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/request-private-offer" className="btn-inverse">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link
               href="/collection"

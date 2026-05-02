@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { ModelDetail } from "@/components/sections/ModelDetail";
 import { largeFamilyModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
@@ -11,5 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function LargeFamilyPage() {
+  redirect("/collection");
   return <ModelDetail model={largeFamilyModel} />;
 }
+
+

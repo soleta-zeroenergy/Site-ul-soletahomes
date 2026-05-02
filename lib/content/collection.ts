@@ -5,7 +5,7 @@ export const collectionHero = {
   eyebrow: "The Collection",
   heading: "Architecture shaped around\nthe way you want to live",
   subheading:
-    "Explore four distinct paths — from timeless everyday homes to private retreats, expressive signature residences and fully bespoke architecture.",
+    "Three distinct paths — from timeless everyday homes to private retreats and expressive signature residences that begin from a site, a brief, or an architect's design.",
   ctaPrimary: { label: "Explore the Collection", href: "#collection-paths" },
   imageSrc: "/images/collection/collection-hero.jpg",
   imageAlt: "Soleta timber home exterior in natural landscape",
@@ -48,15 +48,6 @@ export const collectionFamilies = [
     imageSrc: "/images/Retreat800x533.webp",
     imageAlt: "Soleta holiday home in nature",
   },
-  {
-    eyebrow: "Bespoke · Site-Specific",
-    heading: "Custom Architecture",
-    body: "For projects that begin with a unique brief, a special piece of land, or a vision that does not belong within a predefined path. We design the architecture around the site, the lifestyle, and the ambition of the project.",
-    href: "/collection/custom-architecture",
-    cta: "Start a Custom Project",
-    imageSrc: "/images/rezerva800x533.webp",
-    imageAlt: "Custom Soleta architectural project",
-  },
 ];
 
 /* ── Guidance ────────────────────────────────────────────────────────────────── */
@@ -67,8 +58,7 @@ export const collectionGuidance = {
   items: [
     "Choose Classic if you want the strongest balance of permanence, comfort, and everyday living.",
     "Choose Holiday & Retreat if the home is primarily about rest, landscape, and the rhythm of a second home.",
-    "Choose Signature if the project calls for a stronger architectural expression or a more exceptional response to the site.",
-    "Choose Custom if your brief does not fit a predefined path.",
+    "Choose Signature if the project calls for a stronger architectural expression, an exceptional site, or begins with a brief or an external architect's design.",
   ],
 };
 
@@ -115,7 +105,7 @@ export const collectionExplore = {
       cta: "View Architecture",
     },
     {
-      title: "Request a Private Offer",
+      title: "Request a Private Consultation",
       body: "Tell us about your land, your timeline, and your project direction.",
       href: "/request-private-offer",
       cta: "Get in Touch",
@@ -127,7 +117,7 @@ export const collectionExplore = {
 export const collectionCta: CtaBandProps = {
   heading: "Begin your Soleta project",
   body: "Whether you already know which direction you want, or are still choosing between them, the next step is simple: tell us about your land, your timeline, and the kind of home you want to create.",
-  primaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
+  primaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
   secondaryCta: { label: "Explore Built Projects", href: "/built-projects" },
   theme: "dark",
 };

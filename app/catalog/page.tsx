@@ -479,8 +479,8 @@ export default function CatalogPage() {
       {/* ── 5 + 6. Secondary CTA ────────────────────────────────────────── */}
       <CtaBand
         heading="Need more than a catalog?"
-        body="If your project is already taking shape, the Private Offer route gives us the context needed to respond with more precision."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your project is already taking shape, the Private Consultation route gives us the context needed to respond with more precision."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         secondaryCta={{ label: "View the Collection", href: "/collection" }}
         theme="dark"
       />

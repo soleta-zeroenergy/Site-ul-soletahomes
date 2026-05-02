@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ...withCanonical("/contact"),
   title:       "Contact | Soleta Homes",
   description:
-    "Start the conversation with clarity. For project-specific enquiries, submit a Private Offer request. For general questions and press, contact us directly.",
+    "Start the conversation with clarity. For project-specific enquiries, submit a Private Consultation request. For general questions and press, contact us directly.",
 };
 
 /* ── Structured data ─────────────────────────────────────────────────────── */
@@ -117,7 +117,7 @@ export default function ContactPage() {
                 href="/request-private-offer"
                 className="btn-inverse py-3.5 px-8 text-[0.875rem]"
               >
-                Request a Private Offer
+                Request a Private Consultation
               </Link>
               <a
                 href="mailto:office@soletahomes.com"
@@ -152,7 +152,7 @@ export default function ContactPage() {
                     color:         "#1a1714",
                   }}
                 >
-                  Request a Private Offer
+                  Request a Private Consultation
                 </p>
                 <div
                   className="mt-3 h-[2px] w-8"
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   href="/request-private-offer"
                   className="btn-primary py-3 px-7 text-[0.875rem] inline-flex"
                 >
-                  Go to Private Offer
+                  Go to Private Consultation
                 </Link>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function ContactPage() {
                 >
                   Project enquiries
                 </span>
-                Please use the Private Offer form whenever your enquiry relates to a
+                Please use the Private Consultation form whenever your enquiry relates to a
                 future home, a site, a budget direction, or an active planning
                 discussion.
               </p>
@@ -521,8 +521,8 @@ export default function ContactPage() {
       {/* ── 7. Final CTA ─────────────────────────────────────────────────── */}
       <CtaBand
         heading="Ready to discuss your project properly?"
-        body="If your enquiry is tied to a future home, the Private Offer route gives us the context needed to respond with more precision."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your enquiry is tied to a future home, the Private Consultation route gives us the context needed to respond with more precision."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         theme="dark"
       />
     </>

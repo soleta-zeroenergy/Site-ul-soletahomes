@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection"),
   title: "The Collection | Soleta Homes",
   description:
-    "Explore four distinct directions — Signature, Classic, Holiday & Retreat, and Custom Architecture. Timber homes shaped around the way you want to live.",
+    "Explore three distinct directions — Signature, Classic, and Holiday & Retreat. Timber homes shaped around the way you want to live.",
 };
 
 /** Warm atmospheric gradient — used as fallback when no real image is available */
@@ -42,8 +42,8 @@ export default function CollectionPage() {
                 Architecture shaped around<br />the way you want to live
               </h1>
               <p className="subtitle max-w-lg mb-10">
-                Explore four distinct directions — from timeless homes for everyday living to private retreats,
-                expressive Signature residences, and fully bespoke architecture.
+                Three distinct directions — from timeless homes for everyday living to private retreats
+                and expressive Signature residences for exceptional sites and briefs.
               </p>
               <div>
                 <a href="#collection-paths" className="btn-primary">

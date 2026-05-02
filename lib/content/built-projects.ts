@@ -85,7 +85,7 @@ export const categoryMeta: CategoryMeta[] = [
     cta: {
       heading:   "Begin your private residence",
       body:      "Tell us about your site, your vision, and your timeline.",
-      primary:   "Request a Private Offer",
+      primary:   "Request a Private Consultation",
       secondary: "View all projects",
     },
   },
@@ -99,7 +99,7 @@ export const categoryMeta: CategoryMeta[] = [
     cta: {
       heading:   "Begin your holiday home",
       body:      "Tell us about your site, your vision and your timeline.",
-      primary:   "Request a Private Offer",
+      primary:   "Request a Private Consultation",
       secondary: "View all projects",
     },
   },

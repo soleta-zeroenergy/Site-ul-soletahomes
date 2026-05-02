@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { FamilyPage } from "@/components/sections/FamilyPage";
+import { FamilyPage }       from "@/components/sections/FamilyPage";
+import { EcosystemSplit }   from "@/components/sections/EcosystemSplit";
 import { holidayRetreatModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
 import { faqSchema, productSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
@@ -37,6 +38,7 @@ export default function HolidayRetreatPage() {
         />
       ))}
       <FamilyPage model={holidayRetreatModel} />
+      <EcosystemSplit />
     </>
   );
 }

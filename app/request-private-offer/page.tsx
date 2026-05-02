@@ -4,6 +4,7 @@ import { withCanonical } from "@/lib/seo";
 import { PrivateOfferForm } from "@/components/sections/PrivateOfferForm";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ConsultationExpectationsBlock } from "@/components/sections/ConsultationExpectationsBlock";
 import { breadcrumbSchema, faqSchema } from "@/lib/structured-data-helpers";
 import {
   offerHero,
@@ -14,14 +15,14 @@ import {
 
 export const metadata: Metadata = {
   ...withCanonical("/request-private-offer"),
-  title: "Request a Private Offer | Soleta",
+  title: "Request a Private Consultation | Soleta",
   description:
     "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget — and we will reply with a specific written assessment of what is feasible.",
 };
 
 const schema = breadcrumbSchema([
   { name: "Home",                   href: "/" },
-  { name: "Request a Private Offer", href: "/request-private-offer" },
+  { name: "Request a Private Consultation", href: "/request-private-offer" },
 ]);
 
 const faqJsonLd = faqSchema(offerFaq);
@@ -82,6 +83,9 @@ export default function RequestPrivateOfferPage() {
           </div>
         </div>
       </section>
+
+      {/* ── 3b. Consultation expectations ── */}
+      <ConsultationExpectationsBlock />
 
       {/* ── 4. Form section ── */}
       <section

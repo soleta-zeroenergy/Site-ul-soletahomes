@@ -256,7 +256,7 @@ export const classicModel: HomeModel = {
 
 export const signatureModel: HomeModel = {
   slug:       "signature",
-  eyebrow:    "Signature Homes",
+  eyebrow:    "Soleta Signature",
   heading:    "Architecture that\ndefines its landscape.",
   subheading:
     "For landmark sites and clients who want something genuinely distinct. Every Signature home is a one-of-a-kind collaboration.",
@@ -278,6 +278,7 @@ export const signatureModel: HomeModel = {
     "Projects that require a distinct architectural identity — not a catalogue home",
     "Design-led clients who want full creative involvement in the outcome",
     "Private clients and developers commissioning a landmark residence",
+    "Select projects that begin with an external architect's design, reinterpreted within the Soleta structural system — design authorship remains",
   ],
 
   differentiators: [
@@ -304,8 +305,7 @@ export const signatureModel: HomeModel = {
     { label: "Structure",    value: "Exposed glulam post & beam" },
     { label: "Cladding",     value: "Bespoke — timber, stone, metal, or composite" },
     { label: "Glazing",      value: "Custom triple-glazed systems" },
-    { label: "Energy class", value: "A+ standard · Passive House on request" },
-    { label: "Lifespan",     value: "100+ years" },
+    { label: "Energy class", value: "A+ standard" },
   ],
 
   gallery:    [],  // Populate with real images to activate the gallery section
@@ -324,7 +324,6 @@ export const signatureModel: HomeModel = {
     "Glazing configuration — custom formats, pivot systems, corner glazing",
     "Interior spatial sequence and material palette",
     "Integration of volumes for pool, spa, garage, or ancillary studio",
-    "ZeroEnergy and Passive House energy systems",
   ],
 
   deliverySummary: [
@@ -334,7 +333,7 @@ export const signatureModel: HomeModel = {
     "Engineering, structural calculations, and full construction documentation",
     "Factory manufacturing of all timber elements — 8–12 weeks",
     "On-site assembly, finishing, and commissioning",
-    "Handover with full documentation and 10-year structural warranty",
+    "Handover with full documentation",
   ],
 
   includes: [
@@ -345,7 +344,6 @@ export const signatureModel: HomeModel = {
     "Factory manufacturing of all timber elements",
     "On-site assembly and supervision",
     "Interior design coordination (optional)",
-    "10-year structural warranty",
   ],
 
   excludes: [
@@ -353,6 +351,7 @@ export const signatureModel: HomeModel = {
     "Site preparation and groundworks",
     "Utility connections",
     "Interior furniture",
+    "Architectural design fees (where an external architect is engaged)",
   ],
 
   relatedProjects: [
@@ -378,14 +377,9 @@ export const signatureModel: HomeModel = {
 
   faq: [
     {
-      question: "How is a Signature home different from a Custom Architecture project?",
+      question: "Can I bring my own architect's design to a Signature project?",
       answer:
-        "Signature homes are full-service bespoke projects — we lead the entire process, from site analysis to handover. Custom Architecture allows you to bring your own architect's design, and have Soleta manufacture and assemble it.",
-    },
-    {
-      question: "What is the minimum budget for a Signature home?",
-      answer:
-        "Signature projects start from €250,000 for the building (excluding land, foundation, and site works). We discuss budget and feasibility in the first consultation — with no obligation.",
+        "Yes. When a project begins with an external architect's design, Soleta reviews, translates, and engineers it into the Soleta structural and manufacturing system. The design authorship remains. The precision of manufacture and construction is Soleta's.",
     },
     {
       question: "Can we specify our own materials?",

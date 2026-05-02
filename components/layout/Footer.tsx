@@ -74,6 +74,45 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Ecosystem row */}
+      <div className="border-t border-soleta-gold/20">
+        <div className="container-site py-8">
+          <p
+            className="font-ui text-[0.5rem] uppercase tracking-[0.14em] text-soleta-cream/30 mb-5"
+          >
+            Part of Soleta Group
+          </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10">
+            <div className="flex flex-col gap-2">
+              <span className="font-ui text-xs font-medium tracking-wide text-soleta-cream/70">
+                SoletaHomes.com
+              </span>
+              <p className="font-ui text-xs text-soleta-cream/40 leading-relaxed max-w-[36ch]">
+                Premium timber homes. Private residential and landmark projects.
+                Direct consultation, design-to-delivery. No online purchase.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="font-ui text-xs font-medium tracking-wide text-soleta-cream/70">
+                SoletaHousePlans.com
+              </span>
+              <p className="font-ui text-xs text-soleta-cream/40 leading-relaxed max-w-[36ch]">
+                House plans, kits, and assembly support. Public pricing and
+                direct online purchase for smaller projects.
+              </p>
+              <a
+                href="https://soletahouseplans.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-ui text-[0.625rem] uppercase tracking-[0.1em] text-soleta-cream/40 hover:text-soleta-cream/70 transition-colors duration-200 no-underline"
+              >
+                Visit ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-t border-soleta-gold/20">
         <div className="container-site flex flex-col items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
           <p className="font-ui text-xs font-medium tracking-wide text-soleta-cream/50">

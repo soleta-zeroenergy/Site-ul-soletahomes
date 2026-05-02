@@ -74,7 +74,7 @@ export default function PrivateResidencesPage() {
               New projects being added — check back soon.
             </p>
             <Link href="/request-private-offer" className="btn-primary">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
           </div>
         </section>

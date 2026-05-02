@@ -37,8 +37,20 @@ const nextConfig = {
         destination: "/built-projects/holiday-homes/worthersee-lodge",
         permanent:   true,
       },
+      // Custom Architecture merged into Soleta Signature
+      {
+        source:      "/collection/custom-architecture",
+        destination: "/collection/signature",
+        permanent:   true,
+      },
+      {
+        source:      "/collection/large-family",
+        destination: "/collection",
+        permanent:   true,
+      },
     ];
   },
 };
 
 export default nextConfig;
+

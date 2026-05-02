@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero }            from "@/components/sections/Hero";
+import { ProofStrip }      from "@/components/sections/ProofStrip";
+import { EcosystemSplit }  from "@/components/sections/EcosystemSplit";
 import { FeatureSplit }    from "@/components/sections/FeatureSplit";
 import Image              from "next/image";
 import { ProjectGrid }     from "@/components/sections/ProjectGrid";
@@ -46,7 +48,7 @@ export default function HomePage() {
             name: siteConfig.name,
             url: siteConfig.url,
             logo: `${siteConfig.url}/logo/Sigla%20Verde%20%2318392B.png`,
-            foundingDate: "2013",
+            foundingDate: "2011",
             founder: { "@type": "Person", name: "Cătălin Butmălai" },
           },
         })}}
@@ -56,22 +58,7 @@ export default function HomePage() {
       <Hero {...homeHero} />
 
       {/* 2 ── Proof strip */}
-      <section className="bg-[#1a1714] py-6">
-        <div className="container-site">
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
-            {homeProofStrip.items.map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <span aria-hidden="true" className="h-px w-5 shrink-0 bg-brand-400" />
-                <span
-                  className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[#c8bfb8]"
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProofStrip items={homeProofStrip.items} />
 
       {/* 3 ── Manifesto */}
       <FeatureSplit {...homeManifesto} />
@@ -92,7 +79,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-3">
             {homeCollection.cards.map((card) => (
               <Link
                 key={card.href}
@@ -336,7 +323,10 @@ export default function HomePage() {
         </Link>
       </div>
 
-      {/* 11 ── Final CTA */}
+      {/* 11 ── Ecosystem */}
+      <EcosystemSplit />
+
+      {/* 12 ── Final CTA */}
       <CtaBand {...homeCta} />
       <div className="bg-[#1a1714] pb-10 flex justify-center">
         <Link

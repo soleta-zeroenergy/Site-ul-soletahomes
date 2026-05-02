@@ -225,7 +225,7 @@ export function Header() {
               href="/request-private-offer"
               className="btn-primary hidden px-7 py-[0.75rem] text-[0.625rem] lg:inline-flex"
             >
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
 
             <button
@@ -369,7 +369,7 @@ export function Header() {
             href="/request-private-offer"
             className="btn-primary mt-8 self-start px-8 py-4 text-[0.625rem]"
           >
-            Request a Private Offer
+            Request a Private Consultation
           </Link>
         </nav>
       </div>

@@ -441,7 +441,7 @@ export function PrivateOfferForm() {
   return (
     <form
       key={formKey}
-      aria-label="Private Offer request form"
+      aria-label="Private Consultation request form"
       noValidate
       onSubmit={handleSubmit}
       className="flex flex-col gap-0"
@@ -617,3 +617,4 @@ export function PrivateOfferForm() {
     </form>
   );
 }
+

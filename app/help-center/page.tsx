@@ -278,8 +278,8 @@ export default function HelpCenterPage() {
       {/* ── 4. Bottom CTA ───────────────────────────────────────────────── */}
       <CtaBand
         heading="Still need a clearer answer?"
-        body="If your question is tied to a real site, budget direction, or future home, the Private Offer route gives us the context needed to respond more precisely."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your question is tied to a real site, budget direction, or future home, the Private Consultation route gives us the context needed to respond more precisely."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         secondaryCta={{ label: "Contact us", href: "/contact" }}
         theme="dark"
       />

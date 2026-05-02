@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -90,6 +91,7 @@ const scopeItems = [
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 export default function CustomArchPage() {
+  redirect("/collection/signature");
   const schemas = [
     faqSchema(customArchModel.faq),
     breadcrumbSchema([

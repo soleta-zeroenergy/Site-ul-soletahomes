@@ -13,19 +13,20 @@ export const homeHero: HeroProps = {
   heading:     "Quiet distinction,\ndesigned around\nyour life",
   subtext:
     "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to fully bespoke architecture.",
-  primaryCta:   { label: "Explore the Collection", href: "/collection" },
-  secondaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
-  imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
-  imageAlt:     "Soleta ZeroEnergy home",
+  primaryCta:      { label: "Explore the Collection", href: "/collection" },
+  secondaryCta:    { label: "Request a Private Consultation", href: "/request-private-offer" },
+  imageSrc:        "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
+  imageAlt:        "Soleta ZeroEnergy home",
+  overlayVariant:  "side-left",
 };
 
 /* ── 2. Proof strip ───────────────────────────────────────────────────────── */
 export const homeProofStrip = {
   items: [
-    "Architecture-first",
-    "Natural materials",
-    "ZeroEnergy thinking",
-    "Design to delivery",
+    { label: "Founded",   value: "2011" },
+    { label: "Delivered", value: "86+ homes" },
+    { label: "Reach",     value: "European delivery" },
+    { label: "Process",   value: "Design · Engineering · Manufacturing · Build" },
   ],
 };
 
@@ -53,10 +54,10 @@ export const homeCollection: CardGridProps = {
       imageSrc: "https://img.soletahomes.com/sh-home-start-here-signature-09-800x533-3x2.webp",
       imageAlt: "Signature Homes",
       eyebrow:  "Signature",
-      title:    "Signature Homes",
-      body:     "Architecture with a stronger character for exceptional sites and for people who want a home with a more distinctive architectural identity.",
+      title:    "Soleta Signature",
+      body:     "Architecture with a stronger character — for exceptional sites, distinctive briefs, and projects that begin with an external architect's design. Every Signature home is a one-of-a-kind response.",
       href:     "/collection/signature",
-      cta:      "View collection",
+      cta:      "View Signature Homes",
     },
     {
       imageSrc: "https://img.soletahomes.com/sh-home-start-here-classic-10-800x533-3x2.webp",
@@ -75,15 +76,6 @@ export const homeCollection: CardGridProps = {
       body:     "Compact, calm architecture designed for rest, nature, and a very close relationship with the landscape.",
       href:     "/collection/holiday-retreat",
       cta:      "View collection",
-    },
-    {
-      imageSrc: "https://img.soletahomes.com/sh-home-start-here-custom-12-800x533-3x2.webp",
-      imageAlt: "Custom Architecture",
-      eyebrow:  "Custom",
-      title:    "Custom Architecture",
-      body:     "Architecture designed around your brief, your site, and your vision — without a fixed starting point.",
-      href:     "/collection/custom-architecture",
-      cta:      "Start a project",
     },
   ],
   cta:          { label: "Explore the Collection", href: "/collection" },
@@ -251,7 +243,7 @@ export const homeFaq: FaqPreviewProps = {
   items: [
     {
       q: "Do you build only from existing models?",
-      a: "No. Alongside our defined collections — Signature, Classic, Holiday & Retreat — we also offer Custom Architecture for projects that begin with a unique brief, a site, or a vision that does not fit a predefined path.",
+      a: "No. Alongside Classic and Holiday & Retreat, the Soleta Signature path addresses exceptional sites, distinctive briefs, and projects that begin with an external architect's design or a brief that requires a fully individual response.",
     },
     {
       q: "Can Soleta adapt a home to my land and local regulations?",
@@ -277,7 +269,7 @@ export const homeFaqCta = {
 export const homeCta: CtaBandProps = {
   heading:      "Begin your Soleta project",
   body:         "Tell us about your land, your priorities, and your timeline — or begin by exploring the collection and built work.",
-  primaryCta:   { label: "Request a Private Offer", href: "/request-private-offer" },
+  primaryCta:   { label: "Request a Private Consultation", href: "/request-private-offer" },
   secondaryCta: { label: "Explore the Collection",  href: "/collection" },
   theme:        "dark",
 };
