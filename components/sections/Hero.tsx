@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
+import { showImagePlaceholders } from "@/lib/site-flags";
 
 type Cta = { label: string; href: string };
 
@@ -62,9 +63,12 @@ export function Hero({
 }: HeroProps) {
   const centered = align === "center";
   const placeholderMode = editorialPlaceholder?.mode ?? "overlay";
+  const placeholdersEnabled = showImagePlaceholders;
   const showImage = Boolean(imageSrc) && placeholderMode !== "replace";
-  const showPlaceholderOverlay = Boolean(imageSrc) && Boolean(editorialPlaceholder) && placeholderMode === "overlay";
-  const showPlaceholderOnly = Boolean(editorialPlaceholder) && (!imageSrc || placeholderMode === "replace");
+  const showPlaceholderOverlay =
+    placeholdersEnabled && Boolean(imageSrc) && Boolean(editorialPlaceholder) && placeholderMode === "overlay";
+  const showPlaceholderOnly =
+    placeholdersEnabled && Boolean(editorialPlaceholder) && (!imageSrc || placeholderMode === "replace");
 
   return (
     <section

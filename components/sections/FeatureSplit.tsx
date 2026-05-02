@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
+import { showImagePlaceholders } from "@/lib/site-flags";
 
 export type FeatureSplitProps = {
   eyebrow?: string;
@@ -72,9 +73,14 @@ export function FeatureSplit({
   const isDark = theme === "dark";
   const imgLeft = imagePosition === "left";
   const placeholderMode = imagePlaceholder?.mode ?? "overlay";
+  const hasPlaceholderConfig = Boolean(imagePlaceholder);
+  const placeholdersEnabled = showImagePlaceholders;
   const showImage = Boolean(imageSrc) && placeholderMode !== "replace";
-  const showPlaceholderOnly = Boolean(imagePlaceholder) && (!imageSrc || placeholderMode === "replace");
-  const showPlaceholderOverlay = Boolean(imageSrc) && Boolean(imagePlaceholder) && placeholderMode === "overlay";
+  const showPlaceholderOnly =
+    placeholdersEnabled && hasPlaceholderConfig && (!imageSrc || placeholderMode === "replace");
+  const showPlaceholderOverlay =
+    placeholdersEnabled && Boolean(imageSrc) && hasPlaceholderConfig && placeholderMode === "overlay";
+  const showNeutralFrame = hasPlaceholderConfig && !showImage && !showPlaceholderOnly;
 
   return (
     <section className={cn("section overflow-hidden", bgMap[theme])}>
@@ -97,6 +103,12 @@ export function FeatureSplit({
                   description={imagePlaceholder.description}
                   fill
                   variant="solid"
+                />
+              ) : showNeutralFrame ? (
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0"
+                  style={{ backgroundColor: isDark ? "#2a2623" : "#ddd6cf" }}
                 />
               ) : (
                 <div

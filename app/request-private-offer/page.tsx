@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 import { withCanonical } from "@/lib/seo";
+import { showImagePlaceholders } from "@/lib/site-flags";
 import { PrivateOfferForm } from "@/components/sections/PrivateOfferForm";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -64,16 +65,18 @@ export default function RequestPrivateOfferPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <ImagePlaceholder
-            ratio="21:9"
-            width={2560}
-            height={1100}
-            description="Welcoming built project image, trustworthy exterior"
-            fill
-            variant="overlay"
-          />
-        </div>
+        {showImagePlaceholders && (
+          <div className="absolute inset-0 pointer-events-none">
+            <ImagePlaceholder
+              ratio="21:9"
+              width={2560}
+              height={1100}
+              description="Welcoming built project image, trustworthy exterior"
+              fill
+              variant="overlay"
+            />
+          </div>
+        )}
       </div>
 
       <section
@@ -170,16 +173,18 @@ export default function RequestPrivateOfferPage() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 pointer-events-none">
-              <ImagePlaceholder
-                ratio="4:3"
-                width={1200}
-                height={900}
-                description="Quiet premium exterior, path-to-entry, calm proof image"
-                fill
-                variant="overlay"
-              />
-            </div>
+            {showImagePlaceholders && (
+              <div className="absolute inset-0 pointer-events-none">
+                <ImagePlaceholder
+                  ratio="4:3"
+                  width={1200}
+                  height={900}
+                  description="Quiet premium exterior, path-to-entry, calm proof image"
+                  fill
+                  variant="overlay"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -210,3 +215,4 @@ export default function RequestPrivateOfferPage() {
     </>
   );
 }
+

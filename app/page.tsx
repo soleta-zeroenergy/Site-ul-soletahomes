@@ -27,6 +27,7 @@ import {
   homeCtaTextLink,
 } from "@/lib/content/home";
 import { withCanonical, siteConfig } from "@/lib/seo";
+import { showImagePlaceholders } from "@/lib/site-flags";
 
 export const metadata: Metadata = {
   ...withCanonical("/"),
@@ -165,7 +166,7 @@ export default function HomePage() {
                         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                       />
                     )}
-                    {placeholder && (
+                    {showImagePlaceholders && placeholder && (
                       <div className="absolute inset-0 pointer-events-none">
                         <ImagePlaceholder
                           ratio={placeholder.ratio}
@@ -225,16 +226,18 @@ export default function HomePage() {
                 className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 pointer-events-none">
-                <ImagePlaceholder
-                  ratio="4:5"
-                  width={1200}
-                  height={1500}
-                  description="Interior timber atmosphere, natural light, window framing, material intelligence"
-                  fill
-                  variant="overlay"
-                />
-              </div>
+              {showImagePlaceholders && (
+                <div className="absolute inset-0 pointer-events-none">
+                  <ImagePlaceholder
+                    ratio="4:5"
+                    width={1200}
+                    height={1500}
+                    description="Interior timber atmosphere, natural light, window framing, material intelligence"
+                    fill
+                    variant="overlay"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col justify-center gap-8">
@@ -417,3 +420,5 @@ export default function HomePage() {
     </>
   );
 }
+
+

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
+import { showImagePlaceholders } from "@/lib/site-flags";
 
 export type ProjectItem = {
   imageSrc?: string;
@@ -121,9 +122,14 @@ export function ProjectGrid({
             const hasImage = Boolean(project.imageSrc);
             const placeholder = editorialPlaceholders?.[i];
             const placeholderMode = placeholder?.mode ?? "overlay";
+            const hasPlaceholderConfig = Boolean(placeholder);
+            const placeholdersEnabled = showImagePlaceholders;
             const showImage = hasImage && placeholderMode !== "replace";
-            const showPlaceholderOnly = Boolean(placeholder) && (!hasImage || placeholderMode === "replace");
-            const showPlaceholderOverlay = Boolean(placeholder) && hasImage && placeholderMode === "overlay";
+            const showPlaceholderOnly =
+              placeholdersEnabled && hasPlaceholderConfig && (!hasImage || placeholderMode === "replace");
+            const showPlaceholderOverlay =
+              placeholdersEnabled && hasPlaceholderConfig && hasImage && placeholderMode === "overlay";
+            const showNeutralFrame = hasPlaceholderConfig && !showImage && !showPlaceholderOnly;
 
             const innerContent = (
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -142,6 +148,12 @@ export function ProjectGrid({
                     description={placeholder.description}
                     fill
                     variant="solid"
+                  />
+                ) : showNeutralFrame ? (
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0"
+                    style={{ backgroundColor: "#2a2623" }}
                   />
                 ) : (
                   <div

@@ -5,6 +5,7 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { FloorPlanModal } from "@/components/ui/FloorPlanModal";
 import { ImageGallery } from "@/components/ui/ImageGallery";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
+import { showImagePlaceholders } from "@/lib/site-flags";
 import type { HomeModel } from "@/lib/content/collection-models";
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -75,9 +76,13 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
       {(model.heroImageSrc || imagePlaceholders?.hero) && (() => {
         const heroPlaceholder = imagePlaceholders?.hero;
         const placeholderMode = heroPlaceholder?.mode ?? "overlay";
+        const placeholdersEnabled = showImagePlaceholders;
         const showImage = Boolean(model.heroImageSrc) && placeholderMode !== "replace";
-        const showPlaceholderOnly = Boolean(heroPlaceholder) && (!model.heroImageSrc || placeholderMode === "replace");
-        const showPlaceholderOverlay = Boolean(model.heroImageSrc) && Boolean(heroPlaceholder) && placeholderMode === "overlay";
+        const showPlaceholderOnly =
+          placeholdersEnabled && Boolean(heroPlaceholder) && (!model.heroImageSrc || placeholderMode === "replace");
+        const showPlaceholderOverlay =
+          placeholdersEnabled && Boolean(model.heroImageSrc) && Boolean(heroPlaceholder) && placeholderMode === "overlay";
+        const showNeutralFrame = Boolean(heroPlaceholder) && !showImage && !showPlaceholderOnly;
 
         return (
           <div
@@ -93,6 +98,10 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
                 sizes="100vw"
                 className="object-cover"
               />
+            )}
+
+            {showNeutralFrame && (
+              <div aria-hidden="true" className="absolute inset-0" style={{ backgroundColor: "#ddd6cf" }} />
             )}
 
             {showPlaceholderOnly && heroPlaceholder && (
@@ -492,9 +501,13 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
               {model.relatedProjects.map((project, i) => {
                 const relatedPlaceholder = imagePlaceholders?.relatedProjects?.[i];
                 const placeholderMode = relatedPlaceholder?.mode ?? "overlay";
+                const placeholdersEnabled = showImagePlaceholders;
                 const showImage = Boolean(project.imageSrc) && placeholderMode !== "replace";
-                const showPlaceholderOnly = Boolean(relatedPlaceholder) && (!project.imageSrc || placeholderMode === "replace");
-                const showPlaceholderOverlay = Boolean(project.imageSrc) && Boolean(relatedPlaceholder) && placeholderMode === "overlay";
+                const showPlaceholderOnly =
+                  placeholdersEnabled && Boolean(relatedPlaceholder) && (!project.imageSrc || placeholderMode === "replace");
+                const showPlaceholderOverlay =
+                  placeholdersEnabled && Boolean(project.imageSrc) && Boolean(relatedPlaceholder) && placeholderMode === "overlay";
+                const showNeutralFrame = Boolean(relatedPlaceholder) && !showImage && !showPlaceholderOnly;
                 const inner = (
                   <div className="relative aspect-[4/3] overflow-hidden">
                     {showImage ? (
@@ -513,6 +526,8 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
                         fill
                         variant="solid"
                       />
+                    ) : showNeutralFrame ? (
+                      <div aria-hidden="true" className="absolute inset-0" style={{ backgroundColor: "#2a2623" }} />
                     ) : (
                       <div aria-hidden="true" className="absolute inset-0 bg-[#1a1714]" />
                     )}
@@ -656,4 +671,7 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
     </article>
   );
 }
+
+
+
 

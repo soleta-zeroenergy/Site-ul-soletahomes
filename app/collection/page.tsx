@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { withCanonical } from "@/lib/seo";
+import { showImagePlaceholders } from "@/lib/site-flags";
 import {
   collectionApproach,
   collectionFamilies,
@@ -78,16 +79,18 @@ export default function CollectionPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 pointer-events-none">
-                <ImagePlaceholder
-                  ratio="4:5"
-                  width={1200}
-                  height={1500}
-                  description="Emotionally strong Soleta scene, balanced lifestyle and architecture"
-                  fill
-                  variant="overlay"
-                />
-              </div>
+              {showImagePlaceholders && (
+                <div className="absolute inset-0 pointer-events-none">
+                  <ImagePlaceholder
+                    ratio="4:5"
+                    width={1200}
+                    height={1500}
+                    description="Emotionally strong Soleta scene, balanced lifestyle and architecture"
+                    fill
+                    variant="overlay"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -161,7 +164,7 @@ export default function CollectionPage() {
                       />
                     )}
 
-                    {placeholder && (
+                    {showImagePlaceholders && placeholder && (
                       <div className="absolute inset-0 pointer-events-none">
                         <ImagePlaceholder
                           ratio={placeholder.ratio}
@@ -295,3 +298,5 @@ export default function CollectionPage() {
     </>
   );
 }
+
+

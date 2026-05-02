@@ -41,8 +41,8 @@ export function ImagePlaceholder({
         style={{
           background:
             variant === "overlay"
-              ? "linear-gradient(180deg, rgba(26,23,20,0.70) 0%, rgba(26,23,20,0.55) 100%), radial-gradient(ellipse 80% 75% at 40% 55%, rgba(64,44,32,0.42) 0%, rgba(26,23,20,0.55) 60%, rgba(26,23,20,0.72) 100%)"
-              : "radial-gradient(ellipse 80% 75% at 40% 55%, rgba(64,44,32,0.88) 0%, rgba(26,23,20,0.97) 60%, #1a1714 100%)",
+              ? "linear-gradient(180deg, rgba(26,23,20,0.36) 0%, rgba(26,23,20,0.24) 100%), radial-gradient(ellipse 80% 75% at 40% 55%, rgba(64,44,32,0.16) 0%, rgba(26,23,20,0.20) 60%, rgba(26,23,20,0.28) 100%)"
+              : "radial-gradient(ellipse 80% 75% at 40% 55%, rgba(64,44,32,0.72) 0%, rgba(26,23,20,0.90) 60%, #1a1714 100%)",
         }}
       />
 
@@ -54,7 +54,7 @@ export function ImagePlaceholder({
             fontWeight: 600,
             letterSpacing: "0.20em",
             textTransform: "uppercase",
-            color: "rgba(250,248,246,0.90)",
+            color: "rgba(250,248,246,0.86)",
             lineHeight: 1,
           }}
         >
@@ -68,7 +68,7 @@ export function ImagePlaceholder({
             fontWeight: 500,
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "rgba(250,248,246,0.70)",
+            color: "rgba(250,248,246,0.72)",
             lineHeight: 1,
           }}
         >
@@ -81,7 +81,7 @@ export function ImagePlaceholder({
             fontSize: "0.5625rem",
             fontWeight: 400,
             letterSpacing: "0.12em",
-            color: "rgba(250,248,246,0.75)",
+            color: "rgba(250,248,246,0.68)",
             lineHeight: 1,
           }}
         >
@@ -91,13 +91,13 @@ export function ImagePlaceholder({
         <p
           style={{
             fontFamily: "var(--font-heading)",
-            fontSize: "0.9375rem",
+            fontSize: "0.875rem",
             fontStyle: "italic",
             fontWeight: 400,
-            color: "rgba(250,248,246,0.85)",
-            lineHeight: 1.5,
+            color: "rgba(250,248,246,0.80)",
+            lineHeight: 1.45,
             maxWidth: "40ch",
-            marginTop: "0.5rem",
+            marginTop: "0.35rem",
           }}
         >
           {description}
