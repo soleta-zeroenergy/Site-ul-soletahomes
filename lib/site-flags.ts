@@ -1,1 +1,2 @@
-﻿export const showImagePlaceholders = true;
+﻿export const showImagePlaceholders = false;
+
