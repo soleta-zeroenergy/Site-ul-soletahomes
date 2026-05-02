@@ -1,32 +1,38 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 
-/* ── Types ─────────────────────────────────────────────────────────────────── */
 type Cta = { label: string; href: string };
 
-export type HeroProps = {
-  eyebrow?:        string;
-  heading:         string;   // use \n for intentional line breaks
-  subtext?:        string;
-  primaryCta?:     Cta;
-  secondaryCta?:   Cta;
-  imageSrc?:       string;
-  imageAlt?:       string;
-  align?:          "left" | "center" | string;
-  size?:           "full" | "large" | "medium" | string;
-  overlayVariant?: "bottom" | "side-left";
+type EditorialPlaceholder = {
+  ratio: "16:9" | "4:5" | "4:3" | "3:2" | "21:9" | "16:7" | "1:1";
+  width: number;
+  height: number;
+  description: string;
+  mode?: "overlay" | "replace";
 };
 
-/* ── Config ────────────────────────────────────────────────────────────────── */
+export type HeroProps = {
+  eyebrow?: string;
+  heading: string;
+  subtext?: string;
+  primaryCta?: Cta;
+  secondaryCta?: Cta;
+  imageSrc?: string;
+  imageAlt?: string;
+  align?: "left" | "center" | string;
+  size?: "full" | "large" | "medium" | string;
+  overlayVariant?: "bottom" | "side-left";
+  editorialPlaceholder?: EditorialPlaceholder;
+};
+
 const sizeMap = {
-  full:   "min-h-[100svh]",
-  large:  "min-h-[85svh]",
+  full: "min-h-[100svh]",
+  large: "min-h-[85svh]",
   medium: "min-h-[60svh]",
 };
 
-/* ── Helpers ───────────────────────────────────────────────────────────────── */
-/** Renders a heading string with explicit \n line breaks preserved as <br />. */
 function HeadingLines({ text }: { text: string }) {
   const lines = text.split("\n");
   return (
@@ -41,7 +47,6 @@ function HeadingLines({ text }: { text: string }) {
   );
 }
 
-/* ── Component ─────────────────────────────────────────────────────────────── */
 export function Hero({
   eyebrow,
   heading,
@@ -53,8 +58,13 @@ export function Hero({
   align = "left",
   size = "full",
   overlayVariant = "bottom",
+  editorialPlaceholder,
 }: HeroProps) {
   const centered = align === "center";
+  const placeholderMode = editorialPlaceholder?.mode ?? "overlay";
+  const showImage = Boolean(imageSrc) && placeholderMode !== "replace";
+  const showPlaceholderOverlay = Boolean(imageSrc) && Boolean(editorialPlaceholder) && placeholderMode === "overlay";
+  const showPlaceholderOnly = Boolean(editorialPlaceholder) && (!imageSrc || placeholderMode === "replace");
 
   return (
     <section
@@ -64,10 +74,9 @@ export function Hero({
       )}
       aria-label={eyebrow ?? "Hero"}
     >
-      {/* Background image */}
-      {imageSrc && (
+      {showImage && (
         <Image
-          src={imageSrc}
+          src={imageSrc!}
           alt={imageAlt}
           fill
           priority
@@ -75,12 +84,37 @@ export function Hero({
         />
       )}
 
-      {/* Overlay: gradient on image, warm radials on dark background */}
+      {showPlaceholderOnly && editorialPlaceholder && (
+        <div className="absolute inset-0">
+          <ImagePlaceholder
+            ratio={editorialPlaceholder.ratio}
+            width={editorialPlaceholder.width}
+            height={editorialPlaceholder.height}
+            description={editorialPlaceholder.description}
+            fill
+            variant="solid"
+          />
+        </div>
+      )}
+
+      {showPlaceholderOverlay && editorialPlaceholder && (
+        <div className="absolute inset-0 pointer-events-none z-[1]">
+          <ImagePlaceholder
+            ratio={editorialPlaceholder.ratio}
+            width={editorialPlaceholder.width}
+            height={editorialPlaceholder.height}
+            description={editorialPlaceholder.description}
+            fill
+            variant="overlay"
+          />
+        </div>
+      )}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={
-          imageSrc
+          showImage || showPlaceholderOnly
             ? {
                 background:
                   overlayVariant === "side-left"
@@ -95,7 +129,6 @@ export function Hero({
         }
       />
 
-      {/* Content */}
       <div
         className={cn(
           "container-site relative z-10 pb-24 pt-16 sm:pt-0 lg:pb-32",
@@ -148,7 +181,7 @@ export function Hero({
                 className="inline-flex items-center gap-2 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#c8bfb8] hover:text-[#faf8f6] transition-colors duration-200"
               >
                 {secondaryCta.label}
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">-&gt;</span>
               </Link>
             )}
           </div>

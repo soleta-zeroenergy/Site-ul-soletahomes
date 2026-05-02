@@ -1,17 +1,34 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { FloorPlanModal } from "@/components/ui/FloorPlanModal";
 import { ImageGallery } from "@/components/ui/ImageGallery";
+import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 import type { HomeModel } from "@/lib/content/collection-models";
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   FamilyPage — shared server component for Signature / Classic / Holiday & Retreat
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   FamilyPage â€” shared server component for Signature / Classic / Holiday & Retreat
    All sections are conditional; nothing renders empty or broken.
-   ───────────────────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-export function FamilyPage({ model }: { model: HomeModel }) {
+type EditorialPlaceholder = {
+  ratio: "16:9" | "4:5" | "4:3" | "3:2" | "21:9" | "16:7" | "1:1";
+  width: number;
+  height: number;
+  description: string;
+  mode?: "overlay" | "replace";
+};
+
+type FamilyPageProps = {
+  model: HomeModel;
+  imagePlaceholders?: {
+    hero?: EditorialPlaceholder;
+    relatedProjects?: EditorialPlaceholder[];
+  };
+};
+
+export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
   const showPrice  = model.priceDisplay === "shown";
   const hasGallery = Array.isArray(model.gallery) && model.gallery.length > 0;
   const hasFloors  = Array.isArray(model.floorPlans) && model.floorPlans.length > 0;
@@ -26,7 +43,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
   return (
     <article>
 
-      {/* ── 1. Page header ────────────────────────────────────────────────── */}
+      {/* â”€â”€ 1. Page header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {/* Padding: controlled (not section-lg which adds 11rem at desktop)     */}
       <section
         className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
@@ -37,7 +54,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             href="/collection"
             className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
           >
-            ← The Collection
+            â† The Collection
           </Link>
           <span className="eyebrow mb-4 block">{model.eyebrow}</span>
           <h1 className="mb-6 max-w-2xl whitespace-pre-line">{model.heading}</h1>
@@ -53,25 +70,61 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </div>
       </section>
 
-      {/* ── 2. Hero image ─────────────────────────────────────────────────── */}
-      {/* Height capped — avoids the enormous full-width aspect-ratio band      */}
-      {model.heroImageSrc && (
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ height: "clamp(260px, 38vw, 520px)" }}
-        >
-          <Image
-            src={model.heroImageSrc}
-            alt={model.heroImageAlt ?? model.eyebrow}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      )}
+      {/* â”€â”€ 2. Hero image â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* Height capped â€” avoids the enormous full-width aspect-ratio band      */}
+      {(model.heroImageSrc || imagePlaceholders?.hero) && (() => {
+        const heroPlaceholder = imagePlaceholders?.hero;
+        const placeholderMode = heroPlaceholder?.mode ?? "overlay";
+        const showImage = Boolean(model.heroImageSrc) && placeholderMode !== "replace";
+        const showPlaceholderOnly = Boolean(heroPlaceholder) && (!model.heroImageSrc || placeholderMode === "replace");
+        const showPlaceholderOverlay = Boolean(model.heroImageSrc) && Boolean(heroPlaceholder) && placeholderMode === "overlay";
 
-      {/* ── 3. About this collection + key specs sidebar ──────────────────── */}
+        return (
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ height: "clamp(260px, 38vw, 520px)" }}
+          >
+            {showImage && (
+              <Image
+                src={model.heroImageSrc!}
+                alt={model.heroImageAlt ?? model.eyebrow}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
+
+            {showPlaceholderOnly && heroPlaceholder && (
+              <div className="absolute inset-0">
+                <ImagePlaceholder
+                  ratio={heroPlaceholder.ratio}
+                  width={heroPlaceholder.width}
+                  height={heroPlaceholder.height}
+                  description={heroPlaceholder.description}
+                  fill
+                  variant="solid"
+                />
+              </div>
+            )}
+
+            {showPlaceholderOverlay && heroPlaceholder && (
+              <div className="absolute inset-0 pointer-events-none">
+                <ImagePlaceholder
+                  ratio={heroPlaceholder.ratio}
+                  width={heroPlaceholder.width}
+                  height={heroPlaceholder.height}
+                  description={heroPlaceholder.description}
+                  fill
+                  variant="overlay"
+                />
+              </div>
+            )}
+          </div>
+        );
+      })()}
+
+      {/* â”€â”€ 3. About this collection + key specs sidebar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -124,7 +177,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </div>
       </section>
 
-      {/* ── 4. Image gallery (conditional — only renders when gallery is populated) */}
+      {/* â”€â”€ 4. Image gallery (conditional â€” only renders when gallery is populated) */}
       {hasGallery && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -137,7 +190,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 5. Floor plans (conditional — only renders when assets exist) ──── */}
+      {/* â”€â”€ 5. Floor plans (conditional â€” only renders when assets exist) â”€â”€â”€â”€ */}
       {hasFloors && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -156,7 +209,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 <FloorPlanModal
                   key={plan.variantName}
                   src={plan.src}
-                  alt={plan.alt ?? `${model.eyebrow} — ${plan.variantName} floor plan`}
+                  alt={plan.alt ?? `${model.eyebrow} â€” ${plan.variantName} floor plan`}
                   label={plan.label ?? plan.variantName}
                 />
               ))}
@@ -165,7 +218,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 6. Who it is for (conditional) ───────────────────────────────── */}
+      {/* â”€â”€ 6. Who it is for (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.audience && model.audience.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -194,7 +247,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 7. Available configurations (variants) ────────────────────────── */}
+      {/* â”€â”€ 7. Available configurations (variants) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -241,7 +294,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                   href="/contact"
                   className="mt-2 inline-flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
                 >
-                  Request consultation →
+                  Request consultation â†’
                 </Link>
               </div>
             ))}
@@ -249,7 +302,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </div>
       </section>
 
-      {/* ── 8. Architectural idea / differentiators (conditional) ─────────── */}
+      {/* â”€â”€ 8. Architectural idea / differentiators (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.differentiators && model.differentiators.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -288,7 +341,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 9. What can be adapted (customizable, conditional) ───────────── */}
+      {/* â”€â”€ 9. What can be adapted (customizable, conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.customizable && model.customizable.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -317,7 +370,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 10. Includes / Not included ──────────────────────────────────── */}
+      {/* â”€â”€ 10. Includes / Not included â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -359,7 +412,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </div>
       </section>
 
-      {/* ── 11. Delivery path (conditional) ──────────────────────────────── */}
+      {/* â”€â”€ 11. Delivery path (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.deliverySummary && model.deliverySummary.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -397,14 +450,14 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 href="/process"
                 className="inline-flex items-center gap-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
               >
-                See the full process →
+                See the full process â†’
               </Link>
             </div>
           </div>
         </section>
       )}
 
-      {/* ── 12. Related built projects (conditional) ─────────────────────── */}
+      {/* â”€â”€ 12. Related built projects (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.relatedProjects && model.relatedProjects.length > 0 && (
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
@@ -422,7 +475,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 href="/built-projects"
                 className="hidden shrink-0 items-center gap-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.15em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70 md:inline-flex"
               >
-                All built projects →
+                All built projects â†’
               </Link>
             </div>
 
@@ -437,18 +490,46 @@ export function FamilyPage({ model }: { model: HomeModel }) {
               )}
             >
               {model.relatedProjects.map((project, i) => {
+                const relatedPlaceholder = imagePlaceholders?.relatedProjects?.[i];
+                const placeholderMode = relatedPlaceholder?.mode ?? "overlay";
+                const showImage = Boolean(project.imageSrc) && placeholderMode !== "replace";
+                const showPlaceholderOnly = Boolean(relatedPlaceholder) && (!project.imageSrc || placeholderMode === "replace");
+                const showPlaceholderOverlay = Boolean(project.imageSrc) && Boolean(relatedPlaceholder) && placeholderMode === "overlay";
                 const inner = (
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    {project.imageSrc ? (
+                    {showImage ? (
                       <Image
-                        src={project.imageSrc}
+                        src={project.imageSrc!}
                         alt={project.imageAlt ?? project.title}
                         fill
                         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                       />
+                    ) : showPlaceholderOnly && relatedPlaceholder ? (
+                      <ImagePlaceholder
+                        ratio={relatedPlaceholder.ratio}
+                        width={relatedPlaceholder.width}
+                        height={relatedPlaceholder.height}
+                        description={relatedPlaceholder.description}
+                        fill
+                        variant="solid"
+                      />
                     ) : (
                       <div aria-hidden="true" className="absolute inset-0 bg-[#1a1714]" />
                     )}
+
+                    {showPlaceholderOverlay && relatedPlaceholder && (
+                      <div className="absolute inset-0 pointer-events-none">
+                        <ImagePlaceholder
+                          ratio={relatedPlaceholder.ratio}
+                          width={relatedPlaceholder.width}
+                          height={relatedPlaceholder.height}
+                          description={relatedPlaceholder.description}
+                          fill
+                          variant="overlay"
+                        />
+                      </div>
+                    )}
+
                     <div
                       aria-hidden="true"
                       className="absolute inset-0 pointer-events-none"
@@ -501,7 +582,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 13. FAQ ──────────────────────────────────────────────────────── */}
+      {/* â”€â”€ 13. FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -518,7 +599,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </div>
       </section>
 
-      {/* ── 14. Final CTA ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ 14. Final CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-forest)", color: "var(--soleta-cream)" }}
@@ -552,13 +633,13 @@ export function FamilyPage({ model }: { model: HomeModel }) {
               className="btn-ghost"
               style={{ color: "var(--soleta-cream)", opacity: 0.7 }}
             >
-              ← Back to The Collection
+              â† Back to The Collection
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Sticky mobile CTA ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Sticky mobile CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-white/10 bg-[var(--soleta-forest)] p-3 md:hidden">
         <Link href="/request-private-offer" className="btn-primary flex-1 justify-center text-center">
           Consult
@@ -575,3 +656,4 @@ export function FamilyPage({ model }: { model: HomeModel }) {
     </article>
   );
 }
+

@@ -1,8 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 
-/* ── Types ─────────────────────────────────────────────────────────────────── */
 export type ProjectItem = {
   imageSrc?: string;
   imageAlt?: string;
@@ -13,6 +13,14 @@ export type ProjectItem = {
   year?: string | number;
 };
 
+type EditorialPlaceholder = {
+  ratio: "16:9" | "4:5" | "4:3" | "3:2" | "21:9" | "16:7" | "1:1";
+  width: number;
+  height: number;
+  description: string;
+  mode?: "overlay" | "replace";
+};
+
 export type ProjectGridProps = {
   eyebrow?: string;
   heading?: string;
@@ -21,9 +29,8 @@ export type ProjectGridProps = {
   cta?: { label: string; href: string };
   columns?: number;
   theme?: "light" | "warm" | "dark" | string;
+  editorialPlaceholders?: EditorialPlaceholder[];
 };
-
-/* ── Config ────────────────────────────────────────────────────────────────── */
 
 const PLACEHOLDERS = [
   "radial-gradient(ellipse 65% 65% at 28% 42%, rgba(128,103,84,0.32) 0%, #1a1714 68%)",
@@ -38,7 +45,6 @@ const bgMap = {
   dark: "bg-[#1a1714]",
 };
 
-/* ── Component ─────────────────────────────────────────────────────────────── */
 export function ProjectGrid({
   eyebrow,
   heading,
@@ -47,6 +53,7 @@ export function ProjectGrid({
   cta,
   columns = 3,
   theme = "light",
+  editorialPlaceholders,
 }: ProjectGridProps) {
   const isDark = theme === "dark";
   const gridCols =
@@ -103,7 +110,7 @@ export function ProjectGrid({
                 )}
               >
                 {cta.label}
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">-&gt;</span>
               </Link>
             )}
           </div>
@@ -112,15 +119,29 @@ export function ProjectGrid({
         <div className={cn("grid gap-px border border-sand-400 bg-sand-400", gridCols)}>
           {projects.map((project, i) => {
             const hasImage = Boolean(project.imageSrc);
+            const placeholder = editorialPlaceholders?.[i];
+            const placeholderMode = placeholder?.mode ?? "overlay";
+            const showImage = hasImage && placeholderMode !== "replace";
+            const showPlaceholderOnly = Boolean(placeholder) && (!hasImage || placeholderMode === "replace");
+            const showPlaceholderOverlay = Boolean(placeholder) && hasImage && placeholderMode === "overlay";
 
             const innerContent = (
               <div className="relative aspect-[4/3] overflow-hidden">
-                {hasImage ? (
+                {showImage ? (
                   <Image
                     src={project.imageSrc!}
                     alt={project.imageAlt ?? project.title}
                     fill
                     className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+                  />
+                ) : showPlaceholderOnly && placeholder ? (
+                  <ImagePlaceholder
+                    ratio={placeholder.ratio}
+                    width={placeholder.width}
+                    height={placeholder.height}
+                    description={placeholder.description}
+                    fill
+                    variant="solid"
                   />
                 ) : (
                   <div
@@ -128,6 +149,19 @@ export function ProjectGrid({
                     className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-75"
                     style={{ background: PLACEHOLDERS[i % PLACEHOLDERS.length] }}
                   />
+                )}
+
+                {showPlaceholderOverlay && placeholder && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    <ImagePlaceholder
+                      ratio={placeholder.ratio}
+                      width={placeholder.width}
+                      height={placeholder.height}
+                      description={placeholder.description}
+                      fill
+                      variant="overlay"
+                    />
+                  </div>
                 )}
 
                 <div

@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
+import { ImagePlaceholder } from "@/components/sections/ImagePlaceholder";
 import { withCanonical } from "@/lib/seo";
 import { PrivateOfferForm } from "@/components/sections/PrivateOfferForm";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -17,11 +18,11 @@ export const metadata: Metadata = {
   ...withCanonical("/request-private-offer"),
   title: "Request a Private Consultation | Soleta",
   description:
-    "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget — and we will reply with a specific written assessment of what is feasible.",
+    "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget - and we will reply with a specific written assessment of what is feasible.",
 };
 
 const schema = breadcrumbSchema([
-  { name: "Home",                   href: "/" },
+  { name: "Home", href: "/" },
   { name: "Request a Private Consultation", href: "/request-private-offer" },
 ]);
 
@@ -39,7 +40,6 @@ export default function RequestPrivateOfferPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ── 1. Page header ── */}
       <section
         className="border-b border-[var(--color-border-light)] px-0 pt-12 pb-10 lg:pt-16 lg:pb-14"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -51,23 +51,31 @@ export default function RequestPrivateOfferPage() {
         </div>
       </section>
 
-      {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
         style={{ height: "clamp(260px, 36vw, 520px)" }}
       >
         <Image
           src="/images/hero.webp"
-          alt="Soleta — begin your project with a private brief"
+          alt="Soleta - begin your project with a private brief"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none">
+          <ImagePlaceholder
+            ratio="21:9"
+            width={2560}
+            height={1100}
+            description="Welcoming built project image, trustworthy exterior"
+            fill
+            variant="overlay"
+          />
+        </div>
       </div>
 
-      {/* ── 3. Framing block — why we ask these questions ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -84,44 +92,40 @@ export default function RequestPrivateOfferPage() {
         </div>
       </section>
 
-      {/* ── 3b. Consultation expectations ── */}
       <ConsultationExpectationsBlock />
 
-      {/* ── 4. Form section ── */}
       <section
         className="border-b border-[var(--color-border-light)]"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
-
-            {/* Left — trust / reassurance column */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:items-stretch">
             <div
               className="flex flex-col justify-start gap-8 px-0 py-10 lg:py-14 lg:pr-14 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
             >
               <div>
                 <span className="eyebrow mb-4 block">Before you fill in the form</span>
                 <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer exactly — estimates and ranges are fine.
+                  The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer exactly - estimates and ranges are fine.
                 </p>
               </div>
               <div className="flex flex-col gap-4 border-t border-[var(--color-border-light)] pt-6">
                 {[
-                  { label: "Response time",  value: "3 business days" },
-                  { label: "Format",         value: "Written, project-specific" },
-                  { label: "Cost",           value: "No charge" },
-                  { label: "Obligation",     value: "None" },
-                  { label: "Contact",        value: "office@soletahomes.com" },
+                  { label: "Response time", value: "3 business days" },
+                  { label: "Format", value: "Written, project-specific" },
+                  { label: "Cost", value: "No charge" },
+                  { label: "Obligation", value: "None" },
+                  { label: "Contact", value: "office@soletahomes.com" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex flex-col gap-0.5 pb-4 border-b border-[var(--color-border-light)] last:border-0 last:pb-0">
                     <span
                       style={{
-                        fontSize:      "0.625rem",
-                        fontFamily:    "var(--font-body)",
-                        fontWeight:    600,
+                        fontSize: "0.625rem",
+                        fontFamily: "var(--font-body)",
+                        fontWeight: 600,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase" as const,
-                        color:         "#9a8e87",
+                        color: "#9a8e87",
                       }}
                     >
                       {label}
@@ -137,16 +141,13 @@ export default function RequestPrivateOfferPage() {
               </div>
             </div>
 
-            {/* Right — form */}
             <div className="border-b border-[var(--color-border-light)] lg:border-b-0">
               <PrivateOfferForm />
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── 5. Reassurance — what happens after submission ── */}
       <section
         className="border-b border-[var(--color-border-light)]"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -164,16 +165,25 @@ export default function RequestPrivateOfferPage() {
           >
             <Image
               src="/images/Signature800x533.webp"
-              alt="Soleta Signature — a considered, written response to your project brief"
+              alt="Soleta Signature - a considered, written response to your project brief"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <div className="absolute inset-0 pointer-events-none">
+              <ImagePlaceholder
+                ratio="4:3"
+                width={1200}
+                height={900}
+                description="Quiet premium exterior, path-to-entry, calm proof image"
+                fill
+                variant="overlay"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 6. Pre-submit FAQ ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
@@ -189,12 +199,11 @@ export default function RequestPrivateOfferPage() {
         </div>
       </section>
 
-      {/* ── 7. Closing CTA ── */}
       <CtaBand
         eyebrow="Not ready yet?"
         heading="Browse before you commit"
         body="Explore our completed projects or the collection before choosing a direction."
-        primaryCta={{ label: "View Built Projects",      href: "/built-projects" }}
+        primaryCta={{ label: "View Built Projects", href: "/built-projects" }}
         secondaryCta={{ label: "Explore the Collection", href: "/collection" }}
         theme="dark"
       />
