@@ -5,7 +5,7 @@ export const collectionHero = {
   eyebrow: "The Collection",
   heading: "Architecture shaped around\nthe way you want to live",
   subheading:
-    "Explore four distinct paths — from timeless everyday homes to private retreats, expressive signature residences and fully bespoke architecture.",
+    "Explore three distinct paths — from timeless everyday homes to private retreats and expressive Signature residences.",
   ctaPrimary: { label: "Explore the Collection", href: "#collection-paths" },
   imageSrc: "/images/collection/collection-hero.jpg",
   imageAlt: "Soleta timber home exterior in natural landscape",
@@ -19,7 +19,7 @@ export const collectionApproach = {
   link: { label: "See how we design", href: "/architecture/design-language" },
 };
 
-/* ── Collection families (4 paths — Large Family removed) ────────────────── */
+/* ── Collection families (3 public paths) ─────────────────────────────────── */
 export const collectionFamilies = [
   {
     eyebrow: "Architectural · Distinct",
@@ -48,15 +48,6 @@ export const collectionFamilies = [
     imageSrc: "/images/Retreat800x533.webp",
     imageAlt: "Soleta holiday home in nature",
   },
-  {
-    eyebrow: "Bespoke · Site-Specific",
-    heading: "Custom Architecture",
-    body: "For projects that begin with a unique brief, a special piece of land, or a vision that does not belong within a predefined path. We design the architecture around the site, the lifestyle, and the ambition of the project.",
-    href: "/collection/custom-architecture",
-    cta: "Start a Custom Project",
-    imageSrc: "/images/rezerva800x533.webp",
-    imageAlt: "Custom Soleta architectural project",
-  },
 ];
 
 /* ── Guidance ────────────────────────────────────────────────────────────────── */
@@ -67,8 +58,7 @@ export const collectionGuidance = {
   items: [
     "Choose Classic if you want the strongest balance of permanence, comfort, and everyday living.",
     "Choose Holiday & Retreat if the home is primarily about rest, landscape, and the rhythm of a second home.",
-    "Choose Signature if the project calls for a stronger architectural expression or a more exceptional response to the site.",
-    "Choose Custom if your brief does not fit a predefined path.",
+    "Choose Signature if the project calls for a stronger architectural expression, a more exceptional response to the site, or a more bespoke design direction.",
   ],
 };
 

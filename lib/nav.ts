@@ -32,7 +32,6 @@ export const headerNav: NavItem[] = [
           { label: "Signature Homes", href: "/collection/signature" },
           { label: "Classic Soleta Homes", href: "/collection/classic" },
           { label: "Holiday & Retreat Homes", href: "/collection/holiday-retreat" },
-          { label: "Custom Architecture", href: "/collection/custom-architecture" },
         ],
       },
     ],

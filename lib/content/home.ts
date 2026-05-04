@@ -53,7 +53,7 @@ export const homeCollection: CardGridProps = {
       imageSrc: "https://img.soletahomes.com/sh-home-start-here-signature-09-800x533-3x2.webp",
       imageAlt: "Signature Homes",
       eyebrow:  "Signature",
-      title:    "Signature Homes",
+      title:    "Soleta Signature",
       body:     "Architecture with a stronger character for exceptional sites and for people who want a home with a more distinctive architectural identity.",
       href:     "/collection/signature",
       cta:      "View collection",
@@ -75,15 +75,6 @@ export const homeCollection: CardGridProps = {
       body:     "Compact, calm architecture designed for rest, nature, and a very close relationship with the landscape.",
       href:     "/collection/holiday-retreat",
       cta:      "View collection",
-    },
-    {
-      imageSrc: "https://img.soletahomes.com/sh-home-start-here-custom-12-800x533-3x2.webp",
-      imageAlt: "Custom Architecture",
-      eyebrow:  "Custom",
-      title:    "Custom Architecture",
-      body:     "Architecture designed around your brief, your site, and your vision — without a fixed starting point.",
-      href:     "/collection/custom-architecture",
-      cta:      "Start a project",
     },
   ],
   cta:          { label: "Explore the Collection", href: "/collection" },
@@ -251,7 +242,7 @@ export const homeFaq: FaqPreviewProps = {
   items: [
     {
       q: "Do you build only from existing models?",
-      a: "No. Alongside our defined collections — Signature, Classic, Holiday & Retreat — we also offer Custom Architecture for projects that begin with a unique brief, a site, or a vision that does not fit a predefined path.",
+      a: "No. Alongside Classic and Holiday & Retreat, the Soleta Signature path addresses exceptional sites, distinctive briefs, and projects that require a more bespoke architectural response.",
     },
     {
       q: "Can Soleta adapt a home to my land and local regulations?",
