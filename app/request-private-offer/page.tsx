@@ -14,7 +14,7 @@ import {
 
 export const metadata: Metadata = {
   ...withCanonical("/request-private-offer"),
-  title: "Request a Private Consultation | Soleta",
+  title: "Request a Private Consultation | Soleta Homes",
   description:
     "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget — and we will reply with a specific written assessment of what is feasible.",
 };
@@ -197,3 +197,4 @@ export default function RequestPrivateOfferPage() {
     </>
   );
 }
+

@@ -605,7 +605,7 @@ export function PrivateOfferForm() {
           disabled={status === "loading"}
           className="btn-primary py-4 px-10 self-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)] disabled:opacity-60"
         >
-          {status === "loading" ? "Sending…" : "Send my project brief"}
+          {status === "loading" ? "Sending…" : "Submit project brief"}
         </button>
         <p
           className="text-[#9a8e87] leading-snug"

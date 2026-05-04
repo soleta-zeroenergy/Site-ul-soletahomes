@@ -44,7 +44,7 @@ export const offerFaq = [
       "We aim to respond within three business days of receiving your completed brief. The response is a written document outlining feasibility, cost orientation, and suggested next steps. More complex or unusual briefs may take slightly longer.",
   },
   {
-    question: "Is there any cost or obligation attached to requesting an offer?",
+    question: "Is there any cost or obligation attached to requesting a consultation?",
     answer:
       "None. A Private Consultation is a preliminary document produced at no charge. It carries no obligation on your part and does not constitute a contract or binding estimate. It is the starting point of a conversation, not the end of one.",
   },
