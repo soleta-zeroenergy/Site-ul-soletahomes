@@ -92,7 +92,7 @@ export const companyTimeline = [
   {
     year: "2023",
     event: "Fourth generation collection",
-    detail: "The current collection — Signature, Classic, Holiday & Retreat, Custom Architecture — is released.",
+    detail: "The current collection is refined around Signature, Classic, and Holiday & Retreat, with bespoke project briefs handled through private consultation.",
   },
   {
     year: "2026",

@@ -33,7 +33,7 @@ export const supportCards: CardGridProps = {
       eyebrow: "Catalog",
       title:   "The Soleta Collection Catalog",
       body:
-        "An overview of our five house model families — Signature, Classic, Large Family, Holiday & Retreat, and Custom — with representative plans, imagery, and specification notes. Available to download or request by post.",
+        "An overview of our three public collection directions — Signature, Classic, and Holiday & Retreat — with representative plans, imagery, and specification notes. Available to download or request by post.",
       cta:  "Request the catalog",
       href: "/contact",
     },
@@ -49,7 +49,7 @@ export const supportCards: CardGridProps = {
       eyebrow: "Guidance",
       title:   "Choosing Your Collection",
       body:
-        "Not sure which house model fits your situation? We have written a short guide that walks through the five collections, the types of site and client each is designed for, and how to think about the decision.",
+        "Not sure which collection fits your situation? We have written a short guide that walks through the three public directions — Signature, Classic, and Holiday & Retreat — and how to think about which is the right starting point.",
       cta:  "Read the guide",
       href: "/house-models",
     },
@@ -81,7 +81,7 @@ export const supportFaq: ValuesGridProps = {
     {
       title: "Can we modify a standard collection design?",
       body:
-        "The collection designs are starting points, not fixed products. Most clients adapt them to their site and brief through the design development phase. Significant departures from a collection type may be better served by our Custom Architecture service.",
+        "The collection designs are starting points, not fixed products. Most clients adapt them to their site and brief through the design development phase. Significant departures from a collection type are best discussed through a private consultation, where we can advise whether Signature or a bespoke project brief is the right direction.",
     },
     {
       title: "What is included in a turnkey delivery?",
@@ -103,7 +103,7 @@ export const supportNextSteps: SpecStripProps = {
   items: [
     {
       label:       "Browse the collections",
-      description: "Read through the five house model families and identify which feels closest to what you have in mind.",
+      description: "Read through the three collection directions — Signature, Classic, and Holiday & Retreat — and identify which feels closest to what you have in mind.",
     },
     {
       label:       "Request the catalog",

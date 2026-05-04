@@ -24,15 +24,15 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         question: "What is the difference between the collection models and a custom design?",
-        answer: "The collection models — Signature, Classic, Holiday & Retreat and Custom Architecture — are resolved, engineered and tested architectural systems. They can be adapted to your site and brief within a defined range: orientation, window configuration, internal layout, cladding and finish selections. Custom Design is for projects where the brief, site or programme cannot be resolved by adapting a standard model. Custom projects use the same structural system and the same factory fabrication method; what changes is the architectural form, massing and spatial arrangement.",
+        answer: "The collection models — Signature, Classic, and Holiday & Retreat — are resolved, engineered and tested architectural systems. They can be adapted to your site and brief within a defined range: orientation, window configuration, internal layout, cladding and finish selections. Custom Design is for projects where the brief, site or programme cannot be resolved by adapting a standard model. Custom projects use the same structural system and the same factory fabrication method; what changes is the architectural form, massing and spatial arrangement.",
       },
       {
         question: "Can I modify a collection model significantly?",
         answer: "Yes — within the structural logic of the system. We can adjust the floor plan within the structural grid, modify window sizes and positions, change the cladding material and finish, and adapt the internal layout. We cannot extend the structural footprint indefinitely without moving into custom design territory, and we cannot remove the post-and-beam structural system. The range of modifications available for each model is discussed during the Design & Planning stage.",
       },
       {
-        question: "What does the Custom Architecture path involve?",
-        answer: "Custom Architecture begins with an extended site and brief analysis. We develop two or three distinct concept directions before committing to a path. The output is a complete engineering-ready drawing set: floor plans, elevations, sections, 3D visualisations and a material specification schedule. Custom projects take longer and cost more than standard model adaptations. The process, timeline and fee structure are confirmed before design work begins.",
+        question: "What does a fully bespoke Signature project involve?",
+        answer: "A bespoke Signature project begins with an extended site and brief analysis. We develop two or three distinct concept directions before committing to a path. The output is a complete engineering-ready drawing set: floor plans, elevations, sections, 3D visualisations and a material specification schedule. Bespoke projects take longer and cost more than standard model adaptations. The process, timeline and fee structure are confirmed before design work begins. If your brief does not fit a predefined collection path, request a private consultation and we will advise on the right direction.",
       },
       {
         question: "Can I see completed examples before committing?",

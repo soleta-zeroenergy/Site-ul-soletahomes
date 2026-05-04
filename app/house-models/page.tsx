@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ...withCanonical("/house-models"),
   title:       "House Models",
   description:
-    "Five architectural families — Signature, Classic, Large Family, Holiday & Retreat, and Custom Architecture — each defined by a way of living, not a bedroom count. Bespoke timber homes designed and built by Soleta.",
+    "Three collection directions — Signature, Classic, and Holiday & Retreat — each defined by a way of living, not a bedroom count. Bespoke timber homes designed and built by Soleta.",
 };
 
 /* ── Structured data ───────────────────────────────────────────────────────── */
@@ -32,7 +32,7 @@ const breadcrumbSchema = breadcrumb([
 const faqSchema = faqPage([
   {
     q: "What types of homes does Soleta offer?",
-    a: "Soleta offers five architectural collections. Signature: the most architecturally ambitious work, designed for exceptional sites and clients who want a home that will never be repeated. Classic: timeless post-and-beam construction with generous proportions and enduring materials. Large Family: homes designed for households that need space to spread, with planning that keeps large homes feeling intimate. Holiday & Retreat: compact architecture for remote and rural settings. Custom Architecture: a blank-page design service for clients whose brief falls outside the standard collections.",
+    a: "Soleta offers three collection directions. Signature: the most architecturally ambitious work, designed for exceptional sites and clients who want a home that will never be repeated. Classic: timeless post-and-beam construction with generous proportions and enduring materials. Holiday & Retreat: compact architecture for remote and rural settings. Projects with briefs that fall outside these paths are handled through a private consultation.",
   },
   {
     q: "How does Soleta categorise its houses?",
@@ -40,7 +40,7 @@ const faqSchema = faqPage([
   },
   {
     q: "Can a Soleta house model be customised?",
-    a: "Yes. Each collection design is a starting point, not a fixed product. Most clients adapt their chosen collection to their site and brief through the design development phase. Clients with significantly different requirements are typically better served by the Custom Architecture service.",
+    a: "Yes. Each collection design is a starting point, not a fixed product. Most clients adapt their chosen collection to their site and brief through the design development phase. Clients with significantly different requirements are invited to request a private consultation to discuss the right direction.",
   },
   {
     q: "What is the process for building a Soleta home?",

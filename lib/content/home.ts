@@ -12,7 +12,7 @@ export const homeHero: HeroProps = {
   eyebrow:     "Soleta Homes",
   heading:     "Quiet distinction,\ndesigned around\nyour life",
   subtext:
-    "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to fully bespoke architecture.",
+    "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to individually developed signature projects.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
   secondaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
   imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",

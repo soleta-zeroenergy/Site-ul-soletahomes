@@ -378,9 +378,9 @@ export const signatureModel: HomeModel = {
 
   faq: [
     {
-      question: "How is a Signature home different from a Custom Architecture project?",
+      question: "Can I bring my own architect's design to a Signature project?",
       answer:
-        "Signature homes are full-service bespoke projects — we lead the entire process, from site analysis to handover. Custom Architecture allows you to bring your own architect's design, and have Soleta manufacture and assemble it.",
+        "Yes. Signature projects accommodate both Soleta-led design and externally authored briefs. If you have already worked with an architect and have drawings or a developed concept, we review, engineer and manufacture it within the Soleta structural system. Design authorship remains yours.",
     },
     {
       question: "What is the minimum budget for a Signature home?",
