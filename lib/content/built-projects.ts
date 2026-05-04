@@ -547,11 +547,11 @@ export const projects: BuiltProject[] = [
     caseStudy: {
       challenge:  "A plot on the outskirts of a suburban settlement, south-facing, with strict setback rules from the property boundaries, combined with the client's requirement for enhanced thermal and acoustic insulation.",
       approach:   "Classic frame with increased insulation specification. Natural wood fibre at greater thickness. Vapour-permeable membrane throughout. Massing resolved within strict boundary setbacks.",
-      outcome:    "Enhanced thermal and acoustic performance verified on completion. Home within all planning constraints. Client reports measurably quieter interior than conventional construction.",
+      outcome:    "Enhanced thermal and acoustic performance documented on completion. Home within all planning constraints. Client reports measurably quieter interior than conventional construction.",
       highlights: [
         "South-facing within strict setback envelope",
         "Enhanced insulation — natural wood fibre at increased thickness",
-        "Acoustic performance verified on completion",
+        "Acoustic performance documented on completion",
         "Vapour-permeable construction throughout",
       ],
     },
@@ -636,3 +636,4 @@ export function getCaseStudyProjects(): BuiltProject[] {
 export function projectHref(p: BuiltProject): string {
   return `/built-projects/${p.category}/${p.slug}`;
 }
+
