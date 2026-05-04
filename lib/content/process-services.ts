@@ -249,7 +249,7 @@ export const serviceLevels = [
       "Kitchen and bathroom installation",
       "Electrical and plumbing completion",
       "ZeroEnergy systems (optional)",
-      "5-year full warranty",
+      "5-year structural warranty, subject to standard maintenance terms",
     ],
     price: "From €X/m²",
     cta: "Enquire",
@@ -325,3 +325,4 @@ export const processCta = {
   secondaryCta: { label: "Download the Catalogue", href: "/catalog" },
   theme: "dark",
 };
+

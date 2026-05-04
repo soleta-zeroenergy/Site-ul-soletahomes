@@ -105,7 +105,7 @@ export const postBeamContent = {
     },
     {
       heading: "Durability and maintenance",
-      body: "Glulam structural timber, correctly designed and protected from direct moisture exposure, has a service life exceeding 80 years. The Soleta wall build-up — vapour-permeable membrane, natural insulation, ventilated cladding — is designed to allow moisture to move and escape, preventing condensation damage that shortens the life of airtight synthetic constructions. Cladding is the sacrificial layer, designed to be replaced without touching the structure.",
+      body: "Glulam structural timber can achieve a service life exceeding 80 years when correctly designed, protected from direct moisture exposure and maintained appropriately. The Soleta wall build-up — vapour-permeable membrane, natural insulation, ventilated cladding — is designed to allow moisture to move and escape, preventing condensation damage that shortens the life of airtight synthetic constructions. Cladding is the sacrificial layer, designed to be replaced without touching the structure.",
     },
   ],
   specs: [

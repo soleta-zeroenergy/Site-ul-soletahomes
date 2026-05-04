@@ -17,7 +17,7 @@ export const careersSections = [
   },
   {
     heading: "Standards, not perks",
-    body: "We do not offer a list of lifestyle benefits as a recruitment argument. What we offer is serious work on a product we are proud of, with colleagues who are good at what they do. The standard of output matters here in a way that is not common in construction. A detail resolved incorrectly in the engineering drawing becomes a problem in the factory. A problem in the factory becomes a problem on site. Everyone understands this chain. The rigour is not bureaucratic — it is the direct consequence of building something that has to perform for 80 years.",
+    body: "We do not offer a list of lifestyle benefits as a recruitment argument. What we offer is serious work on a product we are proud of, with colleagues who are good at what they do. The standard of output matters here in a way that is not common in construction. A detail resolved incorrectly in the engineering drawing becomes a problem in the factory. A problem in the factory becomes a problem on site. Everyone understands this chain. The rigour is not bureaucratic — it is the direct consequence of building something designed to perform over generations.",
   },
   {
     heading: "International scope from a European base",
@@ -32,7 +32,7 @@ export const careersValues = [
   },
   {
     title: "Long-term thinking",
-    body: "Soleta homes are designed for 80-year lifespans. The decisions made at every stage of design and production have consequences that outlast any individual project. We look for people who think in those terms — who understand that the quality of their work is not consumed at handover but begins there.",
+    body: "Soleta homes are designed for long service life. The decisions made at every stage of design and production have consequences that outlast any individual project. We look for people who think in those terms — who understand that the quality of their work is not consumed at handover but begins there.",
   },
   {
     title: "Ownership of outcomes",

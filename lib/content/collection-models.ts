@@ -625,7 +625,7 @@ export const customArchModel: HomeModel = {
     { label: "Structure",     value: "Any Soleta structural configuration" },
     { label: "Size",          value: "No minimum or maximum" },
     { label: "Energy",        value: "A+ to Passive House — as specified" },
-    { label: "Warranty",      value: "10 years full structural warranty" },
+    { label: "Warranty",      value: "10-year structural warranty, subject to standard maintenance terms" },
     { label: "Timeline",      value: "Depends on design complexity" },
   ],
   includes: [
@@ -634,7 +634,7 @@ export const customArchModel: HomeModel = {
     "Transport and on-site assembly",
     "Site supervision throughout construction",
     "Building permit support",
-    "10-year structural warranty",
+    "10-year structural warranty (subject to standard maintenance terms)",
   ],
   excludes: [
     "Architectural design fees (if external architect)",

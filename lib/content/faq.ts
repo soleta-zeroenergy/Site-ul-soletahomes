@@ -140,7 +140,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: "How long will a Soleta home last?",
-        answer: "Soleta homes are engineered for a minimum 80-year lifespan. The glulam structural frame, if maintained and protected from moisture, will exceed this. Timber cladding requires periodic re-treatment — the schedule depends on the species, local climate, exposure and orientation. The maintenance schedule provided at handover sets out what to check and when. Our aftercare programme is available to manage this on your behalf.",
+        answer: "Soleta homes are designed for multi-generational structural durability, with actual service life depending on specification, site conditions and proper maintenance. The glulam structural frame, if maintained and protected from moisture, is designed to exceed an 80-year design-life target. Timber cladding requires periodic re-treatment — the schedule depends on the species, local climate, exposure and orientation. The maintenance schedule provided at handover sets out what to check and when. Our aftercare programme is available to manage this on your behalf.",
       },
     ],
   },
