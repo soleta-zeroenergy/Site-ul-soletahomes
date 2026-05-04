@@ -228,7 +228,7 @@ export default function CatalogPage() {
               {[
                 "You are exploring a first direction",
                 "You are comparing model-based and custom routes",
-                "You want to prepare before requesting a private offer",
+                "You want to prepare before requesting a private consultation",
               ].map((item, i) => (
                 <div
                   key={i}
@@ -479,11 +479,12 @@ export default function CatalogPage() {
       {/* ── 5 + 6. Secondary CTA ────────────────────────────────────────── */}
       <CtaBand
         heading="Need more than a catalog?"
-        body="If your project is already taking shape, the Private Offer route gives us the context needed to respond with more precision."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your project is already taking shape, a private consultation gives us the context needed to respond with more precision."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         secondaryCta={{ label: "View the Collection", href: "/collection" }}
         theme="dark"
       />
     </>
   );
 }
+

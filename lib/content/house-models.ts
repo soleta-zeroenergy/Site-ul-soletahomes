@@ -100,7 +100,7 @@ export const modelsProcess: SpecStripProps = {
 export const modelsCta: CtaBandProps = {
   heading:      "Speak with our architects",
   body:         "Every Soleta home begins with a conversation. Tell us what you have in mind and we will respond personally.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "Discover the process",    href: "/build-with-us" },
   theme:        "dark",
 };

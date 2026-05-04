@@ -27,7 +27,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           <p className="subtitle max-w-xl">{model.subheading}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/request-private-offer" className="btn-primary">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link href="/catalog" className="btn-outline">
               Download Catalogue
@@ -214,7 +214,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/request-private-offer" className="btn-inverse">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link
               href="/collection"

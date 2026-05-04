@@ -126,7 +126,7 @@ export const supportNextSteps: SpecStripProps = {
 export const supportCta: CtaBandProps = {
   heading:      "Ready to talk?",
   body:         "There is no sales process here. Tell us what you have in mind and we will respond with a personal note and honest advice.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "See house models",         href: "/house-models" },
   theme:        "dark",
 };

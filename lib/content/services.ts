@@ -80,7 +80,7 @@ export const servicesConsulting: FeatureSplitProps = {
 export const servicesCta: CtaBandProps = {
   heading:      "Talk to an architect",
   body:         "Whether you are at the beginning of an idea or halfway through a project that needs a fresh pair of eyes — we are available for a private conversation.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "Discover the process",    href: "/build-with-us" },
   theme:        "dark",
 };

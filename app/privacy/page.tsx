@@ -189,7 +189,7 @@ export default function PrivacyPage() {
                 <ul className="flex flex-col gap-2 ml-0 pl-0" style={{ listStyle: "none" }}>
                   {[
                     "Information submitted through the contact form, including name, email address, and any project or enquiry details provided.",
-                    "Information submitted through the Private Offer request form, including name, email address, phone number, country of residence, project location, and relevant project details such as land status, intended use, size, budget range, and project description.",
+                    "Information submitted through the Private Consultation request form, including name, email address, phone number, country of residence, project location, and relevant project details such as land status, intended use, size, budget range, and project description.",
                     "Information submitted through the catalog request form, including name, email address, country, and project stage.",
                     "Basic technical and usage data that may be collected through standard website operation, including server logs, browser type, referring URLs, and similar technical information associated with website visits.",
                     "Information you provide when contacting us directly by email.",

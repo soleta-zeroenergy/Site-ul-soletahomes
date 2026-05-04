@@ -95,6 +95,6 @@ export const inspirationCta: CtaBandProps = {
   heading:      "See the house models",
   body:         "Each Soleta collection has its own character. Find the one that fits the life you want to live in it.",
   primaryCta:   { label: "Explore house models",   href: "/house-models" },
-  secondaryCta: { label: "Request a private offer", href: "/contact" },
+  secondaryCta: { label: "Request a private consultation", href: "/contact" },
   theme:        "dark",
 };

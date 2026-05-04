@@ -315,7 +315,7 @@ export default async function JournalArticlePage({
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link href="/request-private-offer" className="btn-primary py-3 px-7 text-[0.75rem]">
-                    Request a Private Offer
+                    Request a Private Consultation
                   </Link>
                   <Link href="/journal" className="btn-outline py-3 px-7 text-[0.75rem]">
                     Back to Journal
@@ -422,8 +422,8 @@ export default async function JournalArticlePage({
       {/* ── 5. Final CTA ────────────────────────────────────────────────── */}
       <CtaBand
         heading="Ready to move from reading to clarity?"
-        body="If your project is beginning to take shape, a Private Offer request gives us the context needed to respond with more precision."
-        primaryCta={{ label: "Request a Private Offer", href: "/request-private-offer" }}
+        body="If your project is beginning to take shape, a Private Consultation request gives us the context needed to respond with more precision."
+        primaryCta={{ label: "Request a Private Consultation", href: "/request-private-offer" }}
         secondaryCta={{ label: "View the Collection",   href: "/collection" }}
         theme="dark"
       />

@@ -14,14 +14,14 @@ import {
 
 export const metadata: Metadata = {
   ...withCanonical("/request-private-offer"),
-  title: "Request a Private Offer | Soleta",
+  title: "Request a Private Consultation | Soleta",
   description:
     "Submit your project brief to Soleta. Tell us about your site, intended use, timeline, and budget — and we will reply with a specific written assessment of what is feasible.",
 };
 
 const schema = breadcrumbSchema([
   { name: "Home",                   href: "/" },
-  { name: "Request a Private Offer", href: "/request-private-offer" },
+  { name: "Request a Private Consultation", href: "/request-private-offer" },
 ]);
 
 const faqJsonLd = faqSchema(offerFaq);

@@ -94,7 +94,7 @@ export const sustainBadges: BadgeRowProps = {
 export const sustainCta: CtaBandProps = {
   heading:      "Ask us anything",
   body:         "If you have specific questions about materials, specification, or how we approach a particular performance requirement — ask. We will give you a straight answer.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "Explore house models",    href: "/house-models" },
   theme:        "dark",
 };

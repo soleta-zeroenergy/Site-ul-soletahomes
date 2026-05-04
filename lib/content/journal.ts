@@ -128,7 +128,7 @@ export const journalArticles: JournalArticle[] = [
       {
         heading: "How to approach a realistic budget conversation",
         content:
-          `The most useful early budget conversation is one that starts from direction rather than from a number. What kind of site? What kind of house? What level of specification? Primary or seasonal use? What is the project's relationship to the existing Soleta models — starting from an existing direction, adapting significantly, or building a custom response?\n\nFrom that context, a meaningful cost orientation becomes possible. Not a fixed price — projects at the design stage cannot have fixed prices — but a realistic sense of the range that a particular direction implies, and the decisions that would move the budget within or outside that range.\n\nAt Soleta, the Private Offer process is structured to gather exactly this kind of early context. It is not a commitment. It is the basis for a substantive first response — one that addresses your specific situation rather than offering a generic number that will have to be revised as soon as the real variables become visible.`,
+          `The most useful early budget conversation is one that starts from direction rather than from a number. What kind of site? What kind of house? What level of specification? Primary or seasonal use? What is the project's relationship to the existing Soleta models — starting from an existing direction, adapting significantly, or building a custom response?\n\nFrom that context, a meaningful cost orientation becomes possible. Not a fixed price — projects at the design stage cannot have fixed prices — but a realistic sense of the range that a particular direction implies, and the decisions that would move the budget within or outside that range.\n\nAt Soleta, the Private Consultation process is structured to gather exactly this kind of early context. It is not a commitment. It is the basis for a substantive first response — one that addresses your specific situation rather than offering a generic number that will have to be revised as soon as the real variables become visible.`,
       },
     ],
   },
@@ -182,20 +182,20 @@ export const journalArticles: JournalArticle[] = [
   /* ── 4 — STUB ─────────────────────────────────────────────────────────── */
   {
     slug:        "what-to-prepare-before-requesting-a-private-offer",
-    title:       "What to prepare before requesting a private offer",
+    title:       "What to prepare before requesting a private consultation",
     excerpt:
-      "A private offer request is most useful when it includes the right information. Here is what to prepare — and why each piece matters.",
+      "A private consultation request is most useful when it includes the right information. Here is what to prepare — and why each piece matters.",
     category:    "Process, Budget & Build",
     image:       "/images/Retreat800x533.webp",
     imageAlt:    "Soleta Retreat — preparing a project brief",
     publishedAt: "2025-09-10",
     intro:
-      "A private offer request is most useful when it includes the right information. The more specific the brief, the more precise and useful the response. Here is what to prepare — and why each piece matters for the early project conversation.",
+      "A private consultation request is most useful when it includes the right information. The more specific the brief, the more precise and useful the response. Here is what to prepare — and why each piece matters for the early project conversation.",
     body: [
       {
         heading: "Why the brief matters",
         content:
-          `A private offer is not a sales interaction. It is a project review — an assessment of what a specific brief, on a specific site, at a specific stage, realistically involves. The quality of the response depends directly on the quality of the information provided.\n\nThis does not mean the brief needs to be complete or polished. Many clients submit a brief at an early and uncertain stage, and that is entirely appropriate. But the brief should be honest, specific, and grounded in what you actually know at this point — rather than idealized or vague in a way that prevents a meaningful response.`,
+          `A private consultation is not a sales interaction. It is a project review — an assessment of what a specific brief, on a specific site, at a specific stage, realistically involves. The quality of the response depends directly on the quality of the information provided.\n\nThis does not mean the brief needs to be complete or polished. Many clients submit a brief at an early and uncertain stage, and that is entirely appropriate. But the brief should be honest, specific, and grounded in what you actually know at this point — rather than idealized or vague in a way that prevents a meaningful response.`,
       },
       {
         heading: "Location and site",

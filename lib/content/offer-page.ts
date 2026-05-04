@@ -1,17 +1,17 @@
 /* ─────────────────────────────────────────────────────────────────────────────
-   Request a Private Offer — page content
+   Request a Private Consultation — page content
    ───────────────────────────────────────────────────────────────────────────── */
 
 export const offerHero = {
-  eyebrow:  "Private Offer",
-  heading:  "Request a Private Offer",
+  eyebrow:  "Private Consultation",
+  heading:  "Request a Private Consultation",
   subtitle:
     "Before Soleta can give you a truly useful response, we need to understand your project. The questions below take around five minutes and allow us to give you a relevant, specific reply — not a brochure.",
 };
 
 export const offerFraming = {
   left:
-    "A Private Offer is not a price list. It is a structured first response to your project — based on your site, your programme, your direction, and your timeline. To produce one, we need to know something about all four. The questions in this form are designed specifically to gather that information.",
+    "A Private Consultation is not a price list. It is a structured first response to your project — based on your site, your programme, your direction, and your timeline. To produce one, we need to know something about all four. The questions in this form are designed specifically to gather that information.",
   right:
     "You do not need to have everything already decided. Many clients come to us before they have found land, or while they are still choosing between models. What matters is that there is a serious intention to build — the details can be refined together.",
 };
@@ -31,7 +31,7 @@ export const offerFaq = [
   {
     question: "Can I enquire if I am still comparing options?",
     answer:
-      "Yes. If you are comparing Soleta with other builders or approaches, a Private Offer is a useful way to get a concrete sense of what a Soleta project would actually involve — scope, timeline, and cost range — before committing to a direction. We expect this and will be direct about what Soleta can and cannot offer for your brief.",
+      "Yes. If you are comparing Soleta with other builders or approaches, a Private Consultation is a useful way to get a concrete sense of what a Soleta project would actually involve — scope, timeline, and cost range — before committing to a direction. We expect this and will be direct about what Soleta can and cannot offer for your brief.",
   },
   {
     question: "Does Soleta work with clients outside Europe?",
@@ -39,13 +39,13 @@ export const offerFaq = [
       "Yes, but because planning requirements, foundation options, and logistics vary from country to country, tell us your location and we will advise on what applies in your case. Some countries or jurisdictions require specific local approvals, but we will make sure to support you even under those conditions.",
   },
   {
-    question: "How long does a Private Offer take to produce?",
+    question: "How long does a Private Consultation take to produce?",
     answer:
       "We aim to respond within three business days of receiving your completed brief. The response is a written document outlining feasibility, cost orientation, and suggested next steps. More complex or unusual briefs may take slightly longer.",
   },
   {
     question: "Is there any cost or obligation attached to requesting an offer?",
     answer:
-      "None. A Private Offer is a preliminary document produced at no charge. It carries no obligation on your part and does not constitute a contract or binding estimate. It is the starting point of a conversation, not the end of one.",
+      "None. A Private Consultation is a preliminary document produced at no charge. It carries no obligation on your part and does not constitute a contract or binding estimate. It is the starting point of a conversation, not the end of one.",
   },
 ];

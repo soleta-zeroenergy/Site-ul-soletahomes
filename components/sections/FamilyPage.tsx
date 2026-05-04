@@ -44,7 +44,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           <p className="subtitle max-w-xl mb-10">{model.subheading}</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/request-private-offer" className="btn-primary">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link href="/catalog" className="btn-outline">
               Download Catalogue
@@ -233,7 +233,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                   </span>
                 ) : (
                   <span className="mt-2 font-ui text-[0.75rem] text-[var(--color-text-muted)]">
-                    Private offer on request
+                    Private consultation on request
                   </span>
                 )}
 
@@ -545,7 +545,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/request-private-offer" className="btn-inverse">
-              Request a Private Offer
+              Request a Private Consultation
             </Link>
             <Link
               href="/collection"

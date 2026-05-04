@@ -93,7 +93,7 @@ export const processTimeline: ProcessTimelineProps = {
 export const processCta: CtaBandProps = {
   heading:      "Ready to begin?",
   body:         "Tell us about your site and what you have in mind. We will respond with a personal note — not a brochure.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "See our house models",    href: "/house-models" },
   theme:        "dark",
 };

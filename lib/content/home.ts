@@ -14,7 +14,7 @@ export const homeHero: HeroProps = {
   subtext:
     "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to fully bespoke architecture.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
-  secondaryCta: { label: "Request a Private Offer", href: "/request-private-offer" },
+  secondaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
   imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
   imageAlt:     "Soleta ZeroEnergy home",
 };
@@ -277,7 +277,7 @@ export const homeFaqCta = {
 export const homeCta: CtaBandProps = {
   heading:      "Begin your Soleta project",
   body:         "Tell us about your land, your priorities, and your timeline — or begin by exploring the collection and built work.",
-  primaryCta:   { label: "Request a Private Offer", href: "/request-private-offer" },
+  primaryCta:   { label: "Request a Private Consultation", href: "/request-private-offer" },
   secondaryCta: { label: "Explore the Collection",  href: "/collection" },
   theme:        "dark",
 };

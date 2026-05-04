@@ -82,7 +82,7 @@ export const professionalsApproach: FeatureSplitProps = {
 export const professionalsCta: CtaBandProps = {
   heading:      "Let's talk about your project",
   body:         "Whether you have a brief in hand or an early-stage opportunity — a short conversation is all it takes to establish whether we are the right fit.",
-  primaryCta:   { label: "Request a private offer", href: "/contact" },
+  primaryCta:   { label: "Request a private consultation", href: "/contact" },
   secondaryCta: { label: "Discover the process",    href: "/build-with-us" },
   theme:        "dark",
 };
