@@ -65,7 +65,7 @@ export default function BuiltProjectsPage() {
             </div>
             <div className="flex flex-col gap-5">
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                We show beautiful homes that truly exist — lived in, weather-tested, and assessed by their owners. Every project listed here has been completed, delivered, and verified.
+                We show beautiful homes that truly exist — lived in, weather-tested, and assessed by their owners. Every project listed here has been completed and delivered — documented here based on our own project records.
               </p>
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
                 The case studies go further: the brief, the site constraints, the design decisions, and what the owners say now. Useful and honest documentation for anyone planning a similar project.
