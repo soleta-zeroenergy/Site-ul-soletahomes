@@ -20,7 +20,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Old flat /built-projects/[slug] routes → new canonical nested routes.
+      // Old flat /built-projects/[slug] routes -> new canonical nested routes.
       // These three slugs existed before the routing restructure.
       {
         source:      "/built-projects/villa-falaise",
@@ -37,8 +37,21 @@ const nextConfig = {
         destination: "/built-projects/holiday-homes/worthersee-lodge",
         permanent:   true,
       },
+      // Legacy collection paths removed from public navigation.
+      // Redirect to the closest active public collection path.
+      {
+        source:      "/collection/custom-architecture",
+        destination: "/collection/signature",
+        permanent:   true,
+      },
+      {
+        source:      "/collection/large-family",
+        destination: "/collection",
+        permanent:   true,
+      },
     ];
   },
 };
 
 export default nextConfig;
+

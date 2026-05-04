@@ -13,9 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/collection`,                           lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/collection/classic`,                   lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/collection/signature`,                 lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/collection/large-family`,              lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/collection/holiday-retreat`,           lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/collection/custom-architecture`,       lastModified, changeFrequency: "monthly", priority: 0.85 },
 
     /* ── Tier 2 — Built projects ────────────────────────────────────────── */
     { url: `${base}/built-projects`,                       lastModified, changeFrequency: "monthly", priority: 0.9 },

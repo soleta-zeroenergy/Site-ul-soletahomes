@@ -399,74 +399,6 @@ export const signatureModel: HomeModel = {
 };
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/*  LARGE FAMILY (legacy — unchanged, still rendered by ModelDetail)           */
-/* ═══════════════════════════════════════════════════════════════════════════ */
-
-export const largeFamilyModel: HomeModel = {
-  slug:       "large-family",
-  eyebrow:    "Large Family Homes",
-  heading:    "Space that grows\nwith your family.",
-  subheading:
-    "4 to 7 bedrooms, generous living areas and a modular structure that allows new additions at any time — without demolition.",
-  badge: "4–7 bedrooms",
-  description: [
-    "The Large Family collection addresses a real challenge: families grow, and needs change. Most homes cannot adapt without expensive and disruptive renovation. Soleta's modular exoskeleton system changes that — new wings, studios or covered terraces can be added years later without touching the original structure.",
-    "Large Family homes are engineered for multi-generational living. Separate sleeping wings, flexible open-plan living areas and optional annexe modules mean the home can accommodate grandparents, grown children or long-term guests — each with genuine privacy.",
-    "At this scale, ZeroEnergy systems make a significant financial difference. We design the energy system for the full projected footprint of the home — including future additions — so nothing needs to be retrofitted.",
-  ],
-  specs: [
-    { label: "Size range",   value: "120 m² – 300 m²" },
-    { label: "Bedrooms",     value: "4 to 7" },
-    { label: "Structure",    value: "Extended post & beam glulam" },
-    { label: "Additions",    value: "Modular — no demolition required" },
-    { label: "Energy class", value: "A+ · ZeroEnergy standard at this scale" },
-    { label: "Lifespan",     value: "80+ years" },
-  ],
-  includes: [
-    "Full timber frame structure for all modules",
-    "Natural insulation throughout",
-    "All exterior finishes and roofing",
-    "Triple-glazed windows and doors",
-    "Kitchen and all bathrooms",
-    "Electrical and plumbing rough-in",
-    "Transport, crane placement and assembly",
-    "5-year structural warranty",
-  ],
-  excludes: [
-    "Land and site preparation",
-    "Foundation works (quoted per site)",
-    "Utility connections",
-    "Building permits (assisted)",
-    "Furniture and appliances",
-  ],
-  variants: [
-    { name: "Family 120", area: "120 m²", bedrooms: "4 bedrooms", price: "From €X" },
-    { name: "Family 160", area: "160 m²", bedrooms: "5 bedrooms", price: "From €X" },
-    { name: "Family 220", area: "220 m²", bedrooms: "6 bedrooms", price: "From €X" },
-    { name: "Family 300", area: "300 m²", bedrooms: "7 bedrooms", price: "From €X" },
-  ],
-  faq: [
-    {
-      question: "How do modular additions work in practice?",
-      answer:
-        "The Soleta exoskeleton is designed from day one for future expansion. New modules connect to the existing structure at pre-planned junction points — no demolition, no structural disruption. The addition is manufactured in our factory and assembled on-site in days.",
-    },
-    {
-      question: "Can we phase the build to manage budget?",
-      answer:
-        "Yes. We can design the full home and build it in phases — starting with the core living areas and adding bedrooms or wings later. The foundation and structure are designed for the full footprint from the start.",
-    },
-    {
-      question: "Is ZeroEnergy standard on Large Family homes?",
-      answer:
-        "We strongly recommend ZeroEnergy at this scale — the energy savings over 10 years significantly offset the initial investment. It is an option, not a requirement, but most Large Family clients choose it.",
-    },
-  ],
-  relatedHref:  "/collection",
-  relatedLabel: "View all collections",
-};
-
-/* ═══════════════════════════════════════════════════════════════════════════ */
 /*  HOLIDAY & RETREAT                                                          */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -604,77 +536,10 @@ export const holidayRetreatModel: HomeModel = {
   relatedLabel: "View all collections",
 };
 
-/* ═══════════════════════════════════════════════════════════════════════════ */
-/*  CUSTOM ARCHITECTURE                                                        */
-/* ═══════════════════════════════════════════════════════════════════════════ */
-
-export const customArchModel: HomeModel = {
-  slug:       "custom-architecture",
-  eyebrow:    "Custom Architecture",
-  heading:    "Start from a sketch.\nWe build around your vision.",
-  subheading:
-    "Bring your own architect's design — or start with a brief and let our team shape it. We adapt, manufacture, and assemble almost any architecture in the Soleta system.",
-  badge: "Fully bespoke",
-  description: [
-    "Custom Architecture is for clients who arrive with a vision — or a sketch — not a catalogue preference. Perhaps you have already worked with an architect and have some drawings. Perhaps you have a site and a feeling, but no fixed design.",
-    "In both cases, our role is to translate architectural intent into built Soleta reality — with the manufacturing precision, structural expertise, and construction management that our system provides.",
-    "We work both with external architects, as specialist partners, and by leading the entire design process ourselves. In both cases, the result is a home that is entirely yours.",
-  ],
-  specs: [
-    { label: "Design origin", value: "Client's architect or Soleta design team" },
-    { label: "Structure",     value: "Any Soleta structural configuration" },
-    { label: "Size",          value: "No minimum or maximum" },
-    { label: "Energy",        value: "A+ to Passive House — as specified" },
-    { label: "Warranty",      value: "10-year structural warranty, subject to standard maintenance terms" },
-    { label: "Timeline",      value: "Depends on design complexity" },
-  ],
-  includes: [
-    "Design review and structural engineering",
-    "Factory manufacturing of all timber elements",
-    "Transport and on-site assembly",
-    "Site supervision throughout construction",
-    "Building permit support",
-    "10-year structural warranty (subject to standard maintenance terms)",
-  ],
-  excludes: [
-    "Architectural design fees (if external architect)",
-    "Land and site preparation",
-    "Foundation works",
-    "Utility connections",
-    "Interior finishes (quoted per specification)",
-  ],
-  variants: [
-    { name: "Custom S", area: "Up to 120 m²", bedrooms: "1–3 bedrooms", price: "On request" },
-    { name: "Custom M", area: "120–250 m²",   bedrooms: "3–5 bedrooms", price: "On request" },
-    { name: "Custom L", area: "250 m²+",       bedrooms: "5+ bedrooms",  price: "On request" },
-  ],
-  faq: [
-    {
-      question: "Can I use my own architect?",
-      answer:
-        "Yes. We work with external architects as manufacturing and delivery partners. We assess the project from the perspective of structural and manufacturing feasibility, then produce and assemble all timber elements according to the Soleta specification.",
-    },
-    {
-      question: "What if I only have a rough idea?",
-      answer:
-        "That is a perfectly valid starting point. Our design team can develop a complete architectural brief based on a site, a lifestyle description, and a budget. We then design, engineer, and build the entire home.",
-    },
-    {
-      question: "Is there a minimum project size?",
-      answer:
-        "No. We have delivered custom projects ranging from 30 m² cabins to 1000 m² family estates. The approach remains the same — rigorous manufacturing, careful assembly, and long-term quality.",
-    },
-  ],
-  relatedHref:  "/collection",
-  relatedLabel: "View all collections",
-};
-
 /* ── Aggregate export ──────────────────────────────────────────────────────── */
 
 export const allModels = [
   classicModel,
   signatureModel,
-  largeFamilyModel,
   holidayRetreatModel,
-  customArchModel,
 ];
