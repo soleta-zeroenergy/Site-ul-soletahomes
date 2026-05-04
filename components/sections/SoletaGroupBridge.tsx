@@ -46,7 +46,7 @@ export function SoletaGroupBridge() {
               rel="noopener noreferrer"
               className="mt-6 inline-flex font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
             >
-              VISIT SOLETAHOUSEPLANS.COM <span aria-hidden="true">&nearr;</span>
+              VISIT SOLETAHOUSEPLANS.COM <span aria-hidden="true">&#8599;</span>
             </a>
           </div>
         </div>

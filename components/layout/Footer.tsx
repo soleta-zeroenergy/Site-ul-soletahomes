@@ -58,7 +58,7 @@ export function Footer() {
                           aria-hidden="true"
                           className="text-xs text-[var(--soleta-gold)]"
                         >
-                          &nearr;
+                          &#8599;
                         </span>
                       </a>
                     ) : (
