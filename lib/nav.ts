@@ -119,7 +119,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Sustainability", href: "/sustainability" },
       { label: "Press & Media", href: "/press" },
       { label: "Careers", href: "/careers" },
-      { label: "Help Center", href: "/help-center" },
+      { label: "FAQ", href: "/faq" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
