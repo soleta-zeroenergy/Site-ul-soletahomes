@@ -13,6 +13,7 @@ export type HeroProps = {
   secondaryCta?: Cta;
   imageSrc?:     string;
   imageAlt?:     string;
+  imageOverlayVariant?: "default" | "localized";
   align?:        "left" | "center" | string;
   size?:         "full" | "large" | "medium" | string;
 };
@@ -49,6 +50,7 @@ export function Hero({
   secondaryCta,
   imageSrc,
   imageAlt = "",
+  imageOverlayVariant = "default",
   align = "left",
   size = "full",
 }: HeroProps) {
@@ -81,7 +83,9 @@ export function Hero({
           imageSrc
             ? {
                 background:
-                  "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
+                  imageOverlayVariant === "localized"
+                    ? "linear-gradient(to top, rgba(26,23,20,0.32) 0%, rgba(26,23,20,0.12) 26%, rgba(26,23,20,0.02) 52%, transparent 72%), radial-gradient(95% 88% at 24% 76%, rgba(26,23,20,0.58) 0%, rgba(26,23,20,0.38) 33%, rgba(26,23,20,0.16) 56%, rgba(26,23,20,0.04) 74%, transparent 86%)"
+                    : "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
               }
             : {
                 background:
@@ -134,14 +138,17 @@ export function Hero({
         {(primaryCta || secondaryCta) && (
           <div className={cn("flex flex-wrap items-center gap-5", centered && "justify-center")}>
             {primaryCta && (
-              <Link href={primaryCta.href} className="btn-inverse py-4 px-9">
+              <Link
+                href={primaryCta.href}
+                className="btn-inverse py-4 px-9 transition-colors duration-200 hover:bg-[#e9e3dd] hover:border-[#e9e3dd]"
+              >
                 {primaryCta.label}
               </Link>
             )}
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center gap-2 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#c8bfb8] hover:text-[#faf8f6] transition-colors duration-200"
+                className="inline-flex items-center gap-2 border-b border-transparent pb-[2px] text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#c8bfb8] transition-colors duration-200 hover:border-[#c8bfb8] hover:text-[#faf8f6]"
               >
                 {secondaryCta.label}
                 <span aria-hidden="true">→</span>

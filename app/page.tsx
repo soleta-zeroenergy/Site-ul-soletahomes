@@ -53,7 +53,7 @@ export default function HomePage() {
       />
 
       {/* 1 ── Hero */}
-      <Hero {...homeHero} />
+      <Hero {...homeHero} imageOverlayVariant="localized" />
 
       {/* 2 ── Proof strip */}
       <section className="bg-[#1a1714] py-6">
