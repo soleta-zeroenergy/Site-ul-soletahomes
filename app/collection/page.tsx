@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { withCanonical } from "@/lib/seo";
 import { showImagePlaceholders } from "@/lib/site-flags";
 import {
+  collectionHero,
   collectionApproach,
   collectionFamilies,
   collectionGuidance,
@@ -74,8 +75,8 @@ export default function CollectionPage() {
 
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[680px]">
               <Image
-                src="/images/WhySoleta900x1200.webp"
-                alt="Interior of a Soleta timber home"
+                src={collectionHero.imageSrc}
+                alt={collectionHero.imageAlt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
