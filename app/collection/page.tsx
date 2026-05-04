@@ -246,7 +246,7 @@ export default function CollectionPage() {
       >
         <div className="container-site">
           <span className="eyebrow mb-10 block">{collectionExplore.eyebrow}</span>
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2 lg:grid-cols-4">
             {collectionExplore.blocks.map((block) => (
               <Link
                 key={block.href}
