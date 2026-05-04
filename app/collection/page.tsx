@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...withCanonical("/collection"),
   title: "The Collection | Soleta Homes",
   description:
-    "Explore four distinct directions — Signature, Classic, Holiday & Retreat, and Custom Architecture. Timber homes shaped around the way you want to live.",
+    "Explore three distinct directions — Signature, Classic, and Holiday & Retreat. Timber homes shaped around the way you want to live.",
 };
 
 /** Warm atmospheric gradient — used as fallback when no real image is available */
@@ -42,8 +42,8 @@ export default function CollectionPage() {
                 Architecture shaped around<br />the way you want to live
               </h1>
               <p className="subtitle max-w-lg mb-10">
-                Explore four distinct directions — from timeless homes for everyday living to private retreats,
-                expressive Signature residences, and fully bespoke architecture.
+                Explore three distinct directions — from timeless homes for everyday living to private retreats
+                and expressive Signature residences.
               </p>
               <div>
                 <a href="#collection-paths" className="btn-primary">
@@ -110,7 +110,7 @@ export default function CollectionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2 lg:grid-cols-3">
             {collectionFamilies.map((family) => {
               const hasImage = Boolean(family.imageSrc);
 
@@ -245,7 +245,7 @@ export default function CollectionPage() {
       >
         <div className="container-site">
           <span className="eyebrow mb-10 block">{collectionExplore.eyebrow}</span>
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2 lg:grid-cols-3">
             {collectionExplore.blocks.map((block) => (
               <Link
                 key={block.href}
@@ -270,3 +270,5 @@ export default function CollectionPage() {
     </>
   );
 }
+
+

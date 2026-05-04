@@ -92,7 +92,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-2 lg:grid-cols-3">
             {homeCollection.cards.map((card) => (
               <Link
                 key={card.href}
@@ -233,7 +233,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-sand-400 border border-sand-400 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-px bg-sand-400 border border-sand-400 sm:grid-cols-2 lg:grid-cols-3">
             {homeWhoWeWorkWith.blocks.map((block) => (
               <Link
                 key={block.href}
@@ -349,3 +349,5 @@ export default function HomePage() {
     </>
   );
 }
+
+
