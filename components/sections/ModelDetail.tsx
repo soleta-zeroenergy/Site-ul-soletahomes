@@ -30,7 +30,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
               Request a Private Consultation
             </Link>
             <Link href="/catalog" className="btn-outline">
-              Download Catalogue
+              Download Brochure
             </Link>
           </div>
         </div>

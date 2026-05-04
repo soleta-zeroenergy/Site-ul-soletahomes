@@ -322,7 +322,7 @@ export const processCta = {
   heading: "Begin your Soleta project",
   body: "The first conversation is free. Tell us about your site and your vision — we will tell you what is possible.",
   primaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
-  secondaryCta: { label: "Download the Catalogue", href: "/catalog" },
+  secondaryCta: { label: "Download Brochure", href: "/catalog" },
   theme: "dark",
 };
 

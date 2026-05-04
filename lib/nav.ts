@@ -132,7 +132,7 @@ export const footerColumns: FooterColumn[] = [
   {
     links: [
       { label: "Journal", href: "/journal" },
-      { label: "Catalog Download", href: "/catalog" },
+      { label: "Download Brochure", href: "/catalog" },
       { label: "The Collection", href: "/collection" },
       { label: "Built Projects", href: "/built-projects" },
       { label: "Process & Services", href: "/process" },
