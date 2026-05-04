@@ -7,7 +7,7 @@ export const collectionHero = {
   subheading:
     "Explore three distinct paths — from timeless everyday homes to private retreats and expressive Signature residences.",
   ctaPrimary: { label: "Explore the Collection", href: "#collection-paths" },
-  imageSrc: "/images/collection/collection-hero.jpg",
+  imageSrc: "https://img.soletahomes.com/collection-hero-overview-1600x2000-4x5.webp",
   imageAlt: "Soleta timber home exterior in natural landscape",
 };
 
@@ -27,7 +27,7 @@ export const collectionFamilies = [
     body: "For exceptional sites and clients who want a home with a stronger architectural identity. Signature is for projects in which expression, proportion, and presence matter as much as comfort.",
     href: "/collection/signature",
     cta: "View Signature Homes",
-    imageSrc: "/images/Signature800x533.webp",
+    imageSrc: "https://img.soletahomes.com/collection-card-signature-1800x1200-3x2.webp",
     imageAlt: "Soleta Signature home exterior",
   },
   {
@@ -36,7 +36,7 @@ export const collectionFamilies = [
     body: "Balanced, warm, and enduring homes designed for daily life. This is the most natural starting point for permanent living, family life, and long-term comfort, in the calm architectural language that defines Soleta.",
     href: "/collection/classic",
     cta: "View Classic Homes",
-    imageSrc: "/images/Classic800x533.webp",
+    imageSrc: "https://img.soletahomes.com/collection-card-classic-1800x1200-3x2.webp",
     imageAlt: "Soleta Classic home exterior",
   },
   {
@@ -45,7 +45,7 @@ export const collectionFamilies = [
     body: "Homes designed for a slower rhythm, privacy, and a closer relationship with nature. Ideal for second homes, weekend escapes, and landscapes where stillness matters.",
     href: "/collection/holiday-retreat",
     cta: "View Retreat Homes",
-    imageSrc: "/images/Retreat800x533.webp",
+    imageSrc: "https://img.soletahomes.com/collection-card-retreat-1800x1200-3x2.webp",
     imageAlt: "Soleta holiday home in nature",
   },
 ];

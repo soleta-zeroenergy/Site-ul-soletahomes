@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { withCanonical } from "@/lib/seo";
 import {
+  collectionHero,
   collectionApproach,
   collectionFamilies,
   collectionGuidance,
@@ -53,10 +54,10 @@ export default function CollectionPage() {
             </div>
 
             {/* Image column — stacks below text on mobile */}
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[680px]">
+            <div className="relative aspect-[4/5] lg:min-h-[680px]">
               <Image
-                src="/images/WhySoleta900x1200.webp"
-                alt="Interior of a Soleta timber home"
+                src={collectionHero.imageSrc}
+                alt={collectionHero.imageAlt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -121,7 +122,7 @@ export default function CollectionPage() {
                   className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
                 >
                   {/* Image area — real photo or atmospheric fallback */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <div className="relative aspect-[3/2] w-full overflow-hidden">
                     {hasImage ? (
                       <Image
                         src={family.imageSrc}
