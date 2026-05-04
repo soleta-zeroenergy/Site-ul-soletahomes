@@ -334,7 +334,7 @@ export const signatureModel: HomeModel = {
     "Engineering, structural calculations, and full construction documentation",
     "Factory manufacturing of all timber elements — 8–12 weeks",
     "On-site assembly, finishing, and commissioning",
-    "Handover with full documentation and 10-year structural warranty",
+    "Handover with full documentation and 10-year structural warranty, subject to standard maintenance terms",
   ],
 
   includes: [
@@ -345,7 +345,7 @@ export const signatureModel: HomeModel = {
     "Factory manufacturing of all timber elements",
     "On-site assembly and supervision",
     "Interior design coordination (optional)",
-    "10-year structural warranty",
+    "10-year structural warranty (subject to standard maintenance terms)",
   ],
 
   excludes: [

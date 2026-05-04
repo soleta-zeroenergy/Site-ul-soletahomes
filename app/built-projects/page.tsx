@@ -200,7 +200,7 @@ export default function BuiltProjectsPage() {
               },
               {
                 heading: "Speed without compromise",
-                body:     "Assembly times of 4–12 weeks are common. Not because corners are cut, but because fabrication happens in parallel with site preparation — not sequentially.",
+                body:     "Structural assembly commonly takes 4–12 weeks, depending on model, site access, weather, contractor availability and scope. Not because corners are cut, but because fabrication happens in parallel with site preparation — not sequentially. Full fit-out timelines vary by specification.",
               },
             ].map((item) => (
               <div key={item.heading} className="flex flex-col gap-3 border-t border-[var(--color-border-light)] pt-6">
