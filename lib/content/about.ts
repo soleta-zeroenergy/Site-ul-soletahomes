@@ -53,7 +53,7 @@ export const aboutRecognition = {
   intro: "Soleta ZeroEnergy One launched in 2013 and, within just a few weeks, was featured by The Guardian and Grand Designs / Discovery (UK), Inhabitat (US), Daily News (US), HomeAdore (international), Mr Mondialisation (France), and many others around the world. That international recognition was followed immediately by the first client deliveries — Soleta was already a complete, mature product.",
   points: [
     "Featured in The Guardian, Inhabitat, Daily News, HomeAdore, and dozens of international architecture publications since 2013",
-    "Homes delivered across Sweden, Romania, France, Germany, Austria, Switzerland, and Croatia",
+    "Homes delivered in Sweden, Romania, France, Germany, Austria, Switzerland, and Croatia since 2013",
     "Production facility in continuous operation since 1998",
     "Four generations of collection models developed and refined since the ZeroEnergy One prototype",
   ],

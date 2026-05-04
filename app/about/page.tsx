@@ -17,9 +17,9 @@ import {
 
 export const metadata: Metadata = {
   ...withCanonical("/about"),
-  title: "About Soleta | Founded 2011 | Timber Homes Romania",
+  title: "About Soleta | Timber Architecture Since 2011 | Soleta Homes",
   description:
-    "Soleta was founded in 2011 by Cătălin Butmălai. Over 86 homes delivered across Europe. The story, the system and the values behind Romania's most internationally recognised timber home brand.",
+    "Soleta was founded in 2011 by Cătălin Butmălai. Over 86 homes delivered across Europe. The story, the structural system and the values behind one of Europe's most internationally recognised timber architecture practices.",
 };
 
 const schema = breadcrumbSchema([
