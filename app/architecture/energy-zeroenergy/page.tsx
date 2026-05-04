@@ -201,11 +201,11 @@ export default function ZeroEnergyPage() {
                 )}
                 {i > 0 && (
                   <Link
-                    href="/contact"
+                    href="/request-private-offer"
                     className="mt-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] hover:opacity-70 transition-opacity"
                     style={{ color: i === 1 ? "var(--soleta-cream)" : "var(--color-brand)" }}
                   >
-                    Get a quote →
+                    Request a Private Consultation →
                   </Link>
                 )}
               </div>
