@@ -105,6 +105,7 @@ export default function HomePage() {
 
       <Hero
         {...homeHero}
+        mirrorImageX
         editorialPlaceholder={{
           ratio: "16:9",
           width: 2560,
@@ -346,8 +347,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ProcessTimeline {...homeProcess} />
-      <div className="bg-[#faf8f6] pb-16 flex justify-center">
+      <ProcessTimeline {...homeProcess} theme="light" />
+      <div className="bg-white border-t border-[var(--color-border-light)] pt-8 pb-14 flex justify-center">
         <Link href={homeProcessCta.href} className="btn-outline py-4 px-10">
           {homeProcessCta.label}
         </Link>
@@ -402,7 +403,7 @@ export default function HomePage() {
       </section>
 
       <FaqPreview {...homeFaq} />
-      <div className="bg-white pb-16 flex justify-center">
+      <div className="bg-white border-t border-[var(--color-border-light)] pt-8 pb-14 flex justify-center">
         <Link href={homeFaqCta.href} className="btn-outline py-4 px-10">
           {homeFaqCta.label}
         </Link>

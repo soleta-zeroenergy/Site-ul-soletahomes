@@ -26,12 +26,12 @@ export function ProofStrip({ items, theme = "dark" }: ProofStripProps) {
           {items.map((item, i) => (
             <div
               key={i}
-              className="flex min-h-[150px] flex-col justify-between gap-6 py-8 pr-8 lg:py-10"
+              className="flex min-h-[150px] flex-col items-center justify-center gap-4 px-4 py-8 text-center lg:py-10"
               style={{
                 borderRight: i < items.length - 1 ? `1px solid ${border}` : undefined,
               }}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <div
                   aria-hidden="true"
                   style={{
@@ -54,6 +54,7 @@ export function ProofStrip({ items, theme = "dark" }: ProofStripProps) {
                 </span>
               </div>
               <span
+                className="flex min-h-[2.25rem] items-center justify-center"
                 style={{
                   fontFamily:    "var(--font-heading)",
                   fontSize:      "clamp(1.45rem, 2.45vw, 2.2rem)",

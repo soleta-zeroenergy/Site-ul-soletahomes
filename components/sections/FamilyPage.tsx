@@ -137,11 +137,18 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
 
       {/* â”€â”€ 3. About this collection + key specs sidebar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
-        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--color-bg)" }}
+        className="border-b border-[var(--color-border-light)] py-12 lg:py-18"
+        style={{ backgroundColor: isFlagship ? "var(--soleta-cream)" : "var(--color-bg)" }}
       >
         <div className="container-site">
-          <div className={cn("grid grid-cols-1 gap-14", isFlagship ? "lg:grid-cols-[0.95fr_0.05fr_340px]" : "lg:grid-cols-[1fr_340px]")}>
+          <div
+            className={cn(
+              "grid grid-cols-1 gap-14",
+              isFlagship
+                ? "border border-[var(--soleta-gold)]/40 bg-[var(--color-bg)] p-8 lg:grid-cols-[0.95fr_0.05fr_360px] lg:p-10"
+                : "lg:grid-cols-[1fr_340px]"
+            )}
+          >
 
             {/* Description */}
             <div>
@@ -172,7 +179,7 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
                 )}
                 style={{ backgroundColor: isFlagship ? "#f7f2ec" : "var(--soleta-cream)" }}
               >
-                <span className="eyebrow mb-5 block">Key specifications</span>
+                <span className="eyebrow mb-5 block">{isFlagship ? "Key indications" : "Key specifications"}</span>
                 <p className="mb-6 text-[0.8125rem] leading-relaxed text-[var(--color-text-muted)]">
                   Signature is defined by design intent first, then by engineering decisions that preserve that intent.
                 </p>
@@ -271,10 +278,10 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
       {/* â”€â”€ 7. Available configurations (variants) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        style={{ backgroundColor: isFlagship ? "var(--color-bg)" : "var(--soleta-cream)" }}
       >
         <div className="container-site">
-          <span className="eyebrow mb-4 block">Available sizes</span>
+          <span className="eyebrow mb-4 block">{isFlagship ? "Configuration directions" : "Available sizes"}</span>
           <h2
             className="mb-10 max-w-lg"
             style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", lineHeight: 1.15 }}
@@ -313,6 +320,10 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
                   <span className="mt-2 font-ui text-sm font-medium text-[var(--color-text)]">
                     {variant.price}
                   </span>
+                ) : isFlagship ? (
+                  <span className="mt-2 font-ui text-[0.75rem] text-[var(--color-text-muted)]">
+                    Defined through site and brief
+                  </span>
                 ) : (
                   <span className="mt-2 font-ui text-[0.75rem] text-[var(--color-text-muted)]">
                     Private offer on request
@@ -323,7 +334,7 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
                   href="/contact"
                   className="mt-2 inline-flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
                 >
-                  Request consultation â†’
+                  {isFlagship ? "Discuss this direction →" : "Request consultation →"}
                 </Link>
               </div>
             ))}
@@ -489,14 +500,17 @@ export function FamilyPage({ model, visualVariant = "default", imagePlaceholders
       {/* â”€â”€ 12. Related built projects (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.relatedProjects && model.relatedProjects.length > 0 && (
         <section
-          className="border-b border-[var(--color-border-light)] py-14 lg:py-24"
+          className={cn(
+            "border-b border-[var(--color-border-light)] py-14",
+            isFlagship ? "lg:py-28" : "lg:py-24"
+          )}
           style={{ backgroundColor: "var(--color-bg)" }}
         >
           <div className="container-site">
             <div className="mb-12 flex items-end justify-between gap-8">
               <div>
                 <span className="eyebrow mb-4 block">Built work</span>
-                <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", lineHeight: 1.15 }}>
+                <h2 style={{ fontSize: isFlagship ? "clamp(1.75rem, 2.8vw, 2.25rem)" : "clamp(1.5rem, 2.5vw, 2rem)", lineHeight: 1.15 }}>
                   Projects from this collection
                 </h2>
               </div>

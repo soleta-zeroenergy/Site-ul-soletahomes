@@ -26,6 +26,7 @@ export type HeroProps = {
   size?: "full" | "large" | "medium" | string;
   overlayVariant?: "bottom" | "side-left";
   editorialPlaceholder?: EditorialPlaceholder;
+  mirrorImageX?: boolean;
 };
 
 const sizeMap = {
@@ -60,6 +61,7 @@ export function Hero({
   size = "full",
   overlayVariant = "bottom",
   editorialPlaceholder,
+  mirrorImageX = false,
 }: HeroProps) {
   const centered = align === "center";
   const placeholderMode = editorialPlaceholder?.mode ?? "overlay";
@@ -84,7 +86,7 @@ export function Hero({
           alt={imageAlt}
           fill
           priority
-          className="object-cover"
+          className={cn("object-cover", mirrorImageX && "scale-x-[-1]")}
         />
       )}
 

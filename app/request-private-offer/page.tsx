@@ -99,12 +99,12 @@ export default function RequestPrivateOfferPage() {
 
       <section
         className="border-b border-[var(--color-border-light)]"
-        style={{ backgroundColor: "var(--soleta-cream)" }}
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:items-stretch">
             <div
-              className="flex flex-col justify-start gap-8 px-0 py-10 lg:sticky lg:top-24 lg:self-start lg:py-14 lg:pr-14 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+              className="flex flex-col justify-start gap-8 bg-[var(--soleta-cream)] px-0 py-10 lg:sticky lg:top-24 lg:self-start lg:py-14 lg:pr-14 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
             >
               <div>
                 <span className="eyebrow mb-4 block">Before you fill in the form</span>
@@ -144,7 +144,7 @@ export default function RequestPrivateOfferPage() {
               </div>
             </div>
 
-            <div className="border-b border-[var(--color-border-light)] bg-[var(--color-bg)] lg:border-b-0">
+            <div className="border-b border-[var(--color-border-light)] bg-[var(--color-bg)] lg:border-b-0 lg:border-l">
               <PrivateOfferForm />
             </div>
           </div>

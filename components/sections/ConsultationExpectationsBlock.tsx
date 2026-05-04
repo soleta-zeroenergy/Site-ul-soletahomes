@@ -21,7 +21,7 @@ export function ConsultationExpectationsBlock() {
   return (
     <section
       className="border-b border-[var(--color-border-light)] py-14 lg:py-22"
-      style={{ backgroundColor: "var(--soleta-cream)" }}
+      style={{ backgroundColor: "var(--color-bg)" }}
     >
       <div className="container-narrow">
         <div className="mb-10 max-w-3xl border-t border-[var(--color-border-light)] pt-10">

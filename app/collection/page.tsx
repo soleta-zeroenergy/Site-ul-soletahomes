@@ -138,18 +138,18 @@ export default function CollectionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] lg:grid-cols-12">
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)]">
             <Link
               href={signaturePath.href}
-              className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)] lg:col-span-8"
+              className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden">
+              <div className="relative aspect-[16/10] w-full overflow-hidden lg:aspect-[16/8]">
                 {signaturePath.imageSrc ? (
                   <Image
                     src={signaturePath.imageSrc}
                     alt={signaturePath.imageAlt ?? signaturePath.heading}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    sizes="100vw"
                     className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                   />
                 ) : (
@@ -178,10 +178,10 @@ export default function CollectionPage() {
                 <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
                   {signaturePath.eyebrow}
                 </span>
-                <h3 className="max-w-xl text-[clamp(1.75rem,2.4vw,2.375rem)] leading-[1.08]">
+                <h3 className="max-w-xl text-[clamp(1.75rem,2.4vw,2.5rem)] leading-[1.08]">
                   {signaturePath.heading}
                 </h3>
-                <p className="max-w-2xl flex-1 text-[0.9375rem] leading-relaxed text-[var(--color-text-secondary)]">
+                <p className="max-w-3xl flex-1 text-[0.9375rem] leading-relaxed text-[var(--color-text-secondary)]">
                   {signaturePath.body}
                 </p>
                 <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
@@ -190,62 +190,64 @@ export default function CollectionPage() {
               </div>
             </Link>
 
-            {[classicPath, retreatPath].map((family, index) => {
-              const placeholder = pathCardPlaceholders[index + 1];
-              const hasImage = Boolean(family.imageSrc);
+            <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] lg:grid-cols-2">
+              {[classicPath, retreatPath].map((family, index) => {
+                const placeholder = pathCardPlaceholders[index + 1];
+                const hasImage = Boolean(family.imageSrc);
 
-              return (
-                <Link
-                  key={family.href}
-                  href={family.href}
-                  className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)] lg:col-span-4"
-                >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
-                    {hasImage ? (
-                      <Image
-                        src={family.imageSrc!}
-                        alt={family.imageAlt ?? family.heading}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 34vw"
-                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
-                        style={{ background: CARD_PLACEHOLDER }}
-                      />
-                    )}
-
-                    {showImagePlaceholders && placeholder && (
-                      <div className="absolute inset-0 pointer-events-none">
-                        <ImagePlaceholder
-                          ratio={placeholder.ratio}
-                          width={placeholder.width}
-                          height={placeholder.height}
-                          description={placeholder.description}
+                return (
+                  <Link
+                    key={family.href}
+                    href={family.href}
+                    className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
+                  >
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      {hasImage ? (
+                        <Image
+                          src={family.imageSrc!}
+                          alt={family.imageAlt ?? family.heading}
                           fill
-                          variant="overlay"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                         />
-                      </div>
-                    )}
-                  </div>
+                      ) : (
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
+                          style={{ background: CARD_PLACEHOLDER }}
+                        />
+                      )}
 
-                  <div className="flex flex-1 flex-col gap-3 p-7">
-                    <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
-                      {family.eyebrow}
-                    </span>
-                    <h3 className="text-[1.375rem] leading-[1.15]">{family.heading}</h3>
-                    <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                      {family.body}
-                    </p>
-                    <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
-                      {family.cta} -&gt;
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
+                      {showImagePlaceholders && placeholder && (
+                        <div className="absolute inset-0 pointer-events-none">
+                          <ImagePlaceholder
+                            ratio={placeholder.ratio}
+                            width={placeholder.width}
+                            height={placeholder.height}
+                            description={placeholder.description}
+                            fill
+                            variant="overlay"
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex flex-1 flex-col gap-3 p-7 lg:p-8">
+                      <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                        {family.eyebrow}
+                      </span>
+                      <h3 className="text-[1.375rem] leading-[1.15]">{family.heading}</h3>
+                      <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                        {family.body}
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
+                        {family.cta} -&gt;
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

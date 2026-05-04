@@ -24,9 +24,9 @@ export const homeHero: HeroProps = {
 export const homeProofStrip = {
   items: [
     { label: "Founded",   value: "2011" },
-    { label: "Delivered", value: "86+ homes" },
-    { label: "Reach",     value: "European delivery" },
-    { label: "Process",   value: "Design · Engineering · Manufacturing · Build" },
+    { label: "Delivered", value: "86+" },
+    { label: "Reach",     value: "Europe" },
+    { label: "Process",   value: "Complete" },
   ],
 };
 
