@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { SoletaGroupBridge } from "@/components/sections/SoletaGroupBridge";
 import { baseMetadata, siteConfig } from "@/lib/metadata";
 import "@/styles/globals.css";
 
@@ -81,6 +82,7 @@ export default function RootLayout({
         <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>
           {children}
         </main>
+        <SoletaGroupBridge />
         <Footer />
         <script
           type="application/ld+json"

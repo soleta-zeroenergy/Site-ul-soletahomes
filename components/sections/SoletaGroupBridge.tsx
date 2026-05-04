@@ -1,0 +1,57 @@
+export function SoletaGroupBridge() {
+  return (
+    <section
+      className="border-t border-b border-[var(--color-border-light)] py-14 lg:py-16"
+      style={{ backgroundColor: "var(--soleta-cream)" }}
+    >
+      <div className="container-site">
+        <p className="eyebrow mb-8 text-[var(--color-text-muted)]">PART OF SOLETA GROUP</p>
+
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="max-w-xl">
+            <h2
+              className="text-[#1a1714]"
+              style={{
+                fontSize: "clamp(1.375rem, 2.2vw, 1.75rem)",
+                lineHeight: 1.2,
+                letterSpacing: "0.01em",
+              }}
+            >
+              SoletaHomes.com
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+              Premium timber homes. Private residential projects, large-scale and landmark architecture, direct
+              consultation, design-to-delivery. No online purchase.
+            </p>
+          </div>
+
+          <div className="max-w-xl lg:border-l lg:border-[var(--color-border-light)] lg:pl-12">
+            <h2
+              className="text-[#1a1714]"
+              style={{
+                fontSize: "clamp(1.375rem, 2.2vw, 1.75rem)",
+                lineHeight: 1.2,
+                letterSpacing: "0.01em",
+              }}
+            >
+              SoletaHousePlans.com
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+              House plans, kits, and assembly support. Public pricing and direct online purchase for smaller
+              projects.
+            </p>
+            <a
+              href="https://soletahouseplans.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
+            >
+              VISIT SOLETAHOUSEPLANS.COM <span aria-hidden="true">&nearr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
