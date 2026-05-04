@@ -30,6 +30,7 @@ export type ProjectGridProps = {
   cta?: { label: string; href: string };
   columns?: number;
   theme?: "light" | "warm" | "dark" | string;
+  layout?: "standard" | "editorial";
   editorialPlaceholders?: EditorialPlaceholder[];
 };
 
@@ -54,20 +55,22 @@ export function ProjectGrid({
   cta,
   columns = 3,
   theme = "light",
+  layout = "standard",
   editorialPlaceholders,
 }: ProjectGridProps) {
   const isDark = theme === "dark";
+  const isEditorial = layout === "editorial";
   const gridCols =
     columns === 2
       ? "grid-cols-1 md:grid-cols-2"
       : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className={cn("section", bgMap[theme])}>
+    <section className={cn(isEditorial ? "py-16 lg:py-24" : "section", bgMap[theme])}>
       <div className="container-site">
         {(eyebrow || heading || body) && (
-          <div className="mb-14 flex items-end justify-between gap-8">
-            <div className="max-w-xl">
+          <div className={cn("flex items-end justify-between gap-8", isEditorial ? "mb-12 border-t border-sand-400 pt-12" : "mb-14")}>
+            <div className={cn(isEditorial ? "max-w-2xl" : "max-w-xl")}>
               {eyebrow && (
                 <p
                   className={cn(
@@ -82,8 +85,8 @@ export function ProjectGrid({
                 <h2
                   className={isDark ? "text-[#faf8f6]" : "text-[#1a1714]"}
                   style={{
-                    fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                    lineHeight: 1.12,
+                    fontSize: isEditorial ? "clamp(2rem, 3.4vw, 3rem)" : "clamp(1.75rem, 3vw, 2.5rem)",
+                    lineHeight: 1.08,
                     letterSpacing: "0.02em",
                   }}
                 >
@@ -132,7 +135,7 @@ export function ProjectGrid({
             const showNeutralFrame = hasPlaceholderConfig && !showImage && !showPlaceholderOnly;
 
             const innerContent = (
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className={cn("relative overflow-hidden", isEditorial ? "aspect-[5/4] lg:aspect-[16/11]" : "aspect-[4/3]")}>
                 {showImage ? (
                   <Image
                     src={project.imageSrc!}
@@ -191,7 +194,7 @@ export function ProjectGrid({
                   style={{ background: "rgba(26,23,20,0.15)" }}
                 />
 
-                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-1.5">
+                <div className={cn("absolute inset-x-0 bottom-0 flex flex-col gap-1.5", isEditorial ? "p-7 lg:p-8" : "p-6")}>
                   <p className="text-[0.5625rem] font-medium tracking-[0.18em] uppercase text-brand-300">
                     {project.category}
                     {project.year && (
@@ -203,6 +206,7 @@ export function ProjectGrid({
                     className="text-[#faf8f6]"
                     style={{
                       fontSize: "1.125rem",
+                      ...(isEditorial ? { fontSize: "clamp(1.25rem, 1.8vw, 1.625rem)" } : {}),
                       lineHeight: 1.25,
                       letterSpacing: "0.02em",
                       fontFamily: "var(--font-heading)",

@@ -46,6 +46,8 @@ const pathCardPlaceholders = [
 ];
 
 export default function CollectionPage() {
+  const [signaturePath, classicPath, retreatPath] = collectionFamilies;
+
   return (
     <>
       <section
@@ -136,24 +138,75 @@ export default function CollectionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] sm:grid-cols-2">
-            {collectionFamilies.map((family, index) => {
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-border-light)] lg:grid-cols-12">
+            <Link
+              href={signaturePath.href}
+              className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)] lg:col-span-8"
+            >
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                {signaturePath.imageSrc ? (
+                  <Image
+                    src={signaturePath.imageSrc}
+                    alt={signaturePath.imageAlt ?? signaturePath.heading}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
+                    style={{ background: CARD_PLACEHOLDER }}
+                  />
+                )}
+
+                {showImagePlaceholders && pathCardPlaceholders[0] && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    <ImagePlaceholder
+                      ratio={pathCardPlaceholders[0].ratio}
+                      width={pathCardPlaceholders[0].width}
+                      height={pathCardPlaceholders[0].height}
+                      description={pathCardPlaceholders[0].description}
+                      fill
+                      variant="overlay"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-1 flex-col gap-5 p-8 lg:p-10">
+                <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                  {signaturePath.eyebrow}
+                </span>
+                <h3 className="max-w-xl text-[clamp(1.75rem,2.4vw,2.375rem)] leading-[1.08]">
+                  {signaturePath.heading}
+                </h3>
+                <p className="max-w-2xl flex-1 text-[0.9375rem] leading-relaxed text-[var(--color-text-secondary)]">
+                  {signaturePath.body}
+                </p>
+                <span className="inline-flex items-center gap-1.5 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform duration-200 group-hover:translate-x-1">
+                  {signaturePath.cta} -&gt;
+                </span>
+              </div>
+            </Link>
+
+            {[classicPath, retreatPath].map((family, index) => {
+              const placeholder = pathCardPlaceholders[index + 1];
               const hasImage = Boolean(family.imageSrc);
-              const placeholder = pathCardPlaceholders[index];
 
               return (
                 <Link
                   key={family.href}
                   href={family.href}
-                  className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
+                  className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)] lg:col-span-4"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     {hasImage ? (
                       <Image
-                        src={family.imageSrc}
+                        src={family.imageSrc!}
                         alt={family.imageAlt ?? family.heading}
                         fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) 100vw, 34vw"
                         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                       />
                     ) : (
@@ -178,11 +231,11 @@ export default function CollectionPage() {
                     )}
                   </div>
 
-                  <div className="flex flex-1 flex-col p-8 gap-4">
+                  <div className="flex flex-1 flex-col gap-3 p-7">
                     <span className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
                       {family.eyebrow}
                     </span>
-                    <h3 className="text-[1.375rem] leading-[1.2]">{family.heading}</h3>
+                    <h3 className="text-[1.375rem] leading-[1.15]">{family.heading}</h3>
                     <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
                       {family.body}
                     </p>
@@ -204,18 +257,20 @@ export default function CollectionPage() {
         <div className="container-narrow">
           <div className="border border-[var(--color-border-light)] bg-[var(--soleta-cream)] p-8 lg:p-10">
             <span className="eyebrow mb-4 block">{collectionGuidance.eyebrow}</span>
-            <h2 className="mb-4 max-w-lg">{collectionGuidance.heading}</h2>
-            <p
-              className="mb-8 text-[var(--color-text-secondary)] leading-relaxed"
-              style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
-            >
-              {collectionGuidance.intro}
-            </p>
-            <ul className="flex flex-col gap-5">
+            <div className="mb-8 grid grid-cols-1 gap-6 border-b border-[var(--color-border-light)] pb-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+              <h2 className="max-w-lg">{collectionGuidance.heading}</h2>
+              <p
+                className="text-[var(--color-text-secondary)] leading-relaxed"
+                style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
+              >
+                {collectionGuidance.intro}
+              </p>
+            </div>
+            <ul className="grid grid-cols-1 gap-5 lg:grid-cols-3">
               {collectionGuidance.items.map((item, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-4 border-l-2 border-[var(--color-brand)] pl-5 text-[var(--color-text-secondary)] leading-relaxed"
+                  className="flex items-start gap-4 border-l-2 border-[var(--color-brand)] bg-[var(--color-bg)] p-5 text-[var(--color-text-secondary)] leading-relaxed"
                   style={{ fontSize: "clamp(0.9375rem,1.1vw,1.0625rem)" }}
                 >
                   {item}

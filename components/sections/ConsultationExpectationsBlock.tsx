@@ -20,11 +20,11 @@
 export function ConsultationExpectationsBlock() {
   return (
     <section
-      className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+      className="border-b border-[var(--color-border-light)] py-14 lg:py-22"
       style={{ backgroundColor: "var(--soleta-cream)" }}
     >
       <div className="container-narrow">
-        <div className="mb-10 max-w-2xl">
+        <div className="mb-10 max-w-3xl border-t border-[var(--color-border-light)] pt-10">
           <span
             style={{
               fontFamily: "var(--font-ui)",
@@ -53,11 +53,11 @@ export function ConsultationExpectationsBlock() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)] md:grid-cols-2">
           {blocks.map((block) => (
             <div
               key={block.eyebrow}
-              className="flex h-full flex-col gap-3 border border-[var(--color-border-light)] bg-[var(--color-bg)] p-6"
+              className="flex h-full flex-col gap-4 bg-[var(--color-bg)] p-6 lg:p-7"
             >
               <span
                 style={{

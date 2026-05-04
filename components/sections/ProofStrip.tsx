@@ -11,60 +11,59 @@ type ProofStripProps = {
 
 export function ProofStrip({ items, theme = "dark" }: ProofStripProps) {
   const bg    = theme === "warm" ? "var(--soleta-cream)" : "#1a1714";
-  const rule  = theme === "warm" ? "var(--color-brand)"  : "var(--color-brand-400, #c9a97a)";
+  const rule  = theme === "warm" ? "var(--color-brand)"  : "var(--soleta-gold, #c9a97a)";
   const value = theme === "warm" ? "#1a1714"             : "#faf8f6";
-  const label = theme === "warm" ? "var(--color-text-muted)" : "rgba(250,248,246,0.45)";
+  const label = theme === "warm" ? "var(--color-text-muted)" : "rgba(250,248,246,0.52)";
+  const border = theme === "warm" ? "var(--color-border-light)" : "rgba(250,248,246,0.10)";
 
   return (
     <div
-      className="border-b border-[var(--color-border-light)]"
+      className="border-b"
       style={{ backgroundColor: bg }}
     >
       <div className="container-site">
-        <div className="grid grid-cols-2 sm:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col gap-2 py-6 pr-6"
+              className="flex min-h-[150px] flex-col justify-between gap-6 py-8 pr-8 lg:py-10"
               style={{
-                borderRight: i < items.length - 1 ? "1px solid rgba(255,255,255,0.08)" : undefined,
+                borderRight: i < items.length - 1 ? `1px solid ${border}` : undefined,
               }}
             >
-              {/* Accent rule */}
-              <div
-                aria-hidden="true"
-                style={{
-                  width:           "2rem",
-                  height:          "2px",
-                  backgroundColor: rule,
-                  marginBottom:    "0.25rem",
-                }}
-              />
-              {/* Value */}
+              <div className="flex items-center gap-3">
+                <div
+                  aria-hidden="true"
+                  style={{
+                    width:           "2.5rem",
+                    height:          "1px",
+                    backgroundColor: rule,
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily:    "var(--font-ui)",
+                    fontSize:      "0.5625rem",
+                    fontWeight:    600,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase" as const,
+                    color:         label,
+                  }}
+                >
+                  {item.label}
+                </span>
+              </div>
               <span
                 style={{
                   fontFamily:    "var(--font-heading)",
-                  fontSize:      "clamp(1rem, 1.5vw, 1.3125rem)",
+                  fontSize:      "clamp(1.45rem, 2.45vw, 2.2rem)",
                   fontWeight:    400,
                   color:         value,
-                  lineHeight:    1.2,
+                  lineHeight:    1.08,
                   letterSpacing: "0",
                 }}
               >
                 {item.value}
-              </span>
-              {/* Label */}
-              <span
-                style={{
-                  fontFamily:    "var(--font-ui)",
-                  fontSize:      "0.5625rem",
-                  fontWeight:    500,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase" as const,
-                  color:         label,
-                }}
-              >
-                {item.label}
               </span>
             </div>
           ))}

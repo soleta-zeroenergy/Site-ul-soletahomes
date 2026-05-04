@@ -115,7 +115,7 @@ export default function HomePage() {
         }}
       />
 
-      <section className="border-b border-[var(--color-border-light)] bg-[#faf8f6]">
+      <section className="bg-[#1a1714]">
         <ProofStrip items={homeProofStrip.items} />
       </section>
 
@@ -131,22 +131,24 @@ export default function HomePage() {
         }}
       />
 
-      <section className="section bg-[#faf8f6] pt-16 lg:pt-20">
+      <section className="bg-[#faf8f6] py-16 lg:py-24">
         <div className="container-site">
-          <div className="mb-14 max-w-2xl">
-            <p className="eyebrow mb-4 text-brand-500">{homeCollection.eyebrow}</p>
-            <h2
-              className="text-[#1a1714] mb-4"
-              style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", lineHeight: 1.12, letterSpacing: "0.02em" }}
-            >
-              {homeCollection.heading}
-            </h2>
-            <p className="text-[#4a4440] leading-relaxed" style={{ fontFamily: "var(--font-subtitle)", fontSize: "1.125rem" }}>
+          <div className="mb-12 grid grid-cols-1 gap-8 border-t border-sand-400 pt-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="eyebrow mb-4 text-brand-500">{homeCollection.eyebrow}</p>
+              <h2
+                className="text-[#1a1714]"
+                style={{ fontSize: "clamp(2rem, 3.4vw, 3rem)", lineHeight: 1.08, letterSpacing: "0.02em" }}
+              >
+                {homeCollection.heading}
+              </h2>
+            </div>
+            <p className="max-w-2xl text-[#4a4440] leading-relaxed lg:justify-self-end" style={{ fontFamily: "var(--font-subtitle)", fontSize: "clamp(1.0625rem, 1.35vw, 1.25rem)" }}>
               {homeCollection.body}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px border border-sand-400 bg-sand-400 lg:grid-cols-3">
             {homeCollection.cards.map((card, index) => {
               const placeholder = homeCollectionPlaceholders[index];
 
@@ -154,9 +156,9 @@ export default function HomePage() {
                 <Link
                   key={card.href}
                   href={card.href!}
-                  className="group flex flex-col overflow-hidden bg-white"
+                  className="group flex min-h-full flex-col overflow-hidden bg-white transition-colors duration-200 hover:bg-[#fbfaf8]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#ece9e5]">
+                  <div className="relative aspect-[5/4] overflow-hidden bg-[#ece9e5]">
                     {card.imageSrc && (
                       <Image
                         src={card.imageSrc}
@@ -179,18 +181,18 @@ export default function HomePage() {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-col flex-1 p-6 gap-3">
+                  <div className="flex flex-1 flex-col gap-4 p-7 lg:p-8">
                     {card.eyebrow && (
                       <p className="eyebrow text-brand-500">{card.eyebrow}</p>
                     )}
                     <h3
                       className="text-[#1a1714]"
-                      style={{ fontSize: "1.125rem", lineHeight: 1.3, letterSpacing: "0.02em", fontFamily: "var(--font-heading)" }}
+                      style={{ fontSize: "clamp(1.25rem, 1.8vw, 1.625rem)", lineHeight: 1.18, letterSpacing: "0.02em", fontFamily: "var(--font-heading)" }}
                     >
                       {card.title}
                     </h3>
                     {card.body && (
-                      <p className="text-sm leading-relaxed flex-1 text-[#6b5d56]">{card.body}</p>
+                      <p className="flex-1 text-sm leading-relaxed text-[#6b5d56] lg:text-[0.9375rem]">{card.body}</p>
                     )}
                     <span
                       aria-hidden="true"
@@ -290,7 +292,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ProjectGrid {...homeProjects} editorialPlaceholders={selectedProjectPlaceholders} />
+      <ProjectGrid {...homeProjects} layout="editorial" editorialPlaceholders={selectedProjectPlaceholders} />
 
       <section className="section bg-[#faf8f6]">
         <div className="container-site">

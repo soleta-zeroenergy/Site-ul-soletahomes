@@ -263,12 +263,12 @@ function CheckboxGroup({
 
 function GroupDivider({ number, label }: { number: string; label: string }) {
   return (
-    <div className="flex items-baseline gap-4 border-t border-[var(--color-border-light)] pt-8 pb-2">
+    <div className="flex items-baseline gap-4 border-t border-[var(--color-border-light)] pt-8 pb-3">
       <span style={{ ...groupHeadingStyle, color: "var(--color-brand)", lineHeight: 1 }}>{number}</span>
       <span
         style={{
           fontFamily:    "var(--font-serif)",
-          fontSize:      "1.0625rem",
+          fontSize:      "1.125rem",
           fontWeight:    400,
           letterSpacing: "0.01em",
           color:         "#1a1714",
@@ -472,7 +472,7 @@ export function PrivateOfferForm() {
       )}
 
       {/* ── GROUP 1 — About you ─────────────────────────────────────────── */}
-      <div className="px-10 pt-6 pb-10 lg:px-14 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-7">
+      <div className="px-8 pt-6 pb-10 lg:px-12 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-7">
         <GroupDivider number="01" label="About you" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <TextField
@@ -501,7 +501,7 @@ export function PrivateOfferForm() {
       </div>
 
       {/* ── GROUP 2 — Your project ──────────────────────────────────────── */}
-      <div className="px-10 py-10 lg:px-14 border-b border-[var(--color-border-light)] bg-white flex flex-col gap-8">
+      <div className="px-8 py-10 lg:px-12 border-b border-[var(--color-border-light)] bg-white flex flex-col gap-8">
         <GroupDivider number="02" label="Your project" />
         <TextField
           id="location" label="Location of future home" required
@@ -545,7 +545,7 @@ export function PrivateOfferForm() {
       </div>
 
       {/* ── GROUP 3 — Site and readiness ────────────────────────────────── */}
-      <div className="px-10 py-10 lg:px-14 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-8">
+      <div className="px-8 py-10 lg:px-12 border-b border-[var(--color-border-light)] bg-[#faf8f6] flex flex-col gap-8">
         <GroupDivider number="03" label="Site and readiness" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SelectField
@@ -589,7 +589,7 @@ export function PrivateOfferForm() {
       </div>
 
       {/* ── GROUP 4 — Optional context ──────────────────────────────────── */}
-      <div className="px-10 py-10 lg:px-14 border-b border-[var(--color-border-light)] bg-white flex flex-col gap-7">
+      <div className="px-8 py-10 lg:px-12 border-b border-[var(--color-border-light)] bg-white flex flex-col gap-7">
         <GroupDivider number="04" label="Optional context" />
         <SelectField
           id="referral" label="How did you hear about Soleta?"
@@ -599,20 +599,22 @@ export function PrivateOfferForm() {
       </div>
 
       {/* ── Submit ──────────────────────────────────────────────────────── */}
-      <div className="px-10 py-10 lg:px-14 bg-[#faf8f6] flex flex-col sm:flex-row sm:items-center gap-5">
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="btn-primary py-4 px-10 self-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)] disabled:opacity-60"
-        >
-          {status === "loading" ? "Sending…" : "Send my project brief"}
-        </button>
-        <p
-          className="text-[#9a8e87] leading-snug"
-          style={{ fontSize: "0.8125rem", fontFamily: "var(--font-body)" }}
-        >
-          Your details are private. No marketing, no third-party sharing.
-        </p>
+      <div className="px-8 py-10 lg:px-12 bg-[#f3efea] border-t border-[var(--color-border-light)]">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="btn-primary py-4 px-10 self-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)] disabled:opacity-60"
+          >
+            {status === "loading" ? "Sending…" : "Send my project brief"}
+          </button>
+          <p
+            className="max-w-sm border-l border-[var(--color-border-light)] pl-5 text-[#9a8e87] leading-snug"
+            style={{ fontSize: "0.8125rem", fontFamily: "var(--font-body)" }}
+          >
+            Your details are private. No marketing, no third-party sharing.
+          </p>
+        </div>
       </div>
     </form>
   );

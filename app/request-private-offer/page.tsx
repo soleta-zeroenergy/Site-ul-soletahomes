@@ -84,7 +84,7 @@ export default function RequestPrivateOfferPage() {
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-narrow">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+          <div className="grid grid-cols-1 gap-10 border-t border-[var(--color-border-light)] pt-10 md:grid-cols-2 md:gap-16">
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               {offerFraming.left}
             </p>
@@ -104,7 +104,7 @@ export default function RequestPrivateOfferPage() {
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:items-stretch">
             <div
-              className="flex flex-col justify-start gap-8 px-0 py-10 lg:py-14 lg:pr-14 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
+              className="flex flex-col justify-start gap-8 px-0 py-10 lg:sticky lg:top-24 lg:self-start lg:py-14 lg:pr-14 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
             >
               <div>
                 <span className="eyebrow mb-4 block">Before you fill in the form</span>
@@ -112,7 +112,7 @@ export default function RequestPrivateOfferPage() {
                   The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer exactly - estimates and ranges are fine.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 border-t border-[var(--color-border-light)] pt-6">
+              <div className="flex flex-col gap-4 border border-[var(--color-border-light)] bg-[var(--color-bg)] p-5">
                 {[
                   { label: "Response time", value: "3 business days" },
                   { label: "Format", value: "Written, project-specific" },
@@ -144,7 +144,7 @@ export default function RequestPrivateOfferPage() {
               </div>
             </div>
 
-            <div className="border-b border-[var(--color-border-light)] lg:border-b-0">
+            <div className="border-b border-[var(--color-border-light)] bg-[var(--color-bg)] lg:border-b-0">
               <PrivateOfferForm />
             </div>
           </div>

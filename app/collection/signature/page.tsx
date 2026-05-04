@@ -38,6 +38,7 @@ export default function SignaturePage() {
       ))}
       <FamilyPage
         model={signatureModel}
+        visualVariant="flagship"
         imagePlaceholders={{
           hero: {
             ratio: "16:9",

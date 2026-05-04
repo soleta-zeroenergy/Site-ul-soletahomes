@@ -23,13 +23,15 @@ type EditorialPlaceholder = {
 
 type FamilyPageProps = {
   model: HomeModel;
+  visualVariant?: "default" | "flagship";
   imagePlaceholders?: {
     hero?: EditorialPlaceholder;
     relatedProjects?: EditorialPlaceholder[];
   };
 };
 
-export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
+export function FamilyPage({ model, visualVariant = "default", imagePlaceholders }: FamilyPageProps) {
+  const isFlagship = visualVariant === "flagship";
   const showPrice  = model.priceDisplay === "shown";
   const hasGallery = Array.isArray(model.gallery) && model.gallery.length > 0;
   const hasFloors  = Array.isArray(model.floorPlans) && model.floorPlans.length > 0;
@@ -139,7 +141,7 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
-          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_340px]">
+          <div className={cn("grid grid-cols-1 gap-14", isFlagship ? "lg:grid-cols-[0.95fr_0.05fr_340px]" : "lg:grid-cols-[1fr_340px]")}>
 
             {/* Description */}
             <div>
@@ -157,13 +159,23 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
               </div>
             </div>
 
+            {isFlagship && (
+              <div className="hidden lg:block border-r border-[var(--color-border-light)]" aria-hidden="true" />
+            )}
+
             {/* Key specs sidebar */}
             <aside>
               <div
-                className="border border-[var(--color-border-light)] p-8"
-                style={{ backgroundColor: "var(--soleta-cream)" }}
+                className={cn(
+                  "border p-8",
+                  isFlagship ? "border-[var(--soleta-gold)] bg-[#f7f2ec] shadow-[0_28px_56px_-36px_rgba(26,23,20,0.45)]" : "border-[var(--color-border-light)]"
+                )}
+                style={{ backgroundColor: isFlagship ? "#f7f2ec" : "var(--soleta-cream)" }}
               >
-                <span className="eyebrow mb-6 block">Key specifications</span>
+                <span className="eyebrow mb-5 block">Key specifications</span>
+                <p className="mb-6 text-[0.8125rem] leading-relaxed text-[var(--color-text-muted)]">
+                  Signature is defined by design intent first, then by engineering decisions that preserve that intent.
+                </p>
                 <dl className="flex flex-col gap-4">
                   {model.specs.map((spec) => (
                     <div
@@ -270,18 +282,26 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
             Choose your configuration
           </h2>
 
-          <div className={cn("grid gap-px bg-[var(--color-border-light)] border border-[var(--color-border-light)]", variantCols)}>
+          <div className={cn("grid gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)]", variantCols)}>
             {model.variants.map((variant) => (
               <div
                 key={variant.name}
-                className="flex flex-col gap-3 bg-[var(--soleta-cream)] p-8"
+                className={cn(
+                  "flex flex-col gap-4 p-8",
+                  isFlagship ? "bg-[var(--color-bg)]" : "bg-[var(--soleta-cream)]"
+                )}
               >
-                <span
-                  className="font-heading text-[1.375rem] text-[var(--color-text)]"
-                  style={{ lineHeight: 1.2 }}
-                >
-                  {variant.name}
-                </span>
+                <div className="flex items-center justify-between border-b border-[var(--color-border-light)] pb-4">
+                  <span
+                    className="font-heading text-[1.375rem] text-[var(--color-text)]"
+                    style={{ lineHeight: 1.2 }}
+                  >
+                    {variant.name}
+                  </span>
+                  <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)]">
+                    Orientation
+                  </span>
+                </div>
                 <span className="font-ui text-sm text-[var(--color-text-secondary)]">
                   {variant.area}
                 </span>
@@ -469,7 +489,7 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
       {/* â”€â”€ 12. Related built projects (conditional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {model.relatedProjects && model.relatedProjects.length > 0 && (
         <section
-          className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+          className="border-b border-[var(--color-border-light)] py-14 lg:py-24"
           style={{ backgroundColor: "var(--color-bg)" }}
         >
           <div className="container-site">
@@ -509,7 +529,7 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
                   placeholdersEnabled && Boolean(project.imageSrc) && Boolean(relatedPlaceholder) && placeholderMode === "overlay";
                 const showNeutralFrame = Boolean(relatedPlaceholder) && !showImage && !showPlaceholderOnly;
                 const inner = (
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className={cn("relative overflow-hidden", isFlagship ? "aspect-[5/4] lg:aspect-[16/11]" : "aspect-[4/3]")}>
                     {showImage ? (
                       <Image
                         src={project.imageSrc!}
@@ -553,7 +573,7 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
                           "linear-gradient(to top, rgba(26,23,20,0.85) 0%, rgba(26,23,20,0.20) 50%, transparent 75%)",
                       }}
                     />
-                    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-1.5">
+                    <div className={cn("absolute inset-x-0 bottom-0 flex flex-col gap-1.5", isFlagship ? "p-7 lg:p-8" : "p-6")}>
                       <p className="font-ui text-[0.5625rem] font-medium tracking-[0.18em] uppercase text-[#c8bfb8]">
                         {project.category}
                         {project.year && (
@@ -563,7 +583,8 @@ export function FamilyPage({ model, imagePlaceholders }: FamilyPageProps) {
                       <h3
                         className="text-[#faf8f6]"
                         style={{
-                          fontSize: "1.125rem", lineHeight: 1.25,
+                          ...(isFlagship ? { fontSize: "clamp(1.25rem, 1.8vw, 1.625rem)" } : { fontSize: "1.125rem" }),
+                          lineHeight: 1.25,
                           letterSpacing: "0.02em", fontFamily: "var(--font-heading)",
                         }}
                       >
