@@ -51,7 +51,7 @@ export const sustainabilityPrinciples = [
   {
     number: "05",
     heading: "Designed to last 80 years or more",
-    body: "The most sustainable building is one that does not need to be replaced. Soleta homes are engineered for an 80-year minimum lifespan — with structural systems that can be repaired, extended or reconfigured rather than demolished. The timber frame improves with age when maintained correctly. That maintenance programme is part of what we offer, not an afterthought.",
+    body: "The most sustainable building is one that does not need to be replaced. Soleta homes are designed with an 80-year structural design-life target — with structural systems that can be repaired, extended or reconfigured rather than demolished. Actual service life depends on specification, site conditions and maintenance. The timber frame improves with age when maintained correctly. That maintenance programme is part of what we offer, not an afterthought.",
   },
   {
     number: "06",

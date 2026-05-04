@@ -267,7 +267,7 @@ export const serviceLevels = [
       "Foundation works",
       "Interior design",
       "Landscape coordination",
-      "10-year full warranty",
+      "10-year structural warranty (subject to standard maintenance terms)",
     ],
     price: "On request",
     cta: "Enquire",

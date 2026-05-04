@@ -43,7 +43,7 @@ export const aboutValues = [
   },
   {
     title: "Long-term responsibility",
-    body: "A Soleta home is engineered for a minimum 80-year lifespan. Our aftercare programme continues the relationship after handover. We take a direct interest in whether the home performs as designed — not because it is required, but because a building's long-term performance is the proof of its original quality.",
+    body: "A Soleta home is engineered with an 80-year structural design-life target, subject to specification, site conditions and proper maintenance. Our aftercare programme continues the relationship after handover. We take a direct interest in whether the home performs as designed — not because it is required, but because a building's long-term performance is the proof of its original quality.",
   },
 ];
 
