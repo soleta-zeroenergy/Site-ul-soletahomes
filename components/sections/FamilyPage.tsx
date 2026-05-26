@@ -438,7 +438,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             >
               {model.relatedProjects.map((project, i) => {
                 const inner = (
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[3/2] overflow-hidden">
                     {project.imageSrc ? (
                       <Image
                         src={project.imageSrc}
