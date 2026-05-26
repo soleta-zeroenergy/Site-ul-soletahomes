@@ -1,28 +1,48 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 type GalleryImage = { src: string; alt?: string };
 
 /**
  * Editorial image gallery: full-width lead image + horizontal thumbnail strip.
- * Clicking any image opens a restrained full-screen lightbox with prev/next.
- * Returns null if no images are provided — safe to always render.
+ * Clicking any image opens a full-screen lightbox — fixed overlay, dark backdrop,
+ * object-contain sizing, visible controls, thumbnail rail, keyboard navigation.
  */
 export function ImageGallery({ images }: { images: GalleryImage[] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  const close = useCallback(() => setLightboxIndex(null), []);
+
+  const prev = useCallback(() => {
+    setLightboxIndex((i) => (i !== null ? (i - 1 + images.length) % images.length : null));
+  }, [images.length]);
+
+  const next = useCallback(() => {
+    setLightboxIndex((i) => (i !== null ? (i + 1) % images.length : null));
+  }, [images.length]);
+
   useEffect(() => {
     if (lightboxIndex === null) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape")      setLightboxIndex(null);
-      if (e.key === "ArrowRight")  setLightboxIndex((i) => i !== null ? (i + 1) % images.length : null);
-      if (e.key === "ArrowLeft")   setLightboxIndex((i) => i !== null ? (i - 1 + images.length) % images.length : null);
+      if (e.key === "Escape")     close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft")  prev();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [lightboxIndex, images.length]);
+  }, [lightboxIndex, close, prev, next]);
+
+  // Lock body scroll while lightbox is open
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [lightboxIndex]);
 
   if (!images || images.length === 0) return null;
 
@@ -31,6 +51,7 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
+      {/* ── In-page gallery ─────────────────────────────────────────────── */}
       <div className="flex flex-col gap-2">
 
         {/* Lead image */}
@@ -57,7 +78,7 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
           </span>
         </button>
 
-        {/* Thumbnail strip — horizontal scroll */}
+        {/* Thumbnail strip */}
         {thumbs.length > 0 && (
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {thumbs.map((img, i) => (
@@ -84,55 +105,107 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
 
       </div>
 
-      {/* Lightbox */}
+      {/* ── Lightbox ────────────────────────────────────────────────────── */}
       {lightboxIndex !== null && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label="Image viewer"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/88 p-4"
-          onClick={() => setLightboxIndex(null)}
+          className="fixed inset-0 z-[200] flex flex-col items-center justify-center"
+          style={{ backgroundColor: "rgba(18, 15, 12, 0.94)" }}
+          onClick={close}
         >
+          {/* Close button — top-right, always visible */}
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); close(); }}
+            aria-label="Close gallery"
+            className="absolute right-4 top-4 z-10 flex items-center gap-2 rounded bg-white/10 px-3 py-1.5 font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-white transition-colors duration-150 hover:bg-white/20"
+          >
+            Close <span aria-hidden="true" className="text-[0.875rem] leading-none">✕</span>
+          </button>
+
+          {/* Image area — stops click-to-close propagation */}
           <div
-            className="relative w-full max-w-5xl"
+            className="flex w-full flex-col items-center gap-4 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setLightboxIndex(null)}
-              className="absolute -top-10 right-0 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-white/70 transition-colors duration-200 hover:text-white"
+            {/* Main image — no fixed aspect ratio; constrained by max-w / max-h */}
+            <div
+              className="relative flex items-center justify-center"
+              style={{ width: "90vw", maxWidth: "1100px", maxHeight: "82vh" }}
             >
-              Close ✕
-            </button>
-
-            <div className="relative aspect-[3/2] w-full border border-white/10">
               <Image
                 src={images[lightboxIndex].src}
                 alt={images[lightboxIndex].alt ?? ""}
-                fill
+                width={1800}
+                height={1200}
                 className="object-contain"
+                style={{
+                  maxWidth: "90vw",
+                  maxHeight: "82vh",
+                  width: "auto",
+                  height: "auto",
+                }}
+                sizes="90vw"
+                priority
               />
             </div>
 
+            {/* Navigation row */}
             {images.length > 1 && (
-              <div className="mt-4 flex items-center justify-center gap-8">
+              <div className="flex items-center gap-6">
                 <button
                   type="button"
-                  onClick={() => setLightboxIndex((lightboxIndex - 1 + images.length) % images.length)}
-                  className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-white/60 transition-colors duration-200 hover:text-white"
+                  onClick={prev}
+                  aria-label="Previous image"
+                  className="flex items-center gap-2 rounded bg-white/10 px-4 py-2 font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-white transition-colors duration-150 hover:bg-white/20"
                 >
-                  ← Prev
+                  <span aria-hidden="true">←</span> Prev
                 </button>
-                <span className="font-ui text-[0.625rem] text-white/40">
+
+                <span className="font-ui text-[0.5625rem] tabular-nums text-white/50">
                   {lightboxIndex + 1} / {images.length}
                 </span>
+
                 <button
                   type="button"
-                  onClick={() => setLightboxIndex((lightboxIndex + 1) % images.length)}
-                  className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-white/60 transition-colors duration-200 hover:text-white"
+                  onClick={next}
+                  aria-label="Next image"
+                  className="flex items-center gap-2 rounded bg-white/10 px-4 py-2 font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-white transition-colors duration-150 hover:bg-white/20"
                 >
-                  Next →
+                  Next <span aria-hidden="true">→</span>
                 </button>
+              </div>
+            )}
+
+            {/* Thumbnail rail */}
+            {images.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                {images.map((img, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setLightboxIndex(i)}
+                    aria-label={`Go to image ${i + 1}${img.alt ? `: ${img.alt}` : ""}`}
+                    className="relative shrink-0 overflow-hidden transition-opacity duration-150"
+                    style={{
+                      outline: i === lightboxIndex ? "2px solid rgba(255,255,255,0.7)" : "2px solid transparent",
+                      outlineOffset: "2px",
+                      opacity: i === lightboxIndex ? 1 : 0.45,
+                    }}
+                  >
+                    <div className="relative h-[54px] w-[80px]">
+                      <Image
+                        src={img.src}
+                        alt={img.alt ?? ""}
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    </div>
+                  </button>
+                ))}
               </div>
             )}
           </div>
