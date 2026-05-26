@@ -78,28 +78,30 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
           </span>
         </button>
 
-        {/* Thumbnail strip — horizontal scroll, never wraps */}
+        {/* Thumbnail strip — centres when thumbnails fit, scrolls when they overflow */}
         {thumbs.length > 0 && (
-          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {thumbs.map((img, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setLightboxIndex(i + 1)}
-                aria-label={`View image ${i + 2} at full size${img.alt ? `: ${img.alt}` : ""}`}
-                className="group relative shrink-0 overflow-hidden border border-[var(--color-border-light)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand)]"
-              >
-                <div className="relative h-[72px] w-[108px]">
-                  <Image
-                    src={img.src}
-                    alt={img.alt ?? ""}
-                    fill
-                    sizes="108px"
-                    className="object-cover transition-opacity duration-200 group-hover:opacity-75"
-                  />
-                </div>
-              </button>
-            ))}
+          <div className="w-full overflow-x-auto pb-1 scrollbar-hide">
+            <div className="mx-auto flex min-w-max flex-nowrap justify-center gap-2">
+              {thumbs.map((img, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setLightboxIndex(i + 1)}
+                  aria-label={`View image ${i + 2} at full size${img.alt ? `: ${img.alt}` : ""}`}
+                  className="group relative shrink-0 overflow-hidden border border-[var(--color-border-light)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand)]"
+                >
+                  <div className="relative h-[72px] w-[108px]">
+                    <Image
+                      src={img.src}
+                      alt={img.alt ?? ""}
+                      fill
+                      sizes="108px"
+                      className="object-cover transition-opacity duration-200 group-hover:opacity-75"
+                    />
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
@@ -179,33 +181,35 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
               </div>
             )}
 
-            {/* Thumbnail rail — horizontal scroll, never wraps */}
+            {/* Thumbnail rail — centres when thumbnails fit, scrolls when they overflow */}
             {images.length > 1 && (
-              <div className="flex flex-nowrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
-                {images.map((img, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setLightboxIndex(i)}
-                    aria-label={`Go to image ${i + 1}${img.alt ? `: ${img.alt}` : ""}`}
-                    className="relative shrink-0 overflow-hidden transition-opacity duration-150"
-                    style={{
-                      outline: i === lightboxIndex ? "2px solid rgba(255,255,255,0.7)" : "2px solid transparent",
-                      outlineOffset: "2px",
-                      opacity: i === lightboxIndex ? 1 : 0.45,
-                    }}
-                  >
-                    <div className="relative h-[54px] w-[80px]">
-                      <Image
-                        src={img.src}
-                        alt={img.alt ?? ""}
-                        fill
-                        sizes="80px"
-                        className="object-cover"
-                      />
-                    </div>
-                  </button>
-                ))}
+              <div className="w-full overflow-x-auto pb-1 scrollbar-hide">
+                <div className="mx-auto flex min-w-max flex-nowrap justify-center gap-2">
+                  {images.map((img, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setLightboxIndex(i)}
+                      aria-label={`Go to image ${i + 1}${img.alt ? `: ${img.alt}` : ""}`}
+                      className="relative shrink-0 overflow-hidden transition-opacity duration-150"
+                      style={{
+                        outline: i === lightboxIndex ? "2px solid rgba(255,255,255,0.7)" : "2px solid transparent",
+                        outlineOffset: "2px",
+                        opacity: i === lightboxIndex ? 1 : 0.45,
+                      }}
+                    >
+                      <div className="relative h-[54px] w-[80px]">
+                        <Image
+                          src={img.src}
+                          alt={img.alt ?? ""}
+                          fill
+                          sizes="80px"
+                          className="object-cover"
+                        />
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>

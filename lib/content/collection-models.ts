@@ -314,7 +314,7 @@ export const signatureModel: HomeModel = {
       alt: "Soleta Signature exterior with timber structure and wide glazing",
     },
     {
-      src: "https://img.soletahomes.com/signature-gallery-interior-02-1800x1013.webp",
+      src: "https://img.soletahomes.com/signature-gallery-interior-02-v2-1800x1013.webp",
       alt: "Soleta Signature interior with warm timber structure and natural light",
     },
     {
