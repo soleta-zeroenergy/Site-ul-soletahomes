@@ -319,11 +319,35 @@ export const signatureModel: HomeModel = {
     },
     {
       src: "https://img.soletahomes.com/signature-gallery-detail-03-1536x1024.webp",
-      alt: "Soleta Signature architectural detail with timber and glass",
+      alt: "Soleta Signature architectural detail with timber, stone and glass",
     },
     {
       src: "https://img.soletahomes.com/signature-gallery-bathroom-04-1122x1402.webp",
       alt: "Soleta Signature bathroom with natural finishes",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-exterior-05-1672x941.webp",
+      alt: "Soleta Signature exterior from a second architectural angle",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-06-1672x941.webp",
+      alt: "Soleta Signature timber and glazing detail",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-07-1448x1086.webp",
+      alt: "Soleta Signature material and architectural detail",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-08-1122x1402.webp",
+      alt: "Soleta Signature vertical interior detail with natural finishes",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-09-1672x941.webp",
+      alt: "Soleta Signature exterior and material detail",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-10-1448x1086.webp",
+      alt: "Soleta Signature interior detail with warm timber surfaces",
     },
   ],
   floorPlans: [],  // No assets — floor plan section omitted
@@ -374,20 +398,19 @@ export const signatureModel: HomeModel = {
 
   relatedProjects: [
     {
-      imageSrc: "https://img.soletahomes.com/signature-related-built-01-1672x841.webp",
+      imageSrc: "https://img.soletahomes.com/signature-related-built-01-3x2.webp",
       imageAlt: "Built Soleta Signature residence exterior",
-      title:    "Built Signature work",
+      title:    "Signature Residence I",
       location: "Europe",
       category: "Private Residence",
-      href:     "/built-projects/private-residences/soleta-aquarius",
+      href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "/images/Aurora800x600.webp",
-      imageAlt: "House Aurora",
-      title:    "House Aurora",
+      imageSrc: "https://img.soletahomes.com/signature-related-built-02-3x2.webp",
+      imageAlt: "Built Soleta Signature home in a natural setting",
+      title:    "Signature Residence II",
       location: "Europe",
       category: "Private Residence",
-      year:     2021,
       href:     "/built-projects/private-residences",
     },
   ],

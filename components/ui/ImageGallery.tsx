@@ -78,9 +78,9 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
           </span>
         </button>
 
-        {/* Thumbnail strip */}
+        {/* Thumbnail strip — horizontal scroll, never wraps */}
         {thumbs.length > 0 && (
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {thumbs.map((img, i) => (
               <button
                 key={i}
@@ -89,12 +89,12 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
                 aria-label={`View image ${i + 2} at full size${img.alt ? `: ${img.alt}` : ""}`}
                 className="group relative shrink-0 overflow-hidden border border-[var(--color-border-light)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand)]"
               >
-                <div className="relative h-[90px] w-[135px]">
+                <div className="relative h-[72px] w-[108px]">
                   <Image
                     src={img.src}
                     alt={img.alt ?? ""}
                     fill
-                    sizes="135px"
+                    sizes="108px"
                     className="object-cover transition-opacity duration-200 group-hover:opacity-75"
                   />
                 </div>
@@ -179,9 +179,9 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
               </div>
             )}
 
-            {/* Thumbnail rail */}
+            {/* Thumbnail rail — horizontal scroll, never wraps */}
             {images.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+              <div className="flex flex-nowrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
                 {images.map((img, i) => (
                   <button
                     key={i}
