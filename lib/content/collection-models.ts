@@ -262,8 +262,8 @@ export const signatureModel: HomeModel = {
     "For landmark sites and clients who want something genuinely distinct. Every Signature home is a one-of-a-kind collaboration.",
   badge: "Bespoke · Premium",
 
-  heroImageSrc: "/images/Signature800x533.webp",
-  heroImageAlt: "Signature Soleta home — bespoke timber architecture",
+  heroImageSrc: "https://img.soletahomes.com/signature-hero-2975x1190-16x9.webp",
+  heroImageAlt: "Soleta Signature timber residence in a natural landscape",
 
   priceDisplay: "on-request",
 
@@ -308,7 +308,24 @@ export const signatureModel: HomeModel = {
     { label: "Lifespan",     value: "100+ years" },
   ],
 
-  gallery:    [],  // Populate with real images to activate the gallery section
+  gallery: [
+    {
+      src: "https://img.soletahomes.com/signature-gallery-exterior-01-1800x943.webp",
+      alt: "Soleta Signature exterior with timber structure and wide glazing",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-interior-02-1800x1013.webp",
+      alt: "Soleta Signature interior with warm timber structure and natural light",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-detail-03-1536x1024.webp",
+      alt: "Soleta Signature architectural detail with timber and glass",
+    },
+    {
+      src: "https://img.soletahomes.com/signature-gallery-bathroom-04-1122x1402.webp",
+      alt: "Soleta Signature bathroom with natural finishes",
+    },
+  ],
   floorPlans: [],  // No assets — floor plan section omitted
 
   variants: [
@@ -357,13 +374,12 @@ export const signatureModel: HomeModel = {
 
   relatedProjects: [
     {
-      imageSrc: "/images/Aquarius800x600.webp",
-      imageAlt: "Villa Aquarius",
-      title:    "Villa AQUARIUS",
+      imageSrc: "https://img.soletahomes.com/signature-related-built-01-1672x841.webp",
+      imageAlt: "Built Soleta Signature residence exterior",
+      title:    "Built Signature work",
       location: "Europe",
       category: "Private Residence",
-      year:     2014,
-      href:     "/built-projects/private-residences",
+      href:     "/built-projects/private-residences/soleta-aquarius",
     },
     {
       imageSrc: "/images/Aurora800x600.webp",
