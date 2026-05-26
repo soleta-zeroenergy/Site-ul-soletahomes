@@ -54,19 +54,35 @@ export function FamilyPage({ model }: { model: HomeModel }) {
       </section>
 
       {/* ── 2. Hero image ─────────────────────────────────────────────────── */}
-      {/* Height capped — avoids the enormous full-width aspect-ratio band      */}
+      {/* Height capped — avoids the enormous full-width aspect-ratio band.
+          Mobile height is reduced slightly when a mobile object-position is set
+          to compensate for the narrower viewport crop on wide panoramic images.  */}
       {model.heroImageSrc && (
         <div
           className="relative w-full overflow-hidden"
-          style={{ height: "clamp(260px, 38vw, 520px)" }}
+          style={{
+            // When a mobile object-position is set, reduce the minimum height on small
+            // viewports so the wide panoramic image feels less zoomed-in on mobile.
+            // Desktop clamp ceiling (520px) is unchanged in both cases.
+            height: model.heroMobileObjectPosition
+              ? "clamp(200px, 38vw, 520px)"
+              : "clamp(260px, 38vw, 520px)",
+          }}
         >
+          {/* Mobile object-position override — below md breakpoint only */}
+          {model.heroMobileObjectPosition && (
+            <style>{`@media (max-width: 767px) { .family-hero-mobile-op-${model.slug} { object-position: ${model.heroMobileObjectPosition} !important; } }`}</style>
+          )}
           <Image
             src={model.heroImageSrc}
             alt={model.heroImageAlt ?? model.eyebrow}
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className={cn(
+              "object-cover",
+              model.heroMobileObjectPosition && `family-hero-mobile-op-${model.slug}`
+            )}
           />
         </div>
       )}

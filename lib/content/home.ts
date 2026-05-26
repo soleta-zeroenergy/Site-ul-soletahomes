@@ -17,6 +17,9 @@ export const homeHero: HeroProps = {
   secondaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
   imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
   imageAlt:     "Soleta ZeroEnergy home",
+  // Mobile: preserve left side of the wide panoramic image; reduce height to reduce crop.
+  mobileObjectPosition: "25% center",
+  mobileSizeClass:      "min-h-[78svh]",
 };
 
 /* ── 2. Proof strip ───────────────────────────────────────────────────────── */

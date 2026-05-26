@@ -16,6 +16,12 @@ export type HeroProps = {
   imageOverlayVariant?: "default" | "localized";
   align?:        "left" | "center" | string;
   size?:         "full" | "large" | "medium" | string;
+  /* Mobile-only image framing. When set, overrides object-position below md breakpoint.
+     Example: "25% center". Desktop always uses default object-position (center). */
+  mobileObjectPosition?: string;
+  /* Mobile-only hero height class. When set, replaces size-derived min-height on mobile.
+     Example: "min-h-[78svh]". Desktop keeps the size-derived min-height. */
+  mobileSizeClass?: string;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -23,6 +29,13 @@ const sizeMap = {
   full:   "min-h-[100svh]",
   large:  "min-h-[85svh]",
   medium: "min-h-[60svh]",
+};
+
+// md-prefixed counterparts used when mobileSizeClass overrides mobile height
+const mdSizeMap = {
+  full:   "md:min-h-[100svh]",
+  large:  "md:min-h-[85svh]",
+  medium: "md:min-h-[60svh]",
 };
 
 /* ── Helpers ───────────────────────────────────────────────────────────────── */
@@ -53,17 +66,27 @@ export function Hero({
   imageOverlayVariant = "default",
   align = "left",
   size = "full",
+  mobileObjectPosition,
+  mobileSizeClass,
 }: HeroProps) {
   const centered = align === "center";
+  const sizeKey  = (size in sizeMap ? size : "full") as keyof typeof sizeMap;
 
   return (
     <section
       className={cn(
         "relative flex items-end overflow-hidden bg-[#1a1714]",
-        sizeMap[size]
+        mobileSizeClass
+          ? cn(mobileSizeClass, mdSizeMap[sizeKey])
+          : sizeMap[sizeKey]
       )}
       aria-label={eyebrow ?? "Hero"}
     >
+      {/* Mobile object-position override — applied below md breakpoint only */}
+      {imageSrc && mobileObjectPosition && (
+        <style>{`@media (max-width: 767px) { .hero-mobile-op { object-position: ${mobileObjectPosition} !important; } }`}</style>
+      )}
+
       {/* Background image */}
       {imageSrc && (
         <Image
@@ -71,7 +94,7 @@ export function Hero({
           alt={imageAlt}
           fill
           priority
-          className="object-cover"
+          className={cn("object-cover", mobileObjectPosition && "hero-mobile-op")}
         />
       )}
 

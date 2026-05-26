@@ -41,6 +41,9 @@ export type HomeModel = {
   /* Hero — omitted gracefully when not set */
   heroImageSrc?: string;
   heroImageAlt?: string;
+  /* Mobile-only hero image framing. Overrides object-position below md breakpoint.
+     Example: "75% center". When absent, default browser object-position applies. */
+  heroMobileObjectPosition?: string;
 
   /* Pricing display rule.
      "shown"      → render variant.price (only set when real prices exist)
@@ -264,6 +267,8 @@ export const signatureModel: HomeModel = {
 
   heroImageSrc: "https://img.soletahomes.com/signature-hero-2975x1190-16x9.webp",
   heroImageAlt: "Soleta Signature timber residence in a natural landscape",
+  // Mobile: preserve right side of the wide panoramic hero; keep architecture visible.
+  heroMobileObjectPosition: "75% center",
 
   priceDisplay: "on-request",
 
