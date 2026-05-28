@@ -576,7 +576,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
 
       {/* ── Sticky mobile CTA ─────────────────────────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-white/10 bg-[var(--soleta-forest)] p-3 md:hidden">
-        <Link href="/contact" className="btn-primary flex-1 justify-center text-center">
+        <Link href="/request-private-offer" className="btn-primary flex-1 justify-center text-center">
           Request Offer
         </Link>
         <Link
