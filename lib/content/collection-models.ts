@@ -118,7 +118,7 @@ export const classicModel: HomeModel = {
   heroAspectRatio: "3000 / 953",
   // Mobile: override panoramic aspect-ratio with a usable height; object-cover crops at 30% left.
   heroMobileHeight:         "clamp(220px, 52vw, 340px)",
-  heroMobileObjectPosition: "30% center",
+  heroMobileObjectPosition: "center center",
 
   priceDisplay: "on-request",
 
