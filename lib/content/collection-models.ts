@@ -105,8 +105,10 @@ export const classicModel: HomeModel = {
     "Classic is the most requested Soleta family of homes. It offers generous proportions, is built with enduring materials, and its architecture makes it feel naturally at home in any landscape.",
   badge: "Most popular",
 
-  heroImageSrc: "/images/Classic800x533.webp",
+  heroImageSrc: "https://img.soletahomes.com/classic-hero-3000x953.webp",
   heroImageAlt: "Exterior of a Classic Soleta home",
+  // Mobile: wide panoramic — shift left to keep facade and roof structure readable.
+  heroMobileObjectPosition: "30% center",
 
   priceDisplay: "on-request",
 
@@ -151,7 +153,52 @@ export const classicModel: HomeModel = {
     { label: "Foundation",    value: "Ground screws (KSF) or concrete" },
   ],
 
-  gallery:    [],  // Populate with real images to activate the gallery section
+  gallery: [
+    {
+      src: "https://img.soletahomes.com/classic-gallery-exterior-01-1800x1200.webp",
+      alt: "Classic Soleta home exterior — front facade with timber structure",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-exterior-02-1800x1200.webp",
+      alt: "Classic Soleta home exterior — side elevation in natural landscape",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-03-1800x1012.webp",
+      alt: "Classic Soleta home interior — open living area with natural light",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-exterior-04-1800x1200.webp",
+      alt: "Classic Soleta home exterior — architectural detail and cladding",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-exterior-05-1800x1201.webp",
+      alt: "Classic Soleta home exterior — terrace and glazing",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-06-1800x1198.webp",
+      alt: "Classic Soleta home interior — dining and kitchen space",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-exterior-07-1800x1201.webp",
+      alt: "Classic Soleta home exterior — garden and landscape view",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-08-1800x1198.webp",
+      alt: "Classic Soleta home interior — bedroom with timber finishes",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-09-1800x1207.webp",
+      alt: "Classic Soleta home interior — detail with natural materials",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-10-1800x1198.webp",
+      alt: "Classic Soleta home interior — warm timber surfaces and natural light",
+    },
+    {
+      src: "https://img.soletahomes.com/classic-gallery-interior-11-1800x1013.webp",
+      alt: "Classic Soleta home interior — living space with exposed structure",
+    },
+  ],
   floorPlans: [],  // No assets yet — section omitted at render time
 
   variants: [
@@ -202,21 +249,19 @@ export const classicModel: HomeModel = {
 
   relatedProjects: [
     {
-      imageSrc: "/images/Aurora800x600.webp",
-      imageAlt: "House Aurora",
-      title:    "House Aurora",
+      imageSrc: "https://img.soletahomes.com/classic-related-built-01-1456x971-3x2.webp",
+      imageAlt: "Built Classic Soleta residence exterior",
+      title:    "Classic Mountain Retreat",
       location: "Europe",
       category: "Private Residence",
-      year:     2021,
       href:     "/built-projects/private-residences",
     },
     {
-      imageSrc: "/images/Aquarius800x600.webp",
-      imageAlt: "Villa Aquarius",
-      title:    "Villa AQUARIUS",
+      imageSrc: "https://img.soletahomes.com/classic-related-built-02-1456x971-3x2.webp",
+      imageAlt: "Built Classic Soleta home in a forest setting",
+      title:    "Classic Forest Residence",
       location: "Europe",
       category: "Private Residence",
-      year:     2014,
       href:     "/built-projects/private-residences",
     },
   ],
