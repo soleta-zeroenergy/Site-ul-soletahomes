@@ -44,6 +44,10 @@ export type HomeModel = {
   /* Mobile-only hero image framing. Overrides object-position below md breakpoint.
      Example: "75% center". When absent, default browser object-position applies. */
   heroMobileObjectPosition?: string;
+  /* When set, the hero container uses this aspect-ratio instead of a fixed clamp() height.
+     Use for panoramic images where the full frame must be visible (no crop).
+     Example: "3000 / 953". When absent, the default clamp() height behavior applies. */
+  heroAspectRatio?: string;
 
   /* Pricing display rule.
      "shown"      → render variant.price (only set when real prices exist)
@@ -105,8 +109,9 @@ export const classicModel: HomeModel = {
     "Classic is the most requested Soleta family of homes. It offers generous proportions, is built with enduring materials, and its architecture makes it feel naturally at home in any landscape.",
   badge: "Most popular",
 
-  heroImageSrc: "https://img.soletahomes.com/classic-hero-3000x953.webp",
-  heroImageAlt: "Exterior of a Classic Soleta home",
+  heroImageSrc:    "https://img.soletahomes.com/classic-hero-3000x953.webp",
+  heroImageAlt:    "Exterior of a Classic Soleta home",
+  heroAspectRatio: "3000 / 953",
   // Mobile: wide panoramic — shift left to keep facade and roof structure readable.
   heroMobileObjectPosition: "30% center",
 

@@ -56,18 +56,21 @@ export function FamilyPage({ model }: { model: HomeModel }) {
       {/* ── 2. Hero image ─────────────────────────────────────────────────── */}
       {/* Height capped — avoids the enormous full-width aspect-ratio band.
           Mobile height is reduced slightly when a mobile object-position is set
-          to compensate for the narrower viewport crop on wide panoramic images.  */}
+          to compensate for the narrower viewport crop on wide panoramic images.
+          When heroAspectRatio is set, the container uses that ratio instead of a
+          fixed clamp() height, and the image is not cropped (object-contain). */}
       {model.heroImageSrc && (
         <div
           className="relative w-full overflow-hidden"
-          style={{
-            // When a mobile object-position is set, reduce the minimum height on small
-            // viewports so the wide panoramic image feels less zoomed-in on mobile.
-            // Desktop clamp ceiling (520px) is unchanged in both cases.
-            height: model.heroMobileObjectPosition
-              ? "clamp(200px, 38vw, 520px)"
-              : "clamp(260px, 38vw, 520px)",
-          }}
+          style={
+            model.heroAspectRatio
+              ? { aspectRatio: model.heroAspectRatio }
+              : {
+                  height: model.heroMobileObjectPosition
+                    ? "clamp(200px, 38vw, 520px)"
+                    : "clamp(260px, 38vw, 520px)",
+                }
+          }
         >
           {/* Mobile object-position override — below md breakpoint only */}
           {model.heroMobileObjectPosition && (
@@ -80,7 +83,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             priority
             sizes="100vw"
             className={cn(
-              "object-cover",
+              model.heroAspectRatio ? "object-contain" : "object-cover",
               model.heroMobileObjectPosition && `family-hero-mobile-op-${model.slug}`
             )}
           />
