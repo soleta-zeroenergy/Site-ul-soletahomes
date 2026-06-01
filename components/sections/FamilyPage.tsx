@@ -55,13 +55,15 @@ export function FamilyPage({ model }: { model: HomeModel }) {
 
       {/* ── 2. Hero image ─────────────────────────────────────────────────── */}
       {/* Height capped — avoids the enormous full-width aspect-ratio band.
-          Mobile height is reduced slightly when a mobile object-position is set
-          to compensate for the narrower viewport crop on wide panoramic images.
-          When heroAspectRatio is set, the container uses that ratio instead of a
-          fixed clamp() height, and the image is not cropped (object-contain). */}
+          When heroAspectRatio is set the container uses that ratio on desktop so the
+          full panoramic image is uncropped. heroMobileHeight overrides height below md
+          so a panoramic ratio doesn't collapse to an unusably thin strip on phones. */}
       {model.heroImageSrc && (
         <div
-          className="relative w-full overflow-hidden"
+          className={cn(
+            "relative w-full overflow-hidden",
+            model.heroMobileHeight && `family-hero-mh-${model.slug}`
+          )}
           style={
             model.heroAspectRatio
               ? { aspectRatio: model.heroAspectRatio }
@@ -72,6 +74,12 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 }
           }
         >
+          {/* Mobile height override — restores usable height on phones when heroAspectRatio
+              would produce a too-short container at narrow viewports. Also switches the
+              image back to object-cover so the mobile crop fills the area correctly. */}
+          {model.heroMobileHeight && (
+            <style>{`@media (max-width: 767px) { .family-hero-mh-${model.slug} { height: ${model.heroMobileHeight} !important; aspect-ratio: unset !important; } .family-hero-mh-${model.slug} img { object-fit: cover !important; } }`}</style>
+          )}
           {/* Mobile object-position override — below md breakpoint only */}
           {model.heroMobileObjectPosition && (
             <style>{`@media (max-width: 767px) { .family-hero-mobile-op-${model.slug} { object-position: ${model.heroMobileObjectPosition} !important; } }`}</style>

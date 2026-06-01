@@ -48,6 +48,10 @@ export type HomeModel = {
      Use for panoramic images where the full frame must be visible (no crop).
      Example: "3000 / 953". When absent, the default clamp() height behavior applies. */
   heroAspectRatio?: string;
+  /* Mobile-only height override for panoramic heroes where the native aspect-ratio would
+     produce an unusably short container on small viewports. Only applied below md (767px).
+     Example: "clamp(220px, 52vw, 340px)". When absent, aspect-ratio drives height on all viewports. */
+  heroMobileHeight?: string;
 
   /* Pricing display rule.
      "shown"      → render variant.price (only set when real prices exist)
@@ -112,7 +116,8 @@ export const classicModel: HomeModel = {
   heroImageSrc:    "https://img.soletahomes.com/classic-hero-3000x953.webp",
   heroImageAlt:    "Exterior of a Classic Soleta home",
   heroAspectRatio: "3000 / 953",
-  // Mobile: wide panoramic — shift left to keep facade and roof structure readable.
+  // Mobile: override panoramic aspect-ratio with a usable height; object-cover crops at 30% left.
+  heroMobileHeight:         "clamp(220px, 52vw, 340px)",
   heroMobileObjectPosition: "30% center",
 
   priceDisplay: "on-request",
