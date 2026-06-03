@@ -509,8 +509,9 @@ export const holidayRetreatModel: HomeModel = {
     "Compact, calm architecture designed for rest, nature, and an authentic connection to the landscape.",
   badge: "1–3 bedrooms",
 
-  heroImageSrc: "/images/Retreat800x533.webp",
+  heroImageSrc: "https://img.soletahomes.com/retreat_hero_01_3000x1045.webp",
   heroImageAlt: "A Soleta Holiday & Retreat home in a natural setting",
+  heroMobileObjectPosition: "center center",
 
   priceDisplay: "on-request",
 
@@ -555,7 +556,52 @@ export const holidayRetreatModel: HomeModel = {
     { label: "Lifespan",    value: "80+ years" },
   ],
 
-  gallery:    [],  // Populate with real images to activate the gallery section
+  gallery: [
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-01-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — natural setting",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-02-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — facade and terrace",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-03-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — landscape view",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-04-1800x1200.webp",
+      alt: "Holiday & Retreat home interior — living space with natural light",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-05-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — terrace and surroundings",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-06-1800x1200.webp",
+      alt: "Holiday & Retreat home interior — open plan with timber finishes",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-07-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — garden and approach",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-08-1800x1200.webp",
+      alt: "Holiday & Retreat home interior — bedroom with natural materials",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-09-1800x1200.webp",
+      alt: "Holiday & Retreat home interior — detail with warm timber surfaces",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-10-1800x1200.webp",
+      alt: "Holiday & Retreat home exterior — architectural detail",
+    },
+    {
+      src: "https://img.soletahomes.com/retreat-gallery-11-1800x1200.webp",
+      alt: "Holiday & Retreat home — view from site",
+    },
+  ],
   floorPlans: [],  // No assets — floor plan section omitted
 
   variants: [
@@ -603,12 +649,20 @@ export const holidayRetreatModel: HomeModel = {
 
   relatedProjects: [
     {
-      imageSrc: "/images/Life800x600.webp",
-      imageAlt: "House Life",
+      imageSrc: "https://img.soletahomes.com/retreat-related-built-1-1456x971.webp",
+      imageAlt: "House Life — built Holiday & Retreat home",
       title:    "House Life",
       location: "Europe",
       category: "Holiday Home",
       year:     2024,
+      href:     "/built-projects/holiday-homes",
+    },
+    {
+      imageSrc: "https://img.soletahomes.com/retreat-related-built-2-1456x971.webp",
+      imageAlt: "Forest Retreat House — built Holiday & Retreat home",
+      title:    "Forest Retreat House",
+      location: "Europe",
+      category: "Holiday Home",
       href:     "/built-projects/holiday-homes",
     },
   ],
