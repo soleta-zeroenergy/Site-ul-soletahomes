@@ -212,10 +212,10 @@ export const classicModel: HomeModel = {
   floorPlans: [],  // No assets yet — section omitted at render time
 
   variants: [
-    { name: "Soleta Almara",  area: "48 m²",  bedrooms: "1–2 bedrooms", price: "From €X" },
-    { name: "Soleta Virelia", area: "72 m²",  bedrooms: "2–3 bedrooms", price: "From €X" },
-    { name: "Soleta Cortina", area: "95 m²",  bedrooms: "3 bedrooms",   price: "From €X" },
-    { name: "Soleta Lumira",  area: "120 m²", bedrooms: "3–4 bedrooms", price: "From €X" },
+    { name: "Soleta Classic\nCasa Almara",  area: "48 m²",  bedrooms: "1–2 bedrooms", price: "From €X" },
+    { name: "Soleta Classic\nCasa Virelia", area: "72 m²",  bedrooms: "2–3 bedrooms", price: "From €X" },
+    { name: "Soleta Classic\nCasa Cortina", area: "95 m²",  bedrooms: "3 bedrooms",   price: "From €X" },
+    { name: "Soleta Classic\nCasa Lumira",  area: "120 m²", bedrooms: "3–4 bedrooms", price: "From €X" },
   ],
 
   customizable: [
@@ -261,7 +261,7 @@ export const classicModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/classic-related-built-01-1456x971-3x2.webp",
       imageAlt: "Built Classic Soleta residence exterior",
-      title:    "Soleta Almara",
+      title:    "Soleta Classic Casa Almara",
       location: "Europe",
       category: "Private Residence",
       href:     "/built-projects/private-residences",
@@ -269,7 +269,7 @@ export const classicModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/classic-related-built-02-1456x971-3x2.webp",
       imageAlt: "Built Classic Soleta home in a forest setting",
-      title:    "Soleta Virelia",
+      title:    "Soleta Classic Casa Virelia",
       location: "Europe",
       category: "Private Residence",
       href:     "/built-projects/private-residences",
