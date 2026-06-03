@@ -605,10 +605,10 @@ export const holidayRetreatModel: HomeModel = {
   floorPlans: [],  // No assets — floor plan section omitted
 
   variants: [
-    { name: "Nest 24",    area: "24 m²", bedrooms: "1 bedroom",    price: "From €X" },
-    { name: "Retreat 48", area: "48 m²", bedrooms: "1–2 bedrooms", price: "From €X" },
-    { name: "Lodge 72",   area: "72 m²", bedrooms: "2–3 bedrooms", price: "From €X" },
-    { name: "Retreat 95", area: "95 m²", bedrooms: "3 bedrooms",   price: "From €X" },
+    { name: "Soleta Holiday\nCasa Avelon", area: "24 m²", bedrooms: "1 bedroom",    price: "From €X" },
+    { name: "Soleta Holiday\nCasa Almora", area: "48 m²", bedrooms: "1–2 bedrooms", price: "From €X" },
+    { name: "Soleta Holiday\nCasa Elara",  area: "72 m²", bedrooms: "2–3 bedrooms", price: "From €X" },
+    { name: "Soleta Holiday\nCasa Norvia", area: "95 m²", bedrooms: "3 bedrooms",   price: "From €X" },
   ],
 
   customizable: [
@@ -651,7 +651,7 @@ export const holidayRetreatModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/retreat-related-built-1-1456x971.webp",
       imageAlt: "House Life — built Holiday & Retreat home",
-      title:    "House Life",
+      title:    "Soleta Holiday Casa Avelon",
       location: "Europe",
       category: "Holiday Home",
       year:     2024,
@@ -660,7 +660,7 @@ export const holidayRetreatModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/retreat-related-built-2-1456x971.webp",
       imageAlt: "Forest Retreat House — built Holiday & Retreat home",
-      title:    "Forest Retreat House",
+      title:    "Soleta Holiday Casa Almora",
       location: "Europe",
       category: "Holiday Home",
       href:     "/built-projects/holiday-homes",
