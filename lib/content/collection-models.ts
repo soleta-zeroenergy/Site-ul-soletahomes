@@ -320,9 +320,11 @@ export const signatureModel: HomeModel = {
     "For landmark sites and clients who want something genuinely distinct. Every Signature home is a one-of-a-kind collaboration.",
   badge: "Bespoke · Premium",
 
-  heroImageSrc: "https://img.soletahomes.com/signature-hero-2975x1190-16x9.webp",
-  heroImageAlt: "Soleta Signature timber residence in a natural landscape",
-  // Mobile: preserve right side of the wide panoramic hero; keep architecture visible.
+  heroImageSrc:    "https://img.soletahomes.com/signature-hero-2975x1190-16x9.webp",
+  heroImageAlt:    "Soleta Signature timber residence in a natural landscape",
+  heroAspectRatio: "2975 / 1190",
+  // Mobile: override panoramic aspect-ratio with usable height; preserve right-side framing.
+  heroMobileHeight:         "clamp(220px, 52vw, 340px)",
   heroMobileObjectPosition: "75% center",
 
   priceDisplay: "on-request",
