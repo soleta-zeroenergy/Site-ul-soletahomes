@@ -511,8 +511,10 @@ export const holidayRetreatModel: HomeModel = {
     "Compact, calm architecture designed for rest, nature, and an authentic connection to the landscape.",
   badge: "1–3 bedrooms",
 
-  heroImageSrc: "https://img.soletahomes.com/retreat_hero_01_3000x1045.webp",
-  heroImageAlt: "A Soleta Holiday & Retreat home in a natural setting",
+  heroImageSrc:    "https://img.soletahomes.com/retreat_hero_01_3000x1045.webp",
+  heroImageAlt:    "A Soleta Holiday & Retreat home in a natural setting",
+  heroAspectRatio: "3000 / 1045",
+  heroMobileHeight:         "clamp(220px, 52vw, 340px)",
   heroMobileObjectPosition: "center center",
 
   priceDisplay: "on-request",
