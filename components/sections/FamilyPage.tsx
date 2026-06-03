@@ -242,7 +242,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 className="flex flex-col gap-3 bg-[var(--soleta-cream)] p-8"
               >
                 <span
-                  className="font-heading text-[1.375rem] text-[var(--color-text)]"
+                  className="font-heading text-[1.375rem] text-[var(--color-text)] whitespace-pre-line"
                   style={{ lineHeight: 1.2 }}
                 >
                   {variant.name}

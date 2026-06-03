@@ -413,9 +413,9 @@ export const signatureModel: HomeModel = {
   floorPlans: [],  // No assets — floor plan section omitted
 
   variants: [
-    { name: "Signature S",  area: "120–200 m²", bedrooms: "3–4 bedrooms", price: "On request" },
-    { name: "Signature L",  area: "200–350 m²", bedrooms: "4–6 bedrooms", price: "On request" },
-    { name: "Signature XL", area: "350 m²+",    bedrooms: "6+ bedrooms",  price: "On request" },
+    { name: "Soleta Signature\nCasa Altavira",   area: "120–200 m²", bedrooms: "3–4 bedrooms", price: "On request" },
+    { name: "Soleta Signature\nCasa Montevera",  area: "200–350 m²", bedrooms: "4–6 bedrooms", price: "On request" },
+    { name: "Soleta Signature\nCasa Bellavista", area: "350 m²+",    bedrooms: "6+ bedrooms",  price: "On request" },
   ],
 
   customizable: [
@@ -460,7 +460,7 @@ export const signatureModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/signature-related-built-01-3x2.webp",
       imageAlt: "Built Soleta Signature residence exterior",
-      title:    "Signature Residence I",
+      title:    "Soleta Signature Casa Altavira",
       location: "Europe",
       category: "Private Residence",
       href:     "/built-projects/private-residences",
@@ -468,7 +468,7 @@ export const signatureModel: HomeModel = {
     {
       imageSrc: "https://img.soletahomes.com/signature-related-built-02-3x2.webp",
       imageAlt: "Built Soleta Signature home in a natural setting",
-      title:    "Signature Residence II",
+      title:    "Soleta Signature Casa Montevera",
       location: "Europe",
       category: "Private Residence",
       href:     "/built-projects/private-residences",
