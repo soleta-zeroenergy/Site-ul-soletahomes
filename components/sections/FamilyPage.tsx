@@ -265,7 +265,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
                 )}
 
                 <Link
-                  href="/contact"
+                  href="/request-private-offer"
                   className="mt-2 inline-flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
                 >
                   Request offer →
