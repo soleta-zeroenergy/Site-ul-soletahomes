@@ -119,12 +119,12 @@ export default function ContactPage() {
               >
                 Request a Private Consultation
               </Link>
-              <a
-                href="mailto:office@soletahomes.com"
+              <Link
+                href="/request-private-offer"
                 className="btn inline-flex items-center py-3.5 px-8 border border-white/40 text-[#faf8f6] text-[0.875rem] hover:border-white hover:bg-white/10 transition-colors duration-200"
               >
-                Email us
-              </a>
+                Request a Private Consultation
+              </Link>
             </div>
           </div>
         </div>
@@ -218,12 +218,12 @@ export default function ContactPage() {
                 by email.
               </p>
               <div className="mt-auto pt-2">
-                <a
-                  href="mailto:office@soletahomes.com"
+                <Link
+                  href="/request-private-offer"
                   className="btn-outline py-3 px-7 text-[0.875rem] inline-flex"
                 >
-                  Email office@soletahomes.com
-                </a>
+                  Start a Private Request
+                </Link>
               </div>
             </div>
 
@@ -253,20 +253,17 @@ export default function ContactPage() {
                 If your enquiry does not require a project brief, you can reach us
                 directly.
               </p>
-              <a
-                href="mailto:office@soletahomes.com"
+              <span
                 style={{
                   fontFamily:    "var(--font-heading)",
                   fontSize:      "1.25rem",
                   color:         "var(--color-brand)",
                   letterSpacing: "0.01em",
                   fontWeight:    400,
-                  textDecoration: "none",
                 }}
-                className="hover:opacity-70 transition-opacity duration-200"
               >
                 office@soletahomes.com
-              </a>
+              </span>
             </div>
             <div
               className="flex flex-col gap-5 pt-4 border-t border-[var(--color-border-light)]"
