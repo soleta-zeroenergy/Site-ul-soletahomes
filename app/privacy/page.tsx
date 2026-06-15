@@ -166,12 +166,7 @@ export default function PrivacyPage() {
                 </p>
                 <p style={prose.p}>
                   For privacy-related enquiries, contact us at{" "}
-                  <a
-                    href="mailto:office@soletahomes.com"
-                    style={{ color: "var(--color-brand)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-                  >
-                    office@soletahomes.com
-                  </a>.
+                  <span style={{ color: "var(--color-brand)" }}>office@soletahomes.com</span>.
                 </p>
               </div>
 
@@ -381,12 +376,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p style={{ ...prose.p, marginTop: "0.75rem" }}>
                   To exercise any of these rights, contact us at{" "}
-                  <a
-                    href="mailto:office@soletahomes.com"
-                    style={{ color: "var(--color-brand)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-                  >
-                    office@soletahomes.com
-                  </a>.
+                  <span style={{ color: "var(--color-brand)" }}>office@soletahomes.com</span>.
                 </p>
               </div>
 
@@ -401,12 +391,7 @@ export default function PrivacyPage() {
                 <p style={prose.p}>
                   For any privacy-related questions or requests, contact Soleta Homes
                   at{" "}
-                  <a
-                    href="mailto:office@soletahomes.com"
-                    style={{ color: "var(--color-brand)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-                  >
-                    office@soletahomes.com
-                  </a>.
+                  <span style={{ color: "var(--color-brand)" }}>office@soletahomes.com</span>.
                 </p>
               </div>
 

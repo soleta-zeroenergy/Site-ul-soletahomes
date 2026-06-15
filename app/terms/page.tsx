@@ -312,12 +312,7 @@ export default function TermsPage() {
                 <p style={prose.p}>
                   For questions related to this website or these terms, contact Soleta
                   Homes at{" "}
-                  <a
-                    href="mailto:office@soletahomes.com"
-                    style={{ color: "var(--color-brand)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-                  >
-                    office@soletahomes.com
-                  </a>.
+                  <span style={{ color: "var(--color-brand)" }}>office@soletahomes.com</span>.
                 </p>
               </div>
 

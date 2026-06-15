@@ -264,14 +264,7 @@ export function ContactPanel({
                           paddingLeft: "0.75rem",
                         }}
                       >
-                        Something went wrong. Please try again, or email us directly at{" "}
-                        <a
-                          href="mailto:studio@soletahomes.com"
-                          className="underline underline-offset-2"
-                        >
-                          studio@soletahomes.com
-                        </a>
-                        .
+                        Something went wrong. Please try again, or email us directly at studio@soletahomes.com.
                       </p>
                     )}
 

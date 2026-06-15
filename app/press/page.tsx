@@ -126,12 +126,11 @@ export default function PressPage() {
               <p className="mb-8 leading-relaxed text-[var(--color-text-secondary)]">
                 {pressKit.body}
               </p>
-              <a
-                href={`mailto:${pressKit.contact}`}
-                className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
+              <span
+                className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)]"
               >
                 {pressKit.contact}
-              </a>
+              </span>
             </div>
             <div>
               <span className="eyebrow mb-6 block">What&apos;s included</span>
@@ -181,7 +180,7 @@ export default function PressPage() {
         eyebrow="Press contact"
         heading="Working on a story?"
         body="We are available for interview, site visits and technical briefings. Contact the press team directly."
-        primaryCta={{ label: "Contact the Press Team", href: "mailto:office@soletahomes.com" }}
+        primaryCta={{ label: "Contact the Press Team", href: "/contact" }}
         secondaryCta={{ label: "About Soleta", href: "/about" }}
         theme="dark"
       />

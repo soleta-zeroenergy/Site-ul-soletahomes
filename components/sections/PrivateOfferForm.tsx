@@ -422,15 +422,7 @@ export function PrivateOfferForm() {
             className="text-[0.8125rem]"
             style={{ color: "#9a8e87", fontFamily: "var(--font-body)" }}
           >
-            If you have site documents or photos to share, email them to{" "}
-            <a
-              href="mailto:office@soletahomes.com"
-              className="underline underline-offset-2 hover:opacity-70 transition-opacity"
-              style={{ color: "#4a4440" }}
-            >
-              office@soletahomes.com
-            </a>
-            {" "}with your name in the subject line.
+            If you have site documents or photos to share, email them to office@soletahomes.com with your name in the subject line.
           </p>
         </div>
       </div>
@@ -461,11 +453,7 @@ export function PrivateOfferForm() {
           >
             {serverError
               ? serverError
-              : <>Something went wrong. Please try again, or email us at{" "}
-                  <a href="mailto:office@soletahomes.com" className="underline underline-offset-2">
-                    office@soletahomes.com
-                  </a>.
-                </>
+              : "Something went wrong. Please try again, or email us at office@soletahomes.com."
             }
           </p>
         </div>

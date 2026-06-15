@@ -361,13 +361,7 @@ export default function CatalogPage() {
                     style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}
                   >
                     If you do not receive it within a few minutes, check your spam
-                    folder or contact us at{" "}
-                    <a
-                      href="mailto:office@soletahomes.com"
-                      className="underline underline-offset-2 hover:opacity-70 transition-opacity"
-                    >
-                      office@soletahomes.com
-                    </a>.
+                    folder or contact us at office@soletahomes.com.
                   </p>
                 </div>
               ) : (
