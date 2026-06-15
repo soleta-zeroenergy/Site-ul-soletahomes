@@ -106,7 +106,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
                   {variant.price}
                 </span>
                 <Link
-                  href="/contact"
+                  href="/request-private-offer"
                   className="mt-2 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
                 >
                   Request offer →
@@ -228,7 +228,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
       </section>
       {/* ── Sticky mobile CTA ── */}
       <div className="sticky-cta-mobile">
-        <Link href="/contact" className="btn-primary flex-1 justify-center">
+        <Link href="/request-private-offer" className="btn-primary flex-1 justify-center">
           Request Offer
         </Link>
         <Link href="/catalog" className="btn-outline flex-1 justify-center">
