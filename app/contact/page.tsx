@@ -119,12 +119,6 @@ export default function ContactPage() {
               >
                 Request a Private Consultation
               </Link>
-              <Link
-                href="/request-private-offer"
-                className="btn inline-flex items-center py-3.5 px-8 border border-white/40 text-[#faf8f6] text-[0.875rem] hover:border-white hover:bg-white/10 transition-colors duration-200"
-              >
-                Request a Private Consultation
-              </Link>
             </div>
           </div>
         </div>
@@ -218,12 +212,17 @@ export default function ContactPage() {
                 by email.
               </p>
               <div className="mt-auto pt-2">
-                <Link
-                  href="/request-private-offer"
-                  className="btn-outline py-3 px-7 text-[0.875rem] inline-flex"
+                <p
+                  style={{
+                    fontFamily:    "var(--font-heading)",
+                    fontSize:      "1.0625rem",
+                    fontWeight:    400,
+                    letterSpacing: "0.01em",
+                    color:         "var(--color-brand)",
+                  }}
                 >
-                  Start a Private Request
-                </Link>
+                  office@soletahomes.com
+                </p>
               </div>
             </div>
 
