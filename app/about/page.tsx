@@ -53,7 +53,7 @@ export default function AboutPage() {
         style={{ aspectRatio: "3000 / 1198" }}
       >
         <Image
-          src="https://img.soletahomes.com/about_hero_3000x1198.webp"
+          src="https://img.soletahomes.com/about_hero%203000x1198.webp"
           alt="Soleta timber home — designed and built from conviction"
           fill
           priority
@@ -106,7 +106,7 @@ export default function AboutPage() {
             style={{ aspectRatio: "1800 / 1076" }}
           >
             <Image
-              src="https://img.soletahomes.com/about_detail_1800x1076.webp"
+              src="https://img.soletahomes.com/about%20_detail_1800x1076.webp"
               alt="Soleta timber structure detail and post-and-beam craft"
               fill
               className="object-contain"
