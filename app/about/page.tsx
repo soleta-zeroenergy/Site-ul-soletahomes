@@ -100,14 +100,20 @@ export default function AboutPage() {
       </section>
 
       {/* ── 5. What Soleta stands for — ValuesGrid ── */}
-      <div className="border-b border-[var(--color-border-light)]">
-        <ValuesGrid
-          eyebrow="What Soleta stands for"
-          items={aboutValues}
-          columns={3}
-          theme="light"
-        />
-      </div>
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="container-narrow">
+          <ValuesGrid
+            eyebrow="What Soleta stands for"
+            items={aboutValues}
+            columns={3}
+            theme="light"
+            embedded
+          />
+        </div>
+      </section>
 
       {/* ── 6. Recognition / proof layer ── */}
       <section
