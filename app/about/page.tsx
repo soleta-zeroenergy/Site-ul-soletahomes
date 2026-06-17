@@ -50,17 +50,16 @@ export default function AboutPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 520px)" }}
+        style={{ aspectRatio: "3000 / 1198" }}
       >
         <Image
-          src="https://img.soletahomes.com/sh-about-hero-01-2038x771.webp"
-          alt="Soleta — designed and built from conviction"
+          src="https://img.soletahomes.com/about_hero_3000x1198.webp"
+          alt="Soleta timber home — designed and built from conviction"
           fill
           priority
-          className="object-cover"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* ── 3. What Soleta is — framing block ── */}
@@ -98,6 +97,42 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* ── 4a. Craft / timber system image ── */}
+      <div className="border-b border-[var(--color-border-light)]" style={{ backgroundColor: "var(--soleta-cream)" }}>
+        <div className="container-narrow py-0">
+          <div
+            className="relative w-full"
+            style={{ aspectRatio: "1800 / 1076" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/about_detail_1800x1076.webp"
+              alt="Soleta timber structure detail and post-and-beam craft"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1152px) 100vw, 1152px"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── 4b. History / story image ── */}
+      <div className="border-b border-[var(--color-border-light)]" style={{ backgroundColor: "var(--color-bg)" }}>
+        <div className="container-narrow py-0">
+          <div
+            className="relative w-full"
+            style={{ aspectRatio: "1800 / 1076" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/about_history_1800x1076.webp"
+              alt="Soleta ZeroEnergy prototype and early design history"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1152px) 100vw, 1152px"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* ── 5. What Soleta stands for — ValuesGrid ── */}
       <section
