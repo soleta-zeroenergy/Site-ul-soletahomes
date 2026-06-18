@@ -48,17 +48,16 @@ export default function DesignLanguagePage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 38vw, 540px)" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="/images/WhySoleta900x1200.webp"
+          src="https://img.soletahomes.com/hero_soleta_design_language_3000x975.webp"
           alt="Soleta design language - architecture that belongs where it stands"
           fill
           priority
-          className="object-cover object-center"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
       </div>
 
       {/* ── 3. Numbered prose sections ── */}

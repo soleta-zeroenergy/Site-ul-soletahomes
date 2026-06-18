@@ -57,17 +57,16 @@ export default function ZeroEnergyPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 520px)" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="/images/Classic800x533.webp"
+          src="https://img.soletahomes.com/hero_energy_zeroEnergy_3000x975.webp"
           alt="Soleta Classic, energy performance and glazing design"
           fill
           priority
-          className="object-cover"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* ── 3. Design-led energy sections (envelope → glazing → ventilation) ── */}
