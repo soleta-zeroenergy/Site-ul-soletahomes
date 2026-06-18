@@ -50,10 +50,10 @@ export default function AboutPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ aspectRatio: "3000 / 960" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="https://img.soletahomes.com/about_hero_3000x1198.webp"
+          src="https://img.soletahomes.com/hero_about_3000x975.webp"
           alt="Soleta timber home — designed and built from conviction"
           fill
           priority

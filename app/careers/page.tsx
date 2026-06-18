@@ -47,17 +47,16 @@ export default function CareersPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 520px)" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="/images/WhySoleta900x1200.webp"
+          src="https://img.soletahomes.com/hero_careers_3000x975.webp"
           alt="Soleta — precision manufacturing and craft"
           fill
           priority
-          className="object-cover object-center"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* ── 3. What working at Soleta means ── */}
