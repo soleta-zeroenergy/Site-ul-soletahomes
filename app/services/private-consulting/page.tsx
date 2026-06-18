@@ -50,17 +50,16 @@ export default function PrivateConsultingPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 520px)" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="/images/hero.webp"
+          src="https://img.soletahomes.com/hero_private_consulting_3000x975.webp"
           alt="Soleta — beginning with clarity, not commitment"
           fill
           priority
-          className="object-cover"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* ── 3. Editorial framing ── */}

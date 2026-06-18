@@ -50,17 +50,16 @@ export default function CustomDesignPage() {
       {/* ── 2. Hero image ── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 520px)" }}
+        style={{ aspectRatio: "3000 / 975" }}
       >
         <Image
-          src="/images/Signature800x533.webp"
+          src="https://img.soletahomes.com/hero_custom_design_3000x975.webp"
           alt="Soleta Signature — architecture shaped by site and brief"
           fill
           priority
-          className="object-cover"
+          className="object-contain"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
       {/* ── 3. Editorial framing ── */}
