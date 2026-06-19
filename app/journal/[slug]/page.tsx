@@ -139,14 +139,14 @@ export default async function JournalArticlePage({
       {/* ── 2. Hero image ───────────────────────────────────────────────── */}
       <div
         className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ height: "clamp(260px, 36vw, 500px)" }}
+        style={{ aspectRatio: "1642 / 941", minHeight: "280px" }}
       >
         <Image
           src={article.image}
           alt={article.imageAlt}
           fill
           priority
-          className="object-cover object-center"
+          className="object-contain"
           sizes="100vw"
         />
       </div>

@@ -37,8 +37,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "Land decisions made before a project begins have more influence on the outcome than almost any design choice made afterward. Here is how to think about them.",
     category:    "Planning & Land",
-    image:       "/images/hero.webp",
-    imageAlt:    "Soleta — evaluating land for a timber home",
+    image:       "https://img.soletahomes.com/How%20to%20evaluate%20land%20before%20planning%20a%20timber%20home.webp",
+    imageAlt:    "How to evaluate land before planning a timber home",
     publishedAt: "2025-10-15",
     featured:    true,
     intro:
@@ -89,8 +89,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "Budget questions are rarely answered honestly in the early stages of a project. This article explains what actually drives cost — and why the honest answer depends on a series of prior decisions.",
     category:    "Process, Budget & Build",
-    image:       "/images/Signature800x533.webp",
-    imageAlt:    "Soleta Signature — premium timber construction",
+    image:       "https://img.soletahomes.com/What%20shapes%20the%20budget%20of%20a%20premium%20timber%20house.webp",
+    imageAlt:    "What shapes the budget of a premium timber house",
     publishedAt: "2025-10-08",
     intro:
       "Budget questions are rarely answered honestly in the early stages of a project. This article explains what actually drives cost — and why the honest answer depends on a series of prior decisions.",
@@ -140,8 +140,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "The choice between adapting an established model and pursuing a fully custom design involves real trade-offs in time, cost, certainty, and creative latitude. Here is how to think about it.",
     category:    "Design & Living",
-    image:       "/images/Classic800x533.webp",
-    imageAlt:    "Soleta Classic — model-based direction",
+    image:       "https://img.soletahomes.com/Starting%20from%20a%20model%20or%20building%20a%20custom%20direction.webp",
+    imageAlt:    "Starting from a model or building a custom direction",
     publishedAt: "2025-09-25",
     intro:
       "The choice between adapting an established model and pursuing a fully custom design involves real trade-offs in time, cost, certainty, and creative latitude.",
@@ -186,8 +186,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "A private consultation request is most useful when it includes the right information. Here is what to prepare — and why each piece matters.",
     category:    "Process, Budget & Build",
-    image:       "/images/Retreat800x533.webp",
-    imageAlt:    "Soleta Retreat — preparing a project brief",
+    image:       "https://img.soletahomes.com/What%20to%20prepare%20before%20requesting%20a%20private%20consultation.webp",
+    imageAlt:    "What to prepare before requesting a private consultation",
     publishedAt: "2025-09-10",
     intro:
       "A private consultation request is most useful when it includes the right information. The more specific the brief, the more precise and useful the response. Here is what to prepare — and why each piece matters for the early project conversation.",
@@ -227,8 +227,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "The differences between a retreat and a primary residence go deeper than programme. They affect structure, specification, mechanical systems, and the fundamental logic of the brief.",
     category:    "Design & Living",
-    image:       "/images/Retreat800x533.webp",
-    imageAlt:    "Soleta Retreat — seasonal home in landscape",
+    image:       "https://img.soletahomes.com/Planning%20a%20retreat%20home%20versus%20a%20primary%20residence.webp",
+    imageAlt:    "Planning a retreat home versus a primary residence",
     publishedAt: "2025-09-02",
     intro:
       "The differences between a retreat and a primary residence go deeper than programme. They affect structure, specification, mechanical systems, and the fundamental logic of the brief. Understanding these differences early produces a more honest brief and a more useful design conversation.",
@@ -258,8 +258,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "The term is used freely in architecture. Here is what it actually means for a timber home — how material choices translate into durability, indoor quality, and long-term maintenance.",
     category:    "Design & Living",
-    image:       "/images/WhySoleta900x1200.webp",
-    imageAlt:    "Soleta — natural timber material quality",
+    image:       "https://img.soletahomes.com/What%20healthy%20materials%20mean%20in%20practice.webp",
+    imageAlt:    "What healthy materials mean in practice",
     publishedAt: "2025-08-20",
     intro:
       "The term 'healthy materials' is used freely in premium architecture marketing. Its meaning is rarely spelled out. Here is what it actually means in the context of a timber home — how material choices affect durability, indoor air quality, and what you will be living with in twenty years.",
@@ -289,8 +289,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "Budget overruns and timeline slippage rarely come from the headline items. They come from the things that were not considered, not costed, or assumed to be simpler than they are.",
     category:    "Process, Budget & Build",
-    image:       "/images/Life800x600.webp",
-    imageAlt:    "Soleta — project decision clarity",
+    image:       "https://img.soletahomes.com/What%20clients%20usually%20underestimate%20before%20starting.webp",
+    imageAlt:    "What clients usually underestimate before starting",
     publishedAt: "2025-08-05",
     intro:
       "Budget overruns and timeline slippage rarely come from the headline items. They come from the things that were not considered, not costed, or assumed to be simpler than they are. This is a frank account of what clients most often underestimate — not to discourage, but to make the starting position more honest.",
@@ -320,8 +320,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "Timber construction adapts to climate. But the adaptations are not just cosmetic — they affect structure, insulation strategy, mechanical systems, and the fundamental approach to moisture and weather.",
     category:    "Planning & Land",
-    image:       "/images/Aurora800x600.webp",
-    imageAlt:    "Soleta Aurora — alpine climate build",
+    image:       "https://img.soletahomes.com/What%20changes%20when%20building%20across%20different%20climates%20and%20regions.webp",
+    imageAlt:    "What changes when building across different climates and regions",
     publishedAt: "2025-07-22",
     intro:
       "Timber construction adapts to climate, but the adaptations are not cosmetic. They affect the structural detailing, the insulation and airtightness strategy, the mechanical systems, and the approach to moisture management. Here is what actually changes — and what stays the same — when building a timber home across different European climates.",
@@ -351,8 +351,8 @@ export const journalArticles: JournalArticle[] = [
     excerpt:
       "Before a timber home becomes a floor plan, the site already has opinions: sun, wind, access, slope, privacy and views. Reading those signals early creates a stronger brief and avoids costly design corrections later.",
     category:    "Planning & Land",
-    image:       "/images/Life800x600.webp",
-    imageAlt:    "Soleta — site reading, orientation and natural light",
+    image:       "https://img.soletahomes.com/How%20orientation,%20access%20and%20views%20shape%20a%20timber%20home.webp",
+    imageAlt:    "How orientation, access and views shape a timber home",
     publishedAt: "2025-11-05",
     intro:
       "Before a timber home becomes a floor plan, the site already has opinions: sun, wind, access, slope, privacy and views. Reading those signals early creates a stronger brief and avoids costly design corrections later.",

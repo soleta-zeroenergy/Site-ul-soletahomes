@@ -118,6 +118,21 @@ export default function JournalPage() {
         </div>
       </section>
 
+      {/* ── 1b. Journal page hero image ─────────────────────────────────── */}
+      <div
+        className="relative w-full border-b border-[var(--color-border-light)]"
+        style={{ aspectRatio: "1072 / 941" }}
+      >
+        <Image
+          src="https://img.soletahomes.com/Hero%20-%20How%20to%20evaluate%20land%20before%20planning%20a%20timber%20home.webp"
+          alt="Soleta Journal — practical articles on land, design and timber home projects"
+          fill
+          priority
+          className="object-contain"
+          sizes="100vw"
+        />
+      </div>
+
       {/* ── 2. Featured article ──────────────────────────────────────────── */}
       <section
         className="border-b border-[var(--color-border-light)]"
@@ -128,14 +143,14 @@ export default function JournalPage() {
             {/* Image */}
             <div
               className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r lg:border-[var(--color-border-light)]"
-              style={{ minHeight: "clamp(300px, 36vw, 480px)" }}
+              style={{ aspectRatio: "1642 / 941" }}
             >
               <Image
                 src={featuredArticle.image}
                 alt={featuredArticle.imageAlt}
                 fill
                 priority
-                className="object-cover object-center"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -365,13 +380,13 @@ function ArticleCard({ article }: { article: typeof journalArticles[0] }) {
       >
         <div
           className="relative w-full overflow-hidden"
-          style={{ paddingBottom: "66.67%" /* 3:2 */ }}
+          style={{ aspectRatio: "1642 / 941" }}
         >
           <Image
             src={article.image}
             alt={article.imageAlt}
             fill
-            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+            className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
