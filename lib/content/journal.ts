@@ -343,6 +343,47 @@ export const journalArticles: JournalArticle[] = [
       },
     ],
   },
+
+  /* ── 9 — FULL ARTICLE ─────────────────────────────────────────────────── */
+  {
+    slug:        "how-orientation-access-and-views-shape-a-timber-home",
+    title:       "How orientation, access and views shape a timber home",
+    excerpt:
+      "Before a timber home becomes a floor plan, the site already has opinions: sun, wind, access, slope, privacy and views. Reading those signals early creates a stronger brief and avoids costly design corrections later.",
+    category:    "Planning & Land",
+    image:       "/images/Life800x600.webp",
+    imageAlt:    "Soleta — site reading, orientation and natural light",
+    publishedAt: "2025-11-05",
+    intro:
+      "Before a timber home becomes a floor plan, the site already has opinions: sun, wind, access, slope, privacy and views. Reading those signals early creates a stronger brief and avoids costly design corrections later.",
+    body: [
+      {
+        heading: "The site speaks before the architect does",
+        content:
+          `Most clients come to a first project conversation with an idea of what they want to build. Fewer have spent equal time understanding what the site is telling them to build. These two things — the brief and the site — need to converge before a design can do useful work. When they diverge, the design process becomes a series of compromises rather than a series of decisions.\n\nOrientation, access, topography, views, and privacy are not site features to be worked around. They are the primary inputs to any timber home that is designed with genuine attention to its setting. Getting a clear read on them before the design begins is not preliminary work. It is the most consequential design work of the whole project.`,
+      },
+      {
+        heading: "Orientation and daylight",
+        content:
+          `Solar orientation is the most influential site variable for the performance and comfort of a timber home. In northern and central Europe, a south-facing primary aspect allows generous glazing on the living side of the house without the overheating risk that the same glazing would create on a west-facing elevation. It enables passive solar gain in winter, when it is useful, and is manageable with roof overhangs or external shading in summer.\n\nThis matters structurally as well as thermally. The position of glazing, the depth of roof overhangs, the placement of opaque walls — all of these are functions of orientation. If the orientation is known and understood early, the structure can be designed around it. If the orientation is resolved late, these decisions are made under constraint and the results are typically less elegant and sometimes more expensive.\n\nNorth-facing sites are not unusable, but they require a different design response. Generous roof lights, carefully positioned internal courtyards, and deliberate planning of which spaces accept indirect light and which require direct light all become part of the brief. The design conversation is different. The cost is sometimes higher. Knowing this before committing to a site is useful information.\n\nBeyond the primary compass orientation, consider where the sun is at the times of day that matter most to the way you use a house. Morning light in a kitchen or eating space has a different quality from afternoon light in a living room. Evening light on a terrace is different from midday sun on a south facade. These preferences can inform how the brief is written and how the plan is organised — but only if the sun's behaviour on the specific site is understood at the outset.`,
+      },
+      {
+        heading: "Access, slope and build logistics",
+        content:
+          `How a site is accessed affects the project in ways that are rarely visible in the finished building but are felt throughout the construction process and sometimes in the budget.\n\nTimber construction involves the delivery of prefabricated structural elements — panels, beams, and engineered timber components — that arrive as large pieces and need to be set in sequence. A site that is reached by a narrow road, a steep descent, or a track that cannot support delivery vehicles adds logistics complexity that needs to be planned for and costed before construction begins. This is not an insurmountable problem, but it is a variable that changes what the project costs and how long it takes to assemble on site.\n\nSlope is a related consideration. A gentle slope is often an advantage — it allows the building to step with the terrain, creates underfloor access, and can produce more interesting spatial relationships between rooms at different levels than a flat plan would allow. A steep slope requires more significant foundation engineering: retaining walls, deep or piled foundations, cut-and-fill earthworks that can be extensive. These are costs that need to be estimated before the site is purchased, not after.\n\nThe relationship between slope and drainage is also worth understanding. Sloped sites tend to shed surface water well, but they can also direct water toward the building if the site is not graded carefully. A flat site that holds water is a greater risk for a timber structure than a sloped one that drains — but a sloped site with no provision for surface water management can direct water toward the foundation regardless of the slope. Both situations require attention; neither is automatically safe.`,
+      },
+      {
+        heading: "Views, privacy and the real shape of the brief",
+        content:
+          `Views and privacy pull in opposite directions, and how a site balances them is one of the clearest signals the site gives about what the house should be.\n\nA site with an open view to the south or west invites generous glazing on that aspect. But an open view is also an exposed position — visible from neighbouring properties, a road, or a public path. The glazing that frames the view is the same glazing through which the house is visible from outside. Managing this well — through topography, planting, built screening, or the arrangement of the plan — is part of the early site reading that shapes the design before the first sketch is drawn.\n\nViews that are not to the south complicate the orientation logic. A spectacular view to the north means the glazing that captures it is not contributing to passive solar gain and, depending on the climate, may be a source of heat loss in winter. This is not an argument against the view. It is an argument for understanding the trade-off explicitly and deciding whether the spatial experience is worth the thermal implication.\n\nPrivacy is a brief element that clients sometimes underspecify. Which spaces need it? At what times of day? From which directions? A bedroom that is inadvertently visible from a neighbouring terrace is a problem that is extremely difficult to fix once the building is complete. The same is true of a main living space that looks directly into a neighbour's kitchen. Checking the relationship between the proposed building positions — yours and any existing neighbours — is part of the site visit work that needs to happen before the design is fixed.\n\nThe clearest version of the brief is usually produced by spending time on the site and asking simple questions: where would I want to sit in the morning? Where would I want to be at the end of the day? Where do I not want to be overlooked? Where does the light come from that I want to use? The answers to these questions are more useful early design inputs than a room list.`,
+      },
+      {
+        heading: "Reading the site is part of the design process",
+        content:
+          `Site reading is not a task to complete before the design begins. It is the beginning of the design. The information gathered from understanding orientation, access, slope, views, and privacy is the raw material from which a brief is built — and a brief built from that material produces a more direct and less compromised design than one assembled from generic preferences.\n\nAt Soleta, early project conversations frequently start with the site before they start with the house. What does the land make possible? What does it constrain? What does it suggest about where the living spaces should face, where the entrance should be, where the building mass should be light and where it should be solid?\n\nIf you are assessing a site — or comparing two or three options — bringing that information into an early conversation is more useful than arriving with a complete brief. The site often provides more design clarity than the brief does at that stage.`,
+      },
+    ],
+  },
 ];
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
