@@ -99,25 +99,21 @@ export default function SustainabilityPage() {
 
       {/* ── 6. Supporting image split ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
+        <div className="container-narrow flex flex-col gap-10">
+          <Image
+            src="https://img.soletahomes.com/Longevity%20is%20the%20most%20sustainable%20outcome.webp"
+            alt="Longevity is the most sustainable outcome — Soleta"
+            width={0}
+            height={0}
+            sizes="(max-width: 1152px) 100vw, 1152px"
+            style={{ width: "100%", height: "auto" }}
+          />
+          <div className="flex flex-col gap-6 lg:max-w-2xl">
             <span className="eyebrow block">{sustainabilitySupportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{sustainabilitySupportBlock.body}</p>
-          </div>
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/Aurora800x600.webp"
-              alt="Soleta Aurora — materials that age well"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
