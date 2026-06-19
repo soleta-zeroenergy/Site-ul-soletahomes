@@ -110,23 +110,19 @@ export default function CareersPage() {
 
       {/* ── 6. Supporting image split ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/Classic800x533.webp"
-              alt="Soleta Classic — built to last by people who care"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
+        <div className="container-narrow flex flex-col gap-10">
+          <Image
+            src="https://img.soletahomes.com/Who%20we%20are%20looking%20for.webp"
+            alt="Who we are looking for — Soleta careers"
+            width={0}
+            height={0}
+            sizes="(max-width: 1152px) 100vw, 1152px"
+            style={{ width: "100%", height: "auto" }}
+          />
+          <div className="flex flex-col gap-6 lg:max-w-2xl">
             <span className="eyebrow block">{careersSupportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{careersSupportBlock.body}</p>
           </div>
