@@ -118,21 +118,6 @@ export default function JournalPage() {
         </div>
       </section>
 
-      {/* ── 1b. Journal page hero image ─────────────────────────────────── */}
-      <div
-        className="relative w-full border-b border-[var(--color-border-light)]"
-        style={{ aspectRatio: "1072 / 941" }}
-      >
-        <Image
-          src="https://img.soletahomes.com/Hero%20-%20How%20to%20evaluate%20land%20before%20planning%20a%20timber%20home.webp"
-          alt="Soleta Journal — practical articles on land, design and timber home projects"
-          fill
-          priority
-          className="object-contain"
-          sizes="100vw"
-        />
-      </div>
-
       {/* ── 2. Featured article ──────────────────────────────────────────── */}
       <section
         className="border-b border-[var(--color-border-light)]"
