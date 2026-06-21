@@ -18,12 +18,19 @@ const schema = breadcrumbSchema([
   { name: "Architecture & Design", href: "/architecture" },
 ]);
 
-/* Image assigned to each pillar card */
+/* Images assigned to each pillar card — 1537×1023 px, no crop required */
 const pillarImages: Record<string, string> = {
-  "/architecture/design-language":    "/images/WhySoleta900x1200.webp",
-  "/architecture/post-beam":          "/images/Signature800x533.webp",
-  "/architecture/healthy-materials":  "/images/Aurora800x600.webp",
-  "/architecture/energy-zeroenergy":  "/images/Classic800x533.webp",
+  "/architecture/design-language":   "https://img.soletahomes.com/architecture-card-design-language.webp",
+  "/architecture/post-beam":         "https://img.soletahomes.com/architecture-card-post-beam-system.webp",
+  "/architecture/healthy-materials": "https://img.soletahomes.com/architecture-card-healthy-materials.webp",
+  "/architecture/energy-zeroenergy": "https://img.soletahomes.com/architecture-card-zeroenergy%20.webp",
+};
+
+const pillarAlt: Record<string, string> = {
+  "/architecture/design-language":   "Soleta design language",
+  "/architecture/post-beam":         "Post and beam timber construction system",
+  "/architecture/healthy-materials": "Healthy timber materials",
+  "/architecture/energy-zeroenergy": "Soleta ZeroEnergy architecture",
 };
 
 export default function ArchitecturePage() {
@@ -95,19 +102,18 @@ export default function ArchitecturePage() {
                 href={pillar.href}
                 className="group flex flex-col bg-[var(--soleta-cream)] transition-colors duration-200 hover:bg-[var(--color-bg)]"
               >
-                {/* Card image */}
+                {/* Card image — 1537×1023, full image shown without crop */}
                 <div
                   className="relative w-full overflow-hidden"
-                  style={{ height: "clamp(160px, 18vw, 260px)" }}
+                  style={{ aspectRatio: "1537 / 1023" }}
                 >
                   <Image
                     src={pillarImages[pillar.href]}
-                    alt={pillar.heading}
+                    alt={pillarAlt[pillar.href]}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
                 {/* Card text */}
                 <div className="flex flex-col p-10 flex-1">
