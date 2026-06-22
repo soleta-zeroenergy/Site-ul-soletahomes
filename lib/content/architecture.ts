@@ -115,7 +115,8 @@ export const postBeamContent = {
     { label: "Frame material", value: "Glulam — GL24h class" },
     { label: "Roof U-value",   value: "0.12 W/m²K" },
     { label: "Windows",        value: "Triple-glazed — Uw 0.8 W/m²K" },
-    { label: "Airtightness",   value: "n₅₀ ≤ 0.6 h⁻¹ (Passive House standard)" },
+    { label: "Airtightness",        value: "n₅₀ ≤ 0.6 h⁻¹ (Passive House standard)" },
+    { label: "Structural upgrade",  value: "Glulam — GL28h class" },
   ],
   faq: [
     {
