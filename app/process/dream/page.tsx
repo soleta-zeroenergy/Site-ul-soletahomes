@@ -81,6 +81,20 @@ export default function DreamPage() {
               </div>
             </div>
 
+            {/* Image A — 1537×939, after "Site first, brief second" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 939" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/dream-site-first-brief-second-1537x939.webp"
+                alt="Soleta site analysis before the first design brief"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
               <div>
@@ -89,6 +103,20 @@ export default function DreamPage() {
                   We ask about your household: who lives there now, who might live there in five or ten years, how you use space, whether you work from home, how you host guests, and what privacy means to you. These questions shape the brief more than any reference image. A home that fits the way you actually live is more valuable than one that fits a catalogue.
                 </p>
               </div>
+            </div>
+
+            {/* Image B — 1536×1024, after "Understanding how you live" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1536 / 1024" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/dream-first-conversation-brief-1536x1024.webp"
+                alt="Soleta first conversation and project brief"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
@@ -141,26 +169,14 @@ export default function DreamPage() {
         </div>
       </section>
 
-      {/* ── 6. Supporting image split ── */}
+      {/* ── 6. Indicative timing ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/WhySoleta900x1200.webp"
-              alt="Soleta - site, brief, and the first conversation"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">Indicative timing</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Indicative timing</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               The Dream stage typically takes one to two weeks from the first conversation to the signing of the project brief — longer if you need time to gather site information or align with your partner or family. There is no pressure to move quickly. The project moves into Design &amp; Planning only when you are ready to proceed.
             </p>
