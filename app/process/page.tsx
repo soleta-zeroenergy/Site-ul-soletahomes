@@ -98,6 +98,27 @@ export default function ProcessPage() {
         </div>
       </section>
 
+      {/* ── 3b. Editorial image A — design / planning ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ aspectRatio: "1536 / 1025" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/process-design-planning-table-1536x1025.webp"
+              alt="Soleta design planning table with architectural drawings"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── 4. The five stages (ProcessTimeline) ── */}
       {/* ProcessTimeline renders its own <section> with internal spacing */}
       <div className="border-b border-[var(--color-border-light)]">
@@ -109,31 +130,52 @@ export default function ProcessPage() {
         />
       </div>
 
-      {/* ── 5. Image support block 1 — construction quality ── */}
+      {/* ── 5. Editorial image B + text — factory preparation ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Image side */}
+        <div className="container-narrow">
+          {/* Image B — 1537×1025, full image visible, no crop */}
           <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(260px, 32vw, 480px)" }}
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1025" }}
           >
             <Image
-              src="/images/Signature800x533.webp"
-              alt="Soleta Signature — precision manufacturing and on-site assembly"
+              src="https://img.soletahomes.com/1-process-factory-to-site-1537x1025.webp"
+              alt="Soleta factory to site timber preparation"
               fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
             />
           </div>
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">Built once in the factory, once on your site</span>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Built once in the factory, once on your site</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               Every structural element is cut, drilled and finished under controlled conditions before it reaches your site. When the truck arrives, the frame goes up in 3 to 10 days. Quality comes from preparation, not from working faster on site.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5b. Editorial image C — site assembly / delivery sequence ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ aspectRatio: "1537 / 1025" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/2-process-factory-to-site-1537x1025.webp"
+              alt="Soleta labelled timber elements prepared for site assembly"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
           </div>
         </div>
       </section>
@@ -222,31 +264,31 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* ── 9. Image support block 2 — handover quality ── */}
+      {/* ── 9. Editorial image D + text — handover / completed home ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">Handover is not the end</span>
+        <div className="container-narrow">
+          {/* Image D — 1537×1025, full image visible, no crop */}
+          <div
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1025" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/process-handover-completed-home-1537x1025.webp"
+              alt="Completed Soleta home at handover"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
+          </div>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Handover is not the end</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               At handover you receive full technical documentation, system manuals, and your warranty pack. Our aftercare programme covers annual inspections, maintenance support, and warranty management — because a home that performs in year one should still perform in year twenty.
             </p>
-          </div>
-          {/* Image side */}
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
-          >
-            <Image
-              src="/images/Classic800x533.webp"
-              alt="Soleta Classic - completed home at handover"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
