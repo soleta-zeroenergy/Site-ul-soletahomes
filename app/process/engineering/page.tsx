@@ -82,6 +82,20 @@ export default function EngineeringPage() {
               </div>
             </div>
 
+            {/* Image A — 1537×868, after "Precision protects the design" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 868" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/engineering-structural-connection-detail-1537x868.webp"
+                alt="Soleta structural connection engineering detail"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
               <div>
@@ -92,6 +106,20 @@ export default function EngineeringPage() {
               </div>
             </div>
 
+            {/* Image B — 1537×1025, after "Energy model and thermal analysis" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1025" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/engineering-energy-model-thermal-analysis-1537x1025.webp"
+                alt="Soleta energy model and thermal analysis for a timber home"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
               <div>
@@ -100,6 +128,20 @@ export default function EngineeringPage() {
                   The output of the engineering stage is a complete set of manufacturing drawings — the files that go directly to our CNC machines. These are not construction drawings in the traditional sense. Every element is specified precisely: dimensions, connection points, insulation pockets, window openings, and service penetrations. Nothing is left to interpretation on site. When the machine runs, the result is identical to what was designed.
                 </p>
               </div>
+            </div>
+
+            {/* Image C — 1537×723, after "3D manufacturing drawings" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 723" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/engineering-manufacturing-drawings-cnc-1537x723.webp"
+                alt="Soleta manufacturing drawings prepared for CNC production"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
             </div>
 
           </div>
@@ -124,29 +166,20 @@ export default function EngineeringPage() {
         </div>
       </section>
 
-      {/* ── 5. Supporting image split ── */}
+      {/* ── 5. This is the stage most builders rush ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
-          >
-            <Image
-              src="/images/Signature800x533.webp"
-              alt="Soleta Signature — every structural element calculated before production"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">This is the stage most builders rush</span>
-            <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Engineering takes 4 to 8 weeks, depending on project complexity and whether permit documentation is required. That range does not indicate inefficiency — it reflects the difference between a straightforward standard project and a custom design with complex permitting requirements. We do not compress this stage to meet an arbitrary schedule, because errors discovered during manufacturing are significantly more expensive than errors resolved during engineering.
-            </p>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Timing</span>
+            <div>
+              <p className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">This is the stage most builders rush</p>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                Engineering takes 4 to 8 weeks, depending on project complexity and whether permit documentation is required. That range does not indicate inefficiency — it reflects the difference between a straightforward standard project and a custom design with complex permitting requirements. We do not compress this stage to meet an arbitrary schedule, because errors discovered during manufacturing are significantly more expensive than errors resolved during engineering.
+              </p>
+            </div>
           </div>
         </div>
       </section>
