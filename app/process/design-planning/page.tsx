@@ -82,6 +82,20 @@ export default function DesignPlanningPage() {
               </div>
             </div>
 
+            {/* Image A — 1537×1061, after "From brief to developed proposal" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1061" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/design-planning-developed-proposal-1537x1061.webp"
+                alt="Soleta developed architectural proposal"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
               <div>
@@ -90,6 +104,20 @@ export default function DesignPlanningPage() {
                   If you visit us, material selections are presented as a physical sample board, insulation specifications, glazing systems, and exterior finish options. You see and touch the real materials before they are ordered, not only on a screen. Changes at this stage are simple. Changes at engineering stage cost more. Changes at manufacturing stage cost significantly more.
                 </p>
               </div>
+            </div>
+
+            {/* Image B — 1537×1025, after "Material selections you can see and even touch" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1025" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/design-planning-material-selections-1537x1025.webp"
+                alt="Soleta material selections for design planning"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
@@ -124,29 +152,31 @@ export default function DesignPlanningPage() {
         </div>
       </section>
 
-      {/* ── 5. Supporting image split ── */}
+      {/* ── 5. Planning context — image C + text ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">Planning context</span>
+        <div className="container-narrow">
+          {/* Image C — 1537×1397, full image visible, no crop */}
+          <div
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1397" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/design-planning-planning-context-1537x1397.webp"
+              alt="Soleta planning context and site constraints"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
+          </div>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Planning context</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               Building-permit requirements vary significantly between countries, regions, and individual municipalities. Where permit documentation is part of your project scope, local collaborators are required, and the design must be developed with the likely permit requirements in mind — setbacks, height limits, material restrictions, access conditions, and even the required format of project presentation. We do not guarantee planning outcomes, but we design with this awareness from the first sketch.
             </p>
-          </div>
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
-          >
-            <Image
-              src="/images/hero.webp"
-              alt="Soleta — planning-aware architectural design"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
