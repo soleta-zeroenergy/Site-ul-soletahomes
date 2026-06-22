@@ -89,34 +89,41 @@ export default function DesignLanguagePage() {
         </div>
       </section>
 
-      {/* ── 4. Visual support block ── */}
+      {/* ── 4. Editorial image + prose section ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Image side */}
+        <div className="container-narrow">
+          {/* Image — 1537×1153, full image visible, no crop */}
           <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(260px, 32vw, 480px)" }}
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1153" }}
           >
             <Image
-              src="/images/hero.webp"
-              alt="Soleta — site, light and proportion"
+              src="https://img.soletahomes.com/design-language-site-light-proportion.webp"
+              alt="Soleta design language shaped by site, light and proportion"
               fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
             />
           </div>
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">03</span>
-            <h2 style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
-              {designLanguageContent.sections[2].heading}
-            </h2>
-            <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              {designLanguageContent.sections[2].body}
-            </p>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span
+              className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1"
+              aria-hidden="true"
+            >
+              03
+            </span>
+            <div>
+              <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
+                {designLanguageContent.sections[2].heading}
+              </h2>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                {designLanguageContent.sections[2].body}
+              </p>
+            </div>
           </div>
         </div>
       </section>
