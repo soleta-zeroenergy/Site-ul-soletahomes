@@ -107,28 +107,28 @@ export default function HealthyMaterialsPage() {
         </div>
       </section>
 
-      {/* ── 5. Visual support block — material atmosphere ── */}
+      {/* ── 5. Editorial image + material atmosphere ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Image side — portrait, left */}
+        <div className="container-narrow">
+          {/* Image — 1537×1023, full image visible, no crop */}
           <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 560px)" }}
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1023" }}
           >
             <Image
-              src="/images/WhySoleta900x1200.webp"
-              alt="Soleta - natural timber interior"
+              src="https://img.soletahomes.com/healthy-materials-natural-layers-1537x1023.webp"
+              alt="Natural timber and healthy material layers for Soleta homes"
               fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
             />
           </div>
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">Surfaces over time</span>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Surfaces over time</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               The materials in Soleta homes change over time. They acquire a beautiful patina and are selected not for how they look on completion day, but for how they behave over a decade — aging visibly, honestly, and well.
             </p>
