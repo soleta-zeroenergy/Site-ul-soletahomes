@@ -102,31 +102,31 @@ export default function ZeroEnergyPage() {
         </div>
       </section>
 
-      {/* ── 4. Visual support block — envelope / glazing / performance ── */}
+      {/* ── 4. Editorial image 1 + envelope text ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">Envelope before systems</span>
+        <div className="container-narrow">
+          {/* Image 1 — 1448×1086, full image visible, no crop */}
+          <div
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1448 / 1086" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/1-energy-zeroenergy-integrated-performance-1537x1023.webp"
+              alt="Soleta energy performance through envelope design"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
+          </div>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Envelope before systems</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               A Soleta home reduces its energy demand through the quality of its envelope — insulation, airtightness, glazing orientation — before any renewable system is sized. This order produces homes that perform consistently, regardless of how the energy context changes over the building&apos;s lifetime.
             </p>
-          </div>
-          {/* Image side */}
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
-          >
-            <Image
-              src="/images/Life800x600.webp"
-              alt="Soleta - passive solar glazing and envelope performance"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
@@ -235,6 +235,27 @@ export default function ZeroEnergyPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7b. Editorial image 2 — integrated performance ── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ aspectRatio: "1448 / 1086" }}
+          >
+            <Image
+              src="https://img.soletahomes.com/2-energy-zeroenergy-integrated-performance-1537x1023.webp"
+              alt="Soleta ZeroEnergy integrated systems performance"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
+            />
           </div>
         </div>
       </section>
