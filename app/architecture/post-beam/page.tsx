@@ -61,7 +61,7 @@ export default function PostBeamPage() {
         />
       </div>
 
-      {/* ── 3. Numbered prose sections ── */}
+      {/* ── 3. Numbered prose sections + per-section images ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
@@ -69,20 +69,36 @@ export default function PostBeamPage() {
         <div className="container-narrow">
           <div className="flex flex-col gap-16">
             {postBeamContent.sections.map((section, i) => (
-              <div key={i} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
-                <span
-                  className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1"
-                  aria-hidden="true"
+              <div key={i} className="flex flex-col gap-8">
+                {/* Numbered prose */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+                  <span
+                    className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1"
+                    aria-hidden="true"
+                  >
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
+                      {section.heading}
+                    </h2>
+                    <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                      {section.body}
+                    </p>
+                  </div>
+                </div>
+                {/* Section image — 1671×941, full image, no crop */}
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ aspectRatio: "1671 / 941" }}
                 >
-                  0{i + 1}
-                </span>
-                <div>
-                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>
-                    {section.heading}
-                  </h2>
-                  <p className="leading-relaxed text-[var(--color-text-secondary)]">
-                    {section.body}
-                  </p>
+                  <Image
+                    src={`https://img.soletahomes.com/${i + 1}-post-beam-structural-frame-1671x941.webp`}
+                    alt={`Post and beam structural frame section ${i + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 768px"
+                  />
                 </div>
               </div>
             ))}
@@ -115,35 +131,6 @@ export default function PostBeamPage() {
               </div>
             ))}
           </dl>
-        </div>
-      </section>
-
-      {/* ── 5. Image support block — construction quality ── */}
-      <section
-        className="border-b border-[var(--color-border-light)]"
-        style={{ backgroundColor: "var(--color-bg)" }}
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          {/* Text side */}
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">Factory precision</span>
-            <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              Every structural element is cut, drilled, and finished in controlled conditions before it reaches your site. The result is a dimensionally exact frame — no site variation, no fabrication mistakes, no waiting on weather.
-            </p>
-          </div>
-          {/* Image side */}
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(260px, 30vw, 440px)" }}
-          >
-            <Image
-              src="/images/Classic800x533.webp"
-              alt="Soleta Classic - glulam post-and-beam construction"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
         </div>
       </section>
 
