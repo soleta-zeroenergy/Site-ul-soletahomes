@@ -131,26 +131,14 @@ export default function InteriorDesignPage() {
         </div>
       </section>
 
-      {/* ── 7. Supporting image split ── */}
+      {/* ── 7. Support block ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/WhySoleta900x1200.webp"
-              alt="Soleta — surfaces chosen for how they age, not how they photograph"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">{svc.supportBlock.eyebrow}</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">{svc.supportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.supportBlock.body}</p>
           </div>
         </div>
