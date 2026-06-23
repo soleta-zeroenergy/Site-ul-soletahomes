@@ -94,6 +94,8 @@ export function Hero({
           alt={imageAlt}
           fill
           priority
+          quality={70}
+          sizes="100vw"
           className={cn("object-cover", mobileObjectPosition && "hero-mobile-op")}
         />
       )}
