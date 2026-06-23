@@ -82,17 +82,76 @@ export default function PrivateConsultingPage() {
       >
         <div className="container-narrow">
           <div className="flex flex-col gap-14">
-            {svc.sections.map((section, i) => (
-              <div key={section.heading} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
-                <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{section.heading}</h2>
-                  <p className="leading-relaxed text-[var(--color-text-secondary)]">{section.body}</p>
-                </div>
+
+            {/* Section 01 — site/brief/budget */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">01</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[0].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[0].body}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Image A — 1538×1024, after "What the session covers" (site information) */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1538 / 1024" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/private-consulting-site-information-1538x1024.webp"
+                alt="Soleta private consulting site information review"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
+            {/* Section 02 — working session */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[1].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[1].body}</p>
+              </div>
+            </div>
+
+            {/* Image B — 1536×1024, after "How it is structured" (working session) */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1536 / 1024" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/private-consulting-working-session-1536x1024.webp"
+                alt="Soleta private consulting working session"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
+            {/* Section 03 — written summary */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[2].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[2].body}</p>
+              </div>
+            </div>
+
+            {/* Image C — 1537×1023, after "What you take away" (written summary) */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1023" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/private-consulting-written-summary-1537x1023.webp"
+                alt="Soleta private consulting written summary and recommendations"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
           </div>
         </div>
       </section>
@@ -131,26 +190,14 @@ export default function PrivateConsultingPage() {
         </div>
       </section>
 
-      {/* ── 7. Supporting image split ── */}
+      {/* ── 7. Support block ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/WhySoleta900x1200.webp"
-              alt="Soleta — site, brief and the first conversation"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">{svc.supportBlock.eyebrow}</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">{svc.supportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.supportBlock.body}</p>
           </div>
         </div>
