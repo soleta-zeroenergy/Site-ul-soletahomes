@@ -138,35 +138,32 @@ export default function AftercarePage() {
         </div>
       </section>
 
-      {/* ── 7. Supporting image split ── */}
+      {/* ── 7. Support block ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">{svc.supportBlock.eyebrow}</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">{svc.supportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.supportBlock.body}</p>
-          </div>
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/Classic800x533.webp"
-              alt="Soleta Classic — built to last, maintained to perform"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
 
       {/* ── 8. FAQ ── */}
-      <div className="border-b border-[var(--color-border-light)]">
-        <FaqAccordion items={svc.faq!} />
-      </div>
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <span className="eyebrow mb-4 block">Frequently asked</span>
+          <h2 className="mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            Questions about aftercare
+          </h2>
+          <FaqAccordion items={svc.faq!} />
+        </div>
+      </section>
 
       {/* ── 9. CTA ── */}
       <CtaBand
