@@ -82,6 +82,20 @@ export default function BuildPage() {
               </div>
             </div>
 
+            {/* Image A — 1533×1025, after "Controlled production, not site improvisation" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1533 / 1025" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/build-controlled-production-1533x1025.png"
+                alt="Soleta controlled timber production"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
               <div>
@@ -92,6 +106,20 @@ export default function BuildPage() {
               </div>
             </div>
 
+            {/* Image B — 1537×1769 (tall/vertical), after "Loaded in sequence, assembled in order" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1769" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/build-loaded-in-sequence-1537x1769.PNG"
+                alt="Soleta timber elements loaded in sequence for delivery"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
               <div>
@@ -100,6 +128,20 @@ export default function BuildPage() {
                   The structural frame of a Classic or Signature model is typically erected in 3 to 10 working days. The complete weatherproof envelope — structure, insulation, cladding, windows, and external doors — is achieved within 3 to 10 weeks from the start of assembly, weather permitting. Internal works begin once the envelope is closed. The total duration of the Build stage, factory and site combined, is typically 6 to 13 weeks for a standard project.
                 </p>
               </div>
+            </div>
+
+            {/* Image C — 1537×862, after "Indicative on-site timeline" (site delivery / assembly sequence) */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 862" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/build-loaded-in-sequence-1537x862.webp"
+                alt="Soleta factory-to-site delivery sequence"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
             </div>
 
           </div>
@@ -142,26 +184,28 @@ export default function BuildPage() {
         </div>
       </section>
 
-      {/* ── 6. Supporting image split ── */}
+      {/* ── 6. Weatherproof envelope — image D + text ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+        <div className="container-narrow">
+          {/* Image D — 1537×1025, full image visible, no crop */}
           <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
+            className="relative w-full overflow-hidden mb-10"
+            style={{ aspectRatio: "1537 / 1025" }}
           >
             <Image
-              src="/images/Classic800x533.webp"
-              alt="Soleta Classic — weatherproof envelope achieved on site"
+              src="https://img.soletahomes.com/build-weatherproof-envelope-complete-1537x1025.PNG"
+              alt="Soleta weatherproof envelope complete during build"
               fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 768px"
             />
           </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">Factory precision, visible on site</span>
+          {/* Text */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Factory precision, visible on site</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               Because every element is manufactured to CNC tolerances, the assembly process is unusually clean and quiet. What arrives on site fits. That predictability is not accidental — it is the direct consequence of resolving every dimension in the factory before transport begins.
             </p>
