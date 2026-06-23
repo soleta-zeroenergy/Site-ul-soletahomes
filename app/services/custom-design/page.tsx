@@ -82,17 +82,48 @@ export default function CustomDesignPage() {
       >
         <div className="container-narrow">
           <div className="flex flex-col gap-14">
-            {svc.sections.map((section, i) => (
-              <div key={section.heading} className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
-                <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{section.heading}</h2>
-                  <p className="leading-relaxed text-[var(--color-text-secondary)]">{section.body}</p>
-                </div>
+
+            {/* Section 01 — How the design process works (concept directions) */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">01</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[0].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[0].body}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Image — 1536×1024, after "How the design process works" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1536 / 1024" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/custom-design-concept-directions-1536x1024.webp"
+                alt="Three Soleta custom design concept directions for the same site"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
+            {/* Section 02 */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[1].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[1].body}</p>
+              </div>
+            </div>
+
+            {/* Section 03 */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+              <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
+              <div>
+                <h2 className="mb-4" style={{ fontSize: "1.1875rem", lineHeight: 1.3 }}>{svc.sections[2].heading}</h2>
+                <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.sections[2].body}</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -131,27 +162,15 @@ export default function CustomDesignPage() {
         </div>
       </section>
 
-      {/* ── 7. Supporting image split ── */}
+      {/* ── 7. Support block ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">{svc.supportBlock.eyebrow}</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">{svc.supportBlock.eyebrow}</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">{svc.supportBlock.body}</p>
-          </div>
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/hero.webp"
-              alt="Soleta — design shaped by the structural logic of the system"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
