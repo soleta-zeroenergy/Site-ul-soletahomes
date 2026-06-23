@@ -169,16 +169,6 @@ export const homeWhoWeWorkWith = {
       body:  "Second homes and seasonal retreats in landscapes where quiet and connection matter.",
       href:  "/built-projects/holiday-homes",
     },
-    {
-      title: "Hospitality & Small Resorts",
-      body:  "Small lodge groups, boutique hotel extensions, and eco-resort developments.",
-      href:  "/built-projects/hospitality-resorts",
-    },
-    {
-      title: "Educational & Public Buildings",
-      body:  "Timber construction for education, community spaces, and public architecture.",
-      href:  "/built-projects/educational-public",
-    },
   ],
   cta: { label: "See Built Projects by Type", href: "/built-projects" },
 };

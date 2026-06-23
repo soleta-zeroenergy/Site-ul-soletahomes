@@ -22,6 +22,8 @@ export type CategoryMeta = {
   h1:         string;
   subheading: string;
   href:       string;        // "/built-projects/private-residences"
+  /** Set true to hide from public UI, sitemap, and nav. Restore by removing this flag. */
+  isHidden?:  boolean;
   cta: {
     heading:  string;
     body:     string;
@@ -107,6 +109,7 @@ export const categoryMeta: CategoryMeta[] = [
     value:      "hospitality-resorts",
     label:      "Hospitality & Resorts",
     eyebrow:    "Hospitality & Resorts",
+    isHidden:   true,
     h1:         "Timber hospitality, built at scale",
     subheading: "Boutique hotels, eco-resorts, lodge clusters, and restaurant terraces. The Soleta modular system makes it possible to build high-quality hospitality projects quickly — without compromising on materials or architecture.",
     href:       "/built-projects/hospitality-resorts",
@@ -121,6 +124,7 @@ export const categoryMeta: CategoryMeta[] = [
     value:      "educational-public",
     label:      "Educational & Public",
     eyebrow:    "Educational & Public",
+    isHidden:   true,
     h1:         "Timber buildings for the public realm",
     subheading: "Schools, kindergartens, community centres, and public spaces. The Soleta system — healthy materials, fast assembly, and long lifespan — makes it an ideal choice for buildings that serve communities.",
     href:       "/built-projects/educational-public",

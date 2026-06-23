@@ -19,8 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/built-projects`,                       lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/built-projects/private-residences`,    lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/built-projects/holiday-homes`,         lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/built-projects/hospitality-resorts`,   lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/built-projects/educational-public`,    lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/built-projects/case-studies`,          lastModified, changeFrequency: "monthly", priority: 0.75 },
 
     /* ── Tier 3 — Architecture & Design ────────────────────────────────── */

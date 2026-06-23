@@ -45,8 +45,6 @@ export const headerNav: NavItem[] = [
           { label: "Built Projects", href: "/built-projects" },
           { label: "Private Residences", href: "/built-projects/private-residences" },
           { label: "Holiday Homes", href: "/built-projects/holiday-homes" },
-          { label: "Hospitality & Resorts", href: "/built-projects/hospitality-resorts" },
-          { label: "Educational & Public", href: "/built-projects/educational-public" },
           { label: "Case Studies", href: "/built-projects/case-studies" },
         ],
       },

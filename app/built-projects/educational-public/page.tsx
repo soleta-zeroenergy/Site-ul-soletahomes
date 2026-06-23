@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
-import { projects, getCategoryMeta, getCaseStudyProjects, projectHref } from "@/lib/content/built-projects";
+import { projects, getCategoryMeta, getCaseStudyProjects, projectHref, categoryMeta } from "@/lib/content/built-projects";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { breadcrumbSchema } from "@/lib/structured-data-helpers";
@@ -14,9 +15,12 @@ export const metadata: Metadata = {
   ...withCanonical(meta.href),
   title:       "Educational & Public | Built Projects | Soleta",
   description: "Soleta educational and public buildings — timber architecture for schools, kindergartens, community centres, and public spaces.",
+  robots: { index: false, follow: false },
 };
 
 export default function EducationalPublicPage() {
+  // Category temporarily hidden — return 404 while isHidden is set
+  if (categoryMeta.find((c) => c.value === CATEGORY)?.isHidden) notFound();
   const categoryProjects = projects.filter((p) => p.category === CATEGORY);
   const relatedStudies   = getCaseStudyProjects().filter((p) => p.category === CATEGORY);
 

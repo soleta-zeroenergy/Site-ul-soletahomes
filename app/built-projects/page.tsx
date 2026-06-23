@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ...withCanonical("/built-projects"),
   title:       "Built Projects | Homes We Have Built | Soleta",
   description:
-    "More than 86 Soleta homes built across Romania, France, Germany, Austria, and beyond. Explore private residences, holiday homes, hospitality projects, and case studies.",
+    "More than 86 Soleta homes built across Romania, France, Germany, Austria, and beyond. Explore private residences, holiday homes, and case studies.",
 };
 
 export default function BuiltProjectsPage() {
@@ -43,7 +43,7 @@ export default function BuiltProjectsPage() {
           <span className="eyebrow mb-6 block">Built Projects</span>
           <h1 className="mb-6 max-w-2xl">Architecture shaped by place, use, and real life</h1>
           <p className="subtitle max-w-xl">
-            Explore homes and timber projects developed across private, hospitality, and public contexts — each one shaped by land, climate, use, and the realities of building well.
+            Explore homes and timber projects developed across private and holiday contexts — each one shaped by land, climate, use, and the realities of building well.
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function BuiltProjectsPage() {
         <div className="container-site">
           <span className="eyebrow mb-10 block">Browse by Category</span>
           <div className="grid grid-cols-1 gap-px border border-[var(--color-border-light)] bg-[var(--color-border-light)] sm:grid-cols-2">
-            {categoryMeta.map((cat) => (
+            {categoryMeta.filter((cat) => !cat.isHidden).map((cat) => (
                 <Link
                   key={cat.value}
                   href={cat.href}
