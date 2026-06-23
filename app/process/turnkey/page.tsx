@@ -81,6 +81,20 @@ export default function TurnkeyPage() {
               </div>
             </div>
 
+            {/* Image A — 1537×865, after "What turnkey actually means" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 865" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/turnkey-completed-interior-1537x865.webp"
+                alt="Completed Soleta interior ready for handover"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">02</span>
               <div>
@@ -91,6 +105,20 @@ export default function TurnkeyPage() {
               </div>
             </div>
 
+            {/* Image B — 1537×1025, after "Systems commissioning" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1025" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/turnkey-systems-commissioning-1537x1025.webp"
+                alt="Soleta systems commissioning before handover"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
               <span className="font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] md:pt-1" aria-hidden="true">03</span>
               <div>
@@ -99,6 +127,20 @@ export default function TurnkeyPage() {
                   Handover is a structured walkthrough — typically 3 to 4 hours, with our project manager and the relevant technical lead present on site. We go through every room, every system, and every detail. Snagging items identified during the walkthrough are recorded, prioritised, and resolved before or shortly after the handover date. You do not receive the documentation pack until the walkthrough is complete and both parties are satisfied.
                 </p>
               </div>
+            </div>
+
+            {/* Image C — 1537×1023, after "A structured handover, not a rushed key exchange" */}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ aspectRatio: "1537 / 1023" }}
+            >
+              <Image
+                src="https://img.soletahomes.com/turnkey-handover-documentation-1537x1023.png"
+                alt="Soleta handover documentation and home manuals"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
             </div>
 
           </div>
@@ -135,26 +177,14 @@ export default function TurnkeyPage() {
         </div>
       </section>
 
-      {/* ── 5. Supporting image split ── */}
+      {/* ── 5. Aftercare ── */}
       <section
-        className="border-b border-[var(--color-border-light)]"
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div
-            className="relative w-full border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/WhySoleta900x1200.webp"
-              alt="Soleta — handover and the aftercare programme"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16">
-            <span className="eyebrow block">Handover is not the end of the relationship</span>
+        <div className="container-narrow">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[120px_1fr]">
+            <span className="eyebrow md:pt-1">Handover is not the end of the relationship</span>
             <p className="leading-relaxed text-[var(--color-text-secondary)]">
               Our aftercare programme covers annual inspection visits, maintenance guidance, warranty management, and technical support. A Soleta home is designed to perform for 80 years or more — and we have a direct interest in making sure that happens. Aftercare is available as a separately contracted programme after handover and is particularly relevant for clients in countries where we do not have a permanent local presence.
             </p>
