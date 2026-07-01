@@ -48,6 +48,20 @@ export default function BuiltProjectsPage() {
         </div>
       </section>
 
+      {/* ── 1b. Hero image ── */}
+      <section className="border-b border-[var(--color-border-light)] bg-[var(--soleta-cream)]">
+        <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3001 / 1025" }}>
+          <Image
+            src="https://img.soletahomes.com/Hero_built_projects_3001x1025.webp"
+            alt="Built Soleta projects in natural landscapes"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain"
+          />
+        </div>
+      </section>
+
       {/* ── 2. Why built work matters ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
