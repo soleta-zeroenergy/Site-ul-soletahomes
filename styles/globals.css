@@ -303,7 +303,20 @@
     background-color: var(--soleta-bg);
     border-color: var(--soleta-bg);
   }
-
+  @media (max-width: 480px) {
+    .btn.btn,
+    .btn-primary.btn-primary,
+    .btn-outline.btn-outline,
+    .btn-outline-brand.btn-outline-brand,
+    .btn-inverse.btn-inverse {
+      max-width: 100%;
+      min-width: 0;
+      padding-inline: 1.25rem;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.35;
+    }
+  }
   .card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border-light);

@@ -120,6 +120,18 @@ export function Hero({
         }
       />
 
+      {imageSrc && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none md:hidden"
+          style={{
+            background:
+              imageOverlayVariant === "localized"
+                ? "linear-gradient(to top, rgba(26,23,20,0.88) 0%, rgba(26,23,20,0.64) 30%, rgba(26,23,20,0.32) 58%, rgba(26,23,20,0.10) 82%, transparent 100%), radial-gradient(120% 88% at 26% 72%, rgba(26,23,20,0.72) 0%, rgba(26,23,20,0.48) 42%, rgba(26,23,20,0.16) 70%, transparent 100%)"
+                : "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.52) 36%, rgba(26,23,20,0.18) 68%, transparent 100%)",
+          }}
+        />
+      )}
       {/* Content */}
       <div
         className={cn(
@@ -148,7 +160,7 @@ export function Hero({
         {subtext && (
           <p
             className={cn(
-              "mb-12 text-[#b09a8b] leading-relaxed",
+              "mb-12 text-[#e4dad1] leading-relaxed md:text-[#b09a8b]",
               centered ? "max-w-xl" : "max-w-lg"
             )}
             style={{
@@ -173,7 +185,7 @@ export function Hero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center gap-2 border-b border-transparent pb-[2px] text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#c8bfb8] transition-colors duration-200 hover:border-[#c8bfb8] hover:text-[#faf8f6]"
+                className="inline-flex items-center gap-2 border-b border-transparent pb-[2px] text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[#f0e8df] transition-colors duration-200 hover:border-[#c8bfb8] hover:text-[#faf8f6] md:text-[#c8bfb8]"
               >
                 {secondaryCta.label}
                 <span aria-hidden="true">→</span>
