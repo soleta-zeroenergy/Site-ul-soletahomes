@@ -42,7 +42,7 @@ export default function TurnkeyPage() {
           >
             ← Process & Services
           </Link>
-          <span className="eyebrow mb-2 block">{step.number} — {step.label}</span>
+          <span className="eyebrow mb-2 block">{step.label}</span>
           <h1 className="mb-6 max-w-2xl">{step.heading}</h1>
           <p className="subtitle max-w-xl">{step.description}</p>
         </div>
