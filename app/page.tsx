@@ -7,10 +7,12 @@ import { ProjectGrid }     from "@/components/sections/ProjectGrid";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FaqPreview }      from "@/components/sections/FaqPreview";
 import { CtaBand }         from "@/components/sections/CtaBand";
+import { ValuesGrid }      from "@/components/sections/ValuesGrid";
 import {
   homeHero,
   homeProofStrip,
   homeAuthorityStrip,
+  homeWhyChooseUs,
   homeManifesto,
   homeCollection,
   homeValues,
@@ -82,6 +84,9 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* 2c ── Why clients choose Soleta */}
+      <ValuesGrid {...homeWhyChooseUs} theme="warm" columns={4} />
 
       {/* 3 ── Manifesto */}
       <FeatureSplit {...homeManifesto} />

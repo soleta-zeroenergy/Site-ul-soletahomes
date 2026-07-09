@@ -37,6 +37,30 @@ export const homeAuthorityStrip = {
   text: "Founded in 2011 · Designed in Sweden & manufactured in Romania · Built across Europe · Post & beam timber architecture",
 };
 
+/* ── 2c. Why clients choose Soleta ────────────────────────────────────────── */
+export const homeWhyChooseUs: ValuesGridProps = {
+  eyebrow: "Why clients choose Soleta",
+  heading: "What sets the process apart",
+  items: [
+    {
+      title: "Architectural clarity",
+      body: "Homes are designed as complete architectural objects, not generic catalogue houses.",
+    },
+    {
+      title: "Integrated engineering",
+      body: "Design, structure and production logic are developed together from the beginning.",
+    },
+    {
+      title: "Controlled timber manufacturing",
+      body: "The timber system is prepared with precision before arriving on site.",
+    },
+    {
+      title: "International project experience",
+      body: "Soleta supports private clients and selected projects beyond Romania.",
+    },
+  ],
+};
+
 /* ── 3. Manifesto ─────────────────────────────────────────────────────────── */
 export const homeManifesto: FeatureSplitProps = {
   eyebrow:       "Our View",
