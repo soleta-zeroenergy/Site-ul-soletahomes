@@ -10,6 +10,7 @@ import { CtaBand }         from "@/components/sections/CtaBand";
 import {
   homeHero,
   homeProofStrip,
+  homeAuthorityStrip,
   homeManifesto,
   homeCollection,
   homeValues,
@@ -70,6 +71,15 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 2b ── Authority strip */}
+      <section className="bg-[#1a1714] py-4 border-t border-white/5">
+        <div className="container-site">
+          <p className="mx-auto max-w-3xl text-center font-ui text-[0.5625rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-[#c8bfb8]">
+            {homeAuthorityStrip.text}
+          </p>
         </div>
       </section>
 

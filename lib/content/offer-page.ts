@@ -19,7 +19,7 @@ export const offerFraming = {
 export const offerReassurance = {
   eyebrow: "What happens after you submit",
   body:
-    "Your brief is read by the Soleta team and assigned to the architect best suited to your project type and location. We aim to respond within three business days with a written summary: what is feasible, what the next steps would be, and what information we would need from you to proceed. There is no sales call, no automated sequence, and no obligation.",
+    "Your brief is read by the Soleta team and assigned to the architect best suited to your project type and location. We aim to respond within three business days with a written summary: what is feasible, what the next steps would be, and what information we would need from you to proceed. You will not be added to a generic marketing sequence. If your brief is project-specific, we may follow up with relevant questions or materials needed to assess the next step. There is no obligation.",
 };
 
 export const offerFaq = [

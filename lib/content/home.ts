@@ -32,6 +32,11 @@ export const homeProofStrip = {
   ],
 };
 
+/* ── 2b. Authority strip ──────────────────────────────────────────────────── */
+export const homeAuthorityStrip = {
+  text: "Founded in 2011 · Designed in Sweden & manufactured in Romania · Built across Europe · Post & beam timber architecture",
+};
+
 /* ── 3. Manifesto ─────────────────────────────────────────────────────────── */
 export const homeManifesto: FeatureSplitProps = {
   eyebrow:       "Our View",
