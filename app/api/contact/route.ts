@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
   const result = validateContact(body);
 
-  if (!result.ok) {
+  if (result.ok === false) {
     return NextResponse.json({ errors: result.errors }, { status: 422 });
   }
 

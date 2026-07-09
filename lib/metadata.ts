@@ -7,7 +7,7 @@ export const siteConfig = {
     "Nordic timber homes designed for the way you live. ZeroEnergy architecture, healthy materials, delivered across Europe and beyond.",
   url:            "https://soletahomes.com",
   locale:         "en_US",
-  type:           "website",
+  type:           "website" as const,
   twitterHandle:  "@soletahomes",
   ogImage:        "/images/og-default.jpg",
 };
