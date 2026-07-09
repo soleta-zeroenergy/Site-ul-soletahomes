@@ -1,7 +1,6 @@
 /* ─────────────────────────────────────────────────────────────────────────────
    International Delivery — content data
    /process/international-delivery draws from this file.
-   Text-led page — no hero image in this sprint.
    ───────────────────────────────────────────────────────────────────────────── */
 
 /* ── Page header ─────────────────────────────────────────────────────────────── */
@@ -12,6 +11,8 @@ export const internationalDeliveryHeader = {
   heading: "How Soleta works with international clients",
   subtitle:
     "Soleta can work with clients and sites outside Romania. The exact delivery scope — what we coordinate directly and what remains local — depends on the country, the site, local regulation, logistics, and the availability of trusted local partners. We confirm this in detail during feasibility, not in advance.",
+  imageSrc: "https://img.soletahomes.com/International_delivery_971x1619.webp",
+  imageAlt: "International delivery logistics with shipping and transport",
 };
 
 /* ── 1. What Soleta can usually coordinate ──────────────────────────────────── */

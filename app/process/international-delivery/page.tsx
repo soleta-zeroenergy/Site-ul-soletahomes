@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { withCanonical } from "@/lib/seo";
 import {
   internationalDeliveryHeader,
@@ -45,15 +46,30 @@ export default function InternationalDeliveryPage() {
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
         <div className="container-narrow">
-          <Link
-            href="/process"
-            className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
-          >
-            ← Process & Services
-          </Link>
-          <span className="eyebrow mb-2 block">{internationalDeliveryHeader.eyebrow}</span>
-          <h1 className="mb-6 max-w-2xl">{internationalDeliveryHeader.heading}</h1>
-          <p className="subtitle max-w-xl">{internationalDeliveryHeader.subtitle}</p>
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_340px] lg:gap-14">
+            <div>
+              <Link
+                href="/process"
+                className="eyebrow mb-8 inline-flex items-center gap-2 no-underline opacity-60 hover:opacity-100 transition-opacity"
+              >
+                ← Process & Services
+              </Link>
+              <span className="eyebrow mb-2 block">{internationalDeliveryHeader.eyebrow}</span>
+              <h1 className="mb-6 max-w-2xl">{internationalDeliveryHeader.heading}</h1>
+              <p className="subtitle max-w-xl">{internationalDeliveryHeader.subtitle}</p>
+            </div>
+            <div className="lg:order-last">
+              <Image
+                src={internationalDeliveryHeader.imageSrc}
+                alt={internationalDeliveryHeader.imageAlt}
+                width={971}
+                height={1619}
+                className="mx-auto h-auto w-full max-w-[220px] lg:mx-0 lg:max-w-[340px]"
+                sizes="(max-width: 1024px) 220px, 340px"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 

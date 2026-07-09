@@ -1,7 +1,6 @@
 /* ─────────────────────────────────────────────────────────────────────────────
    Planning & Budget — content data
    /process/planning-budget draws from this file.
-   Text-led page — no hero image in this sprint.
    ───────────────────────────────────────────────────────────────────────────── */
 
 /* ── Page header ─────────────────────────────────────────────────────────────── */
@@ -12,6 +11,8 @@ export const planningBudgetHeader = {
   heading: "How budget clarity is built into a Soleta project",
   subtitle:
     "We do not publish fixed prices online. Instead, budget clarity is built progressively — through conversation, site information, and design decisions — until a formal offer can be made responsibly.",
+  imageSrc: "https://img.soletahomes.com/Planning_and_budgeting_971x1619.webp",
+  imageAlt: "Planning and budgeting notes over an architectural plan",
 };
 
 /* ── 1. Why there is no fixed online price list ─────────────────────────────── */
