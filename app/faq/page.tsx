@@ -131,6 +131,12 @@ export default function FaqPage() {
             >
               Private Consulting →
             </Link>
+            <Link
+              href="/process/planning-budget"
+              className="eyebrow no-underline opacity-70 hover:opacity-100 transition-opacity"
+            >
+              Read more about how Soleta approaches planning and budget clarity →
+            </Link>
           </div>
         </div>
       </section>

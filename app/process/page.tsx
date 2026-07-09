@@ -261,6 +261,14 @@ export default function ProcessPage() {
               </ul>
             </div>
           </div>
+          <p className="mt-10 text-sm">
+            <Link
+              href="/process/planning-budget"
+              className="text-[var(--color-brand)] hover:opacity-70 transition-opacity"
+            >
+              For a fuller explanation, see Planning &amp; Budget.
+            </Link>
+          </p>
         </div>
       </section>
 

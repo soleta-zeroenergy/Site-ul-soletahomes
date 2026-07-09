@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { withCanonical } from "@/lib/seo";
 import { PrivateOfferForm } from "@/components/sections/PrivateOfferForm";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -100,6 +101,12 @@ export default function RequestPrivateOfferPage() {
                 <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
                   The form takes around five minutes. The more specific you are, the more useful our response will be. You do not need to have every answer exactly — estimates and ranges are fine.
                 </p>
+                <Link
+                  href="/process/planning-budget"
+                  className="mt-3 inline-block text-sm text-[var(--color-text-muted)] underline decoration-[var(--color-border-light)] underline-offset-4 hover:text-[var(--color-brand)] transition-colors"
+                >
+                  Understand how budget clarity develops before requesting a consultation.
+                </Link>
               </div>
               <div className="flex flex-col gap-4 border-t border-[var(--color-border-light)] pt-6">
                 {[

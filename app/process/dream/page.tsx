@@ -126,6 +126,12 @@ export default function DreamPage() {
                 <p className="leading-relaxed text-[var(--color-text-secondary)]">
                   At the end of the Dream stage, we tell you which path fits your brief — a collection model, an adapted design, or a fully custom home — and what the budget range looks like for each. If the numbers do not work, we say so. If the timeline is tighter than you expect, we say that too. The Dream stage exists to give you clarity, not to lock you into anything.
                 </p>
+                <Link
+                  href="/process/planning-budget"
+                  className="mt-2 inline-block font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
+                >
+                  For a fuller explanation, see Planning &amp; Budget.
+                </Link>
               </div>
             </div>
 
