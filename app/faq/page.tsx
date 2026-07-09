@@ -137,6 +137,12 @@ export default function FaqPage() {
             >
               Read more about how Soleta approaches planning and budget clarity →
             </Link>
+            <Link
+              href="/process/international-delivery"
+              className="eyebrow no-underline opacity-70 hover:opacity-100 transition-opacity"
+            >
+              Building outside Romania? See International Delivery →
+            </Link>
           </div>
         </div>
       </section>

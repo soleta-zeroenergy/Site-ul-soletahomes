@@ -269,6 +269,14 @@ export default function ProcessPage() {
               For a fuller explanation, see Planning &amp; Budget.
             </Link>
           </p>
+          <p className="mt-3 text-sm">
+            <Link
+              href="/process/international-delivery"
+              className="text-[var(--color-brand)] hover:opacity-70 transition-opacity"
+            >
+              Building outside your home country? See International Delivery.
+            </Link>
+          </p>
         </div>
       </section>
 

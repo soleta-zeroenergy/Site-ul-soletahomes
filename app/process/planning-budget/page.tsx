@@ -199,6 +199,14 @@ export default function PlanningBudgetPage() {
               <p className="leading-relaxed text-[var(--color-text-secondary)]">
                 {whatRemainsLocal.body}
               </p>
+              <p className="mt-4 text-sm">
+                <Link
+                  href="/process/international-delivery"
+                  className="text-[var(--color-brand)] hover:opacity-70 transition-opacity"
+                >
+                  For projects outside Romania, see International Delivery.
+                </Link>
+              </p>
             </div>
           </div>
         </div>

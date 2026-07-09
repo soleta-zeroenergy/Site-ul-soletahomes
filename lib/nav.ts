@@ -74,6 +74,7 @@ export const headerNav: NavItem[] = [
         children: [
           { label: "Process & Services", href: "/process" },
           { label: "Planning & Budget", href: "/process/planning-budget" },
+          { label: "International Delivery", href: "/process/international-delivery" },
           { label: "Dream", href: "/process/dream" },
           { label: "Design & Planning", href: "/process/design-planning" },
           { label: "Engineering", href: "/process/engineering" },
