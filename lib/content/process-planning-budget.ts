@@ -47,7 +47,7 @@ export const budgetFactors = {
     },
     {
       title: "Scope you choose to include",
-      body: "Structural kit only, a fully turnkey home, or something in between — the scope you select materially changes the total figure.",
+      body: "A structural package, an extended delivery scope where available, or something in between — the scope selected materially changes the total figure.",
     },
   ],
 };
