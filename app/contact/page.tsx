@@ -172,7 +172,7 @@ export default function ContactPage() {
                   href="/request-private-offer"
                   className="btn-primary py-3 px-7 text-[0.875rem] inline-flex"
                 >
-                  Go to Private Consultation
+                  Request a Private Consultation
                 </Link>
               </div>
             </div>

@@ -229,7 +229,7 @@ export function ModelDetail({ model }: { model: HomeModel }) {
       {/* ── Sticky mobile CTA ── */}
       <div className="sticky-cta-mobile">
         <Link href="/request-private-offer" className="btn-primary flex-1 justify-center">
-          Request Offer
+          Request Consultation
         </Link>
         <Link href="/catalog" className="btn-outline flex-1 justify-center">
           Catalogue
