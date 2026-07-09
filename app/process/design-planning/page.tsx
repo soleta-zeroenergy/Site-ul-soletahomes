@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/process/design-planning"),
-  title: "Design & Planning — Stage 2 | Process & Services | Soleta",
+  title: "Design & Planning | Process & Services | Soleta",
   description:
     "Turning your brief into a developed architectural proposal — plans, elevations, 3D visualisations, and material selections. Nothing is fixed until you approve it.",
 };
@@ -191,13 +191,13 @@ export default function DesignPlanningPage() {
             href={prevStep.href}
             className="eyebrow opacity-60 hover:opacity-100 transition-opacity no-underline"
           >
-            ← {prevStep.number} {prevStep.label}
+            ← {prevStep.label}
           </Link>
           <Link
             href={nextStep.href}
             className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
           >
-            Next: {nextStep.number} {nextStep.label} →
+            Next: {nextStep.label} →
           </Link>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function DesignPlanningPage() {
         eyebrow="Next step"
         heading="See how design becomes structure"
         body="Engineering resolves every technical question raised by the design — before a single element is manufactured."
-        primaryCta={{ label: nextStep.number + " " + nextStep.label + " →", href: nextStep.href }}
+        primaryCta={{ label: nextStep.label + " →", href: nextStep.href }}
         secondaryCta={{ label: "Back to Process overview", href: "/process" }}
         theme="dark"
       />

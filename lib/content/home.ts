@@ -210,27 +210,22 @@ export const homeProcess: ProcessTimelineProps = {
   theme:   "warm",
   stages: [
     {
-      eyebrow: "Stage 01",
       title:   "Dream",
       body:    "We visit your site before a single line is drawn. Architecture begins with listening — about your land, how you intend to live, and what the house needs to do for you.",
     },
     {
-      eyebrow: "Stage 02",
       title:   "Design & Planning",
       body:    "Options, not a fixed direction. We present alternatives, refine them together with you, and support the preparation of the documentation required for construction approval.",
     },
     {
-      eyebrow: "Stage 03",
       title:   "Engineering",
       body:    "Technical decisions are resolved within the design — not added afterwards. Complete construction documentation before the site works begin.",
     },
     {
-      eyebrow: "Stage 04",
       title:   "Build",
       body:    "Elements manufactured in the workshop and delivered to site. The structure is erected in 5 to 15 days. The weather-protected envelope is completed in 4 to 10 weeks.",
     },
     {
-      eyebrow: "Stage 05",
       title:   "Turnkey Delivery",
       body:    "Keys, full documentation, and aftercare. One point of responsibility from the first conversation to handover.",
     },

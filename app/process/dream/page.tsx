@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/process/dream"),
-  title: "Dream — Stage 1 | Process & Services | Soleta",
+  title: "Dream | Process & Services | Soleta",
   description:
     "The first conversation — understanding your site, your vision, and your brief. No sales pitch. An honest assessment of what is feasible before any commitment.",
 };
@@ -206,7 +206,7 @@ export default function DreamPage() {
             href={nextStep.href}
             className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
           >
-            Next: {nextStep.number} {nextStep.label} →
+            Next: {nextStep.label} →
           </Link>
         </div>
       </section>

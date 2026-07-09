@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/process/build"),
-  title: "Build — Stage 4 | Process & Services | Soleta",
+  title: "Build | Process & Services | Soleta",
   description:
     "Factory manufacturing and on-site assembly. Every structural element is produced under controlled conditions, loaded in assembly order, and erected on your site by our team.",
 };
@@ -223,13 +223,13 @@ export default function BuildPage() {
             href={prevStep.href}
             className="eyebrow opacity-60 hover:opacity-100 transition-opacity no-underline"
           >
-            ← {prevStep.number} {prevStep.label}
+            ← {prevStep.label}
           </Link>
           <Link
             href={nextStep.href}
             className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
           >
-            Next: {nextStep.number} {nextStep.label} →
+            Next: {nextStep.label} →
           </Link>
         </div>
       </section>
@@ -238,7 +238,7 @@ export default function BuildPage() {
         eyebrow="Next step"
         heading="Final finishes and handover"
         body="Once the envelope is complete, internal works begin. Turnkey Delivery takes the home from structure to move-in-ready."
-        primaryCta={{ label: nextStep.number + " " + nextStep.label + " →", href: nextStep.href }}
+        primaryCta={{ label: nextStep.label + " →", href: nextStep.href }}
         secondaryCta={{ label: "Back to Process & Services", href: "/process" }}
         theme="dark"
       />

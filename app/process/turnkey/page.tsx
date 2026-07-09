@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/process/turnkey"),
-  title: "Turnkey Delivery — Stage 5 | Process & Services | Soleta",
+  title: "Turnkey Delivery | Process & Services | Soleta",
   description:
     "Final finishes, systems commissioning, and structured handover. What turnkey includes, what the documentation pack contains, and what happens after you move in.",
 };
@@ -202,7 +202,7 @@ export default function TurnkeyPage() {
             href={prevStep.href}
             className="eyebrow opacity-60 hover:opacity-100 transition-opacity no-underline"
           >
-            ← {prevStep.number} {prevStep.label}
+            ← {prevStep.label}
           </Link>
           <Link
             href="/process"

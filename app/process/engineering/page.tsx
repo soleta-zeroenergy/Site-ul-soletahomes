@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/process/engineering"),
-  title: "Engineering — Stage 3 | Process & Services | Soleta",
+  title: "Engineering | Process & Services | Soleta",
   description:
     "Structural calculations, energy model, manufacturing drawings, and support for permit documentation. Every technical decision must be resolved before a single element is produced.",
 };
@@ -194,13 +194,13 @@ export default function EngineeringPage() {
             href={prevStep.href}
             className="eyebrow opacity-60 hover:opacity-100 transition-opacity no-underline"
           >
-            ← {prevStep.number} {prevStep.label}
+            ← {prevStep.label}
           </Link>
           <Link
             href={nextStep.href}
             className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] hover:opacity-70 transition-opacity"
           >
-            Next: {nextStep.number} {nextStep.label} →
+            Next: {nextStep.label} →
           </Link>
         </div>
       </section>
@@ -209,7 +209,7 @@ export default function EngineeringPage() {
         eyebrow="Next step"
         heading="From drawings to production"
         body="Once engineering is complete and approved, manufacturing begins. Your home is built once in the factory — precisely — before it arrives on your site."
-        primaryCta={{ label: nextStep.number + " " + nextStep.label + " →", href: nextStep.href }}
+        primaryCta={{ label: nextStep.label + " →", href: nextStep.href }}
         secondaryCta={{ label: "Back to Process overview", href: "/process" }}
         theme="dark"
       />

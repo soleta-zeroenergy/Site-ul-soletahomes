@@ -27,7 +27,6 @@ export const processTimeline: ProcessTimelineProps = {
   theme: "warm",
   stages: [
     {
-      eyebrow: "Stage 01",
       title:   "Dream",
       body:
         "Every project begins with a conversation — about your site, how you intend to live, and what the house needs to do for you. We visit the land with you before a single line is drawn. Our architects listen first.",
@@ -39,7 +38,6 @@ export const processTimeline: ProcessTimelineProps = {
       ],
     },
     {
-      eyebrow: "Stage 02",
       title:   "Design & Planning",
       body:
         "Architecture developed with you, through successive rounds of refinement. We present options, not a single fixed direction. The design is yours by the time we submit for planning approval.",
@@ -51,7 +49,6 @@ export const processTimeline: ProcessTimelineProps = {
       ],
     },
     {
-      eyebrow: "Stage 03",
       title:   "Engineering",
       body:
         "Our structural and services engineers work directly with the architectural team so that technical requirements are resolved inside the design — not bolted on afterwards. Construction documents are complete before ground is broken.",
@@ -63,7 +60,6 @@ export const processTimeline: ProcessTimelineProps = {
       ],
     },
     {
-      eyebrow: "Stage 04",
       title:   "Build",
       body:
         "Skilled timber craftspeople on your site. Our site manager is present throughout; you are kept informed at agreed intervals. We do not subcontract the frame — it is built by the same team that designed it.",
@@ -75,7 +71,6 @@ export const processTimeline: ProcessTimelineProps = {
       ],
     },
     {
-      eyebrow: "Stage 05",
       title:   "Turnkey Delivery",
       body:
         "The house is complete before we hand you the keys. Snagging is resolved by our team, not left for you to chase. You move into a finished home — not a work in progress.",
