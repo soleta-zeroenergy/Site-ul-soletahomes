@@ -120,6 +120,47 @@ export const faqCategories: FaqCategory[] = [
     ],
   },
 
+  /* ── 4b. International & Delivery Scope ──────────────────────────────────── */
+  {
+    id: "international-delivery-scope",
+    label: "International & Delivery",
+    heading: "International delivery and local scope",
+    items: [
+      {
+        question: "What information is needed before a serious estimate?",
+        answer: "A useful starting point includes your intended location, land status, approximate size or model direction, and a general sense of timeline and budget range. You do not need finished answers — estimates and rough ranges are enough for an initial assessment. The more specific you are, the more useful our response will be. A reliable, project-specific figure develops as design and site information are confirmed.",
+      },
+      {
+        question: "Does Soleta offer turnkey delivery outside Romania?",
+        answer: "Not in every country. Turnkey delivery — a fully finished home delivered directly by our team — is available where we have established logistics and trusted local partners. In other markets, delivery typically takes the form of a structural package or design and documentation support, with local execution completed by your own team or local contractors. What applies to your country depends on the country and project scope, and is confirmed during feasibility.",
+      },
+      {
+        question: "Who handles permits and local approvals internationally?",
+        answer: "We prepare technical documentation to support permit applications, in collaboration with local professionals, but permit submission, approval and compliance usually remain local or project-dependent. Requirements, timelines and fees vary significantly by country and municipality, so we confirm what applies to your project during feasibility rather than in advance.",
+      },
+      {
+        question: "Do I need a local architect, engineer, or builder?",
+        answer: "In many jurisdictions, yes — local sign-off from a licensed local professional is a legal requirement for permits, structural approval, or site supervision. Where this applies, we work in collaboration with local professionals, coordinating with your local architect or engineer to keep the design and structural system compatible with local requirements.",
+      },
+      {
+        question: "Can Soleta work with my local team?",
+        answer: "Yes. We frequently collaborate with a client's existing local architect, engineer, or contractor, particularly for foundations, siteworks, and scope that usually remains local or project-dependent. The interface between our package and your local team's work is defined clearly, in writing, before construction begins.",
+      },
+      {
+        question: "Can I visit an existing Soleta home?",
+        answer: "Site visits to completed homes can sometimes be arranged, where available and by agreement with the homeowner, typically after an initial conversation in which we understand your project context. Availability varies by location and project.",
+      },
+      {
+        question: "What happens after I request a Private Consultation?",
+        answer: "We review your brief and respond, typically within three business days, with a written summary: what is feasible, what the next steps would be, and what information we would need to proceed. You will not be added to a generic marketing sequence. If your brief is project-specific, we may follow up with relevant questions or materials needed to assess the next step.",
+      },
+      {
+        question: "When does a formal offer become possible?",
+        answer: "A formal, binding offer is issued once design and engineering are sufficiently advanced and your site and scope are confirmed. Before that point, any figure we share — at the Dream stage or during Private Consulting — is indicative and intended to help you plan, to be confirmed during feasibility rather than treated as a commitment.",
+      },
+    ],
+  },
+
   /* ── 5. Materials & Performance ─────────────────────────────────────────── */
   {
     id: "materials-performance",

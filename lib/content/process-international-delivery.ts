@@ -7,7 +7,7 @@
 /* ── Page header ─────────────────────────────────────────────────────────────── */
 
 export const internationalDeliveryHeader = {
-  eyebrow: "Process & Services",
+  eyebrow: "International Delivery",
   label: "International Delivery",
   heading: "How Soleta works with international clients",
   subtitle:

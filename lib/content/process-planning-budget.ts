@@ -7,7 +7,7 @@
 /* ── Page header ─────────────────────────────────────────────────────────────── */
 
 export const planningBudgetHeader = {
-  eyebrow: "Process & Services",
+  eyebrow: "Planning & Budget",
   label: "Planning & Budget",
   heading: "How budget clarity is built into a Soleta project",
   subtitle:
