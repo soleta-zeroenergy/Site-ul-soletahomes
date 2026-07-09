@@ -85,11 +85,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2c ── Why clients choose Soleta */}
-      <ValuesGrid {...homeWhyChooseUs} theme="warm" columns={4} />
-
       {/* 3 ── Manifesto */}
       <FeatureSplit {...homeManifesto} />
+
+      {/* 3b ── Why clients choose Soleta */}
+      <ValuesGrid {...homeWhyChooseUs} theme="warm" columns={4} compact />
 
       {/* 4 ── Collection preview */}
       <section className="section bg-[#faf8f6]">

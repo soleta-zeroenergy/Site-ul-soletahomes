@@ -14,6 +14,7 @@ export type ValuesGridProps = {
   columns?:   number;      // default 3
   theme?:     "light" | "warm" | "dark" | string;
   embedded?:  boolean;     // true = no outer <section> wrapper (caller owns the section)
+  compact?:   boolean;     // true = tighter section/header/article spacing; default false
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
@@ -47,19 +48,22 @@ export function ValuesGrid({
   columns = 3,
   theme = "warm",
   embedded = false,
+  compact = false,
 }: ValuesGridProps) {
   const isDark = theme === "dark";
 
   const gridCols =
     columns === 2
       ? "grid-cols-1 md:grid-cols-2"
+      : columns === 4
+      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
       : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   const content = (
     <>
       {/* Section header */}
       {(eyebrow || heading || body) && (
-        <div className={cn(embedded ? "mb-8 max-w-none" : "mb-16 max-w-2xl")}>
+        <div className={cn(embedded ? "mb-8 max-w-none" : compact ? "mb-8 max-w-2xl" : "mb-16 max-w-2xl")}>
           {eyebrow && (
             <p className={cn("eyebrow mb-4", isDark ? "text-brand-400" : "text-brand-500")}>
               {eyebrow}
@@ -98,7 +102,8 @@ export function ValuesGrid({
           <article
             key={i}
             className={cn(
-              "flex flex-col gap-3 pt-8 pb-10",
+              "flex flex-col gap-3",
+              compact ? "pt-6 pb-6" : "pt-8 pb-10",
               "border-t",
               isDark ? "border-white/10" : "border-sand-400"
             )}
@@ -141,7 +146,7 @@ export function ValuesGrid({
   if (embedded) return content;
 
   return (
-    <section className={cn("section", bgMap[theme])}>
+    <section className={cn(compact ? "py-14 lg:py-16" : "section", bgMap[theme])}>
       <div className="container-site">
         {content}
       </div>
