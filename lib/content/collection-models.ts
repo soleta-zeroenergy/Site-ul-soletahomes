@@ -486,7 +486,7 @@ export const signatureModel: HomeModel = {
     {
       question: "What is the minimum budget for a Signature home?",
       answer:
-        "Signature projects start from €250,000 for the building (excluding land, foundation, and site works). We discuss budget and feasibility in the first consultation — with no obligation.",
+        "Because every Signature home is designed from first principles, the budget depends on site, scale, and material selection — it is not a fixed figure. As a general orientation, projects start from €250,000 for the building (excluding land, foundation, and site works). We discuss your specific budget and feasibility in the first consultation, with no obligation.",
     },
     {
       question: "Can we specify our own materials?",

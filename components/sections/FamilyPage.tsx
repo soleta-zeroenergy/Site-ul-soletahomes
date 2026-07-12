@@ -273,6 +273,18 @@ export function FamilyPage({ model }: { model: HomeModel }) {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+            Interested in plan packages, EasyKit or commercial availability?{" "}
+            <a
+              href={`https://soletahouseplans.com/models/${model.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              View model options on SoletaHousePlans ↗
+            </a>
+          </p>
         </div>
       </section>
 
@@ -344,16 +356,31 @@ export function FamilyPage({ model }: { model: HomeModel }) {
         </section>
       )}
 
-      {/* ── 10. Includes / Not included ──────────────────────────────────── */}
+      {/* ── 10. What the build resolves ────────────────────────────────────── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="container-site">
+          <span className="eyebrow mb-4 block">What the build resolves</span>
+          <h2
+            className="mb-4 max-w-lg"
+            style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", lineHeight: 1.15 }}
+          >
+            Structural and technical scope
+          </h2>
+          <p
+            className="mb-12 max-w-2xl leading-relaxed text-[var(--color-text-secondary)]"
+            style={{ fontSize: "clamp(0.9375rem, 1.1vw, 1.0625rem)" }}
+          >
+            As part of our factory-built system, the following is resolved within the
+            architecture and structural design. Site-specific works remain separate, and
+            are assessed against your plot during the process.
+          </p>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
 
             <div>
-              <span className="eyebrow mb-6 block">What's included</span>
+              <span className="eyebrow mb-6 block">Resolved in the structural system</span>
               <ul className="flex flex-col gap-3">
                 {model.includes.map((item, i) => (
                   <li
@@ -368,7 +395,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             </div>
 
             <div>
-              <span className="eyebrow mb-6 block">Not included</span>
+              <span className="eyebrow mb-6 block">Site-specific and separate</span>
               <ul className="flex flex-col gap-3">
                 {model.excludes.map((item, i) => (
                   <li
@@ -383,6 +410,18 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             </div>
 
           </div>
+
+          <p className="mt-10 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+            Looking for exact package pricing or delivery specifics?{" "}
+            <a
+              href={`https://soletahouseplans.com/models/${model.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              See package details on SoletaHousePlans ↗
+            </a>
+          </p>
         </div>
       </section>
 
