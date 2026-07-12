@@ -329,6 +329,25 @@ export default function ProcessPage() {
         </p>
       </div>
 
+      {/* ── 10b. SoletaHousePlans contextual link ── */}
+      <div
+        className="border-b border-[var(--color-border-light)] px-5 py-6 sm:px-8 lg:px-12"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl">
+          For a model-based, plans-first route, visit{" "}
+          <a
+            href="https://soletahouseplans.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            SoletaHousePlans ↗
+          </a>
+          .
+        </p>
+      </div>
+
       {/* ── 11. FAQ ── */}
       <section
         className="border-b border-[var(--color-border-light)] py-14 lg:py-20"

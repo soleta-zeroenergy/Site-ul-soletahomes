@@ -33,6 +33,22 @@ export default function ServicesPage() {
       {/* 4 ── Private consulting feature split ──────────────────────────── */}
       <FeatureSplit {...servicesConsulting} />
 
+      {/* 4b ── SoletaHousePlans contextual link ─────────────────────────── */}
+      <div className="border-t border-sand-400 bg-white px-5 py-6 sm:px-8 lg:px-12">
+        <p className="font-ui text-[0.8125rem] text-[#6b5d56] max-w-2xl mx-auto text-center">
+          For a model-based, plans-first route, visit{" "}
+          <a
+            href="https://soletahouseplans.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-500 underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            SoletaHousePlans ↗
+          </a>
+          .
+        </p>
+      </div>
+
       {/* 5 ── CTA ────────────────────────────────────────────────────────── */}
       <CtaBand {...servicesCta} />
     </>

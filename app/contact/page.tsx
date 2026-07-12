@@ -124,6 +124,82 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* ── 1b. Which Soleta platform? ─────────────────────────────────────── */}
+      <section
+        className="border-b border-[var(--color-border-light)] py-14 lg:py-16"
+        style={{ backgroundColor: "var(--soleta-cream)" }}
+      >
+        <div className="container-narrow">
+          <span className="eyebrow mb-4 block">Two Soleta platforms</span>
+          <p
+            className="mb-8 leading-relaxed max-w-2xl"
+            style={{
+              color:      "var(--color-text-secondary)",
+              fontFamily: "var(--font-body)",
+              fontSize:   "0.9375rem",
+            }}
+          >
+            SoletaHomes is for architecture, built work and complete Soleta services.
+            SoletaHousePlans is for plan packages, EasyKit options, pricing guidance and
+            assembly support enquiries.
+          </p>
+          <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:divide-x md:divide-[var(--color-border-light)]">
+
+            {/* Option A — stay on SoletaHomes */}
+            <div className="flex flex-col gap-4 pr-0 pb-8 md:pr-12 md:pb-0 border-b border-[var(--color-border-light)] md:border-b-0">
+              <p
+                style={{
+                  fontFamily:    "var(--font-heading)",
+                  fontSize:      "1.0625rem",
+                  fontWeight:    400,
+                  letterSpacing: "0.01em",
+                  color:         "#1a1714",
+                }}
+              >
+                Architecture, complete design or built project
+              </p>
+              <p
+                className="leading-relaxed text-sm"
+                style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}
+              >
+                Continue with SoletaHomes — use the form below.
+              </p>
+            </div>
+
+            {/* Option B — go to SoletaHousePlans */}
+            <div className="flex flex-col gap-4 pl-0 pt-8 md:pl-12 md:pt-0">
+              <p
+                style={{
+                  fontFamily:    "var(--font-heading)",
+                  fontSize:      "1.0625rem",
+                  fontWeight:    400,
+                  letterSpacing: "0.01em",
+                  color:         "#1a1714",
+                }}
+              >
+                House plans, EasyKit, pricing or assembly support
+              </p>
+              <p
+                className="leading-relaxed text-sm"
+                style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}
+              >
+                Continue on{" "}
+                <a
+                  href="https://soletahouseplans.com/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  style={{ color: "var(--color-brand)" }}
+                >
+                  SoletaHousePlans ↗
+                </a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── 2. Choose the right path ─────────────────────────────────────── */}
       <section
         className="border-b border-[var(--color-border-light)] py-16 lg:py-24"

@@ -61,6 +61,14 @@ export const homeWhyChooseUs: ValuesGridProps = {
   ],
 };
 
+/* ── 2d. SoletaHousePlans bridge ──────────────────────────────────────────── */
+export const homeHousePlansBridge = {
+  eyebrow:  "Plans & EasyKit",
+  heading:  "Looking for plans, EasyKit options or project package guidance?",
+  body:     "SoletaHousePlans is the official Soleta platform for house plans, EasyKit packages, package guidance and project enquiries.",
+  cta:      { label: "Explore SoletaHousePlans", href: "https://soletahouseplans.com/" },
+};
+
 /* ── 3. Manifesto ─────────────────────────────────────────────────────────── */
 export const homeManifesto: FeatureSplitProps = {
   eyebrow:       "Our View",

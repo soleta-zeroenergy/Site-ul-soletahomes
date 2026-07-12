@@ -20,8 +20,7 @@ export function SoletaGroupBridge() {
               SoletaHomes.com
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              Premium timber homes. Private residential projects, large-scale and landmark architecture, direct
-              consultation, design-to-delivery. No online purchase.
+              Architecture, built work, materials, engineering and complete Soleta services.
             </p>
           </div>
 
@@ -37,8 +36,7 @@ export function SoletaGroupBridge() {
               SoletaHousePlans.com
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              House plans, kits, and assembly support. Public pricing and direct online purchase for smaller
-              projects.
+              House plans, EasyKit options and assembly support, with package guidance and project enquiries.
             </p>
             <a
               href="https://soletahouseplans.com"

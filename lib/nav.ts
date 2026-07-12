@@ -110,6 +110,11 @@ export const headerNav: NavItem[] = [
       },
     ],
   },
+  {
+    label: "Plans & EasyKit",
+    href: "https://soletahouseplans.com/",
+    external: true,
+  },
 ];
 
 export const footerColumns: FooterColumn[] = [
