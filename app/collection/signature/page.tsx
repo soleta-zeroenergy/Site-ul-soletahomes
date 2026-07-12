@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FamilyPage } from "@/components/sections/FamilyPage";
 import { signatureModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
-import { faqSchema, productSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
+import { faqSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/collection/signature"),
@@ -13,12 +13,6 @@ export const metadata: Metadata = {
 
 export default function SignaturePage() {
   const schemas = [
-    productSchema({
-      name:        "Signature Soleta Home",
-      description: signatureModel.subheading,
-      image:       "https://soletahomes.com/images/Signature800x533.webp",
-      url:         "https://soletahomes.com/collection/signature",
-    }),
     faqSchema(signatureModel.faq),
     breadcrumbSchema([
       { name: "Home",            href: "/" },

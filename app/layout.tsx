@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
   logo: {
@@ -53,7 +54,14 @@ const organizationSchema = {
     contactType: "customer service",
     email: "studio@soletahomes.com",
   },
-  sameAs: [],
+  sameAs: [
+    "https://soleta.ro",
+  ],
+  subOrganization: {
+    "@type": "Organization",
+    name: "Soleta House Plans",
+    url: "https://soletahouseplans.com/",
+  },
 };
 
 export default function RootLayout({

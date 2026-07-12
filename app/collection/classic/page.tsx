@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FamilyPage } from "@/components/sections/FamilyPage";
 import { classicModel } from "@/lib/content/collection-models";
 import { withCanonical } from "@/lib/seo";
-import { faqSchema, productSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
+import { faqSchema, breadcrumbSchema } from "@/lib/structured-data-helpers";
 
 export const metadata: Metadata = {
   ...withCanonical("/collection/classic"),
@@ -13,12 +13,6 @@ export const metadata: Metadata = {
 
 export default function ClassicPage() {
   const schemas = [
-    productSchema({
-      name:        "Classic Soleta Home",
-      description: classicModel.subheading,
-      image:       "https://soletahomes.com/images/Classic800x533.webp",
-      url:         "https://soletahomes.com/collection/classic",
-    }),
     faqSchema(classicModel.faq),
     breadcrumbSchema([
       { name: "Home",                 href: "/" },

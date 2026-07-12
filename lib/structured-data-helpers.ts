@@ -2,23 +2,20 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://soletahomes.com/#organization",
     name: "Soleta Homes",
     url: "https://soletahomes.com",
     logo: "https://soletahomes.com/logo/Sigla%20Verde%20%2318392B.png",
-    foundingDate: "2013",
-    founder: {
-      "@type": "Person",
-      name: "Cătălin Butmălai",
-    },
     description:
       "Premium timber frame homes designed and built in Romania. ZeroEnergy architecture, natural materials, delivered across Europe.",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "RO",
-    },
     sameAs: [
       "https://soleta.ro",
     ],
+    subOrganization: {
+      "@type": "Organization",
+      name: "Soleta House Plans",
+      url: "https://soletahouseplans.com/",
+    },
   };
 }
 

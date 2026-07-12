@@ -13,6 +13,7 @@ import {
   homeProofStrip,
   homeAuthorityStrip,
   homeWhyChooseUs,
+  homeHousePlansBridge,
   homeManifesto,
   homeCollection,
   homeValues,
@@ -41,16 +42,12 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
+          "@id": `${siteConfig.url}/#website`,
           name: siteConfig.name,
           url: siteConfig.url,
           description: siteConfig.description,
           publisher: {
-            "@type": "Organization",
-            name: siteConfig.name,
-            url: siteConfig.url,
-            logo: `${siteConfig.url}/logo/Sigla%20Verde%20%2318392B.png`,
-            foundingDate: "2013",
-            founder: { "@type": "Person", name: "Cătălin Butmălai" },
+            "@id": `${siteConfig.url}/#organization`,
           },
         })}}
       />
@@ -90,6 +87,31 @@ export default function HomePage() {
 
       {/* 3b ── Why clients choose Soleta */}
       <ValuesGrid {...homeWhyChooseUs} theme="warm" columns={4} compact />
+
+      {/* 3c ── SoletaHousePlans bridge */}
+      <section className="border-y border-sand-400 bg-white py-10">
+        <div className="container-site">
+          <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-2xl">
+              <p className="eyebrow mb-2 text-brand-500">{homeHousePlansBridge.eyebrow}</p>
+              <p className="text-[#1a1714]" style={{ fontFamily: "var(--font-heading)", fontSize: "1.25rem", lineHeight: 1.3 }}>
+                {homeHousePlansBridge.heading}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-[#6b5d56]">
+                {homeHousePlansBridge.body}
+              </p>
+            </div>
+            <a
+              href={homeHousePlansBridge.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline shrink-0 py-3.5 px-8 text-[0.75rem]"
+            >
+              {homeHousePlansBridge.cta.label} <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* 4 ── Collection preview */}
       <section className="section bg-[#faf8f6]">
