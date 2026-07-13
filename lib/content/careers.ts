@@ -21,7 +21,7 @@ export const careersSections = [
   },
   {
     heading: "International scope from a European base",
-    body: "Soleta is headquartered in Sweden and manufactures in Central Europe. Our clients are spread across multiple European countries. The work involves regular engagement with international clients, international site conditions and international regulatory contexts. We are not a local contractor that occasionally goes abroad.",
+    body: "Soleta is headquartered and manufactures in Romania. Our clients are spread across multiple European countries. The work involves regular engagement with international clients, international site conditions and international regulatory contexts. We are not a local contractor that occasionally goes abroad.",
   },
 ];
 

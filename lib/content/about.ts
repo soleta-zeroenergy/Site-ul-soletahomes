@@ -9,7 +9,7 @@ export const aboutHero = {
 /* ── Framing block ────────────────────────────────────────────────────────── */
 
 export const aboutFraming = {
-  left: "Soleta is a timber home manufacturer based in Sweden, with its factory in Romania. We design, engineer, manufacture, and assemble homes for clients across Europe and beyond — from the initial brief through to keys in hand. We do not subcontract technological design to one company and fabrication to another. The same team handles both, which is why quality remains consistent and accountability undivided.",
+  left: "Soleta is a European timber home manufacturer with its production facility in Romania. We design, engineer, manufacture, and assemble homes for clients across Europe and beyond — from the initial brief through to keys in hand. We do not subcontract technological design to one company and fabrication to another. The same team handles both, which is why quality remains consistent and accountability undivided.",
   right: "The structural system of Soleta homes is post-and-beam, manufactured in our workshops to CNC tolerances. The materials are predominantly natural — timber, wood fibre, natural finishes. The energy strategy starts with the envelope, not with technology added afterwards. These are not features layered onto a standard building. They are the starting points of every home we design.",
 };
 

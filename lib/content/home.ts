@@ -34,7 +34,7 @@ export const homeProofStrip = {
 
 /* ── 2b. Authority strip ──────────────────────────────────────────────────── */
 export const homeAuthorityStrip = {
-  text: "Founded in 2011 · Designed in Sweden & manufactured in Romania · Built across Europe · Post & beam timber architecture",
+  text: "Founded in 2011 · Engineered & manufactured in Romania · Built across Europe · Post-and-beam timber architecture",
 };
 
 /* ── 2c. Why clients choose Soleta ────────────────────────────────────────── */
