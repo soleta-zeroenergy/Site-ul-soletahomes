@@ -14,6 +14,8 @@ export type NavItem = {
   href: string;
   external?: boolean;
   sections?: NavSection[];
+  /** Subtle visual emphasis for a single top-level item, e.g. "accent" for a warm brand-accent text treatment. */
+  variant?: "accent";
 };
 
 export type FooterColumn = {
@@ -114,6 +116,7 @@ export const headerNav: NavItem[] = [
     label: "Plans & EasyKit",
     href: "https://soletahouseplans.com/",
     external: true,
+    variant: "accent",
   },
 ];
 

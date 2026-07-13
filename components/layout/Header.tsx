@@ -127,10 +127,15 @@ export function Header() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setOpenDesktopSection(null)}
-                      className="flex items-center gap-1 font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-ink)]/75 transition-colors duration-200 hover:text-[var(--soleta-ink)]"
+                      className={cn(
+                        "flex items-center gap-1 font-ui text-[0.6875rem] tracking-[0.1em] transition-colors duration-200",
+                        item.variant === "accent"
+                          ? "font-semibold uppercase text-[#8a6a52] hover:text-[#1f4a3a]"
+                          : "font-medium uppercase text-[var(--soleta-ink)]/75 hover:text-[var(--soleta-ink)]"
+                      )}
                     >
                       {item.label}
-                      <ExternalIndicator />
+                      {item.variant !== "accent" && <ExternalIndicator />}
                     </a>
                   ) : (
                     <Link
@@ -284,10 +289,15 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex flex-1 items-center gap-1.5 py-4 font-ui text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[var(--soleta-ink)]/75 transition-colors duration-200 hover:text-[var(--soleta-ink)]"
+                      className={cn(
+                        "inline-flex flex-1 items-center gap-1.5 py-4 font-ui text-[0.75rem] tracking-[0.1em] transition-colors duration-200",
+                        item.variant === "accent"
+                          ? "font-semibold uppercase text-[#8a6a52] hover:text-[#1f4a3a]"
+                          : "font-medium uppercase text-[var(--soleta-ink)]/75 hover:text-[var(--soleta-ink)]"
+                      )}
                     >
                       {item.label}
-                      <ExternalIndicator />
+                      {item.variant !== "accent" && <ExternalIndicator />}
                     </a>
                   ) : hasDropdown ? (
                     <button
