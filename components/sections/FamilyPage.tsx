@@ -275,9 +275,9 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           </div>
 
           <p className="mt-8 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-            Interested in plan packages, EasyKit or commercial availability?{" "}
+            Interested in EasyKit, plan packages or commercial availability?{" "}
             <a
-              href={`https://soletahouseplans.com/models/${model.slug}`}
+              href="https://soletahouseplans.com/models"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
@@ -414,7 +414,7 @@ export function FamilyPage({ model }: { model: HomeModel }) {
           <p className="mt-10 text-sm leading-relaxed text-[var(--color-text-secondary)]">
             Looking for exact package pricing or delivery specifics?{" "}
             <a
-              href={`https://soletahouseplans.com/models/${model.slug}`}
+              href="https://soletahouseplans.com/models"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"

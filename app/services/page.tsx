@@ -36,7 +36,7 @@ export default function ServicesPage() {
       {/* 4b ── SoletaHousePlans contextual link ─────────────────────────── */}
       <div className="border-t border-sand-400 bg-white px-5 py-6 sm:px-8 lg:px-12">
         <p className="font-ui text-[0.8125rem] text-[#6b5d56] max-w-2xl mx-auto text-center">
-          For a model-based, plans-first route, visit{" "}
+          For a model-based EasyKit route, with a plans-only option, visit{" "}
           <a
             href="https://soletahouseplans.com/"
             target="_blank"

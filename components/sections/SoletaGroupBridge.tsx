@@ -36,7 +36,7 @@ export function SoletaGroupBridge() {
               SoletaHousePlans.com
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              House plans, EasyKit options and assembly support, with package guidance and project enquiries.
+              EasyKit options, plan packages and assembly support, with package guidance and project enquiries.
             </p>
             <a
               href="https://soletahouseplans.com"

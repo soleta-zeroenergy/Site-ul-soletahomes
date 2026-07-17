@@ -140,8 +140,8 @@ export default function ContactPage() {
             }}
           >
             SoletaHomes is for architecture, built work and complete Soleta services.
-            SoletaHousePlans is for plan packages, EasyKit options, pricing guidance and
-            assembly support enquiries.
+            SoletaHousePlans is for standardised models, EasyKit Core or Extended, assembly
+            support, pricing guidance and the independent Plans Only path.
           </p>
           <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:divide-x md:divide-[var(--color-border-light)]">
 
@@ -177,7 +177,7 @@ export default function ContactPage() {
                   color:         "#1a1714",
                 }}
               >
-                House plans, EasyKit, pricing or assembly support
+                EasyKit, plan packages, pricing or assembly support
               </p>
               <p
                 className="leading-relaxed text-sm"

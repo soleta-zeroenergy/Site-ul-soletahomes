@@ -335,7 +335,7 @@ export default function ProcessPage() {
         style={{ backgroundColor: "var(--color-bg)" }}
       >
         <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl">
-          For a model-based, plans-first route, visit{" "}
+          For a model-based EasyKit route, with a plans-only option, visit{" "}
           <a
             href="https://soletahouseplans.com/"
             target="_blank"
