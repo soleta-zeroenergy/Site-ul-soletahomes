@@ -113,7 +113,7 @@ export const headerNav: NavItem[] = [
     ],
   },
   {
-    label: "Plans & EasyKit",
+    label: "Models & EasyKit",
     href: "https://soletahouseplans.com/",
     external: true,
     variant: "accent",
