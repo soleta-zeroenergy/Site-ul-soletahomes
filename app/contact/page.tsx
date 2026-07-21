@@ -186,8 +186,6 @@ export default function ContactPage() {
                 Continue on{" "}
                 <a
                   href="https://soletahouseplans.com/contact"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="underline underline-offset-2 hover:opacity-70 transition-opacity"
                   style={{ color: "var(--color-brand)" }}
                 >

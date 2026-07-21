@@ -278,8 +278,6 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             Interested in EasyKit, plan packages or commercial availability?{" "}
             <a
               href="https://soletahouseplans.com/models"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
               View model options on SoletaHousePlans ↗
@@ -415,8 +413,6 @@ export function FamilyPage({ model }: { model: HomeModel }) {
             Looking for exact package pricing or delivery specifics?{" "}
             <a
               href="https://soletahouseplans.com/models"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
               See package details on SoletaHousePlans ↗

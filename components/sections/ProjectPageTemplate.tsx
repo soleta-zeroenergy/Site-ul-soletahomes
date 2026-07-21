@@ -118,6 +118,25 @@ export function ProjectPageTemplate({
           </div>
         </section>
 
+        {/* ── 3b. SoletaHousePlans contextual link — unconditional, generic catalogue
+               pointer only. Not gated on project.model: that field reflects this
+               project's own (possibly legacy) family label, and gating visibility on
+               it would create an implied — and unverified — link between this
+               specific project and the current SoletaHousePlans catalogue. ── */}
+        <div className="border-b border-[var(--color-border-light)] px-5 py-6 sm:px-8 lg:px-12">
+          <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl mx-auto text-center">
+            Explore the current Soleta model catalogue and EasyKit options on{" "}
+            <a
+              href="https://soletahouseplans.com/models"
+              rel="noopener"
+              className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              SoletaHousePlans ↗
+            </a>
+            .
+          </p>
+        </div>
+
         {/* ── 4. Introduction / description ───────────────────────────────── */}
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"

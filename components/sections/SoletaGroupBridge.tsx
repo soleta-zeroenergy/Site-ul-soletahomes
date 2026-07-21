@@ -20,7 +20,7 @@ export function SoletaGroupBridge() {
               SoletaHomes.com
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              Architecture, built work, materials, engineering and complete Soleta services.
+              Architecture, built homes, materials and complete project services.
             </p>
           </div>
 
@@ -36,12 +36,10 @@ export function SoletaGroupBridge() {
               SoletaHousePlans.com
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              EasyKit options, plan packages and assembly support, with package guidance and project enquiries.
+              Models, house plans, EasyKit packages and assembly support.
             </p>
             <a
               href="https://soletahouseplans.com"
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-6 inline-flex font-ui text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-[var(--color-brand)] transition-opacity duration-200 hover:opacity-70"
             >
               VISIT SOLETAHOUSEPLANS.COM <span aria-hidden="true">&#8599;</span>

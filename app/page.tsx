@@ -103,8 +103,6 @@ export default function HomePage() {
             </div>
             <a
               href={homeHousePlansBridge.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn-outline shrink-0 py-3.5 px-8 text-[0.75rem]"
             >
               {homeHousePlansBridge.cta.label} <span aria-hidden="true">↗</span>
