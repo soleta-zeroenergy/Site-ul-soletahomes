@@ -113,8 +113,8 @@ export const headerNav: NavItem[] = [
     ],
   },
   {
-    label: "Models & EasyKit",
-    href: "https://soletahouseplans.com/",
+    label: "Build with Soleta",
+    href: "https://soletahouseplans.com/models",
     external: true,
     variant: "accent",
   },
@@ -134,7 +134,7 @@ export const footerColumns: FooterColumn[] = [
   {
     heading: "Part of Soleta Group",
     links: [
-      { label: "Soleta House Plans", href: "https://soletahouseplans.com", external: true },
+      { label: "Build with Soleta", href: "https://soletahouseplans.com/models", external: true },
     ],
   },
   {

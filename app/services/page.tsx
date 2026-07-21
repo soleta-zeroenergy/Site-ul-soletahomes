@@ -38,7 +38,7 @@ export default function ServicesPage() {
         <p className="font-ui text-[0.8125rem] text-[#6b5d56] max-w-2xl mx-auto text-center">
           For a model-based EasyKit route, with a plans-only option, visit{" "}
           <a
-            href="https://soletahouseplans.com/"
+            href="https://soletahouseplans.com/easykit"
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-500 underline underline-offset-2 hover:opacity-70 transition-opacity"

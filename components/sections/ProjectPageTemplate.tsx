@@ -118,6 +118,23 @@ export function ProjectPageTemplate({
           </div>
         </section>
 
+        {/* ── 3b. SoletaHousePlans contextual link (only if a model family is tagged) ── */}
+        {project.model && (
+          <div className="border-b border-[var(--color-border-light)] px-5 py-6 sm:px-8 lg:px-12">
+            <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl mx-auto text-center">
+              Explore buildable Soleta models on{" "}
+              <a
+                href="https://soletahouseplans.com/models"
+                rel="noopener"
+                className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+              >
+                SoletaHousePlans ↗
+              </a>
+              .
+            </p>
+          </div>
+        )}
+
         {/* ── 4. Introduction / description ───────────────────────────────── */}
         <section
           className="border-b border-[var(--color-border-light)] py-14 lg:py-20"
