@@ -338,8 +338,6 @@ export default function ProcessPage() {
           For a model-based EasyKit route, with a plans-only option, visit{" "}
           <a
             href="https://soletahouseplans.com/easykit"
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
           >
             SoletaHousePlans ↗

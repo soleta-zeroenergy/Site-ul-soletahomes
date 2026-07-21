@@ -49,8 +49,6 @@ export function Footer() {
                     {external ? (
                       <a
                         href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className={footerLinkClass}
                       >
                         {label}
