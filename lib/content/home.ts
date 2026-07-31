@@ -10,25 +10,24 @@ import type { FaqPreviewProps }      from "@/components/sections/FaqPreview";
 /* ── 1. Hero ──────────────────────────────────────────────────────────────── */
 export const homeHero: HeroProps = {
   eyebrow:     "Soleta Homes",
-  heading:     "Quiet distinction,\ndesigned around\nyour life",
+  heading:     "The house should fit your life.\nNot the other way around.",
   subtext:
-    "Soleta designs and builds calm, high-performance homes, from enduring family residences and private retreats to individually developed signature projects.",
+    "Some Soleta homes begin with a model. Others begin with the land. Both begin with the same question: how do you want to live? The answer shapes the rooms, the light, and every decision from the first sketch to delivery.",
   primaryCta:   { label: "Explore the Collection", href: "/collection" },
-  secondaryCta: { label: "Request a Private Consultation", href: "/request-private-offer" },
-  imageSrc:     "https://img.soletahomes.com/sh-home-hero-01-2560X1440-16x9.webp",
-  imageAlt:     "Soleta ZeroEnergy home",
-  // Mobile: preserve left side of the wide panoramic image; reduce height to reduce crop.
-  mobileObjectPosition: "25% center",
-  mobileSizeClass:      "min-h-[78svh]",
+  imageSrc:       "https://img.soletahomes.com/newHERO_soletahomes_3000x1350.webp",
+  imageSrcMobile: "https://img.soletahomes.com/newHERO_mobil_soletahomes_1080x1350.webp",
+  imageAlt:
+    "A Soleta post-and-beam timber home set into a wooded hillside, its angled roof and structural frame open to the surrounding landscape",
+  compactHeading: true,
 };
 
 /* ── 2. Proof strip ───────────────────────────────────────────────────────── */
 export const homeProofStrip = {
   items: [
-    "Architecture-first",
-    "Natural materials",
-    "ZeroEnergy thinking",
-    "Design to delivery",
+    "Your life before the layout",
+    "Natural materials with a structural role",
+    "Energy planned from the start",
+    "Design through delivery",
   ],
 };
 
@@ -200,14 +199,18 @@ export const homeWhoWeWorkWith = {
       title: "Private Residences",
       body:  "Permanent family homes, architect-designed for a specific site and a specific way of living.",
       href:  "/built-projects/private-residences",
+      imageSrc: "/images/Aquarius800x600.webp",
+      imageAlt: "Soleta Aquarius — a substantial timber-and-glass family residence set against a mountain backdrop",
     },
     {
       title: "Holiday Homes & Retreats",
       body:  "Second homes and seasonal retreats in landscapes where quiet and connection matter.",
       href:  "/built-projects/holiday-homes",
+      imageSrc: "/images/Life800x600.webp",
+      imageAlt: "A compact post-and-beam retreat with an open timber deck set in a garden landscape",
     },
   ],
-  cta: { label: "See Built Projects by Type", href: "/built-projects" },
+  cta: { label: "See all built projects", href: "/built-projects" },
 };
 
 /* ── 8. Process preview ───────────────────────────────────────────────────── */

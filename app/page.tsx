@@ -60,10 +60,10 @@ export default function HomePage() {
         <div className="container-site">
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
             {homeProofStrip.items.map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <span aria-hidden="true" className="h-px w-5 shrink-0 bg-brand-400" />
+              <div key={i} className="flex items-start gap-3">
+                <span aria-hidden="true" className="mt-[0.4em] h-px w-5 shrink-0 bg-brand-400" />
                 <span
-                  className="font-ui text-[0.5625rem] font-medium uppercase tracking-[0.16em] text-[#c8bfb8]"
+                  className="font-ui text-[0.5625rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-[#c8bfb8]"
                 >
                   {item}
                 </span>
@@ -249,71 +249,86 @@ export default function HomePage() {
       </section>
 
       {/* 6 ── Built Projects */}
-      <ProjectGrid {...homeProjects} />
+      <div className="border-t border-sand-400">
+        <ProjectGrid {...homeProjects} />
+      </div>
 
       {/* 7 ── Who We Work With */}
-      <section className="section bg-[#faf8f6]">
+      <section className="py-20 lg:py-28 bg-[#faf8f6]">
         <div className="container-site">
-          <div className="mb-12 max-w-xl">
-            <p className="eyebrow mb-4 text-brand-500">{homeWhoWeWorkWith.eyebrow}</p>
-            <h2
-              className="text-[#1a1714]"
-              style={{
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                lineHeight: 1.1,
-                letterSpacing: "0.02em",
-              }}
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-xl">
+              <p className="eyebrow mb-4 text-brand-500">{homeWhoWeWorkWith.eyebrow}</p>
+              <h2
+                className="text-[#1a1714]"
+                style={{
+                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                  lineHeight: 1.1,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                {homeWhoWeWorkWith.heading}
+              </h2>
+            </div>
+            <Link
+              href={homeWhoWeWorkWith.cta.href}
+              className="inline-flex items-center gap-1.5 font-ui text-xs font-medium uppercase tracking-[0.14em] text-brand-500 transition-colors duration-200 hover:text-brand-600"
             >
-              {homeWhoWeWorkWith.heading}
-            </h2>
+              {homeWhoWeWorkWith.cta.label} →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-sand-400 border border-sand-400 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
             {homeWhoWeWorkWith.blocks.map((block) => (
               <Link
                 key={block.href}
                 href={block.href}
-                className="group flex flex-col gap-4 bg-[#faf8f6] p-8 transition-colors duration-200 hover:bg-white"
+                className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-[0_1px_2px_rgba(26,23,20,0.06),0_8px_24px_rgba(26,23,20,0.08)] transition-shadow duration-200 hover:shadow-[0_2px_4px_rgba(26,23,20,0.08),0_16px_36px_rgba(26,23,20,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
               >
-                <h3
-                  className="text-[#1a1714]"
-                  style={{
-                    fontSize: "1.0625rem",
-                    lineHeight: 1.3,
-                    letterSpacing: "0.02em",
-                    fontFamily: "var(--font-heading)",
-                  }}
-                >
-                  {block.title}
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-[#6b5d56]">
-                  {block.body}
-                </p>
-                <span className="inline-flex items-center gap-1.5 font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-brand-500 transition-transform duration-200 group-hover:translate-x-1">
-                  View projects →
-                </span>
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src={block.imageSrc}
+                    alt={block.imageAlt}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-8">
+                  <h3
+                    className="text-[#1a1714]"
+                    style={{
+                      fontSize: "1.0625rem",
+                      lineHeight: 1.3,
+                      letterSpacing: "0.02em",
+                      fontFamily: "var(--font-heading)",
+                    }}
+                  >
+                    {block.title}
+                  </h3>
+                  <p className="flex-1 text-sm leading-relaxed text-[#6b5d56]">
+                    {block.body}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 font-ui text-[0.625rem] font-medium uppercase tracking-[0.14em] text-brand-500 transition-transform duration-200 group-hover:translate-x-1">
+                    View projects →
+                  </span>
+                </div>
               </Link>
             ))}
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <Link href={homeWhoWeWorkWith.cta.href} className="btn-outline py-4 px-10">
-              {homeWhoWeWorkWith.cta.label}
-            </Link>
           </div>
         </div>
       </section>
 
       {/* 8 ── How We Work */}
-      <ProcessTimeline {...homeProcess} />
-      <div className="bg-[#faf8f6] pb-16 flex justify-center">
+      <ProcessTimeline {...homeProcess} theme="light" />
+      <div className="bg-white pb-16 flex justify-center">
         <Link href={homeProcessCta.href} className="btn-outline py-4 px-10">
           {homeProcessCta.label}
         </Link>
       </div>
 
       {/* 9 ── Design & Construction bridge */}
-      <section className="section bg-white">
+      <section className="section bg-white border-t border-sand-400">
         <div className="container-site">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
 
@@ -364,8 +379,8 @@ export default function HomePage() {
       </section>
 
       {/* 10 ── FAQ preview */}
-      <FaqPreview {...homeFaq} />
-      <div className="bg-white pb-16 flex justify-center">
+      <FaqPreview {...homeFaq} theme="warm" />
+      <div className="bg-[#faf8f6] pb-16 flex justify-center">
         <Link href={homeFaqCta.href} className="btn-outline py-4 px-10">
           {homeFaqCta.label}
         </Link>

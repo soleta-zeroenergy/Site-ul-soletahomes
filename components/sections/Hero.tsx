@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { cn } from "@/lib/cn";
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
@@ -13,30 +13,79 @@ export type HeroProps = {
   secondaryCta?: Cta;
   imageSrc?:     string;
   imageAlt?:     string;
+  /* Optional dedicated mobile crop (e.g. 4:5). When set, renders a <picture>
+     that art-directs desktop vs. mobile sources so only one asset downloads. */
+  imageSrcMobile?: string;
   imageOverlayVariant?: "default" | "localized";
   align?:        "left" | "center" | string;
   size?:         "full" | "large" | "medium" | string;
   /* Mobile-only image framing. When set, overrides object-position below md breakpoint.
-     Example: "25% center". Desktop always uses default object-position (center). */
+     Example: "25% center". Desktop always uses default object-position (center).
+     Ignored when imageSrcMobile is set (the dedicated crop replaces this hack). */
   mobileObjectPosition?: string;
   /* Mobile-only hero height class. When set, replaces size-derived min-height on mobile.
      Example: "min-h-[78svh]". Desktop keeps the size-derived min-height. */
   mobileSizeClass?: string;
+  /* Tighter heading scale + wider text column, for longer headline copy that
+     still needs to resolve in two or three lines under a fixed-height hero. */
+  compactHeading?: boolean;
 };
 
 /* ── Config ────────────────────────────────────────────────────────────────── */
+// Hero sits below a fixed header, so viewport-relative heights must subtract
+// the header height or the section overflows the first viewport by that amount.
 const sizeMap = {
-  full:   "min-h-[100svh]",
-  large:  "min-h-[85svh]",
-  medium: "min-h-[60svh]",
+  full:   "min-h-[calc(100svh-var(--header-height))]",
+  large:  "min-h-[calc(85svh-var(--header-height))]",
+  medium: "min-h-[calc(60svh-var(--header-height))]",
 };
 
 // md-prefixed counterparts used when mobileSizeClass overrides mobile height
 const mdSizeMap = {
-  full:   "md:min-h-[100svh]",
-  large:  "md:min-h-[85svh]",
-  medium: "md:min-h-[60svh]",
+  full:   "md:min-h-[calc(100svh-var(--header-height))]",
+  large:  "md:min-h-[calc(85svh-var(--header-height))]",
+  medium: "md:min-h-[calc(60svh-var(--header-height))]",
 };
+
+/** Art-directed background: desktop and mobile sources, only one fetched by the browser. */
+function HeroBackgroundPicture({
+  desktopSrc,
+  mobileSrc,
+  alt,
+  mobileObjectPosition,
+  mobileCropPosition,
+}: {
+  desktopSrc: string;
+  mobileSrc:  string;
+  alt:        string;
+  mobileObjectPosition?: string;
+  /* Internal-only crop tuning for the mobile-split layout (distinct from the
+     documented mobileObjectPosition hack, which is ignored when a dedicated
+     mobile crop is supplied). Applied directly as an inline style. */
+  mobileCropPosition?: string;
+}) {
+  const { props: desktopImg } = getImageProps({
+    alt, src: desktopSrc, fill: true, priority: true, quality: 70, sizes: "100vw",
+  });
+  const { props: mobileImg } = getImageProps({
+    alt, src: mobileSrc, fill: true, priority: true, quality: 70, sizes: "100vw",
+  });
+
+  return (
+    <picture className="absolute inset-0 block">
+      <source media="(min-width: 768px)" srcSet={desktopImg.srcSet} sizes={desktopImg.sizes} />
+      <img
+        {...mobileImg}
+        style={mobileCropPosition ? { objectPosition: mobileCropPosition } : undefined}
+        alt={alt}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover",
+          mobileObjectPosition && "hero-mobile-op"
+        )}
+      />
+    </picture>
+  );
+}
 
 /* ── Helpers ───────────────────────────────────────────────────────────────── */
 /** Renders a heading string with explicit \n line breaks preserved as <br />. */
@@ -63,86 +112,161 @@ export function Hero({
   secondaryCta,
   imageSrc,
   imageAlt = "",
+  imageSrcMobile,
   imageOverlayVariant = "default",
   align = "left",
   size = "full",
   mobileObjectPosition,
   mobileSizeClass,
+  compactHeading = false,
 }: HeroProps) {
   const centered = align === "center";
   const sizeKey  = (size in sizeMap ? size : "full") as keyof typeof sizeMap;
+  // Home's "localized" hero: on mobile, show the image cleanly first (no text
+  // overlay) with a scroll cue, then the copy below on a cream background.
+  // Desktop keeps the original full-bleed overlay layout untouched.
+  const isMobileSplit = Boolean(imageSrc) && imageOverlayVariant === "localized";
 
   return (
     <section
       className={cn(
-        "relative flex items-end overflow-hidden bg-[#1a1714]",
-        mobileSizeClass
-          ? cn(mobileSizeClass, mdSizeMap[sizeKey])
-          : sizeMap[sizeKey]
+        "relative overflow-hidden bg-[#1a1714]",
+        isMobileSplit
+          ? cn("md:flex md:items-end", mdSizeMap[sizeKey])
+          : cn(
+              "flex items-end",
+              mobileSizeClass ? cn(mobileSizeClass, mdSizeMap[sizeKey]) : sizeMap[sizeKey]
+            )
       )}
       aria-label={eyebrow ?? "Hero"}
     >
       {/* Mobile object-position override — applied below md breakpoint only */}
-      {imageSrc && mobileObjectPosition && (
+      {imageSrc && mobileObjectPosition && !imageSrcMobile && (
         <style>{`@media (max-width: 767px) { .hero-mobile-op { object-position: ${mobileObjectPosition} !important; } }`}</style>
       )}
 
-      {/* Background image */}
-      {imageSrc && (
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          priority
-          quality={70}
-          sizes="100vw"
-          className={cn("object-cover", mobileObjectPosition && "hero-mobile-op")}
+      {/* Background image. On the mobile-split layout, this wrapper is a normal
+          in-flow block sized to the image's crop ratio on mobile, and switches
+          back to an absolute full-bleed layer at md+ (unchanged desktop behavior). */}
+      <div
+        className={cn(
+          "relative w-full",
+          isMobileSplit ? "h-[42svh] md:absolute md:inset-0 md:h-auto" : "absolute inset-0"
+        )}
+      >
+        {imageSrc && imageSrcMobile ? (
+          <HeroBackgroundPicture
+            desktopSrc={imageSrc}
+            mobileSrc={imageSrcMobile}
+            alt={imageAlt}
+            mobileObjectPosition={mobileObjectPosition}
+            mobileCropPosition={isMobileSplit ? "center 25%" : undefined}
+          />
+        ) : (
+          imageSrc && (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              priority
+              quality={70}
+              sizes="100vw"
+              className={cn("object-cover", mobileObjectPosition && "hero-mobile-op")}
+            />
+          )
+        )}
+
+        {isMobileSplit && (
+          <>
+            <style>{`
+              @keyframes heroScrollCue {
+                0%, 100% { transform: translateY(0); opacity: 0.55; }
+                50% { transform: translateY(6px); opacity: 1; }
+              }
+            `}</style>
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-5 z-10 flex justify-center md:hidden"
+            >
+              <span
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1714]/35 backdrop-blur-sm"
+                style={{ animation: "heroScrollCue 1.8s ease-in-out infinite" }}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 6L8 11L13 6"
+                    stroke="#faf8f6"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Overlay: gradient on image, warm radials on dark background. Not rendered for
+          the "localized" variant when an image is present — that image already has
+          sufficient natural contrast and needs no darkening overlay. */}
+      {!(imageSrc && imageOverlayVariant === "localized") && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={
+            imageSrc
+              ? {
+                  background:
+                    "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
+                }
+              : {
+                  background:
+                    "radial-gradient(ellipse 75% 55% at 65% 30%, rgba(128,103,84,0.22) 0%, transparent 65%)," +
+                    "radial-gradient(ellipse 45% 40% at 15% 85%, rgba(128,103,84,0.12) 0%, transparent 55%)",
+                }
+          }
         />
       )}
 
-      {/* Overlay: gradient on image, warm radials on dark background */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={
-          imageSrc
-            ? {
-                background:
-                  imageOverlayVariant === "localized"
-                    ? "linear-gradient(to top, rgba(26,23,20,0.32) 0%, rgba(26,23,20,0.12) 26%, rgba(26,23,20,0.02) 52%, transparent 72%), radial-gradient(95% 88% at 24% 76%, rgba(26,23,20,0.58) 0%, rgba(26,23,20,0.38) 33%, rgba(26,23,20,0.16) 56%, rgba(26,23,20,0.04) 74%, transparent 86%)"
-                    : "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.55) 18%, rgba(26,23,20,0.18) 38%, transparent 55%)",
-              }
-            : {
-                background:
-                  "radial-gradient(ellipse 75% 55% at 65% 30%, rgba(128,103,84,0.22) 0%, transparent 65%)," +
-                  "radial-gradient(ellipse 45% 40% at 15% 85%, rgba(128,103,84,0.12) 0%, transparent 55%)",
-              }
-        }
-      />
-
-      {imageSrc && (
+      {imageSrc && imageOverlayVariant !== "localized" && (
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none md:hidden"
           style={{
             background:
-              imageOverlayVariant === "localized"
-                ? "linear-gradient(to top, rgba(26,23,20,0.88) 0%, rgba(26,23,20,0.64) 30%, rgba(26,23,20,0.32) 58%, rgba(26,23,20,0.10) 82%, transparent 100%), radial-gradient(120% 88% at 26% 72%, rgba(26,23,20,0.72) 0%, rgba(26,23,20,0.48) 42%, rgba(26,23,20,0.16) 70%, transparent 100%)"
-                : "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.52) 36%, rgba(26,23,20,0.18) 68%, transparent 100%)",
+              "linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.52) 36%, rgba(26,23,20,0.18) 68%, transparent 100%)",
           }}
         />
       )}
       {/* Content */}
       <div
         className={cn(
-          "container-site relative z-10 pb-24 pt-16 sm:pt-0 lg:pb-32",
+          "container-site relative z-10",
+          isMobileSplit
+            ? "bg-[#faf8f6] pt-5 pb-5 md:bg-transparent md:pt-0 md:pb-24 lg:pb-32"
+            : "pb-24 pt-16 sm:pt-0 lg:pb-32",
           centered && "flex flex-col items-center text-center"
         )}
       >
         {eyebrow && (
           <p
-            className="text-brand-400 mb-8 uppercase tracking-widest"
-            style={{ fontFamily: "var(--font-ui)", fontSize: "1.5rem", fontWeight: 400, letterSpacing: "0.14em" }}
+            className={cn(
+              "uppercase tracking-widest",
+              isMobileSplit
+                ? "mb-3 md:mb-8 text-[#5c4a3d] md:text-brand-400 md:[text-shadow:-1px_-1px_2px_rgba(15,13,11,0.85),1px_-1px_2px_rgba(15,13,11,0.85),-1px_1px_2px_rgba(15,13,11,0.85),1px_1px_2px_rgba(15,13,11,0.85),0_2px_14px_rgba(15,13,11,0.55)]"
+                : "mb-8 text-brand-400"
+            )}
+            style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: "1.5rem",
+              fontWeight: 400,
+              letterSpacing: "0.14em",
+              textShadow:
+                !isMobileSplit && imageSrc
+                  ? "-1px -1px 2px rgba(15,13,11,0.85), 1px -1px 2px rgba(15,13,11,0.85), -1px 1px 2px rgba(15,13,11,0.85), 1px 1px 2px rgba(15,13,11,0.85), 0 2px 14px rgba(15,13,11,0.55)"
+                  : undefined,
+            }}
           >
             {eyebrow}
           </p>
@@ -150,9 +274,18 @@ export function Hero({
 
         <h1
           className={cn(
-            "text-[#faf8f6] mb-8",
-            centered ? "max-w-2xl" : "max-w-3xl"
+            isMobileSplit ? "mb-3 md:mb-8 text-[#1a1714] md:text-[#faf8f6]" : "mb-8 text-[#faf8f6]",
+            centered
+              ? "max-w-2xl"
+              : compactHeading
+                ? "max-w-[50rem]"
+                : "max-w-3xl"
           )}
+          style={
+            compactHeading
+              ? { fontSize: "clamp(2.25rem, 3.6vw, 4rem)", lineHeight: 1.14 }
+              : undefined
+          }
         >
           <HeadingLines text={heading} />
         </h1>
@@ -160,7 +293,8 @@ export function Hero({
         {subtext && (
           <p
             className={cn(
-              "mb-12 text-[#e4dad1] leading-relaxed md:text-[#b09a8b]",
+              "leading-relaxed",
+              isMobileSplit ? "mb-3 md:mb-12 text-[#4a3f38] md:text-[#e4dad1]" : "mb-12 text-[#e4dad1]",
               centered ? "max-w-xl" : "max-w-lg"
             )}
             style={{
@@ -175,12 +309,29 @@ export function Hero({
         {(primaryCta || secondaryCta) && (
           <div className={cn("flex flex-wrap items-center gap-5", centered && "justify-center")}>
             {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="btn-inverse py-4 px-9 transition-colors duration-200 hover:bg-[#e9e3dd] hover:border-[#e9e3dd]"
-              >
-                {primaryCta.label}
-              </Link>
+              isMobileSplit ? (
+                <>
+                  <Link
+                    href={primaryCta.href}
+                    className="btn-primary py-4 px-9 transition-colors duration-200 md:hidden"
+                  >
+                    {primaryCta.label}
+                  </Link>
+                  <Link
+                    href={primaryCta.href}
+                    className="btn-inverse hidden py-4 px-9 transition-colors duration-200 hover:bg-[#e9e3dd] hover:border-[#e9e3dd] md:inline-flex"
+                  >
+                    {primaryCta.label}
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  href={primaryCta.href}
+                  className="btn-inverse py-4 px-9 transition-colors duration-200 hover:bg-[#e9e3dd] hover:border-[#e9e3dd]"
+                >
+                  {primaryCta.label}
+                </Link>
+              )
             )}
             {secondaryCta && (
               <Link
