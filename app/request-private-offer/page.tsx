@@ -154,24 +154,26 @@ export default function RequestPrivateOfferPage() {
         className="border-b border-[var(--color-border-light)]"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-          <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
-            <span className="eyebrow block">{offerReassurance.eyebrow}</span>
-            <p className="leading-relaxed text-[var(--color-text-secondary)]">
-              {offerReassurance.body}
-            </p>
-          </div>
-          <div
-            className="relative w-full"
-            style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
-          >
-            <Image
-              src="/images/Signature800x533.webp"
-              alt="Soleta Signature — a considered, written response to your project brief"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+        <div className="container-site">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+            <div className="flex flex-col justify-center gap-6 px-10 py-14 lg:px-14 lg:py-16 border-b border-[var(--color-border-light)] lg:border-b-0 lg:border-r">
+              <span className="eyebrow block">{offerReassurance.eyebrow}</span>
+              <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                {offerReassurance.body}
+              </p>
+            </div>
+            <div
+              className="relative w-full"
+              style={{ minHeight: "clamp(300px, 36vw, 520px)" }}
+            >
+              <Image
+                src="/images/Signature800x533.webp"
+                alt="Soleta Signature — a considered, written response to your project brief"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
