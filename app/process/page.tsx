@@ -321,29 +321,33 @@ export default function ProcessPage() {
       </div>
       {/* Caveat note below badge row */}
       <div
-        className="border-b border-[var(--color-border-light)] px-5 py-6 sm:px-8 lg:px-12"
+        className="border-b border-[var(--color-border-light)] py-6"
         style={{ backgroundColor: "var(--soleta-cream)" }}
       >
-        <p className="font-ui text-[0.6875rem] text-[var(--color-text-muted)] max-w-2xl">
-          Timelines are indicative and reflect typical European conditions. Actual durations depend on project complexity, authority timelines, site access, and client review cycles. We confirm the project-specific schedule during the engineering stage.
-        </p>
+        <div className="container-narrow">
+          <p className="font-ui text-[0.6875rem] text-[var(--color-text-muted)] max-w-2xl">
+            Timelines are indicative and reflect typical European conditions. Actual durations depend on project complexity, authority timelines, site access, and client review cycles. We confirm the project-specific schedule during the engineering stage.
+          </p>
+        </div>
       </div>
 
       {/* ── 10b. SoletaHousePlans contextual link ── */}
       <div
-        className="border-b border-[var(--color-border-light)] px-5 py-6 sm:px-8 lg:px-12"
+        className="border-b border-[var(--color-border-light)] py-6"
         style={{ backgroundColor: "var(--color-bg)" }}
       >
-        <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl">
-          For a model-based EasyKit route, with a plans-only option, visit{" "}
-          <a
-            href="https://soletahouseplans.com/easykit"
-            className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
-          >
-            SoletaHousePlans ↗
-          </a>
-          .
-        </p>
+        <div className="container-narrow">
+          <p className="font-ui text-[0.8125rem] text-[var(--color-text-secondary)] max-w-2xl">
+            For a model-based EasyKit route, with a plans-only option, visit{" "}
+            <a
+              href="https://soletahouseplans.com/easykit"
+              className="text-[var(--color-brand)] underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              SoletaHousePlans ↗
+            </a>
+            .
+          </p>
+        </div>
       </div>
 
       {/* ── 11. FAQ ── */}

@@ -128,7 +128,6 @@ export const footerColumns: FooterColumn[] = [
       { label: "Press & Media", href: "/press" },
       { label: "Careers", href: "/careers" },
       { label: "FAQ", href: "/faq" },
-      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
