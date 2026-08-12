@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ...withCanonical("/press"),
   title: "Press & Media | Soleta in the Press",
   description:
-    "Soleta has been featured by The Guardian, Inhabitat, Daily News, HomeAdore and international architecture publications across all five continents since 2013.",
+    "Soleta has been featured by The Guardian, Inhabitat, New Atlas, HomeAdore and international architecture publications across Europe and beyond since 2013.",
 };
 
 const schema = breadcrumbSchema([
@@ -100,7 +100,7 @@ export default function PressPage() {
                     {item.title}
                   </p>
                   <p className="text-sm italic text-[var(--color-text-muted)]">
-                    "{item.excerpt}"
+                    {item.excerpt}
                   </p>
                 </div>
                 <span className="font-ui text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-[var(--color-brand)] transition-transform group-hover:translate-x-1 inline-block self-center whitespace-nowrap">
