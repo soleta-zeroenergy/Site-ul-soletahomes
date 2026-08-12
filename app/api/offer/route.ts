@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer                    from "nodemailer";
-import { validateOffer }             from "@/lib/offer-schema";
+import { validateOffer, sanitizeHeaderValue } from "@/lib/offer-schema";
 import type { OfferFormData, OfferFieldErrors } from "@/lib/offer-schema";
+
+/* ── HTML escaping ───────────────────────────────────────────────────────── */
+/* Applied to every visitor-supplied value before interpolation into the
+   HTML email body, since none of it is trusted markup. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 /* ── SMTP transporter ────────────────────────────────────────────────────── */
 // All credentials come from environment variables — never from client code.
@@ -71,8 +83,8 @@ function buildEmailBody(d: OfferFormData): string {
 function buildHtmlBody(d: OfferFormData): string {
   const row = (label: string, value: string | undefined) =>
     `<tr>
-      <td style="padding:6px 16px 6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a8e87;white-space:nowrap;vertical-align:top;">${label}</td>
-      <td style="padding:6px 0;font-size:14px;color:#1a1714;vertical-align:top;">${value ?? "<span style='color:#b8b4ae'>—</span>"}</td>
+      <td style="padding:6px 16px 6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a8e87;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td>
+      <td style="padding:6px 0;font-size:14px;color:#1a1714;vertical-align:top;">${value ? escapeHtml(value) : "<span style='color:#b8b4ae'>—</span>"}</td>
     </tr>`;
 
   const section = (heading: string, rows: string) =>
@@ -118,7 +130,7 @@ function buildHtmlBody(d: OfferFormData): string {
                 row("Documents available", d.documents?.join(", ") ?? "None")
               )}
               ${section("Project description",
-                `<tr><td colspan="2" style="padding:8px 0;font-size:14px;color:#1a1714;line-height:1.7;">${d.description.replace(/\n/g, "<br>")}</td></tr>`
+                `<tr><td colspan="2" style="padding:8px 0;font-size:14px;color:#1a1714;line-height:1.7;">${escapeHtml(d.description).replace(/\n/g, "<br>")}</td></tr>`
               )}
               ${section("Optional",
                 row("Referral source", d.referral)
@@ -163,13 +175,9 @@ export async function POST(req: NextRequest) {
 
   const d = result.data;
 
-  /* 3. Log to console regardless of email outcome (server-side audit trail) */
-  console.log("[offer] New project brief —", new Date().toISOString());
-  console.log("  Name:    ", d.name);
-  console.log("  Email:   ", d.email);
-  console.log("  Location:", d.location);
-  console.log("  Budget:  ", d.budget);
-  console.log("  Timeline:", d.timeline);
+  /* 3. Log a non-PII audit trail regardless of email outcome — no name,
+     email, phone, or location values, per no-PII-in-logs policy. */
+  console.log("[offer] New project brief received —", new Date().toISOString());
 
   /* 4. Verify SMTP config is present before attempting to connect */
   const smtpHost = process.env.SMTP_HOST;
@@ -202,11 +210,14 @@ export async function POST(req: NextRequest) {
   try {
     const transporter = createTransporter();
 
+    const safeName = sanitizeHeaderValue(d.name);
+    const safeLocation = sanitizeHeaderValue(d.location);
+
     await transporter.sendMail({
       from:    process.env.SMTP_FROM ?? `"Soleta Website" <${smtpUser}>`,
       to:      recipient,
-      replyTo: `"${d.name}" <${d.email}>`,
-      subject: `New Private Offer Request — ${d.name} — ${d.location}`,
+      replyTo: `"${safeName}" <${d.email}>`,
+      subject: `New Private Offer Request — ${safeName} — ${safeLocation}`,
       text:    buildEmailBody(d),
       html:    buildHtmlBody(d),
     });

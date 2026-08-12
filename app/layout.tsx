@@ -52,7 +52,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "studio@soletahomes.com",
+    email: "office@soletahomes.com",
   },
   sameAs: [
     "https://soleta.ro",

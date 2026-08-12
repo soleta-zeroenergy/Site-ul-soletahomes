@@ -299,6 +299,10 @@ export function PrivateOfferForm() {
 
   const successRef = useRef<HTMLDivElement>(null);
 
+  /* Anti-spam: timestamp captured once when the form first mounts, used by
+     the server to reject implausibly fast (bot) submissions. */
+  const formRenderedAtRef = useRef(Date.now());
+
   /* Scroll success message into view */
   useEffect(() => {
     if (status === "success" && successRef.current) {
@@ -316,6 +320,7 @@ export function PrivateOfferForm() {
     setDocuments([]);
     setFieldErrors({});
     setServerError(null);
+    formRenderedAtRef.current = Date.now();
   }
 
   function handleDocumentChange(value: string, isChecked: boolean) {
@@ -348,6 +353,8 @@ export function PrivateOfferForm() {
       documents,
       description:   fd.get("description"),
       referral:      fd.get("referral"),
+      honeypot:      fd.get("website"),
+      formRenderedAt: formRenderedAtRef.current,
     };
 
     try {
@@ -438,6 +445,17 @@ export function PrivateOfferForm() {
       onSubmit={handleSubmit}
       className="flex flex-col gap-0"
     >
+      {/* Honeypot — hidden from sighted users and screen readers, left empty by
+          humans; a bot filling it causes the server to silently reject the
+          submission. Not display:none/type=hidden so simple bots still fill it. */}
+      <div
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+      >
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       {/* Server / network error banner */}
       {status === "error" && (
         <div className="px-10 py-5 lg:px-14 border-b border-[var(--color-border-light)] bg-[#fdf6f4]">

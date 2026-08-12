@@ -109,6 +109,10 @@ export type OfferFormData = {
 
   /* Group 4 — Optional context */
   referral?:     string;
+
+  /* Anti-spam — not persisted, checked and discarded by the route handler */
+  honeypot?:      string;
+  formRenderedAt?: number;
 };
 
 export type OfferFieldErrors = Partial<Record<keyof OfferFormData, string>>;
@@ -116,6 +120,21 @@ export type OfferFieldErrors = Partial<Record<keyof OfferFormData, string>>;
 export type OfferValidationResult =
   | { ok: true;  data: OfferFormData }
   | { ok: false; errors: OfferFieldErrors };
+
+/* ── Field length limits ─────────────────────────────────────────────────── */
+/* Applied server-side regardless of any client-side maxLength, since the
+   request body is not trusted. */
+export const OFFER_MAX_LENGTHS = {
+  name:        120,
+  email:       254,
+  phone:       40,
+  country:     80,
+  location:    200,
+  siteType:    80,
+  documents:   200,   // per item
+  description: 4000,
+  referral:    80,
+} as const;
 
 /* ── Validation ──────────────────────────────────────────────────────────── */
 
@@ -136,24 +155,24 @@ export function validateOffer(raw: unknown): OfferValidationResult {
   const errors: OfferFieldErrors = {};
 
   /* Group 1 */
-  const name = str(d.name);
+  const name = str(d.name).slice(0, OFFER_MAX_LENGTHS.name);
   if (!name || name.length < 2)
     errors.name = name ? "Name must be at least 2 characters." : "Please enter your name.";
 
-  const email = str(d.email);
+  const email = str(d.email).slice(0, OFFER_MAX_LENGTHS.email);
   if (!email)
     errors.email = "Please enter your email address.";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     errors.email = "Please enter a valid email address.";
 
-  const phone = str(d.phone) || undefined;
+  const phone = str(d.phone).slice(0, OFFER_MAX_LENGTHS.phone) || undefined;
 
-  const country = str(d.country);
+  const country = str(d.country).slice(0, OFFER_MAX_LENGTHS.country);
   if (!country)
     errors.country = "Please enter your country or region.";
 
   /* Group 2 */
-  const location = str(d.location);
+  const location = str(d.location).slice(0, OFFER_MAX_LENGTHS.location);
   if (!location)
     errors.location = "Please describe where you plan to build.";
 
@@ -178,24 +197,38 @@ export function validateOffer(raw: unknown): OfferValidationResult {
     errors.budget = "Please select a budget range.";
 
   /* Group 3 */
-  const siteType = str(d.siteType) || undefined;
+  const siteType = str(d.siteType).slice(0, OFFER_MAX_LENGTHS.siteType) || undefined;
 
   const timeline = str(d.timeline);
   if (!inList(timeline, OFFER_TIMELINE_OPTIONS))
     errors.timeline = "Please select a timeline.";
 
   const documents: string[] = Array.isArray(d.documents)
-    ? (d.documents as unknown[]).filter((v) => typeof v === "string").map((v) => (v as string).trim())
+    ? (d.documents as unknown[])
+        .filter((v) => typeof v === "string")
+        .map((v) => (v as string).trim().slice(0, OFFER_MAX_LENGTHS.documents))
+        .slice(0, 20)
     : [];
 
-  const description = str(d.description);
+  const description = str(d.description).slice(0, OFFER_MAX_LENGTHS.description);
   if (!description || description.length < 10)
     errors.description = description
       ? "Please provide a bit more detail (at least 10 characters)."
       : "Please describe your project.";
 
   /* Group 4 */
-  const referral = str(d.referral) || undefined;
+  const referral = str(d.referral).slice(0, OFFER_MAX_LENGTHS.referral) || undefined;
+
+  /* Anti-spam — a filled honeypot or an implausibly fast submission is
+     treated as a validation failure so it never reaches SMTP, but the
+     error is reported under a generic key so it's not obviously named. */
+  const honeypot = str(d.honeypot);
+  if (honeypot) errors.honeypot = "Submission rejected.";
+
+  const formRenderedAt = typeof d.formRenderedAt === "number" ? d.formRenderedAt : undefined;
+  if (formRenderedAt !== undefined && Date.now() - formRenderedAt < 2500) {
+    errors.formRenderedAt = "Submission rejected.";
+  }
 
   if (Object.keys(errors).length > 0) return { ok: false, errors };
 
@@ -210,4 +243,11 @@ export function validateOffer(raw: unknown): OfferValidationResult {
       referral,
     },
   };
+}
+
+/* ── Header-safety helpers ───────────────────────────────────────────────── */
+/* Strips characters that could be used for email header injection (CRLF)
+   when a field is interpolated into a Subject or Reply-To header. */
+export function sanitizeHeaderValue(value: string): string {
+  return value.replace(/[\r\n]+/g, " ").trim();
 }
