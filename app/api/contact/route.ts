@@ -3,6 +3,9 @@ import nodemailer                    from "nodemailer";
 import { validateContact }           from "@/lib/contact-schema";
 import type { ContactFormData, FieldErrors } from "@/lib/contact-schema";
 
+/* ── Request limits ──────────────────────────────────────────────────────── */
+const MAX_BODY_BYTES = 20_000;
+
 /* ── SMTP transporter ────────────────────────────────────────────────────── */
 /* Reuses the same SMTP contract as app/api/offer/route.ts (SMTP_HOST,       */
 /* SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, SMTP_FROM) — this route     */
@@ -141,15 +144,26 @@ function buildHtmlBody(d: ContactFormData): string {
 
 /* ── Route handler ───────────────────────────────────────────────────────── */
 export async function POST(req: NextRequest) {
-  /* 1. Parse body */
+  /* 1. Reject unexpected content types before touching the body */
+  const contentType = req.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return NextResponse.json({ error: "Unsupported content type." }, { status: 415 });
+  }
+
+  /* 2. Read and size-check the raw body before parsing */
+  const rawBody = await req.text();
+  if (rawBody.length > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request body too large." }, { status: 413 });
+  }
+
   let body: unknown;
   try {
-    body = await req.json();
+    body = JSON.parse(rawBody);
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  /* 2. Anti-instant-submit — reject submissions that arrive implausibly fast
+  /* 3. Anti-instant-submit — reject submissions that arrive implausibly fast
         after the form was rendered (client sends the mount time as `loadedAt`). */
   const b = body as Record<string, unknown>;
   const loadedAt = typeof b.loadedAt === "number" ? b.loadedAt : undefined;
@@ -157,7 +171,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
-  /* 3. Validate (also checks the honeypot field) */
+  /* 4. Validate (also checks the honeypot field) */
   const result = validateContact(body);
 
   if (!result.ok) {
@@ -171,7 +185,7 @@ export async function POST(req: NextRequest) {
 
   const d = result.data;
 
-  /* 4. Verify SMTP config is present before attempting to connect — never
+  /* 5. Verify SMTP config is present before attempting to connect — never
         log field values (PII), only presence/absence of config. */
   const smtpHost   = process.env.SMTP_HOST;
   const smtpUser   = process.env.SMTP_USER;
@@ -199,7 +213,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  /* 5. Send email */
+  /* 6. Send email */
   const safeName  = sanitizeHeaderValue(d.name).slice(0, 120);
   const safeEmail = sanitizeHeaderValue(d.email).slice(0, 180);
   const safeType  = sanitizeHeaderValue(d.inquiryType).slice(0, 60);

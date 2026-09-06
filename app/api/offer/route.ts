@@ -3,6 +3,9 @@ import nodemailer                    from "nodemailer";
 import { validateOffer }             from "@/lib/offer-schema";
 import type { OfferFormData, OfferFieldErrors } from "@/lib/offer-schema";
 
+/* ── Request limits ──────────────────────────────────────────────────────── */
+const MAX_BODY_BYTES = 20_000;
+
 /* ── Header/value sanitisation ───────────────────────────────────────────── */
 // Strips CR/LF and other control characters so user input can never inject
 // extra headers into the outgoing email (header injection).
@@ -161,15 +164,26 @@ function buildHtmlBody(d: OfferFormData): string {
 
 /* ── Route handler ───────────────────────────────────────────────────────── */
 export async function POST(req: NextRequest) {
-  /* 1. Parse body */
+  /* 1. Reject unexpected content types before touching the body */
+  const contentType = req.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return NextResponse.json({ error: "Unsupported content type." }, { status: 415 });
+  }
+
+  /* 2. Read and size-check the raw body before parsing */
+  const rawBody = await req.text();
+  if (rawBody.length > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request body too large." }, { status: 413 });
+  }
+
   let body: unknown;
   try {
-    body = await req.json();
+    body = JSON.parse(rawBody);
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  /* 2. Anti-instant-submit — reject submissions that arrive implausibly fast
+  /* 3. Anti-instant-submit — reject submissions that arrive implausibly fast
         after the form was rendered (client sends the mount time as `loadedAt`). */
   const b = body as Record<string, unknown>;
   const loadedAt = typeof b.loadedAt === "number" ? b.loadedAt : undefined;
@@ -177,7 +191,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
-  /* 3. Validate (also checks the honeypot field) */
+  /* 4. Validate (also checks the honeypot field) */
   const result = validateOffer(body);
 
   if (!result.ok) {
@@ -191,11 +205,11 @@ export async function POST(req: NextRequest) {
 
   const d = result.data;
 
-  /* 4. Log a non-PII audit trail regardless of email outcome — no name,
+  /* 5. Log a non-PII audit trail regardless of email outcome — no name,
      email, or free-text content, per no-PII-in-logs policy. */
   console.log("[offer] New project brief received —", d.projectPath, "—", new Date().toISOString());
 
-  /* 5. Verify SMTP config is present before attempting to connect */
+  /* 6. Verify SMTP config is present before attempting to connect */
   const smtpHost = process.env.SMTP_HOST;
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
@@ -222,7 +236,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  /* 6. Send email */
+  /* 7. Send email */
   const safeName = sanitizeHeaderValue(d.name).slice(0, 120);
   const safeEmail = sanitizeHeaderValue(d.email).slice(0, 180);
   const safeLocation = sanitizeHeaderValue(d.location).slice(0, 160);
