@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://soletahomes.com',
     languages: {
-      'ro': 'https://soleta.ro',
       'en': 'https://soletahomes.com',
       'x-default': 'https://soletahomes.com',
     },
