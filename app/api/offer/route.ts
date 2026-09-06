@@ -3,6 +3,22 @@ import nodemailer                    from "nodemailer";
 import { validateOffer }             from "@/lib/offer-schema";
 import type { OfferFormData, OfferFieldErrors } from "@/lib/offer-schema";
 
+/* ── Header/value sanitisation ───────────────────────────────────────────── */
+// Strips CR/LF and other control characters so user input can never inject
+// extra headers into the outgoing email (header injection).
+function sanitizeHeaderValue(v: string): string {
+  return v.replace(/[\r\n\x00-\x08\x0B\x0C\x0E-\x1F]/g, " ").trim();
+}
+
+function escapeHtml(v: string): string {
+  return v
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /* ── SMTP transporter ────────────────────────────────────────────────────── */
 // All credentials come from environment variables — never from client code.
 function createTransporter() {
@@ -71,12 +87,12 @@ function buildEmailBody(d: OfferFormData): string {
 function buildHtmlBody(d: OfferFormData): string {
   const row = (label: string, value: string | undefined) =>
     `<tr>
-      <td style="padding:6px 16px 6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a8e87;white-space:nowrap;vertical-align:top;">${label}</td>
-      <td style="padding:6px 0;font-size:14px;color:#1a1714;vertical-align:top;">${value ?? "<span style='color:#b8b4ae'>—</span>"}</td>
+      <td style="padding:6px 16px 6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a8e87;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td>
+      <td style="padding:6px 0;font-size:14px;color:#1a1714;vertical-align:top;">${value ? escapeHtml(value) : "<span style='color:#b8b4ae'>—</span>"}</td>
     </tr>`;
 
   const section = (heading: string, rows: string) =>
-    `<tr><td colspan="2" style="padding:20px 0 8px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5c7a5c;font-weight:600;border-top:1px solid #e8e4df;">${heading}</td></tr>${rows}`;
+    `<tr><td colspan="2" style="padding:20px 0 8px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5c7a5c;font-weight:600;border-top:1px solid #e8e4df;">${escapeHtml(heading)}</td></tr>${rows}`;
 
   return `<!DOCTYPE html>
 <html>
@@ -118,7 +134,7 @@ function buildHtmlBody(d: OfferFormData): string {
                 row("Documents available", d.documents?.join(", ") ?? "None")
               )}
               ${section("Project description",
-                `<tr><td colspan="2" style="padding:8px 0;font-size:14px;color:#1a1714;line-height:1.7;">${d.description.replace(/\n/g, "<br>")}</td></tr>`
+                `<tr><td colspan="2" style="padding:8px 0;font-size:14px;color:#1a1714;line-height:1.7;">${escapeHtml(d.description).replace(/\n/g, "<br>")}</td></tr>`
               )}
               ${section("Optional",
                 row("Referral source", d.referral)
@@ -153,25 +169,33 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  /* 2. Validate */
+  /* 2. Anti-instant-submit — reject submissions that arrive implausibly fast
+        after the form was rendered (client sends the mount time as `loadedAt`). */
+  const b = body as Record<string, unknown>;
+  const loadedAt = typeof b.loadedAt === "number" ? b.loadedAt : undefined;
+  if (loadedAt && Date.now() - loadedAt < 2000) {
+    return NextResponse.json({ success: true }, { status: 200 });
+  }
+
+  /* 3. Validate (also checks the honeypot field) */
   const result = validateOffer(body);
 
   if (!result.ok) {
-    const { errors } = result as { ok: false; errors: OfferFieldErrors };
+    const { errors, spam } = result as { ok: false; errors: OfferFieldErrors; spam?: true };
+    if (spam) {
+      // Honeypot tripped — respond as if successful, without sending anything.
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
     return NextResponse.json({ errors }, { status: 422 });
   }
 
   const d = result.data;
 
-  /* 3. Log to console regardless of email outcome (server-side audit trail) */
-  console.log("[offer] New project brief —", new Date().toISOString());
-  console.log("  Name:    ", d.name);
-  console.log("  Email:   ", d.email);
-  console.log("  Location:", d.location);
-  console.log("  Budget:  ", d.budget);
-  console.log("  Timeline:", d.timeline);
+  /* 4. Log a non-PII audit trail regardless of email outcome — no name,
+     email, or free-text content, per no-PII-in-logs policy. */
+  console.log("[offer] New project brief received —", d.projectPath, "—", new Date().toISOString());
 
-  /* 4. Verify SMTP config is present before attempting to connect */
+  /* 5. Verify SMTP config is present before attempting to connect */
   const smtpHost = process.env.SMTP_HOST;
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
@@ -198,15 +222,19 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  /* 5. Send email */
+  /* 6. Send email */
+  const safeName = sanitizeHeaderValue(d.name).slice(0, 120);
+  const safeEmail = sanitizeHeaderValue(d.email).slice(0, 180);
+  const safeLocation = sanitizeHeaderValue(d.location).slice(0, 160);
+
   try {
     const transporter = createTransporter();
 
     await transporter.sendMail({
       from:    process.env.SMTP_FROM ?? `"Soleta Website" <${smtpUser}>`,
       to:      recipient,
-      replyTo: `"${d.name}" <${d.email}>`,
-      subject: `New Private Offer Request — ${d.name} — ${d.location}`,
+      replyTo: `"${safeName}" <${safeEmail}>`,
+      subject: `New Private Offer Request — ${safeName} — ${safeLocation}`,
       text:    buildEmailBody(d),
       html:    buildHtmlBody(d),
     });

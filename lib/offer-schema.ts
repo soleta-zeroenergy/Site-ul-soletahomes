@@ -115,7 +115,7 @@ export type OfferFieldErrors = Partial<Record<keyof OfferFormData, string>>;
 
 export type OfferValidationResult =
   | { ok: true;  data: OfferFormData }
-  | { ok: false; errors: OfferFieldErrors };
+  | { ok: false; errors: OfferFieldErrors; spam?: true };
 
 /* ── Validation ──────────────────────────────────────────────────────────── */
 
@@ -133,6 +133,13 @@ export function validateOffer(raw: unknown): OfferValidationResult {
   }
 
   const d = raw as Record<string, unknown>;
+
+  // Honeypot — a hidden field real visitors never fill in. Any non-empty
+  // value here means the submission is automated; reject silently.
+  if (str(d.website)) {
+    return { ok: false, errors: {}, spam: true };
+  }
+
   const errors: OfferFieldErrors = {};
 
   /* Group 1 */

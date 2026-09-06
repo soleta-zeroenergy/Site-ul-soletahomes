@@ -298,6 +298,7 @@ export function PrivateOfferForm() {
   const [documents,     setDocuments]     = useState<string[]>([]);
 
   const successRef = useRef<HTMLDivElement>(null);
+  const loadedAtRef = useRef(Date.now());
 
   /* Scroll success message into view */
   useEffect(() => {
@@ -348,6 +349,8 @@ export function PrivateOfferForm() {
       documents,
       description:   fd.get("description"),
       referral:      fd.get("referral"),
+      website:       fd.get("website"),
+      loadedAt:      loadedAtRef.current,
     };
 
     try {
@@ -438,6 +441,12 @@ export function PrivateOfferForm() {
       onSubmit={handleSubmit}
       className="flex flex-col gap-0"
     >
+      {/* Honeypot — hidden from real visitors, catches bots */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+        <label htmlFor="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       {/* Server / network error banner */}
       {status === "error" && (
         <div className="px-10 py-5 lg:px-14 border-b border-[var(--color-border-light)] bg-[#fdf6f4]">
