@@ -73,7 +73,7 @@ function HeroBackgroundPicture({
 
   return (
     <picture className="absolute inset-0 block">
-      <source media="(min-width: 768px)" srcSet={desktopImg.srcSet} sizes={desktopImg.sizes} />
+      <source media="(min-width: 768px)" srcSet={desktopImg.srcSet ?? desktopImg.src} sizes={desktopImg.srcSet ? desktopImg.sizes : undefined} />
       <img
         {...mobileImg}
         style={mobileCropPosition ? { objectPosition: mobileCropPosition } : undefined}

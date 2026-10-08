@@ -7,6 +7,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    // Vercel's image optimizer returned 402 (OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED),
+    // which blanked every next/image on the live site. Source images are already
+    // WebP, served from Cloudflare (img.soletahomes.com) at right-sized dimensions,
+    // so serve them directly instead of through /_next/image.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
