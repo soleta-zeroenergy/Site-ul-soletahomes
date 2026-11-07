@@ -3,6 +3,8 @@
 /* Separate from lib/offer-schema.ts — this is the general inquiry form,     */
 /* not the Private Offer form.                                               */
 
+import { CLIENT_SEGMENTS } from "./segment-options";
+
 export const INQUIRY_TYPES = [
   "Project consultation",
   "Architecture and design",
@@ -17,6 +19,7 @@ export type ContactFormData = {
   name:          string;
   email:         string;
   country:       string;
+  segment:       string;
   inquiryType:   string;
   message:       string;
   phone?:        string;
@@ -79,6 +82,11 @@ export function validateContact(raw: unknown): ValidationResult {
   const country = str(d.country).slice(0, MAX.country);
   if (!country) errors.country = "Please enter your country.";
 
+  // segment
+  const segment = str(d.segment);
+  if (!segment || !(CLIENT_SEGMENTS as readonly string[]).includes(segment))
+    errors.segment = "Please select the option that best describes you.";
+
   // inquiryType
   const inquiryType = str(d.inquiryType);
   if (!inquiryType || !(INQUIRY_TYPES as readonly string[]).includes(inquiryType))
@@ -104,6 +112,6 @@ export function validateContact(raw: unknown): ValidationResult {
 
   return {
     ok:   true,
-    data: { name, email, country, inquiryType, message, phone, location, intendedUse, projectStage, timeline },
+    data: { name, email, country, segment, inquiryType, message, phone, location, intendedUse, projectStage, timeline },
   };
 }

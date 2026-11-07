@@ -15,6 +15,7 @@ import {
   OFFER_REFERRAL_OPTIONS,
 } from "@/lib/offer-schema";
 import type { OfferFieldErrors } from "@/lib/offer-schema";
+import { CLIENT_SEGMENTS } from "@/lib/segment-options";
 
 /* ── Types ───────────────────────────────────────────────────────────────── */
 type Status = "idle" | "loading" | "success" | "error";
@@ -338,6 +339,7 @@ export function PrivateOfferForm() {
       email:         fd.get("email"),
       phone:         fd.get("phone"),
       country:       fd.get("country"),
+      segment:       fd.get("segment"),
       location:      fd.get("location"),
       landStatus,
       intendedUse,
@@ -495,6 +497,11 @@ export function PrivateOfferForm() {
             error={fieldErrors.country}
           />
         </div>
+        <SelectField
+          id="segment" label="Which best describes you?" required
+          options={CLIENT_SEGMENTS}
+          error={fieldErrors.segment}
+        />
       </div>
 
       {/* ── GROUP 2 — Your project ──────────────────────────────────────── */}

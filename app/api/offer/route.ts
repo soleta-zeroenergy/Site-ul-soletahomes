@@ -58,6 +58,7 @@ function buildEmailBody(d: OfferFormData): string {
     line("Email:",               d.email),
     line("Phone:",               d.phone),
     line("Country of residence:", d.country),
+    line("Segment:",             d.segment),
     "",
     "THE PROJECT",
     "-".repeat(40),
@@ -121,7 +122,8 @@ function buildHtmlBody(d: OfferFormData): string {
                 row("Full name",            d.name)   +
                 row("Email",               d.email)  +
                 row("Phone",               d.phone)  +
-                row("Country",             d.country)
+                row("Country",             d.country)+
+                row("Segment",             d.segment)
               )}
               ${section("The project",
                 row("Project location",    d.location)     +

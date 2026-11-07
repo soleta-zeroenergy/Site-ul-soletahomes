@@ -5,6 +5,7 @@ import type { CSSProperties, FormEvent } from "react";
 import { cn }                            from "@/lib/cn";
 import { INQUIRY_TYPES }                 from "@/lib/contact-schema";
 import type { FieldErrors }              from "@/lib/contact-schema";
+import { CLIENT_SEGMENTS }               from "@/lib/segment-options";
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 export type ContactPanelProps = {
@@ -43,6 +44,7 @@ export function ContactPanel({
       email:        fd.get("email"),
       phone:        fd.get("phone"),
       country:      fd.get("country"),
+      segment:      fd.get("segment"),
       inquiryType:  fd.get("inquiryType"),
       message:      fd.get("message"),
       location:     fd.get("location"),
@@ -200,14 +202,23 @@ export function ContactPanel({
                   />
                 </div>
 
-                {/* Inquiry type */}
-                <FormSelect
-                  id="inquiryType"
-                  label="Inquiry type"
-                  options={INQUIRY_TYPES}
-                  required
-                  error={fieldErrors.inquiryType}
-                />
+                {/* Row: Segment + Inquiry type */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <FormSelect
+                    id="segment"
+                    label="Which best describes you?"
+                    options={CLIENT_SEGMENTS}
+                    required
+                    error={fieldErrors.segment}
+                  />
+                  <FormSelect
+                    id="inquiryType"
+                    label="Inquiry type"
+                    options={INQUIRY_TYPES}
+                    required
+                    error={fieldErrors.inquiryType}
+                  />
+                </div>
 
                 {/* Message */}
                 <FormTextarea

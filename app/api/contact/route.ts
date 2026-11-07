@@ -58,6 +58,7 @@ function buildEmailBody(d: ContactFormData): string {
     line("Email:",        d.email),
     line("Phone:",        d.phone),
     line("Country:",      d.country),
+    line("Segment:",      d.segment),
     line("Inquiry type:", d.inquiryType),
     "",
     "OPTIONAL DETAILS",
@@ -111,6 +112,7 @@ function buildHtmlBody(d: ContactFormData): string {
                 row("Email",         d.email)       +
                 row("Phone",         d.phone)       +
                 row("Country",       d.country)     +
+                row("Segment",       d.segment)     +
                 row("Inquiry type",  d.inquiryType)
               )}
               ${section("Optional details",

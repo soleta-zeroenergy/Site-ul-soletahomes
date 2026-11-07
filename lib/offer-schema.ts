@@ -3,6 +3,8 @@
    Separate from lib/contact-schema.ts which serves the general /contact form.
    ───────────────────────────────────────────────────────────────────────────── */
 
+import { CLIENT_SEGMENTS } from "./segment-options";
+
 /* ── Constants ───────────────────────────────────────────────────────────── */
 
 export const OFFER_PROJECT_PATHS = [
@@ -92,6 +94,7 @@ export type OfferFormData = {
   email:         string;
   phone?:        string;
   country:       string;
+  segment:       string;
 
   /* Group 2 — Your project */
   location:      string;
@@ -159,6 +162,10 @@ export function validateOffer(raw: unknown): OfferValidationResult {
   if (!country)
     errors.country = "Please enter your country or region.";
 
+  const segment = str(d.segment);
+  if (!inList(segment, CLIENT_SEGMENTS))
+    errors.segment = "Please select the option that best describes you.";
+
   /* Group 2 */
   const location = str(d.location);
   if (!location)
@@ -209,7 +216,7 @@ export function validateOffer(raw: unknown): OfferValidationResult {
   return {
     ok:   true,
     data: {
-      name, email, phone, country,
+      name, email, phone, country, segment,
       location, landStatus, intendedUse, projectPath, estimatedSize, budget,
       siteType, timeline,
       documents: documents.length > 0 ? documents : undefined,
