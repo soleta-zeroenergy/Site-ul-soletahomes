@@ -92,7 +92,13 @@ function applyConsent(state: ConsentState | null) {
   const marketing = state?.marketing === true;
 
   if (!gaInitialized) {
-    if (analytics) initializeGa(marketing);
+    if (analytics) {
+      setGaDisabled(false);
+      initializeGa(marketing);
+    } else if (state !== null) {
+      setGaDisabled(true);
+      deleteGaCookies();
+    }
     return;
   }
 

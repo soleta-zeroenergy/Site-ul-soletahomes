@@ -71,8 +71,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${cormorant.variable} min-h-screen bg-[var(--soleta-bg)] text-[var(--soleta-ink)]`}>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <body className="min-h-screen bg-[var(--soleta-bg)] text-[var(--soleta-ink)]">
         <ConsentBanner />
         <Header />
         <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>
