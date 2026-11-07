@@ -21,6 +21,12 @@ export type Attribution = Partial<Record<
 export type QualificationValue = string | number | boolean;
 export type Qualification = Record<string, QualificationValue>;
 
+export type LeadConsent = {
+  channel: "email" | "sms" | "whatsapp" | "phone";
+  basis:   "consent" | "contract" | "legitimate_interest";
+  source:  string;
+};
+
 export interface TikkaLeadPayload {
   deliveryId:      string;
   name:            string;
@@ -32,6 +38,7 @@ export interface TikkaLeadPayload {
   message?:        string;
   attribution?:    Attribution;
   qualification?:  Qualification;
+  consents?:       LeadConsent[];
 }
 
 export type ForwardResult =
@@ -63,6 +70,9 @@ export interface DeliverResult {
 /* ── Constants ───────────────────────────────────────────────────────────── */
 
 export const TIKKA_TIMEOUT_MS = 3000;
+
+export const CONTACT_CONSENT_SOURCE = "soletahomes.com/contact";
+export const OFFER_CONSENT_SOURCE = "soletahomes.com/request-private-offer";
 
 /* ── Country code resolution ─────────────────────────────────────────────── */
 
@@ -234,6 +244,18 @@ function setQual(qualification: Qualification, key: string, value: unknown): voi
   if (v !== undefined) qualification[key] = v;
 }
 
+function buildConsents(
+  email: string | undefined,
+  phone: string | undefined,
+  basis: LeadConsent["basis"],
+  source: string
+): LeadConsent[] {
+  const consents: LeadConsent[] = [];
+  if (email) consents.push({ channel: "email", basis, source });
+  if (phone) consents.push({ channel: "phone", basis, source });
+  return consents;
+}
+
 export function buildContactLead(
   d: ContactFormData,
   attribution: Attribution | undefined,
@@ -268,6 +290,9 @@ export function buildContactLead(
   if (message) payload.message = message;
 
   if (attribution) payload.attribution = attribution;
+
+  const consents = buildConsents(email, phone, "legitimate_interest", CONTACT_CONSENT_SOURCE);
+  if (consents.length > 0) payload.consents = consents;
 
   return payload;
 }
@@ -313,6 +338,9 @@ export function buildOfferLead(
   if (message) payload.message = message;
 
   if (attribution) payload.attribution = attribution;
+
+  const consents = buildConsents(email, phone, "contract", OFFER_CONSENT_SOURCE);
+  if (consents.length > 0) payload.consents = consents;
 
   return payload;
 }
