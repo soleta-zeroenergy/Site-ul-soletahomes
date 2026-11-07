@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 import { footerColumns, legalNav } from "@/lib/nav";
 
 const footerLinkClass =
@@ -90,6 +91,9 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <CookieSettingsButton />
+                </li>
               </ul>
             </nav>
           )}

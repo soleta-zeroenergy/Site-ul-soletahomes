@@ -109,7 +109,7 @@ export default function PrivacyPage() {
               letterSpacing: "0.04em",
             }}
           >
-            Last updated: April 2026
+            Last updated: November 2026
           </p>
         </div>
       </section>
@@ -329,16 +329,33 @@ export default function PrivacyPage() {
               >
                 <h2 style={prose.h2}>Cookies and analytics</h2>
                 <p style={prose.p}>
-                  The website may use cookies or similar technologies for technical
-                  operation and, where applicable, for analytics purposes to understand
-                  how visitors use the site. Where analytics tools are in use, data is
-                  collected in aggregated or anonymised form to the extent possible.
+                  When you first visit, a cookie banner asks you to accept, reject, or
+                  choose your preferences for optional cookies. Your choice is stored in
+                  your browser (local storage) for 180 days, after which you will be
+                  asked again.
                 </p>
                 <p style={prose.p}>
-                  We do not use tracking cookies for advertising or behavioural
-                  profiling purposes. You can manage cookie preferences through your
-                  browser settings. Disabling cookies may affect certain aspects of
-                  website functionality.
+                  Google Analytics 4 only loads after you give consent for analytics. It
+                  sets the <code>_ga</code> and <code>_ga_&lt;container id&gt;</code> cookies to
+                  distinguish visitors and measure site usage.
+                </p>
+                <p style={prose.p}>
+                  Marketing consent does not currently load any advertising pixel. It
+                  means only that advertising consent signals are sent alongside
+                  analytics, and that click identifiers (<code>gclid</code>,{" "}
+                  <code>fbclid</code>) found in the page URL are kept for the current
+                  session so they can be sent with a form you submit.
+                </p>
+                <p style={prose.p}>
+                  With analytics consent, the landing page, referring site, and campaign
+                  parameters for your visit are kept in session storage for the
+                  duration of your session and are only sent to us when you submit a
+                  form.
+                </p>
+                <p style={prose.p}>
+                  You can withdraw consent at any time using "Cookie settings" in the
+                  footer. Withdrawing consent stops Google Analytics and deletes the
+                  Google Analytics cookies set on this site.
                 </p>
               </div>
 
@@ -440,7 +457,7 @@ export default function PrivacyPage() {
               letterSpacing: "0.04em",
             }}
           >
-            Last updated: April 2026
+            Last updated: November 2026
           </p>
         </div>
       </section>
