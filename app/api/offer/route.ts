@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomUUID }                from "node:crypto";
 import nodemailer                    from "nodemailer";
 import { validateOffer }             from "@/lib/offer-schema";
 import type { OfferFormData, OfferFieldErrors } from "@/lib/offer-schema";
+import { buildOfferLead, deliver, forwardToTikka, logForward, pickAttribution } from "@/lib/tikka-webhook";
 
 /* ── Request limits ──────────────────────────────────────────────────────── */
 const MAX_BODY_BYTES = 20_000;
@@ -243,7 +245,7 @@ export async function POST(req: NextRequest) {
   const safeEmail = sanitizeHeaderValue(d.email).slice(0, 180);
   const safeLocation = sanitizeHeaderValue(d.location).slice(0, 160);
 
-  try {
+  const sendEmail = async () => {
     const transporter = createTransporter();
 
     await transporter.sendMail({
@@ -256,9 +258,28 @@ export async function POST(req: NextRequest) {
     });
 
     console.log("[offer] Email delivered to", recipient);
-  } catch (err) {
+  };
+
+  const deliveryId  = randomUUID();
+  const attribution = pickAttribution(b.attribution);
+  const payload     = buildOfferLead(d, attribution, deliveryId);
+
+  const deliverResult = await deliver({
+    sendEmail,
+    forward: payload === null
+      ? { status: "skipped", reason: "no_identifier" }
+      : forwardToTikka(payload, {
+          url:    process.env.TIKKA_WEBHOOK_URL ?? "",
+          secret: process.env.TIKKA_WEBHOOK_SECRET ?? "",
+          now:    () => new Date(),
+        }),
+  });
+
+  logForward("offer", deliveryId, deliverResult.forward);
+
+  if (!deliverResult.emailOk) {
     /* Log structured error info for Vercel logs — no secrets exposed */
-    const e = err as Record<string, unknown>;
+    const e = deliverResult.emailError as Record<string, unknown>;
     console.error("[offer] SMTP_SEND_FAILED", {
       code:    e?.code    ?? "unknown",
       command: e?.command ?? "unknown",
