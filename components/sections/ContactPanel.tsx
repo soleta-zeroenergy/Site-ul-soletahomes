@@ -2,6 +2,7 @@
 
 import { useRef, useState }              from "react";
 import type { CSSProperties, FormEvent } from "react";
+import { readAttribution }               from "@/lib/attribution";
 import { cn }                            from "@/lib/cn";
 import { INQUIRY_TYPES }                 from "@/lib/contact-schema";
 import type { FieldErrors }              from "@/lib/contact-schema";
@@ -53,6 +54,7 @@ export function ContactPanel({
       timeline:     fd.get("timeline"),
       website:      fd.get("website"),
       loadedAt:     loadedAtRef.current,
+      attribution:  readAttribution(),
     };
 
     try {

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import type { CSSProperties, FormEvent } from "react";
+import { readAttribution } from "@/lib/attribution";
 import { cn } from "@/lib/cn";
 import {
   OFFER_PROJECT_PATHS,
@@ -353,6 +354,7 @@ export function PrivateOfferForm() {
       referral:      fd.get("referral"),
       website:       fd.get("website"),
       loadedAt:      loadedAtRef.current,
+      attribution:   readAttribution(),
     };
 
     try {

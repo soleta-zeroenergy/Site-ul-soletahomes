@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import Script from "next/script";
+import { AttributionCapture } from "@/components/AttributionCapture";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SoletaGroupBridge } from "@/components/sections/SoletaGroupBridge";
@@ -89,6 +90,7 @@ export default function RootLayout({
         <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>
           {children}
         </main>
+        <AttributionCapture />
         <SoletaGroupBridge />
         <Footer />
         <script
