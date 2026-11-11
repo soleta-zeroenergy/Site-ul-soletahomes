@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "name": "o48-2-soletahomes-retry-delivery-id",
+  "lot": "O48.2",
+  "repo": "H:\\Site-ul Soleta\\soletahomes",
+  "_run": "cwd = H:\\Site-ul Soleta\\soletahomes: node H:\\Butmal.AI\\scripts\\dsh-gate.mjs docs/dsh/o48-2-gate.json",
+  "allowDirty": [
+    "lib/tikka-webhook.ts",
+    "app/api/contact/route.ts",
+    "app/api/offer/route.ts"
+  ],
+  "steps": [
+    { "id": "type-check", "cmd": "npm run type-check", "timeoutSec": 300 },
+    { "id": "lint", "cmd": "npm run lint", "timeoutSec": 300 },
+    { "id": "build", "cmd": "npm run build", "timeoutSec": 900 },
+    { "id": "check", "cmd": "node scripts/check-tikka-webhook.mts", "timeoutSec": 120 },
+    { "id": "e2e", "cmd": "node scripts/run-e2e-forms.mjs", "timeoutSec": 600 }
+  ],
+  "mutations": [
+    {
+      "id": "M1-body-reserialized-per-attempt",
+      "file": "lib/tikka-webhook.ts",
+      "find": "        const t = Math.floor(now().getTime() / 1000);\n        const signature = signatureHeader(secretBytes, t, body);\n        const attemptBody = body;",
+      "repl": "        const attemptBody = JSON.stringify({ ...payload, [Math.random().toString(36).slice(2)]: 1 });\n        const t = Math.floor(now().getTime() / 1000);\n        const signature = signatureHeader(secretBytes, t, attemptBody);",
+      "targetCmd": "node scripts/check-tikka-webhook.mts",
+      "timeoutSec": 120,
+      "expectText": "forwardToTikka retries 5xx (503, 503, 201) with three identical bodies and valid signatures"
+    },
+    {
+      "id": "M2-retries-4xx-too",
+      "file": "lib/tikka-webhook.ts",
+      "find": "        if (response.status === 429 || response.status >= 500) continue;",
+      "repl": "        continue;",
+      "targetCmd": "node scripts/check-tikka-webhook.mts",
+      "timeoutSec": 120,
+      "expectText": "forwardToTikka does not retry 4xx (400, 401, 409): one request each"
+    },
+    {
+      "id": "M3-no-total-deadline",
+      "file": "lib/tikka-webhook.ts",
+      "find": "      const attemptTimeoutMs = Math.min(TIKKA_ATTEMPT_TIMEOUT_MS, remaining());",
+      "repl": "      const attemptTimeoutMs = TIKKA_ATTEMPT_TIMEOUT_MS;",
+      "targetCmd": "node scripts/check-tikka-webhook.mts",
+      "timeoutSec": 120,
+      "expectText": "forwardToTikka real budget against a hanging mock fails timeout in under 6000ms"
+    },
+    {
+      "id": "M4-inverted-pauses",
+      "file": "lib/tikka-webhook.ts",
+      "find": "        await sleep(TIKKA_RETRY_DELAYS_MS[i - 1]);",
+      "repl": "        await sleep(TIKKA_RETRY_DELAYS_MS[TIKKA_RETRY_DELAYS_MS.length - i]);",
+      "targetCmd": "node scripts/check-tikka-webhook.mts",
+      "timeoutSec": 120,
+      "expectText": "test sleep receives exactly 250 and then 750 between attempts"
+    },
+    {
+      "id": "M5-delivery-header-removed-contact",
+      "file": "app/api/contact/route.ts",
+      "find": "      headers: { \"X-Soleta-Delivery-Id\": deliveryId },\n",
+      "repl": "",
+      "targetCmd": "node scripts/run-e2e-forms.mjs",
+      "timeoutSec": 900,
+      "expectText": "contact / mode=ok: 200 success, email sent, under 7s"
+    },
+    {
+      "id": "M6-delivery-line-removed-offer-text",
+      "file": "app/api/offer/route.ts",
+      "find": "    `Delivery ID: ${deliveryId}`,\n",
+      "repl": "",
+      "targetCmd": "node scripts/run-e2e-forms.mjs",
+      "timeoutSec": 900,
+      "expectText": "offer / mode=ok: 200 success, email sent, under 7s"
+    },
+    {
+      "id": "M7-500-when-forward-failed",
+      "file": "app/api/contact/route.ts",
+      "find": "  logForward(\"contact\", deliveryId, deliverResult.forward);\n",
+      "repl": "  logForward(\"contact\", deliveryId, deliverResult.forward);\n  if (deliverResult.forward.status !== \"sent\") return NextResponse.json({ error: \"forward failed\" }, { status: 500 });\n",
+      "targetCmd": "node scripts/run-e2e-forms.mjs",
+      "timeoutSec": 900,
+      "expectText": "contact / mode=down: 200 success, email still sent"
+    }
+  ]
+}
