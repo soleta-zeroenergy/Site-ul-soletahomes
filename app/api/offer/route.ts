@@ -46,7 +46,7 @@ function createTransporter() {
 }
 
 /* ── Email body ──────────────────────────────────────────────────────────── */
-function buildEmailBody(d: OfferFormData): string {
+function buildEmailBody(d: OfferFormData, deliveryId: string): string {
   const line = (label: string, value: string | undefined) =>
     `${label.padEnd(26)} ${value ?? "—"}`;
 
@@ -87,10 +87,11 @@ function buildEmailBody(d: OfferFormData): string {
     "",
     "=".repeat(60),
     `Submitted: ${new Date().toUTCString()}`,
+    `Delivery ID: ${deliveryId}`,
   ].join("\n");
 }
 
-function buildHtmlBody(d: OfferFormData): string {
+function buildHtmlBody(d: OfferFormData, deliveryId: string): string {
   const row = (label: string, value: string | undefined) =>
     `<tr>
       <td style="padding:6px 16px 6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a8e87;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td>
@@ -156,6 +157,7 @@ function buildHtmlBody(d: OfferFormData): string {
             <p style="margin:0;font-size:11px;color:#9a8e87;">
               Submitted ${new Date().toUTCString()} · soletahomes.com
             </p>
+            <p style="margin:8px 0 0;font-size:10px;color:#9a8e87;">Delivery ID: ${escapeHtml(deliveryId)}</p>
           </td>
         </tr>
 
@@ -245,6 +247,8 @@ export async function POST(req: NextRequest) {
   const safeEmail = sanitizeHeaderValue(d.email).slice(0, 180);
   const safeLocation = sanitizeHeaderValue(d.location).slice(0, 160);
 
+  const deliveryId = randomUUID();
+
   const sendEmail = async () => {
     const transporter = createTransporter();
 
@@ -253,21 +257,21 @@ export async function POST(req: NextRequest) {
       to:      recipient,
       replyTo: `"${safeName}" <${safeEmail}>`,
       subject: `New Private Offer Request — ${safeName} — ${safeLocation}`,
-      text:    buildEmailBody(d),
-      html:    buildHtmlBody(d),
+      headers: { "X-Soleta-Delivery-Id": deliveryId },
+      text:    buildEmailBody(d, deliveryId),
+      html:    buildHtmlBody(d, deliveryId),
     });
 
     console.log("[offer] Email delivered to", recipient);
   };
 
-  const deliveryId  = randomUUID();
   const attribution = pickAttribution(b.attribution);
   const payload     = buildOfferLead(d, attribution, deliveryId);
 
   const deliverResult = await deliver({
     sendEmail,
     forward: payload === null
-      ? { status: "skipped", reason: "no_identifier" }
+      ? { status: "skipped", reason: "no_identifier", attempts: 0 }
       : forwardToTikka(payload, {
           url:    process.env.TIKKA_WEBHOOK_URL ?? "",
           secret: process.env.TIKKA_WEBHOOK_SECRET ?? "",

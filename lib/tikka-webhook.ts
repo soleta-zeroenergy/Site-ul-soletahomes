@@ -42,9 +42,9 @@ export interface TikkaLeadPayload {
 }
 
 export type ForwardResult =
-  | { status: "skipped"; reason: "not_configured" | "invalid_url" | "invalid_secret" | "no_identifier" }
-  | { status: "sent"; httpStatus: number }
-  | { status: "failed"; reason: "timeout" | "network" | "http"; httpStatus?: number };
+  | { status: "skipped"; reason: "not_configured" | "invalid_url" | "invalid_secret" | "no_identifier"; attempts: number }
+  | { status: "sent"; httpStatus: number; attempts: number }
+  | { status: "failed"; reason: "timeout" | "network" | "http"; httpStatus?: number; attempts: number };
 
 export interface ForwardOptions {
   url:         string;
@@ -52,6 +52,8 @@ export interface ForwardOptions {
   now:         () => Date;
   fetchImpl?:  typeof fetch;
   timeoutMs?:  number;
+  sleep?:      (ms: number) => Promise<void>;
+  deadlineMs?: number;
 }
 
 export type ForwardLike = ForwardResult | Promise<ForwardResult> | (() => ForwardResult | Promise<ForwardResult>);
@@ -69,7 +71,11 @@ export interface DeliverResult {
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 
-export const TIKKA_TIMEOUT_MS = 3000;
+export const TIKKA_ATTEMPT_TIMEOUT_MS = 2000;
+export const TIKKA_RETRY_DELAYS_MS = [250, 750];
+export const TIKKA_DEADLINE_MS = 5500;
+export const TIKKA_MIN_ATTEMPT_MS = 300;
+export const TIKKA_TIMEOUT_MS = TIKKA_ATTEMPT_TIMEOUT_MS;
 
 export const CONTACT_CONSENT_SOURCE = "soletahomes.com/contact";
 export const OFFER_CONSENT_SOURCE = "soletahomes.com/request-private-offer";
@@ -373,6 +379,11 @@ function isAllowedHost(hostname: string): boolean {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]" || hostname === "::1";
 }
 
+const defaultSleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
 export async function forwardToTikka(
   payload: TikkaLeadPayload | null,
   options: ForwardOptions
@@ -381,51 +392,88 @@ export async function forwardToTikka(
   // now(), JSON.stringify, signing, fetch) and forwardToTikka must still
   // resolve — it never rejects.
   try {
-    if (payload === null) return { status: "skipped", reason: "no_identifier" };
+    if (payload === null) return { status: "skipped", reason: "no_identifier", attempts: 0 };
 
-    const { url, secret, now, fetchImpl = fetch, timeoutMs = TIKKA_TIMEOUT_MS } = options;
+    const {
+      url, secret, now, fetchImpl = fetch,
+      sleep = defaultSleep, deadlineMs, timeoutMs,
+    } = options;
 
-    if (!url || !secret) return { status: "skipped", reason: "not_configured" };
+    // Configuration checks run once, before any attempt, without fetch.
+    if (!url || !secret) return { status: "skipped", reason: "not_configured", attempts: 0 };
 
     let parsedUrl: URL;
     try {
       parsedUrl = new URL(url);
     } catch {
-      return { status: "skipped", reason: "invalid_url" };
+      return { status: "skipped", reason: "invalid_url", attempts: 0 };
     }
 
     const isHttps = parsedUrl.protocol === "https:";
     const isLocalHttp = parsedUrl.protocol === "http:" && isAllowedHost(parsedUrl.hostname);
-    if (!isHttps && !isLocalHttp) return { status: "skipped", reason: "invalid_url" };
+    if (!isHttps && !isLocalHttp) return { status: "skipped", reason: "invalid_url", attempts: 0 };
 
     const secretBytes = decodeSecret(secret);
-    if (!secretBytes) return { status: "skipped", reason: "invalid_secret" };
+    if (!secretBytes) return { status: "skipped", reason: "invalid_secret", attempts: 0 };
 
+    // The body is serialized exactly once: every attempt sends the same
+    // octets; only the timestamp `t` (and its signature) is refreshed.
     const body = JSON.stringify(payload);
-    const t = Math.floor(now().getTime() / 1000);
-    const signature = signatureHeader(secretBytes, t, body);
 
-    const response = await fetchImpl(parsedUrl.toString(), {
-      method:  "POST",
-      headers: {
-        "content-type":         "application/json",
-        "x-webhook-signature":  signature,
-      },
-      body,
-      redirect: "error",
-      signal:   AbortSignal.timeout(timeoutMs),
-    });
+    // Total budget from the first attempt. `timeoutMs` is the legacy name of
+    // `deadlineMs` and stays accepted as an alias of it.
+    const budgetMs = deadlineMs ?? timeoutMs ?? TIKKA_DEADLINE_MS;
+    const startedAt = Date.now();
+    const remaining = () => budgetMs - (Date.now() - startedAt);
 
-    if (response.status >= 200 && response.status < 300) {
-      return { status: "sent", httpStatus: response.status };
+    let attempts = 0;
+    let last: ForwardResult = { status: "failed", reason: "timeout", attempts: 0 };
+
+    for (let i = 0; i <= TIKKA_RETRY_DELAYS_MS.length; i++) {
+      if (i > 0) {
+        await sleep(TIKKA_RETRY_DELAYS_MS[i - 1]);
+        // No retry attempt starts with less than TIKKA_MIN_ATTEMPT_MS left.
+        if (remaining() < TIKKA_MIN_ATTEMPT_MS) break;
+      }
+
+      attempts += 1;
+      const attemptTimeoutMs = Math.min(TIKKA_ATTEMPT_TIMEOUT_MS, remaining());
+
+      try {
+        const t = Math.floor(now().getTime() / 1000);
+        const signature = signatureHeader(secretBytes, t, body);
+        const attemptBody = body;
+        const response = await fetchImpl(parsedUrl.toString(), {
+          method:  "POST",
+          headers: {
+            "content-type":        "application/json",
+            "x-webhook-signature": signature,
+          },
+          body: attemptBody,
+          redirect: "manual",
+          signal:   AbortSignal.timeout(attemptTimeoutMs),
+        });
+
+        if (response.status >= 200 && response.status < 300) {
+          return { status: "sent", httpStatus: response.status, attempts };
+        }
+        last = { status: "failed", reason: "http", httpStatus: response.status, attempts };
+        // 5xx and 429 are retryable; every other status (4xx, redirects)
+        // returns immediately — a retry cannot fix content or config errors.
+        if (response.status === 429 || response.status >= 500) continue;
+        return last;
+      } catch (err) {
+        const name = (err as { name?: string } | null)?.name;
+        last = name === "TimeoutError" || name === "AbortError"
+          ? { status: "failed", reason: "timeout", attempts }
+          : { status: "failed", reason: "network", attempts };
+        // Timeout and network errors are retryable.
+      }
     }
-    return { status: "failed", reason: "http", httpStatus: response.status };
-  } catch (err) {
-    const name = (err as { name?: string } | null)?.name;
-    if (name === "TimeoutError" || name === "AbortError") {
-      return { status: "failed", reason: "timeout" };
-    }
-    return { status: "failed", reason: "network" };
+
+    return last;
+  } catch {
+    return { status: "failed", reason: "network", attempts: 0 };
   }
 }
 
@@ -439,7 +487,7 @@ export async function deliver(options: DeliverOptions): Promise<DeliverResult> {
       const outcome = typeof forward === "function" ? forward() : forward;
       return await outcome;
     } catch {
-      return { status: "failed", reason: "network" };
+      return { status: "failed", reason: "network", attempts: 0 };
     }
   })();
 
@@ -469,5 +517,6 @@ export function logForward(tag: string, deliveryId: string, result: ForwardResul
     status:     result.status,
     reason:     "reason" in result ? result.reason : undefined,
     httpStatus: "httpStatus" in result ? result.httpStatus : undefined,
+    attempts: result.attempts,
   });
 }
