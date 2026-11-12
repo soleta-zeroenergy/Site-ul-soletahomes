@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/collection/signature`,                 lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/collection/holiday-retreat`,           lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/house-models`,                         lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/catalog`,                              lastModified, changeFrequency: "monthly", priority: 0.7 },
 
     /* ── Tier 2 — Built projects ────────────────────────────────────────── */
     /* educational-public and hospitality-resorts are excluded — those

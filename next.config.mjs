@@ -25,6 +25,23 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // www -> apex. Vercel serves both hosts with 200 and has no domain
+      // redirect configured, so the canonical host is enforced here.
+      {
+        source:      "/:path*",
+        has:         [{ type: "host", value: "www.soletahomes.com" }],
+        destination: "https://soletahomes.com/:path*",
+        permanent:   true,
+      },
+      // /catalog has no PDF or delivery route yet, and its form only
+      // pretended to send. Every brochure CTA lands on /contact until
+      // /api/catalog exists. Temporary on purpose: drop it when the
+      // catalog ships.
+      {
+        source:      "/catalog",
+        destination: "/contact",
+        permanent:   false,
+      },
       // Old flat /built-projects/[slug] routes -> new canonical nested routes.
       // These three slugs existed before the routing restructure.
       {
