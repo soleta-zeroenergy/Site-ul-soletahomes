@@ -320,6 +320,7 @@ export function buildOfferLead(
   setQual(qualification, "project_path", d.projectPath);
   setQual(qualification, "estimated_size", d.estimatedSize);
   setQual(qualification, "budget", d.budget);
+  setQual(qualification, "budget_source", d.budgetSource);
   setQual(qualification, "site_type", d.siteType);
   setQual(qualification, "timeline", d.timeline);
   if (Array.isArray(d.documents) && d.documents.length > 0) {

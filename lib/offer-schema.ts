@@ -41,6 +41,13 @@ export const OFFER_BUDGET_OPTIONS = [
   "Prefer not to say",
 ] as const;
 
+export const OFFER_BUDGET_SOURCE_OPTIONS = [
+  "Own funds",
+  "Mortgage / bank loan",
+  "A mix of both",
+  "Not decided yet",
+] as const;
+
 export const OFFER_LAND_STATUS = [
   "Yes, I own land",
   "No, still looking",
@@ -103,6 +110,7 @@ export type OfferFormData = {
   projectPath:   string;
   estimatedSize: string;
   budget:        string;
+  budgetSource?: string;
 
   /* Group 3 — Site and readiness */
   siteType?:     string;
@@ -191,6 +199,9 @@ export function validateOffer(raw: unknown): OfferValidationResult {
   if (!inList(budget, OFFER_BUDGET_OPTIONS))
     errors.budget = "Please select a budget range.";
 
+  const budgetSourceRaw = str(d.budgetSource);
+  const budgetSource = inList(budgetSourceRaw, OFFER_BUDGET_SOURCE_OPTIONS) ? budgetSourceRaw : undefined;
+
   /* Group 3 */
   const siteType = str(d.siteType) || undefined;
 
@@ -217,7 +228,7 @@ export function validateOffer(raw: unknown): OfferValidationResult {
     ok:   true,
     data: {
       name, email, phone, country, segment,
-      location, landStatus, intendedUse, projectPath, estimatedSize, budget,
+      location, landStatus, intendedUse, projectPath, estimatedSize, budget, budgetSource,
       siteType, timeline,
       documents: documents.length > 0 ? documents : undefined,
       description,

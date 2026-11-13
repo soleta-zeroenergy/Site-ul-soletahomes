@@ -9,6 +9,7 @@ import {
   OFFER_INTENDED_USES,
   OFFER_SIZE_OPTIONS,
   OFFER_BUDGET_OPTIONS,
+  OFFER_BUDGET_SOURCE_OPTIONS,
   OFFER_LAND_STATUS,
   OFFER_SITE_TYPES,
   OFFER_TIMELINE_OPTIONS,
@@ -347,6 +348,7 @@ export function PrivateOfferForm() {
       projectPath,
       estimatedSize,
       budget,
+      budgetSource:  fd.get("budgetSource"),
       siteType:      fd.get("siteType"),
       timeline:      fd.get("timeline"),
       documents,
@@ -548,6 +550,13 @@ export function PrivateOfferForm() {
             error={fieldErrors.budget}
           />
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <SelectField
+            id="budgetSource" label="How do you plan to fund the build? (optional)"
+            options={OFFER_BUDGET_SOURCE_OPTIONS}
+            error={fieldErrors.budgetSource}
+          />
+        </div>
       </div>
 
       {/* ── GROUP 3 — Site and readiness ────────────────────────────────── */}
@@ -617,7 +626,7 @@ export function PrivateOfferForm() {
           className="text-[#9a8e87] leading-snug"
           style={{ fontSize: "0.8125rem", fontFamily: "var(--font-body)" }}
         >
-          Your details are private. No marketing, no third-party sharing.
+          Your details are private. No third-party sharing.
         </p>
       </div>
     </form>

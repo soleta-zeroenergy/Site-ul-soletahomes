@@ -70,6 +70,7 @@ function buildEmailBody(d: OfferFormData, deliveryId: string): string {
     line("Project path:",        d.projectPath),
     line("Estimated size:",      d.estimatedSize),
     line("Budget:",              d.budget),
+    line("Funding:",             d.budgetSource),
     "",
     "SITE AND READINESS",
     "-".repeat(40),
@@ -134,7 +135,8 @@ function buildHtmlBody(d: OfferFormData, deliveryId: string): string {
                 row("Intended use",        d.intendedUse)  +
                 row("Project path",        d.projectPath)  +
                 row("Estimated size",      d.estimatedSize)+
-                row("Budget",              d.budget)
+                row("Budget",              d.budget)       +
+                row("Funding",             d.budgetSource)
               )}
               ${section("Site and readiness",
                 row("Site type",           d.siteType)                          +
