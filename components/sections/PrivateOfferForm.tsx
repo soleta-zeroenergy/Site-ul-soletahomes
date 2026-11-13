@@ -354,6 +354,7 @@ export function PrivateOfferForm() {
       documents,
       description:   fd.get("description"),
       referral:      fd.get("referral"),
+      marketingOptIn: fd.get("marketingOptIn") === "yes",
       website:       fd.get("website"),
       loadedAt:      loadedAtRef.current,
       attribution:   readAttribution(),
@@ -611,6 +612,12 @@ export function PrivateOfferForm() {
           options={OFFER_REFERRAL_OPTIONS}
           error={fieldErrors.referral}
         />
+        <label className="flex items-start gap-3 cursor-pointer text-[#5a524c] leading-snug"
+          style={{ fontSize: "0.875rem", fontFamily: "var(--font-body)" }}>
+          <input type="checkbox" name="marketingOptIn" value="yes"
+            className="mt-[3px] h-4 w-4 shrink-0 accent-[var(--color-brand)]" />
+          <span>Send me occasional updates about new Soleta models and projects. You can unsubscribe at any time.</span>
+        </label>
       </div>
 
       {/* ── Submit ──────────────────────────────────────────────────────── */}

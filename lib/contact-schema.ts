@@ -27,6 +27,7 @@ export type ContactFormData = {
   intendedUse?:  string;
   projectStage?: string;
   timeline?:     string;
+  marketingOptIn?: boolean;
 };
 
 export type FieldErrors = Partial<Record<keyof ContactFormData, string>>;
@@ -107,11 +108,12 @@ export function validateContact(raw: unknown): ValidationResult {
   const intendedUse  = str(d.intendedUse).slice(0, MAX.intendedUse) || undefined;
   const projectStage = str(d.projectStage).slice(0, MAX.projectStage) || undefined;
   const timeline     = str(d.timeline).slice(0, MAX.timeline) || undefined;
+  const marketingOptIn = d.marketingOptIn === true;
 
   if (Object.keys(errors).length > 0) return { ok: false, errors };
 
   return {
     ok:   true,
-    data: { name, email, country, segment, inquiryType, message, phone, location, intendedUse, projectStage, timeline },
+    data: { name, email, country, segment, inquiryType, message, phone, location, intendedUse, projectStage, timeline, marketingOptIn },
   };
 }

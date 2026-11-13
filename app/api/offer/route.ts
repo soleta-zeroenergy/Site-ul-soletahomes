@@ -85,6 +85,7 @@ function buildEmailBody(d: OfferFormData, deliveryId: string): string {
     "OPTIONAL",
     "-".repeat(40),
     line("Referral source:",     d.referral),
+    line("Updates opt-in:",      d.marketingOptIn ? "Yes" : "No"),
     "",
     "=".repeat(60),
     `Submitted: ${new Date().toUTCString()}`,
@@ -147,7 +148,8 @@ function buildHtmlBody(d: OfferFormData, deliveryId: string): string {
                 `<tr><td colspan="2" style="padding:8px 0;font-size:14px;color:#1a1714;line-height:1.7;">${escapeHtml(d.description).replace(/\n/g, "<br>")}</td></tr>`
               )}
               ${section("Optional",
-                row("Referral source", d.referral)
+                row("Referral source", d.referral) +
+                row("Updates opt-in",  d.marketingOptIn ? "Yes" : "No")
               )}
             </table>
           </td>

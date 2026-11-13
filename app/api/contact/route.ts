@@ -62,6 +62,7 @@ function buildEmailBody(d: ContactFormData, deliveryId: string): string {
     line("Country:",      d.country),
     line("Segment:",      d.segment),
     line("Inquiry type:", d.inquiryType),
+    line("Updates opt-in:", d.marketingOptIn ? "Yes" : "No"),
     "",
     "OPTIONAL DETAILS",
     "-".repeat(40),
@@ -116,7 +117,8 @@ function buildHtmlBody(d: ContactFormData, deliveryId: string): string {
                 row("Phone",         d.phone)       +
                 row("Country",       d.country)     +
                 row("Segment",       d.segment)     +
-                row("Inquiry type",  d.inquiryType)
+                row("Inquiry type",  d.inquiryType) +
+                row("Updates opt-in", d.marketingOptIn ? "Yes" : "No")
               )}
               ${section("Optional details",
                 row("Project location", d.location)     +

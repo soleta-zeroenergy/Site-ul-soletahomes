@@ -120,6 +120,7 @@ export type OfferFormData = {
 
   /* Group 4 — Optional context */
   referral?:     string;
+  marketingOptIn?: boolean;
 };
 
 export type OfferFieldErrors = Partial<Record<keyof OfferFormData, string>>;
@@ -221,6 +222,7 @@ export function validateOffer(raw: unknown): OfferValidationResult {
 
   /* Group 4 */
   const referral = str(d.referral) || undefined;
+  const marketingOptIn = d.marketingOptIn === true;
 
   if (Object.keys(errors).length > 0) return { ok: false, errors };
 
@@ -233,6 +235,7 @@ export function validateOffer(raw: unknown): OfferValidationResult {
       documents: documents.length > 0 ? documents : undefined,
       description,
       referral,
+      marketingOptIn,
     },
   };
 }

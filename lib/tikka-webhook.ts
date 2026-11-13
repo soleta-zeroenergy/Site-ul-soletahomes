@@ -254,11 +254,15 @@ function buildConsents(
   email: string | undefined,
   phone: string | undefined,
   basis: LeadConsent["basis"],
-  source: string
+  source: string,
+  marketingOptIn?: boolean
 ): LeadConsent[] {
   const consents: LeadConsent[] = [];
   if (email) consents.push({ channel: "email", basis, source });
   if (phone) consents.push({ channel: "phone", basis, source });
+  // The ticked "occasional updates" box is the only thing that becomes
+  // marketing consent; Tikka maps email + consent to marketing_email.
+  if (email && marketingOptIn === true) consents.push({ channel: "email", basis: "consent", source });
   return consents;
 }
 
@@ -297,7 +301,7 @@ export function buildContactLead(
 
   if (attribution) payload.attribution = attribution;
 
-  const consents = buildConsents(email, phone, "legitimate_interest", CONTACT_CONSENT_SOURCE);
+  const consents = buildConsents(email, phone, "legitimate_interest", CONTACT_CONSENT_SOURCE, d.marketingOptIn);
   if (consents.length > 0) payload.consents = consents;
 
   return payload;
@@ -346,7 +350,7 @@ export function buildOfferLead(
 
   if (attribution) payload.attribution = attribution;
 
-  const consents = buildConsents(email, phone, "contract", OFFER_CONSENT_SOURCE);
+  const consents = buildConsents(email, phone, "contract", OFFER_CONSENT_SOURCE, d.marketingOptIn);
   if (consents.length > 0) payload.consents = consents;
 
   return payload;
