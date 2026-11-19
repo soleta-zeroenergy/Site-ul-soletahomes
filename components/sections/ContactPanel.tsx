@@ -304,6 +304,13 @@ export function ContactPanel({
                     {trustNote ?? "We normally reply within 24 hours."}
                   </p>
                 </div>
+                <p
+                  className="text-[#9a8e87] leading-snug"
+                  style={{ fontSize: "0.8125rem", fontFamily: "var(--font-body)" }}
+                >
+                  We use your details only to answer this inquiry. See our{" "}
+                  <a href="/privacy" className="underline underline-offset-2 hover:text-[#5a524c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 active:text-[#1a1714]">privacy policy</a>.
+                </p>
 
               </div>
             </form>

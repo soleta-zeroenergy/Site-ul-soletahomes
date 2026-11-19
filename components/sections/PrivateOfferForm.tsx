@@ -633,7 +633,8 @@ export function PrivateOfferForm() {
           className="text-[#9a8e87] leading-snug"
           style={{ fontSize: "0.8125rem", fontFamily: "var(--font-body)" }}
         >
-          Your details are private. No third-party sharing.
+          Your details are private and used only to prepare your offer. No third-party sharing. See our{" "}
+          <a href="/privacy" className="underline underline-offset-2 hover:text-[#5a524c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)] active:text-[#1a1714]">privacy policy</a>.
         </p>
       </div>
     </form>
